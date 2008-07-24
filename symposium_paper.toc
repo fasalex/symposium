@@ -1,0 +1,38 @@
+\contentsline {section}{\numberline {I}Introduction}{2}
+\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {I-A}}Wireless Sensor Networks}{2}
+\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {I-B}}Clock Synchronization in traditional networks}{2}
+\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {I-C}}Wireless Sensor Networks: Why different ?}{2}
+\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {I-D}}Existing Work on WSN clock synchronization}{3}
+\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {I-E}}Objective and overview of the thesis}{4}
+\contentsline {section}{\numberline {II}Need for Synchronization}{4}
+\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {II-A}}Introduction}{4}
+\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {II-B}}Time Division Multiple Access}{4}
+\contentsline {section}{\numberline {III}Problem Formulation}{7}
+\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {III-A}}Clock and Frequency standards}{7}
+\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {III-B}}Sources of synchronization error}{7}
+\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {III-C}}Clock Drift and Delay}{8}
+\contentsline {subsubsection}{\numberline {\unhbox \voidb@x \hbox {III-C}1}Drift}{8}
+\contentsline {subsubsection}{\numberline {\unhbox \voidb@x \hbox {III-C}2}Message Delay}{8}
+\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {III-D}}Requirements of the Algorithm}{9}
+\contentsline {subsubsection}{\numberline {\unhbox \voidb@x \hbox {III-D}1}Lifetime}{9}
+\contentsline {subsubsection}{\numberline {\unhbox \voidb@x \hbox {III-D}2}Scope}{9}
+\contentsline {subsubsection}{\numberline {\unhbox \voidb@x \hbox {III-D}3}Internal vs. External}{9}
+\contentsline {subsubsection}{\numberline {\unhbox \voidb@x \hbox {III-D}4}Energy Budget}{9}
+\contentsline {subsubsection}{\numberline {\unhbox \voidb@x \hbox {III-D}5}Convergence Time}{9}
+\contentsline {subsubsection}{\numberline {\unhbox \voidb@x \hbox {III-D}6}Simplicity}{9}
+\contentsline {section}{\numberline {IV}Synchronity protocol}{9}
+\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {IV-A}}Synchronization Frequency}{9}
+\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {IV-B}}Mathematical Model}{11}
+\contentsline {subsubsection}{\numberline {\unhbox \voidb@x \hbox {IV-B}1}Median algorithm and its drawback?}{11}
+\contentsline {subsubsection}{\numberline {\unhbox \voidb@x \hbox {IV-B}2}Gain factors}{11}
+\contentsline {subsubsection}{\numberline {\unhbox \voidb@x \hbox {IV-B}3}Weighted Measurments - Interferance-phobic}{12}
+\contentsline {subsubsection}{\numberline {\unhbox \voidb@x \hbox {IV-B}4}Non-Linear Curve fitting - Interference elimination}{13}
+\contentsline {paragraph}{\numberline {\unhbox \voidb@x \hbox {IV-B}4a}}{13}
+\contentsline {subsubsection}{\numberline {\unhbox \voidb@x \hbox {IV-B}5}Non Linear Least Square curve fitting}{14}
+\contentsline {subsubsection}{\numberline {\unhbox \voidb@x \hbox {IV-B}6}Kalman Filter}{15}
+\contentsline {section}{\numberline {V}Results and Discussion}{16}
+\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {V-A}}Simulation setup}{16}
+\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {V-B}}Computer simulation Results}{17}
+\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {V-C}}Measurements concerning the energy consumption}{17}
+\contentsline {section}{\numberline {VI}Conclusion and Recommendation}{17}
+\contentsline {section}{References}{17}

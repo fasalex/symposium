@@ -1,0 +1,316 @@
+\documentclass[titlepage]{article}
+\usepackage{graphicx}
+\begin{document}
+\title{Feasibility study to the realization of a 3D transmitarray}
+\author{Fasika A.Assegei}
+\maketitle
+\newpage
+\tableofcontents
+\newpage
+\listoffigures
+\newpage
+\section{Introduction}
+The increasing demand for bandwidth in wireless communication systems drives the transceiver systems to higher operation frequencies. The license-free band at 60GHz receives much interest because of the almost unlimited amount of bandwidth (about 5GHz) that is available. Moreover, the recent advances in silicon technology allow the use of low-cost electronics that operate at these frequencies. To fully exploit the possibilities of the millimeter-wave bands, there is a need for antennas that exploit the available bandwidth and that can be interconnected easily with active electronics.
+\newline
+One of the ways to increase the performance of an antenna is to increase the coverage area. Recently, a single-element antenna has been designed and measured~\cite{1} as well as a 6-element circular array that supports beam-forming~\cite{2}. To further increase the scan range of the antenna, a flexible antenna configuration is proposed that is based on a passive transmitarray. This transmitarray is able to achieve extended coverage and can be customized for multiple scenarios, with the same effort and low manufacturing cost~\cite{4}. The proposed 3D configuration uses passive transmit arrays to deflect incoming EM waves, radiated by the source, towards a new direction where the source cannot give coverage. In this way, a broader coverage area can be achieved. In addition to that, the selection of the direction of the propagation will provide a flexibility in the steering of the source beam towards the required direction.
+\newline
+In this report, a feasibility of a 3D structure is investigated. A model is derived that predicts the behavior of different transmitarray configurations. Several transmitarray setups have been analyzed and their performance is investigated.
+\newline
+In chapter 2, a planar source array is discussed and array factor method is derived to analyse and investigate the properties of a planar antenna array. In chapter 3, the deflector based transmitarray structure is proposed and the configuration is analyzed with results presented along with discussions. In chapter 4, the 3D transmitarray is investigated by taking different parameters into account and the results are presented and discussed. In the last chapter, a conclusion is given.
+\newpage
+\section{Planar array configuration}
+\subsection{Introduction}
+An antenna array is a configuration of individual radiating elements that are arranged in space and that can be used to produce a directional radiation pattern. Antenna arrays come in various geometrical configurations, and usually employ identical elements. The radiation pattern of the array depends on the geometrical configuration of the elements, the distance between the elements, the amplitude and phase excitation of the elements and also on the element pattern of the individual elements.
+\newline
+In order to investigate the radiation pattern of an antenna array, a full wave simulation can be used. Since the computational burden of this kind of simulations is very high, the use of simulations based on the array factor is used here. This method has the advantage of being fast and simple. It should be noted, though, that these simulations do not account for the mutual coupling between the array elements.
+\subsection{Array factor}
+A general n-element antenna array is shown in Figure $\ref{fig:final}$, where an incoming plane wave arrives at an elevation angle $\theta$ and azimuth angle $\varphi$. The elements of an antenna array receive signals of different phases depending on the path length differences, $p_i$. The phases of the received signals from the different elements are shifted and summed. For an incident wave from the direction $f(\theta , \varphi)$, the received signals on the array can be written as
+\begin{equation}
+\centering
+s_n=f(\theta,\varphi)e^{j[k_op_n + \xi_n]},
+\end{equation}
+where $f(\theta,\varphi)$ represents the element pattern of the antenna element and $k=\frac{2\pi}{\lambda_o}$ is the propagation constant of vacuum, with $\lambda_0$ the free space wavelength. The index \emph{n} represents the $n_{th}$ antenna element in the array.
+\begin{figure}[!hbp]
+\centering
+\includegraphics[width=0.8\textwidth]{final}
+\caption{General n-element antenna array}
+\label{fig:final}
+\end{figure}
+The path length $p_i$ can be written as
+\begin{equation}
+    p_i=\textbf{r}_{ray}.\textbf{r}_i  ,
+\end{equation}
+where $\textbf{r}_{ray}=\sin(\theta) \cos(\varphi) \textbf{u}_x+\sin(\theta) \sin(\varphi)\textbf{u}_y+\cos\theta \textbf{u}_z$ is the unit vector which points in the direction of $\theta$ and $\varphi$ and $\textbf{r}_i$ is a vector which denotes the position of the antenna \emph{i}. So, the total signal received from all the antenna elements will be
+\begin{equation}
+    S=f(\theta,\varphi)[e^{j[k_o\textbf{r}_{ray}.\textbf{r}_0 + \xi_o]}+e^{j[k_o\textbf{r}_{ray}.\textbf{r}_1 + \xi_1]}+ \ldots + e^{j[k_o\textbf{r}_{ray}.\textbf{r}_n + \xi_n]}]
+\end{equation}
+Hence, the summation can be generalized  for an N element antenna array as follows:
+\begin{equation}
+    AF_{N}(\theta , \varphi)= \sum_{n=0}^{N-1}e^{j[k_0.\textbf{r}_{ray}.\textbf{r}_n +\xi_n]} .
+\end{equation}
+Here, \emph{AF} is the array factor of the antenna array. By varying the phase, i.e $\xi$, we can steer the array to the direction we want to get a maximum radiation pattern.
+Thus, the radiation pattern of the array is given by
+\begin{equation}
+    g(\theta,\varphi)=f(\theta,\phi)AF(\theta,\varphi).
+\end{equation}
+\subsection{Radiation pattern and directivity}
+In order to simplify the pattern computations for the antenna array, the normalized radiation pattern of an antenna element (element pattern) is approximated by
+\begin{equation}
+f(\theta,\varphi)=\cos(\theta),
+\end{equation}
+for -$\frac{\pi}{2}<\theta<\frac{\pi}{2}$. This approximation is used to simplify the pattern computation in the simulation of the pattern. The element pattern is shown in Figure $\ref{fig:RP}$.
+\begin{figure}[!hbp]
+ \centering
+ \includegraphics[width=0.8\textwidth]{RadiationPattern}
+ \caption{Element pattern of an antenna}
+ \label{fig:RP}
+\end{figure}
+\newline
+The directivity of the approximated radiation pattern can be calculated as
+\begin{equation}
+D(\theta,\varphi) = \frac{|g(\theta,\varphi)|^2}{\frac{1}{4\pi}\int\int|g(\theta,\varphi)|^2\sin(\theta)d\theta d\varphi} ,
+\end{equation}
+where $|g(\theta,\varphi)|^2$ is the normalized radiation pattern of the array, i.e.
+\begin{equation}
+    g(\theta,\varphi)=f(\theta,\phi).AF(\theta,\varphi) ,
+\end{equation}
+where $f(\theta,\varphi)$ is the element pattern and $AF(\theta,\varphi)$ is the array factor.\newline
+Since the maximum value of the normalized radiation pattern is 1 , the maximum directivity will be
+\begin{equation}
+D_{max} = \frac{4\pi}{\int\int|g(\theta,\varphi)|^2\sin(\theta)d\theta d\varphi} .
+\label{equ:Maxdir}
+\end{equation}
+The denominator $\int\int|g(\theta,\varphi)|^2\sin(\theta)d\theta d\varphi$ is the total radiated power, $P_{rad}$, by the antenna elements.
+\subsection{Linear array}
+The linear array is one of the elementary configurations where the centers of the array elements lie along a straight line. A 4 element linear array is considered here. The radiation pattern is simulated in Matlab at a frequency of 60 GHz. The antenna spacing is 2.5mm which is half of a free-space wavelength. The half wavelength distance between the elements is the optimum distance to avoid grating lobes. The simulation of the directivity of the 4 element linear array is given in Figure $\ref{fig:LAD1}$. The maximum directivity of the array is 12.38dBi, as shown in the figure.
+\begin{figure}[!hbp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{LAD1}
+    \caption{Directivity of 4 element linear array at \emph{f }= 60 GHz for broadside scan}
+    \label{fig:LAD1}
+\end{figure}
+\subsection{Circular array}
+A circular array is a six-element array (Figure $\ref{fig:CA}$).
+\begin{figure}[!hbp]
+\centering
+    \includegraphics[width=0.3\textwidth]{Chart1}
+    \caption{A 6 element circular array }
+    \label{fig:CA}
+\end{figure}
+The antenna elements are arranged in a hexagonal geometry. The distance between the antenna elements is $\frac{\lambda}{\sqrt{3}}$ ~\cite{2}. From Figure $\ref{fig:CAD1}$, the directivity of the circular array for broadside scan, i.e. $\theta_o = 0$ is shown. The maximum directivity of the array for the broadside scan is 14.8dBi, as seen in the figure.
+\begin{figure}[!hbp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{CAD1}
+    \caption{Directivity of a circular array at a broadside scan}
+    \label{fig:CAD1}
+\end{figure}
+As it is shown in Figure $\ref{fig:CAD2}$, the directivity of the array decreases with the increase of the steering angle, $\theta_0$. The maximum directivity is 13.3dBi for $\theta_o = 45 ^o$.
+\begin{figure}[!hbp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{CAD2}
+    \caption{Directivity of a circular array at $\theta_o = 45^o$}
+    \label{fig:CAD2}
+\end{figure}
+For larger steering angles that the source is steered, the directivity decreases, which in turn limits the coverage of the source array.
+\section{Deflector based antenna array configuration}
+\subsection{Introduction}
+An omnidirectional antenna is an antenna system which radiates power uniformly in one plane with a directive pattern shape in a perpendicular plane. This type of antenna is used when coverage in all directions from the antenna is required. Omnidirectional antennas are good to use when the signal is required to reach receivers in all directions. Because of the dispersed nature of omnidirectional antennas, the signal is weaker and therefore accommodates shorter signal distances.
+\newline
+On the other hand, directional antennas are designed to focus the signal in a particular direction. A directional antenna concentrates the signal power in a specific direction and uses less power for the same distance than an omnidirectional antenna. However, the problem with directional antennas is the low steerability attached to them. The antennas has low coverage of the surrounding area. Thus, in order to extend the coverage of an antenna towards some regions where the antenna cannot cover, a deflector-based configuration is proposed~\cite{4}.
+\newline
+In the arrangement, the source radiates the beam towards a transmitarray. The transmitarray elements are arranged in such a way that they deflect the incoming beam towards the direction specified by the phase shift of the individual transmitarray elements. So, an extended coverage can be achieved this way. This configuration is based on the passive transmitarray which is able to achieve extended coverage. The passive transmitarray is used to deflect the waves radiated by the source, hence the name \emph{Deflector}. It is used in combination with a steerable source planar array of balanced-fed aperture-coupled patch antennas.
+\newline
+Based on the deflector based design, a 3D configuration of a deflector-based antenna array configuration is proposed~\cite{4} for an extended coverage and which can be applied to different application scenarios. The proposed configuration for the deflector array is a pyramidal configuration with a flexible number of sides(Figure $\ref{fig:Pyramid}$).
+\begin{figure}[!hbp]
+\centering
+\includegraphics[width=0.6\textwidth]{Pyramid}
+\caption{Proposed 3D transmitarray configuration}
+\label{fig:Pyramid}
+\end{figure}
+In the proposed configuration, the sides of the pyramid can vary depending on the requirement.
+\newline
+The source can be steered to one of the planes where a specific direction of propagation is needed. The sides of the pyramid can have different phase shifts to be applied to the incoming source wave. The outgoing beam, then, can be focused to the specified direction which is dependent on the phase shift applied by the deflector elements on the planes.  The range of coverage after the deflection is greater than the range of the source such that the beam can be steered to larger angles resulting in a greater coverage. In this way, the steering capabilities of the source can be increased. There is an additional phase shift due to the distance difference that the deflector elements have from the source. These phase shifts have their own impact on the output of the pyramidal configuration. We use the array factor method to simulate the radiation pattern of the 3D transmitarray configuration.
+\subsection{2D configuration of deflector array}
+ The 2D deflector based configuration of a planar antenna array is shown in Figure $\ref{fig:Deflector}$. The m-element deflector plane is placed above the source at a height \emph{h}. The source can be steered to an angle $\alpha_{st}$ and the deflector plane retransmits the received beam towards a direction which depends on the phase shift applied by the deflector elements.
+\begin{figure}[!hbp]
+\centering
+\includegraphics[width=0.6\textwidth]{Deflector}
+\caption{Schematics of a 2D deflector}
+\label{fig:Deflector}
+\end{figure}
+As shown in the figure, $\beta$ is the angle of deflection and $\alpha_{st}$ is the steering angle of the source. Hence, the total deflection angle will be $\beta + \alpha_{st}$.
+\newline
+The power received by each element of the deflector array is different which is dependent on which area of the array is illuminated with the most power. This, in turn, is dependent on the orientation of the source. Thus, the outgoing power out of each deflector element is also different. The deflector elements will receive the power as radiated by the source. Antennas transmit and receive patterns are similar.Hence, the power received by the deflector element at $\textbf{r}_i$ is
+\begin{equation}
+C_i =  f(\theta,\varphi)AF(\theta_i,\varphi_i) / |\textbf{r}_i|^2 ,
+\label{eq:Power}
+\end{equation}
+where $f(\theta,\varphi)$ is the element pattern of the source array element, $AF(\theta_i,\varphi_i)$ is the array factor of the source in the direction of $\textbf{r}_i$.
+\newline
+We use the array factor method to analyse the overall radiation pattern of the configuration.  The coefficients for the deflector elements can be calculated using Equation $\ref{eq:Power}$. Hence, for the $n_{th}$ deflector element, the radiated power is given as
+\begin{equation}
+\centering
+S_n=f(\theta,\varphi)C_ne^{j[k_od_i + k_o\textbf{r}_i.\textbf{r}_o + \xi_o]}.
+\label{eq:Pat}
+\end{equation}
+The index $n$ represents the $n_{th}$ deflector element in the array. $p_n$ is the position vector of the $n_{th}$ element. The phase shift $\xi_n$ determines the direction of the bending of the beam received at the deflector array. $k_od$ is the phase shift introduced due to the difference in the distance between the deflector elements and the source $d_i=|\textbf{r}_i|$. The coefficient $C_n$ determines how much of the power is received at the deflector element and being radiated from the deflector element. The loss in the deflector elements is assumed to be zero.
+\newline
+Thus, the total output of the array is calculated as
+\begin{equation}
+    S=f(\theta,\varphi)[C_0e^{j[k_od_0+k_o\textbf{r}_{ray}.\textbf{r}_0 + \xi_o]}+\ldots + C_ne^{j[k_od_n+k_o\textbf{r}_{ray}.\textbf{r}_n + \xi_n]}],
+\end{equation}
+where $\textbf{r}_{ray}=\sin(\theta) \cos(\varphi)\textbf{u}_x+\sin(\theta) \sin(\varphi)\textbf{u}_y+\cos\theta\textbf{u}_z $ and $r_n$ is the position vector of the deflector element.
+\newline
+In order to simplify the pattern computations for the antenna and the deflector array, the normalized radiation pattern of an antenna element is approximated by
+\begin{equation}
+f(\theta,\varphi)=cos(\theta)
+\end{equation}
+for -$\frac{\pi}{2}<\theta<\frac{\pi}{2}$. The element pattern of the deflector elements can also be taken to be an omni-directional element. The simulations are conducted with both patterns.
+\newline
+As we can see in the above equations, the phase shift of the beam is dependent on the distance from the source, the distance between the deflector elements and the applied phase shifts on the individual elements. By varying these factors, the direction of the outgoing beam can be controlled. Thus, the total phase shift of the outgoing beam at the \emph{i}th element is
+\begin{equation}
+    \psi_i = k_od_i+k_o\textbf{r}_{ray}.\textbf{r}_i + \xi_i .
+    \label{eq:Phase}
+\end{equation}
+So, in order to steer the beam towards an angle $\theta$ and $\varphi$, the applied phase shift will be
+\begin{equation}
+    \xi_i = -[k_od_i + k_o\textbf{r}_{ray}.\textbf{r}_i].
+\end{equation}
+So, by applying different phase shifts to the different deflector elements, a proper steering can be achieved.
+\newline
+In order to take out the path-length effect due to the distance difference of the deflector elements from the source, a phase shift can be applied on the deflector elements. Thus, for path-length compensation, the applied phase shift will be
+\begin{equation}
+\xi_i = -k_od_i.
+\end{equation}
+So, for path-length compensation, the total phase shift of the array will be
+\begin{equation}
+\psi_i = k_o\textbf{r}_{ray}.\textbf{r}_i.
+\end{equation}
+\subsection{Results and discussions of 2D deflector array}
+The beam pattern of a horizontal deflector plane is investigated. The deflector plane which is used in the simulation consists of 169 deflector elements arranged in a square shape. The radiating source is a circular antenna array whose directivity and radiation pattern are simulated in the previous section(Figure $\ref{fig:CAD1}$). The steerable source can focus power on a certain area of the deflector. Depending on the phase shift that is applied to the deflector elements, the deflector bends the received wave towards a certain direction.
+\newline
+The spacing between the deflector elements is $0.5\lambda_o$ where $\lambda_o$ is the free space wavelength at 60GHz. The plane is placed at a height of 20mm above the source. For broadside scan of the source, the output of the deflector array, with zero phase shift of the deflector elements, is shown in Figure $\ref{fig:BroadsideDir}$. The plot in solid line shows the radiation pattern of the deflector array without path-length compensation. The outgoing beam has very low side lobes(-24dB). The dashed plot shows the radiation pattern of the deflector array with a path-length compensation(Equation $\ref{eq:Power}$) for each deflector element. As seen in the figure, the beam has a higher directivity than the one without the path-length compensation. This is due to the fact that there is no phase shift applied due to the distance difference of the deflector elements from the source.
+\begin{figure}[!hbp]
+\centering
+\includegraphics[width=1\textwidth]{BroadsidePattern}
+\caption{Normalized pattern for broadside scan of the deflector array}
+\label{fig:BroadsideDir}
+\end{figure}
+\newline
+For a scan angle of $\theta_D=15^0$ on the deflector array and the source steered to the broadside direction, the overall deflection of the beam will be $\xi=15^0$. Each element of the deflector array applies a phase shift of $\theta_D=15^0$ to the incoming wave. As the simulation of the radiation pattern of the outgoing beam shows(Figure $\ref{fig:Directivity15}$), the sidelobes are lower than the simulation  of the array setup without the deflectors(See Figure $\ref{fig:Directivity15W}$). It is greater than 10dB lower.
+\begin{figure}[!hbp]
+\centering
+\includegraphics[width=0.8\textwidth]{Broadside15WithoutDeflector}
+\caption{Normalized pattern for a $15^0$ steered source without the deflector Plane}
+\label{fig:Directivity15W}
+\end{figure}
+\begin{figure}[!hbp]
+\centering
+\includegraphics[width=0.8\textwidth]{Broadside15Pattern}
+\caption{Normalized pattern for a $15^0$ deflection of a broadside directed Source}
+\label{fig:Directivity15}
+\end{figure}
+\newline
+\section{3D Configuration of deflector Array}
+\subsection{Introduction}
+Based on the configuration presented in the previous part, a 3D configuration of deflector based antenna array configuration is proposed~\cite{4} for a an extended coverage and which can be applicable to different application scenarios.
+The proposed configuration for the deflector array is pyramidal configuration with flexible number of sides(Figure $\ref{fig:Pyramid}$).
+\newline
+In order to analyze the 3D model, the 2D model present in the previous section can be extended. First, the radiation pattern of each deflector element is calculated at the origin using Equation $\ref{eq:Pat}$. Then, the pattern is rotated by  angle $\theta_n$ and $\varphi_n$ where $\theta_n$ is the elevation angle of the normal of the plane that the element belongs to and $\varphi_n$ is the azimuth angle of the normal of the plane which the deflector element belongs to. After the pattern of all of the deflector elements are rotated to their respective planes, they are added to give the overall pattern of the pyramidal configuration.
+\newpage
+\subsection{Results and discussion of a 3D transmitarray configuration}
+The radiation pattern of a 3D deflector based configuration is analyzed. Two different geometries for the base of the pyramidal configuration are applied, square and hexagonal. In order to compare the results of the different geometries, the average number of deflector elements in the different geometries is set to be constant with 180 deflector elements in total.
+\subsubsection{Square pyramid}
+The 3D structure that is used in this simulation has a square base (square pyramid). The total number of deflector elements is 180. In the first part of the simulation, the distance between the deflector elements is taken to be $0.7 \lambda_o$. As mentioned earlier, the source is a circular array. The beam pattern of the pyramid structure for a broadside scan of the source without path-length compensation is shown in Figure $\ref{fig:SquareNorm0}$. As seen in the figure, the beam pattern is not fully directed to the broadside direction. There are side lobes in the directions perpendicular to the planes which are significant in magnitude(around 2db lower than the broadside beam). This effect is due to the fact that the phase shift of the outgoing beam is dependent on the distance between the elements and the element pattern of the deflectors, as shown in Equation \ref{eq:Phase}. The phase shift due to inter element distance is minimum in the direction perpendicular to the planes.The beam in the normal direction has zero phase shift due to the interelement distance. Thus, a significant portion of the beam is directed to the perpendicular direction of the beams.
+\begin{figure}[!hbp]
+\centering
+\includegraphics[width=1\textwidth]{SquareNorm0}
+\caption{Normalized radiation pattern of a square pyramid with interelement spacing $0.7 \lambda_o$ for a broadside source}
+\label{fig:SquareNorm0}
+\end{figure}
+\newline
+In Figure $\ref{fig:SquarewithComp}$, the beam pattern of a square pyramid is shown. The pattern is calculated with the path-length compensation where each deflector element has added a phase shift to compensate for the path-length difference from the source. Thus, the phase shift of the outgoing beam now depends only on the distance difference between the deflector elements. This phase shift becomes zero for $\theta=\theta_n$ and $\varphi=\varphi_n$ where $\theta_n$ and $\varphi_n$ are the angles for the normal of the defector plane. This is seen in the simulated resulted which shows that the beams are directed in the normal directions of the planes.
+\begin{figure}[!hbp]
+\centering
+\includegraphics[width=1\textwidth]{SquareNorm0WithPathComp}
+\caption{Normalized radiation pattern of a square pyramid with interelement spacing $0.7 \lambda_o$ for a broadside source}
+\label{fig:SquarewithComp}
+\end{figure}
+\newline
+To investigate the effect of element spacing, the distance between the deflector elements is decreased to $0.5 \lambda_o$. The beam pattern for a broadside scan of the source is shown in Figure $\ref{fig:SquareHalfwave0}$. The beam tends to follow the direction of the normals of the individual planes as expected. The sidelobes from each plane sum up at the broadside direction. The sum is less compared to the main beams of the individual planes. Since the primary purpose of the configuration is to have distinct beams in a specific direction to reduce the impact of the adjacent planes, the spacing, that is $0.5 \lambda_o$, is suitable for the kind of application that is needed.
+\begin{figure}[!hbp]
+\centering
+\includegraphics[width=1\textwidth]{SquareHalfwave0}
+\caption{Normalized radiation pattern of a square pyramid with interelement spacing $0.5\lambda_o$ for a broadside source}
+\label{fig:SquareHalfwave0}
+\end{figure}
+\subsubsection{Hexagonal pyramid}
+The base of the pyramidal structure is taken as a hexagon. The number of deflector elements stays at 180 for a proper comparison. The distance between the deflector elements is $0.7 \lambda_o$. The broadside scan of the source produced the beam pattern as shown in the Figure $\ref{fig:HexNorm0}$. The beam pattern has a similar sum up in the broadside direction since the sidelobes at the individual planes add up to give the main lobe in the broadside direction.
+\begin{figure}[!hbp]
+\centering
+\includegraphics[width=1\textwidth]{HexNorm0}
+\caption{Normalized radiation pattern of a hexagonal pyramid with interelement spacing $0.7 \lambda_o$ for a broadside source}
+\label{fig:HexNorm0}
+\end{figure}
+\section{Comparison of the patterns for different Parameters}
+\subsection{Number of planes}
+The effect of the number of planes on the proposed pyramidal configuration is investigated. As the number of planes increases without increasing the total number of elements in the pyramid, the  influence of the individual planes becomes less resulting in a more combined beam than beams directed towards the normal of the planes. As is shown in the figures $\ref{fig:SquareNorm0}$ and $\ref{fig:HexNorm0}$, the beams in the square pyramid are seen to take the normal directions of the planes. But as the number of planes increases, the effect of one plane on the other increases. Thus, the planes start to have more on each other. So, if a focus on a plane is needed, its difficult to achieve in case of more planes surrounding the source since there will be a significant amount of power that will be redirected to the adjacent planes.
+\subsection{Interelement spacing}
+The result of the comparison between the element spacings in the same environment is studied here. As shown in Figure $\ref{fig:SquareNormPattern0}$, there is a significant difference between the two simulation results, one with $0.7\lambda_o$ and the other $0.5\lambda_o$. The figure shows the scan of the beam at $\varphi =0^o$. In the case of $0.7\lambda_o$, the beam is summed up in the broadside direction where the source is directed. In that direction, the contribution of the individual planes resulted in a radiation pattern which is high compared to the normal directions of the planes.
+\newline
+But this is not the case when the interelement spacing is $0.5\lambda_o$. The individual planes has the beam directed perpendicular to the plane which has more directivity in that direction prevailing against the sum up of the sidelobes in the broadside direction. Hence more power is radiated in the normal direction of the planes than the broadside direction where the source is directed to.
+\begin{figure}[!hbp]
+\centering
+\includegraphics[width=1\textwidth]{SquareNormPattern0}
+\caption{Normalized radiation pattern of a square pyramid for broadside scan with interelement spacing of $0.5\lambda_o$(---) and $0.7\lambda_o$(- - -)}
+\label{fig:SquareNormPattern0}
+\end{figure}
+\subsection{Element pattern of the deflector elements}
+The simulation were carried out in two element patterns: Omnidirectional and Directional. The simulations which were done in the previous sections were using the directional element pattern for the deflectors which is $\cos\theta$. In Figure $\ref{fig:OmnidirectionalPat}$, the simulation has been carried out for omnidirectional deflector elements. As it is shown, the element pattern of the deflectors hardly affect the magnitude as well as the direction of the outgoing beam keeping other factors like the number of elements and the shape of the pyramid the same.
+\begin{figure}[!hbp]
+\centering
+\includegraphics[width=1\textwidth]{OmnidirectionalPat}
+\caption{Radiation Pattern of a square pyramid for an Omnidirectional deflector element pattern}
+\label{fig:OmnidirectionalPat}
+\end{figure}
+\subsection{Effect of source steering}
+As the main purpose of the 3D transmitarray is to direct the incoming beam towards a new direction by steering the source towards the required direction, the next part of the simulation is conducted with a source directed towards a specific angle to achieve a desired direction of propagation. The configuration is the square pyramid with inter-element distance of $0.5\lambda_o$ and $0.7\lambda$. The source beam pattern is tilted towards one of the planes so that most of the power is radiated towards the plane. The simulation result for this scenario is shown in Figure $\ref{fig:SquareDeflected45}$. The sidelobes which occur when the element spacing is $0.5\lambda_o$ are 2dB lower than the ones which are shown when the interelement spacing is $0.7\lambda_o$.
+\begin{figure}[!hbp]
+\centering
+\includegraphics[width=1\textwidth]{Squareat45}
+\caption{Normalized radiation pattern of a square pyramid for a source directed to $45^0 $ with interelement spacing of $0.5\lambda_o$(---) and $0.7\lambda_o$(- - -)}
+\label{fig:SquareDeflected45}
+\end{figure}
+\newline
+Looking at a different geometry to see the effect of source steering, a simulation is done with a hexagonal geometry with the inter-element distance of $0.5\lambda_o$ and $0.7\lambda_o$. The source is directed to one of the planes in order to get the maximum radiation in that direction. The result is shown in Figure $\ref{fig:HexDeflected45}$. The side lobe levels at the adjacent planes is 2.4db lower than that of the main beam when the interelement distance is $0.7\lambda_o$. This is due to the fact that as the number of the sides of the pyramid increases, the focus area of the beam encompass more than one plane, affecting the other planes too. Since the other planes will direct the beam in the perpendicular direction, the amount of power in the desired direction will fall. Comparing the results, the sidelobe levels have less than 1dB difference which shows that the results are close.
+\begin{figure}[!hbp]
+\centering
+\includegraphics[width=1\textwidth]{Hexat45}
+\caption{Normalized radiation pattern of a Hexagonal pyramid for a source directed to $45^0 $ with interelement spacing of $0.5\lambda_o$(---) and $0.7\lambda_o$(- - -)}
+\label{fig:HexDeflected45}
+\end{figure}
+\subsection{Phase shifting by the deflectors}
+In the next part of the simulation, the performance of the configuration is shown when a phase shift is applied. In order to steer the beam towards a specific direction, the phase shift being applied to the different elements is different according to Equation $\ref{eq:Phase}$. In order to steer the beam, the source is first steered to the target plane in order to get the maximum radiation towards that direction. Then, the elements in the plane apply the phase shift to the received beam to deflect it towards the desired direction. In the simulation, the intended direction of deflection is $15^0$. Since the source is steered to $\theta = 45^0$ to get maximum radiation on the plane, the beam will be steered towards the $\theta = 60^0$ direction. Figure $\ref{fig:SquareDeflected60}$ shows the performance of the outgoing beam( normalized radiation pattern) at $\varphi = 0^o$. The sidelobe level in the other planes is -3dB. As shown in the figure, we can achieve different steering directions for the other planes too by adjusting the phase shift that is going to be applied on the incoming beam by the deflector elements.
+\begin{figure}[!hbp]
+\centering
+\includegraphics[width=1\textwidth]{SquareDeflected60}
+\caption{Normalized Radiation Pattern of a Square Pyramid for a source directed to $45^0$ and deflected by $15^0$}
+\label{fig:SquareDeflected60}
+\end{figure}
+\newpage
+\section{Conclusion and recommendation}
+In wireless communication, a highly steerable antenna configuration is required but the coverage of a single antenna array is limited. So, a deflector-based design has been proposed to extend coverage~\cite{4}. The proposed design consists of a steerable source and multiple deflectors.In order to extend coverage, the deflectors should be designed to achieve a large steerability. A 3D transmitarray configuration with multiple deflectors arranged in a pyramid shape is proposed. In order to study the feasibility of the structure, array factor based simulations have been conducted.
+\newline
+Different scenarios have been studied to see the feasibility of the 3D transmitarray configuration. The radiation pattern of the configuration is simulated for different geometries and the results are presented. In addition, the simulation is also done with different spacing between the deflector elements.
+The proposed configuration is used to deflect the incoming beam towards a specific direction with low power on the other sides of the pyramid. Thus, the simulation is done to see the performance of the configuration when a source beam is directed to a plane and the results are presented.
+\newline
+Array factor based analysis, as shown in the report, is fast and simple which consume less computation power. A full wave simulations can be used to verify the results of the analysis.
+\newpage
+\begin{thebibliography}{99}
+    \bibitem{1}J.A.G. Akkermans, M.C. van Beuden, and M.H.A.J. Herben. Design of a millimeter wave balanced-fed aperture-coupled patch antenna. In \emph{proc. EuCAP 2006, ESA SP626,} Nice, France, November 2006.
+    \bibitem{2}J.A.G. Akkermans and M.H.A.J. Herben. Planar beam-forming array for broadband communication in the 60 GHz band. In \emph{proc. EuCAP 2007,} Edenburgh, UK, November 2007.
+    \bibitem{3}Warren L.Stuzman and Gary A.Theile. Antenna Theory and Design, p.8 ,John Wiley and Sons,Inc. 1998.
+    \bibitem{5}Warren L.Stuzman and Gary A.Theile. Antenna Theory and Design, p.98-99 ,John Wiley and Sons,Inc. 1998.
+    \bibitem{4}Maurice Kastelijn. A Planar Passive Electromagnetic  Deflector for Millimeter-wave Frequencies. TU/e. 2007.
+\end{thebibliography}
+\end{document} 

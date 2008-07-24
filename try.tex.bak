@@ -1,0 +1,10 @@
+\documentclass[a4paper,8pt]{report}
+\usepackage{graphicx}
+\usepackage{epsfig}
+\usepackage{psfrag}
+\usepackage{psfrag}
+%opening
+\title{Decentralized frame synchronization of a TDMA-based Wireless Sensor Network}
+\author{Fasika A.Assegei}
+\begin{document}
+\end{document}
