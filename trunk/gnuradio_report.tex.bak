@@ -1,0 +1,1111 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage{graphicx}
+%opening
+\title{Time Synchronization of Distributed Multihop Wireless Sensor Network}
+\author{Fasika A.Assegei}
+\begin{document}
+\maketitle
+\newpage
+\begin{abstract}
+GNU Radio is an open source software-defined radio project, and the
+USBM is hardware designed specifically for use with GNU Radio, made
+by Mediatronix. Together, these two pieces have been used to
+implement a low cost, software-defined radios. In this thesis, we
+discuss the design of a software-defined radio application for
+wireless sensor networks, built using the open source GNU Radio and
+a proprietary hardware made by Mediatronix.
+\newline
+In the second part of the thesis, the time synchronization of the
+wireless sensor nodes will be dealt with. An algorithm developed for
+a distributed multihop sensor network is presented with the results
+of the simulation conducted.
+\end{abstract}
+\newpage
+\tableofcontents
+\newpage
+\section{Introduction}
+\newpage
+\section{Software Defined Radio}
+A cognitive radio is a........ A software-defined radio (SDR) is a
+radio communication system that performs radio signal modulation and
+demodulation in software.The exact extent to which a particular
+radio system may be considered an SDR is not entirely clear because
+the SDR community has not yet formulated definitive answers to
+questions regarding the types of processor upon which the software
+can run, or the percentage of total signal processing that must be
+performed in software. However, it is clear that the philosophy
+behind the SDR concept is that the software should operate as close
+to the antenna as possible (in terms of intervening signal
+processing stages), and this software should run on a general
+purpose computer. See Figure $\ref{fig:blockdiagram}$ for the block
+diagram of an ideal SDR.
+\begin{figure}
+\centering
+\includegraphics[width=0.5 \textwidth]{Broadside}
+\caption{Block Diagram of an SDR} \label{fig:blockdiagram}
+\end{figure}
+The impetus of SDR research is a desire to shift the radio
+engineering problem from the hardware domain to the software domain.
+The advantage of this problem-space translation is that the software
+domain provides an inherently more flexible, predictable,
+repeatable, and accessible solution space than does the hardware
+domain. In the software domain, all radios are differentiated solely
+by the software required to implement them. Therefore, a single SDR
+system could become one of any number of RF transceivers (e.g., GPS,
+802.11, HDTV) by simply executing a different block of code residing
+in memory. Of course, realizing the ideal SDR of Figure means
+overcoming some formidable obstacles. Consider the components of
+this system: \newline 1. Ideal transmit and receive antennas - These
+antennas can operate at the carrier frequencies of all radio signals
+of interest. \newline 2. Ideal analog-to-digital and
+digital-to-analog converters - These devices have sampling rates
+greater than two times the carrier frequency of all radio signals of
+interest. At this sampling rate, all signals of interest can be
+processed at their carrier frequency.\newline 3. Ideal computer -
+This computer has sufficient processing power to handle the realtime
+signal processing and protocol management demands for all radio
+signals of interest. In reality, antennas must be designed for
+operation within a particular frequency band, modern
+analog-to-digital converters (ADCs) and digital-to-analog converters
+(DACs) are not fast enough to process a large portion of the
+occupied spectrum, and current general purpose computers are still
+not sufficient to handle the real-time demands of many applications.
+\newpage
+\section{GNU Radio and RF frontend}
+\subsection{GNU Radio}
+The GNU Radio project is a framework for performing digital signal
+processing and controlling software defined radio. It allows for
+rapid development of signal processing application by joining blocks
+together to form a pipeline, taking the signal from reception to
+useful output. A block is a small step of processing within a
+pipeline, they range from file sources and sinks, to demodulators
+and from packet parsers to PAL television decoders. Most blocks are
+written in C++ with a frontend in python, the scripts that link the
+pipeline stages are written in python. It is a future goal of the
+project to allow entire applications to be written in C++, this well
+reduce the overheads and allow some of the slower pipelines to run
+in real time.
+\subsection{RF Frontend}
+\subsubsection{Introduction}
+The RF front end that we use in this project is designed to be used
+with the GNU radio software to receive and analyze the signals
+received by the antenna. The device consists of a main board with
+digital signal processors on it, along with connected daughter a
+board which are specific to various frequency bands. The daughter
+board is aimed at the 2.4GHz to 2.5GHz industrial, scientific and
+medical band. This is the frequency band that wireless sensor nodes
+use. The device is used to receive the signals from the wireless
+sensor nodes so there is no transmitting feature on the device.
+Together it can be set-up as a test facility, which can be used for
+protocol-analysis, performance and quality measurements, and
+actively participate in the communication with the wireless sensor
+network.
+\subsubsection{Block Diagram}
+The block digram of the RF front end is shown below.
+\subsubsection{Packet format}
+The sensor nodes are equipped with the nordic transceiver nRF24LU1.
+All communications are packet based and packets are sent at a rate
+of 1Mb/s. Data is modulated using GFSK modulation, where a frequency
+shift of +115KHz represents a binary 1, and -115KHz represents a
+binary 0. The packet format is described below. \newline Packets are
+made up of three sections, preamble, address and payload. The packet
+is accompanied by a CRC at the end. All packets have a preamble to
+inform other devices the start of the packet transmission.The
+address part of the packet identifies the sender of the packet and
+the data stored in the payload is formatted accordingly. The packet
+is 313 bits long. The packet format is shown below. ( Figure). A
+preamble is an 8 bit sequence of ones and zeros. It can be 01010101
+if the address field starts with 0 and 10101010 if the address field
+starts with 0. The address field is a 3 Byte field which describes
+the address of the transmitting node. The Packet Identification
+Device ( PID ) contains the length of the payload. In our case, the
+payload is a 32 byte data. so, the filed remains constant for the
+packets. The payload, as said earlier, is a
+ 32 byte followed by a 2 byte crc field.
+\subsection{Detection of the signal}
+The signal is first detected by the hardware front end within the
+range of ISM band. The frequency that it is transmitted is fixed so
+the receiver is also set to work with that frequency.The data is
+modulated using Gaussian Frequency Shift Keying (GFSK) which is a
+variant of Gaussian Minimum Shift Keying (GMSK) that has a specific
+frequency shift of 115KHz. It has a symbol rate of 1MS/s, which,
+when taken with the sampling rate of the GNU Radio in the 2.4GHz
+band, give a total of four samples per symbol (bit). When these
+parameters are passed to the GMSK demodulator from the GNU Radio
+project it is able to demodulate the USBM packets. The signal is
+then detected when the first 8 bits of the signal matches the
+preamble.
+\subsection{Deciphering the Packet}
+Figure shows the stages that the signal received by the radio must
+pass through in order to be processed. These modules are part of the
+GNU Radio framework, from the USBM hardware, to the software filters
+and demodulators that come with the software framework. The USBM
+module was adapted in order to process the binary data that comes
+from the demodulator. Figure 5.2: Flow of data within the GNU Radio
+software. The hardware control, filters and GFSK demodulator are
+part of the GNU Radio framework, however the USBM specific block was
+written for deciphering the packets depending on a module previously
+written by Dominic . The module works through a stream of data to
+find the preamble and the crc of the packet at the correct distance
+apart. It then takes the portion that represents the address and the
+payload. Then, it creates a CRC using the crc16 CCITT algorithm. It
+then compares the crc received and the crc calculated. If they
+match, it returns the payload and the address of the packet. If they
+dont match, it discards the packet and continues to search for the
+other packet. The following figure shows the process of extracting
+the payload from the data packet received from the GFSK demodulator.
+\newpage
+\section{Distributed Time Synchronization of Wireless Sensor Nodes}
+\newpage
+\subsection{Introduction}
+       Time synchronization is a critical piece of infrastructure in any distributed system.
+In sensor networks, a number of factors makes flexible and robust
+time synchronization particularly important, while simultaneously
+making it more difficult to achieve than in traditional
+networks.\newline Collaboration among nodes is often required for
+the data reduction that is critical to the energy-efficiency of a
+sensor network. A common view of physical time is a basic
+requirement for nodes to reason about events that occur in the
+physical world. For example, precise time is needed to measure the
+time-of-flight of sound distribute an acoustic beam forming array
+form a low-power TDMA radio schedule integrate a times eries of
+proximity detections into a velocity estimate or suppress redundant
+messages by recognizing duplicate detections of the same event by
+different sensors. In addition to these domain-specific
+requirements, sensor network applications often rely on
+synchronization as typical distributed systems do: for database
+queries, cryptography and authentication schemes, coordination of
+future action, interaction with users, ordering logged events during
+system debugging, and so forth. \newpage\subsubsection{Time
+synchronization in Wireless Sensor Networks} The many uses of
+synchronized time in a sensor network make it critical. However, the
+diversity of these roles also makes synchronization a difficult
+problem to solve. Application requirements vary widely on many axes,
+such as precision, lifetime, scope, availability, and energy budget.
+For example, acoustic applications require precision of several
+microseconds, while sensor tasking works on the timescale of hours
+or days. Local collaborations often require only a pair of neighbors
+to be synchronized, while global queries require global time. Event
+triggers may only require momentary synchronization, while data
+logging or debugging 5 often require an eternally persistent
+timescale. Communication with a user requires a external, human
+timescale such as UTC, whereas only relative time is important for
+purely in-network comparisons. Some nodes have large batteries and
+run all the time; others are so constrained that they only wake up
+occasionally, take a single sensor reading, and transmit it before
+immediately returning to sleep. \newline Even in a traditional
+distributed system, creation of a synchronization scheme that
+satisfies such a broad spectrum of requirements is challenging. The
+task becomes particularly daunting in sensor networks, in light of
+their additional domain requirements|including energy efficiency,
+scalability through localized interactions, and automatic adaptation
+to dynamics. For example, the energy constraints violate a number of
+assumptions routinely made by classical synchronization algorithms:
+that using the CPU in moderation is free, listening to the network
+is free, and occasional transmissions have a negligible impact.
+Network and node dynamics require continuous, automatic
+configuration; this precludes a priori selection of a particular
+node as the "master clock." Indeed, the scale of the network and
+intermittency of its links may preclude the very existence of any
+single master clock node. A paradox of sensor networks, then, is
+that they make stronger demands on a time synchronization system
+than traditional distributed systems, while simultaneously limiting
+the resources available to achieve it. This paradox has made current
+synchronization schemes inadequate to the task.\newline
+       Since the nodes in a sensor network operate independently, their clocks may not
+stay synchronized with one another. In WSN, time synchronization is
+fundamental to its purpose, and is needed by many applications, such
+as:
+\begin{itemize}
+\item Data logging and Fusion
+\item Absolute time of occurrence and temporal delivery of events
+\item Target Tracking and Localization
+\item Configuring Beam-forming arrays and time-of-flight measurements
+\item TDMA radio schedules
+\item Cryptography
+\end{itemize}
+\subsection{Need for Synchronization}
+Why do sensor networks need synchronized time? Before discussing
+time synchronization methods, we must first clarify its motivations.
+In this chapter, we will describe some common uses of synchronized
+time in sensor networks. The wide net cast by the disparate
+application requirements is important; we will argue in the next
+chapter that this diversity precludes the use of any single
+synchronization method for all applications. We begin in Section 3.1
+by formulating the need for time synchronization in sensor networks
+in its most generic terms: synchronized physical time is a
+fundamental requirement if our goal is to reason about a
+time-varying environment that is observed by distributed sensors.
+Most emerging applications are special cases of this single rule. In
+Section 3.2, we show that energy constraints make in network
+synchronization truly unavoidable because data reduction must happen
+inside the network. In Section 3.3, we describe the converse
+situation: coordinated actuation. While sensor integration observes
+the state of the world, actuation changes it. 32 Synchronized time
+is vital for coordinating actions across a distributed set of
+actuators. Sections 3.4, 3.5, and 3.6 describe some specific
+applications of our general rules: energy-efficient radio
+scheduling, acoustic ranging, and distributed signal processing.
+Finally, in Section 3.7, we review some of the traditional uses for
+synchronized clocks in distributed systems. At its core, a sensor
+network is also a distributed system, and many of the same problems
+appear in both domains. 3.1 Multi-Sensor Data Integration In Chapter
+1, we described the situations that most often motivate sensor
+network research: phenomena of interest that span a large geographic
+region, but can not be sensed from far away. Remote sensing might be
+impossible because the environment is cluttered, leaving only short
+line-of-sight paths, or because the signal of interest simply can't
+propagate very far through the environment. In these situations,
+distributed sensing must be accomplished through placement of large
+numbers of sensors close to the phenomena of interest. One of the
+most powerful aspects of the design of such a network is multi
+sensor integration|the combination of information gleaned from
+multiple sensors into a larger world-view not detectable by any
+single sensor alone. For example, consider a sensor network whose
+goal is to detect a stationary phenomenon P, such as that depicted
+in Figure 3.1. P might be a region of the water table that has been
+polluted, within a field of chemical sensors. Each individual sensor
+might be very simple, capable only of measuring chemical
+concentration and thereby detecting whether or not it is within P.
+However, by integrating knowledge 33 Sensor Target Figure 3.1:
+Individually, sensors may only be capable of a binary decision: they
+are within the sensed phenomenon, or they are not. If the sensor
+positions are known, integration of information from the entire
+field allows the network to deduce the size and shape of the target,
+even though it has no size" or shape" sensors. across all the
+sensors, combined with knowledge about the sensors' positions, the
+complete network can describe more than just a set of locations
+covered by P: it can also compute P's size. The whole of information
+has become greater than the sum of the parts: the network can deduce
+the size and shape of P even though it does not have a size" or
+shape" sensor. 3.1.1 The brute-force approach This type of
+collective behavior does not always require synchronized time. This
+was the case in the example above|because P was not moving, the
+situation was time-invariant. However, what if P is mobile, and the
+objective is to report P's speed and direction? At first glance, it
+might seem that the localization system we described above can be
+easily converted into a motion tracking system by performing
+repeated localization queries over time. If the data indicating the
+location of P all arrive at a single, central location for
+integration, we might 34 conclude that no time-synchronization of
+the sensors themselves is required. The central node can simply
+(locally) timestamp each localization reading as it arrives from the
+field. The timestamped locations can then be integrated into a track
+that indicates speed and direction. Such a brute force approach can
+work|in some situations. One example is an asset tracking system
+that can locate pieces of equipment within an once building. If we
+define the motion" of an object as the history of all the rooms in
+which it has been located, an equipment motion tracker might be
+implemented by asking the object tracker for the equipment's
+location several times a day, and compiling a list of onces in which
+the equipment was spotted over time. This works if we assume that
+the travel time of messages from the equipment sensors back to the
+integration point was zero. In other words, if the system is asked,
+Where is object X?" we must assume it can generate a reply that is,
+in effect, instantaneous and still correct when it is received. Such
+an assumption is probably valid for asset tracking: objects are
+likely to stay in the same place for hours or days|extremely slowly
+compared to the time needed by the object tracker to locate an
+object and report its location to the user or a data integrator.
+3.1.2 Failure of the brute-force approach Unfortunately, as the
+message latency grows relative to the speed of the phenomenon being
+tracked, the brute-force approach fails. Consider a network in which
+the range of possible message latencies (i.e., the jitter) is
+denoted by time interval j. Using the brute-force approach, it is
+impossible to track a mobile target with more precision than the
+distance that it can cover during time j. This can be a serious
+limitation in sensor networks: j can be very large, and phenomena
+can move quickly. 35 j is large because sensors are distributed over
+a wide area, but their communication range is very short relative to
+the size of that area. Information can only travel through such a
+network hop-by-hop, so the latency from a sensor to a central
+integrator will vary with the number of hops that separate them. The
+small communication range is a fundamental limitation, driven
+primarily by the need for energy conservation: long-distance
+transmission has a disproportionate energy cost (r2 to r4). Energy
+constraints have other effects on latency: sensor networks use
+low-power radios that often have very low bit-rates, thus magnifying
+the delay caused by multi-hop routing. Wireless medium-access
+protocols often trade latency for energy savings, through
+duty-cycling and other techniques. Significant delay can be
+introduced by retransmissions as well, as packet loss is common in
+wireless networks. Links may even become unusable over long time
+intervals. In addition to large values of j, the other side of the
+equation is also a problem: fast-moving phenomena are a reality of
+nature. For example, in applications that require acoustic
+localization or beam-forming (Chapter 9), there is no avoiding the
+speed of sound. Even during a small j interval, sound can travel a
+distance that may be larger than the desired spatial accuracy of the
+system. These limitations suggest that sensor observations must be
+time-stamped inside of the network, as near as possible to the
+original event. Doing so dramatically reduces the inaccuracy of
+times tamps because the many sources of jitter in message delivery
+are no longer in the critical path. However, in-network times
+tamping implies that, unlike in the brute force solution, the
+sensors themselves must be time-synchronized. 36 3.2 In-Network
+Processing In the previous section, we argued that the integration
+of observations from sensors throughout the network requires time
+synchronization of the sensors themselves. Jitter makes
+synchronization necessary even in a simple centralized processing
+scenario. However, such a scenario is unrealistic, and the role of
+time synchronization becomes even more important in realistic
+designs. Centralized processing is infeasible in sensor networks;
+such a design assumes there is a practical way to transmit every raw
+sensor value generated throughout the network to a single node that
+is responsible for processing it. Even in traditional distributed
+systems, this would be unwise: scaling tends to be clumsy or
+impossible, and a single point of failure makes the system much less
+robust. In sensor networks, centralization is particularly fatal due
+to a requirement not seen in other distributed systems: energy
+efficiency. We saw in Chapter 1 that energy efficiency is crucial
+because it defines the longevity of the system. As communication is
+the primary consumer of energy , and the low power budget of the
+nodes precludes communication beyond a short distance, much research
+has been focused on maximizing local processing and minimizing the
+overhead of collaboration. Emerging designs allow users to task the
+network with a high-level query such as notify me when a large
+region experiences a temperature over 100 degrees" or report the
+location where the following bird call is heard. Such tasking can
+dramatically reduce the communications overhead (and, thus, the
+energy use) by allowing sensor nodes to perform expensive
+computations locally. For example, nodes can correlate an incoming
+audio stream to the desired pattern, and report only the time and
+location of a match. This is many orders of 37 magnitude more
+efficient than transmitting the complete time-series of sampled
+audio. Unnecessary communication back to the user may be further
+reduced by forming collaborations among spatially local nodes so
+that a match detected by only one of them can be recognized as
+spurious. The use of local processing, hierarchical collaboration,
+and domain knowledge to convert data into increasingly distilled and
+high-level representations|or, data reduction|is key to the energy
+efficiency of the system. In general, a perfect system will reduce
+as much data as possible as early as possible, rather than incur the
+energy expense of transmitting raw sensor values further along the
+path to the user. There are many examples of how different data
+reduction processes depend on time synchronization. One is duplicate
+suppression, or, collaboration that prevents redundant notification
+of an event by more than one member of a group of nearby sensors
+that observed it. In tanagonwiwat et al. showed this technique can
+produce significant energy savings. Synchronized clocks are needed
+to resolve to otherwise ambiguous cases, as shown in Figure  Did the
+sensors see different views of a single event? Or did they see two
+distinct events? In many cases, in-network data reduction takes the
+form of multi-sensor integration, as we described in Section 3.1.
+For example, where possible, the group of sensors that detect a
+tracked phenomenon should also compute its speed and direction.
+Transmission of a locally computed velocity vector is far more
+efficient than sending a complete time-series of proximity
+detections from every sensor to a far-away processing point. The
+improvement is more significant if the target area is many hops away
+from the ultimate destination of the data (e.g., the user). For such
+data reduction to be possible, the sensors near the target must be
+time-synchronized. 38 Sensor Target Figure 3.2: A network tracking a
+target may wish to eliminate redundant sightings when the target is
+in view of more than one sensor. left) All four sensors see a
+single, stationary target: only one event should be reported. right)
+A mobile target is sighted by two sensor pairs at different times:
+two distinct events should be reported. To disambiguate these two
+cases, the sensors must compare their detection times. This implies
+the need for synchronized clocks. 3.3 Coordinated Actuation Most of
+our discussion of sensor networks speaks of them as entirely passive
+systems|capable of detecting the state of the environment, but
+unable to change it or the network's relationship to it. However,
+actuation can dramatically extend the capabilities of a network, and
+a number of research groups have made significant progress in that
+direction. One of the most commonly described forms of actuation is
+sensor mobility. Sibley et al. have built a prototype RoboMote,
+which brings autonomous mobility to the Berkeley Mote sensor
+platform [SRS02]. They also describe its use in connectivity-based
+robotic sensor networking|using changes in connectivity between
+nodes to understand their relative positions. Rahimi et al. analyze
+the feasibility of using mobile robots to adaptively harvest energy
+from the environment [RSS03]. Sukhatme et al. propose using mobile
+sensors for actuated boundary detection|the extent of a target can
+be more precisely determined if the sensors are mobile, as shown in
+Figure 3.3. 39 Sensor Target Deduced Target Shape Figure 3.3: left)
+A sensor field might deduce the shape of a target area (e.g.,
+contaminated soil) by drawing a convex hull around the sensors that
+are within the contamination, with concave deviations around
+uncontaminated sensors. right) If the sensors are mobile, they can
+collaboratively adjust their positions, estimating the shape of the
+target with greater accuracy. Mobility is also central to the DARPA
+SHM program [SHM]. Nodes collaboratively draw a map of their
+relative positions via acoustic localization. Each node is equipped
+with a mobility subsystem (small rocket motors); if a gap in the
+sensor field is found, nearby nodes move in to all the space. This
+system will be described in more detail in Section 9.2. Of course,
+there are many types of actuation other than mobility. For example,
+sensors may emit sounds, release chemicals, apply pressure to
+support structures [BCY98], or simply turn on and of[CE02]. In fact,
+the energy-efficient radio scheduling we will describe in Section
+3.4 is actually a special case of coordinated actuation. Broadly
+speaking, systems that incorporate actuation require synchronized
+time in two ways. First, a sensor's decision to act is motivated by
+knowledge from the same sorts of in-network data reduction and
+multi-sensor integration algorithms that are used by static sensor
+networks. These algorithms require 40 synchronized time, as we have
+already described. The second use comes from coordinated actuation;
+if more than one node plans to act, the actions often need to be
+coordinated with each other. As with sensing, coordination of events
+in the physical world requires a common reference frame in physical
+time and space. 3.4 Energy-efficient Radio Scheduling Low-power,
+short-range radios of the variety typically used for wireless sensor
+networks expend virtually as much energy passively listening to the
+channel as they do during transmission [PK00, APK00]. As a result,
+MAC (Medium ACcess) protocols are often designed around this
+assumption, aiming to keep the radio of for as long as possible.
+TDMA is a common starting point because of the natural mechanism it
+provides for adjusting the radio's duty cycle, trading energy
+expenditure for other factors such as channel utilization and
+message latency [Soh00]. Precious energy can be conserved by turning
+the radio of, waking up only brie y to exchange short messages
+before going back to sleep. The energy savings is often directly
+correlated with the precision of time synchronization. Consider two
+wireless sensor nodes that have agreed to rendezvous on the radio
+channel once every 60 seconds to exchange a short message|say, 8
+bits representing the current temperature. Using a 19.2kbit/sec
+radio such as our testbed's RF Monolithics [CEE01], 8 bits can be
+transmitted in about 0.5ms. However, in practice, the radio must be
+awakened early to account for time synchronization error, as
+depicted in Figure 3.4. An expectation of only 1ms phase error will
+triple the total amount of time the radio is expending energy
+listening to the channel. The factor is even larger for faster
+radios|with a 56kbit/sec radio, a 1ms guard band is more than 7 41
+Radio Off Radio On Time Sender Receiver Radio Off Guard band due to
+clock skew; receiver can.t predict exactly when packet will arrive
+Figure 3.4: The effect of time synchronization on the efficiency of
+a TDMA radio schedule. When nodes pick a rendezvous time for data
+exchange, a guard band" is required to compensate for imprecise
+clock synchronization. In sensor networks, the guard band can be a
+major source of energy expenditure: applications may transmit very
+few data bits, separated by long sleep times. times longer than the
+time needed to transmit 8 bits. In addition, even assuming perfect
+synchronization at the start of a sleep period, a typical quartz
+oscillator on such a sensor will drift on the order of 1 part in 105
+[Vig92], or 0.6ms after 60 seconds. Of course, sending
+synchronization packets during the sleep period defeats the purpose
+of sleeping, so we must consider frequency estimation as part of the
+time synchronization problem. This example demonstrates not only the
+importance of time synchronization in a sensor network, but also one
+of its difficulties: any resource expended for synchronization
+reduces the resources available to perform the network's fundamental
+task. Traditional TDMA systems (e.g., cellular telephone networks)
+often do not have this constraint, and are engineered only to
+maximize channel utilization. Good time synchronization is important
+in those systems because it reduces the size of the guard time, but
+it is also easier because of the high data rate: each frame received
+also implicitly gives information about the sender's clock. This
+information can be used to frequently re-synchronize a node with its
+peers [LS96]. 42 3.5 Acoustic Ranging Spatial localization is a
+crucial building block for many sensor network applications. Indeed,
+virtually all of the application examples in this chapter|multi
+sensor integration, array processing, coordinated actuation, and so
+forth|require a common reference frame in both time and space. In
+the smallest networks, it is possible to implement spatial
+localization of nodes manually|by carefully measuring and
+hard-coding" the locations of the sensors. However, this is approach
+does not scale, is ill-suited to ad-hoc deployment, and does not
+work in networks with mobile nodes. Consequently, many researchers
+have focused attention on building systems that discover location
+autonomously [WHF92, BHE03, GBE02, WC02]. One common localization
+method is based on acoustic ranging, where a node emits a sound that
+can be recognized by other nodes in the area. If the nodes are
+time-synchronized, they can compute the time elapsed between the
+emission and reception of the sound. Using an estimate of the speed
+of sound through the medium, this delay can be converted into a
+distance. A maximum-likelihood coordinate system can be constructed
+based on the constraints provided by many such pairwise distance
+measurements. We have implemented such a system, which is described
+in detail in Section 9.1. 3.6 Array Processing For decades, the
+signal processing community has devoted enormous research attention
+to seamless integration of signals from multiple sources, and
+sources with heterogeneous sensing modalities. The signal processing
+literature sometimes refers to this as array processing; with
+heterogeneous sensors, it is often 43 Figure 3.5: Acoustic
+beam-forming arrays localize the source of sound generated by a
+source that is not time-synchronized with the array. Similar to the
+trick used by GPS (Section 2.7.2), the system is over-constrained if
+the microphones are in known positions and are synchronized with
+each other. Localization is possible solely based on time-of-arrival
+differences across the array. called data fusion. There are many
+applications, such as signal enhancement (noise reduction), source
+localization, process control, and source coding. It would seem to
+be a natural match to implement such algorithms in distributed
+sensor networks, and there has been great interest in doing so.
+However, much of the extensive prior art in the field assumes
+centralized sensor fusion. That is, even if the sensors gathering
+data are distributed, they are often assumed to be wired into a
+single processor. Centralized processing makes use of implicit time
+synchronization|sensor channels sampled by the same processor also
+share a common time base. For example, consider the blind beam
+forming" array for localizing the source of sound, described by Yao
+et al. [YHR98]. Their array computes phase differences of acoustic
+signals received by sensors at different locations. From these phase
+differences, it can compute differences in the time of light of the
+sound from the source to each sensor (Figure 3.5). This allows the
+sound's source to be localized with respect to the spatial reference
+frame defined by the sensors 44 in the array. However, their
+technique makes the implicit assumption that the sensors themselves
+are time-synchronized with each other. In other words, the
+beam-forming computation assumes that the observed phase differences
+in the signal are solely due to differences in the time of light
+from the sound source to the sensor. The technique breaks down if
+there are variable delays incurred in transmitting signals from the
+sensor to the processor. In a centralized system, where there is
+tight coupling from sensors to a single central processor, it is
+usually safe to assume that the different sensor channels are in
+synchrony. For such an array to be implemented on a fully
+distributed set of autonomous wireless sensors, explicit time
+synchronization of the sensors is needed. It is interesting to note
+that a blind beam-forming array makes use of a trick similar to GPS,
+as we described in Section 2.7.2. In the acoustic ranging we
+described in Section 3.5, the acoustic emitter and receiver were
+collaborative. In contrast, a lion can not be time-synchronized with
+an acoustic array, just as the GPS satellite constellation is not
+synchronized with GPS receivers. The acoustic array works by
+over-constraining the system; similar to GPS, the time at which the
+sound was generated is simply an unknown in the system of equations.
+In Section 9.3, we will show how our time synchronization methods
+were a key factor that enabled the implementation of the first
+fully-distributed version of the centralized array described here.
+3.7 Traditional Uses in Distributed Systems The uses of time
+synchronization we have described so far have been specific to
+sensor networks, relating to their unique requirements in
+distributed signal processing, energy efficiency, and localized
+computation. However, at its core, a 45 sensor network is also a
+distributed system, where time synchronization of various forms has
+been used extensively for some time. Many of these more traditional
+uses apply in sensor networks as well. For example: Logging and
+Debugging. During design and debugging, it is often necessary
+correlate logs of many different nodes' activities to understand the
+global system's behavior. Logs without synchronized time often make
+it difficult or impossible to determine causality, or reconstruct an
+exact sequence of events. State Consistency. Some systems use
+distributed agreement or voting algorithms|polling a set of servers
+to find the most recent state, despite node or network failures that
+might prevent state updates from reaching every server [Gif79].
+Synchronized time can play a key role in these algorithms if state
+updates are emitted by more than one node. Database Queries. A
+number of research groups have extended traditional database query
+semantics to the sensor network domain [BGS00, MF02]. These schemes
+seek to hide the complexity of the network from the user by
+supporting distributed queries as if from a centralized database. To
+maintain the same query semantics across a distributed set of nodes
+implies the need for synchronized time, as Madden and Franklin
+described [MF02]. Interaction with Users. People use civil
+time"|their wristwatches|when making requests such as show me
+activity in the southeast quadrant between midnight and 4 A.M." For
+this request to be meaningful, at least a subset of the nodes in a
+sensor network need to be synchronized with a civil time standard
+such as UTC. Cryptography. Perhaps due to sensor networks'
+applicability to military missions, there has already been
+significant interest in applying cryptographic schemes to them
+[PSW01, EG02, LEH03]. Authentication schemes often depend on
+synchronized time to ensure freshness, preventing replay attacks and
+other forms of circumvention. However, Davis and Geer point out in
+[DGT96] that, in some contexts, a challenge-response protocol can
+take the place of accurate times tamps.
+
+      Here, the obvious question is : Are traditional time-synchronization methods ap-
+plicable even in case of sensor networks? The answer is ‘no. Many
+assumptions in the traditional schemes do not hold true in the case
+of WSNs [2]. Some of these factors can be described as follows:
+    \begin{itemize}
+\item Energy Constraint: Owing to their small size and nature of applications which they
+      are designed for, energy is a major concern in a WSN. Classical synchronization
+      algorithms are based on assumptions like, ”CPU is available for use most of the
+      time, listening to network is free, frequent transmissions and re-transmissions are
+      possible”. These very factors lead to a lot of energy consumption in a sensor
+      network.
+\item Dynamic Topology: In the Internet, the topology remains more or less static, and
+      this fact is used by NTP for being configured. There are servers available through-
+      out, which serve as a source of external time, and other nodes synchronize with
+      them forming a hierarchy. Also it assumes that nodes are connected before they
+      need synchronization. In a WSN, network dynamics result from various factors like
+      mobility of nodes, node failures, environmental obstructions etc., which prevents
+      simple static configurations. Hierarchical structures might get nodes poorly syn-
+      chronized, and nodes might not be connected when they need synchronization the
+      most.
+\item Variety of applications: WSN are used for a variety of applications, which can
+      have totally different needs as far as synchronization is concerned. For e.g., lo-
+      calization applications need a short-lived but highly precise synchronization, while
+      target tracking applications can tolerate a little lower precision, but want the syn-
+      chronization to last longer. Also some applications might need a global timescale
+      while some others can do only with a local timescale. And while a few require
+      absolute or ‘real time as reference, for some others, a relative notion of time is
+      enough.
+\item Cost and Form factor: Sensor nodes are very small in size and also cheap. Now,
+      we can obtain very good synchronization with GPS receivers, but it will be unrea-
+      sonable to put a $100 GPS receiver on a disposable sensor costing $10.
+\end{itemize}
+All the above factors make the problem of time synchronization more
+challeng- ing in case of sensor networks. Keeping them in mind, we
+can formulate some design requirements, in general, for sensor
+network time synchronization:
+\begin{itemize}
+ \item Energy efficient The energy required to achieve synchronization should be mini-
+      mum.
+ \item Multimodal and Tunable The synchronization provided should be necessary
+      and sufficient for the current conditions. This can be possible by combining two
+      methods to get more advantages from a tiered architecture. We want the scheme
+      to have a good accuracy, but at the same time save energy by not providing more
+      accuracy than required. It will be best to have some parameters for tuning the
+      algorithm to our requirements.
+ \item Adaptive The synchronization should adapt itself to the needs of application re-
+      garding various factors such as scope, lifetime, precision, scalability etc.
+ \item Robust to Ad-Hoc Networks Changes in the network topology, node mobility,
+    node failure should not result in a total collapse of the synchronization architecture
+    or even a drastic change in its accuracy.
+ \item Global or Local Timescale The protocol should be able to build a network-wide
+  timescale or a local timescale.
+ \item Post-facto or Always On Some applications need the nodes to synchronize
+  only after an event of interest has happened, i.e. Post-Facto, and some other
+  applications, like TDMA scheduling, need the nodes to be synchronized all the
+  time.
+ \item Relative or Absolute Time The synchronization algorithm should have a provi-
+  sion to provide a relative timescale within the network or get all nodes synchronized
+  to absolute time, as required.
+\end{itemize}
+\subsubsection{Existing previous Work}
+      Several algorithms have been proposed and researched for time synchronization in
+sensor networks; but only a few of them have been implemented.
+      A typical GPS receiver can give a very good precision of 200ns and a wide scope
+and global timescale. But their size, cost and energy requirements
+are too large for small sensor nodes. Also GPS architecture is not
+always available.
+      Some groups have even tried using NTP for sensor network time synchronization.
+But the above mentioned factors make it unsuitable for this
+application.
+      The reference broadcast synchronization (RBS) designed by [3] is an important
+scheme. It achieves a R-R pairwise synchronization to remove sender
+nondeterminism and results in a good precision of a few
+microseconds. It also provides frequency estimates between two
+receivers using a linear regression technique. But the message
+overhead is very large. This approach is extended in [4] to provide
+a global timescale. In [5] the authors propose a protocol along with
+experiments to achieve a post-facto synchronization, which provides
+high-precision, but it is short-lived and localized. They combine
+the estimates obtained from their algorithm with NTP to improve
+performance and obtain absolute time. It provides a good accuracy.
+      A probabilistic method of clock synchronization is described in [7]. The authors
+extend a deterministic protocol like RBS to provide bounds on the
+accuracy of clock synchronization, and provide protocol parameters
+to make it adaptive by making provision for tradeoff between
+accuracy and protocol parameters.
+      [8] suggests a mathematical approach which leads to a protocol that provides optimal
+       synchronization in a very high density of nodes. They derive an optimal estimator for
+determining the state of an ideal node’s clock and thus provide a
+global synchronization in which all the nodes are synchronized
+optimally with the sender.
+      Another method for achieving a network-wide synchronization is suggested by [9].
+This approach first establishes a hierarchical structure and then
+performs a pairwise synchronization along its edges, resulting in a
+good accuracy which does not degrade over multihop. The algorithm
+suggested by [10] also achieves a lightweight, multihop
+synchronization in a similar tree-based scenario. Another
+lightweight, energy efficient synch protocol is presented by [11]
+which provides a good precision and works well for both single hop
+and multi hop.
+      In situations where temporal ordering of events matter more than absolute time of
+occurrence, the scheme suggested by [12], for sparse sensor
+networks, provides a modest synchronization. It gives mapping of
+intervals between events from clock readings made on one node to the
+clocks of other nodes, without trying to synchronize with a common
+time-base. Though this scheme has very little overhead, it provides
+a localized and instantaneous synchronization with only 1 ms
+accuracy. An improved version of this interval method is proposed by
+[13] which provides the worst and best case of achievable time
+uncertainty in an ad-hoc sensor networks scenario.
+      An interesting method suggested by [14] presents an adaptive protocol, which along
+with providing a good accuracy, adapts itself to the environmental
+conditions and user- defined precision by adjusting the sampling
+rate, thus avoiding any wastage of energy.
+      It can be observed that these time synchronization approaches suggested for sensor
+networks fall into many disparate points in the parameter space
+described in previous section. Each of these schemes have trade-offs
+and no single method is yet optimal on all axes. Another approach is
+used in $f$ to use the metaphor of fireflies to the existing problem
+of synchronization which bases itself in the synchronization of the
+network which is focused on the same domain. \newline In $[]$, the
+synchronization of the network is studied in a meaningful manner
+such that it is no longer a problem.
+\subsubsection{Objective and overview of the thesis}
+       From the literature survey performed by us, it was observed that most of the
+schemes are suffering from the drawback in that, they are only able
+to achieve a short- lived, instantaneous synchronization. It
+therefore applies only to a set of applications and a lot of energy
+will be spent if nodes need to be synchronized often. Also, if the
+nodes are subjected to severe changes in environmental conditions,
+then the accuracy of these short-term synchronization schemes might
+suffer a lot.
+       The primary objective of the thesis is to propose a way of achieving long-term time
+synchronization in sensor networks, which remains a somewhat
+unaddressed problem in current methods. Here there are three
+algorithms present to achieve a long term synchronization of a
+distributed WSN. A comparison is made and the results are presented.
+Thus a protocol can be built around these algorithms, in integration
+with the slot allocation algorithm to be incorporated in the mac
+layer protocol. This protocol is able to achieve a long- term time
+synchronization that has the following characteristics: provides
+high precision, adaptive to environmental effects, energy-efficient,
+scalable, tunable and multi-modal.
+       The remainder of the thesis is organized as follows: Chapter 2 introduces the prob-
+lem and presents the expression governing sensor nodes clock
+behavior over long term.  Chapter 3 presents a general overview of
+the slot allocation algorithm and its effect on the synchronization
+of the network. Chapter 4 presents the algorithm for the
+synchronization of the network. Chapter 5 present the results from
+computer simulations and also a comparison of the three methods.
+Finally, Chapter 7 draws the conclusions from this thesis and
+suggests some future work.  From the literature survey performed by
+us, it was observed that most of the schemes are suffering from the
+drawback in that, they are only able to achieve a short- lived,
+instantaneous synchronization. It therefore applies only to a set of
+applications and a lot of energy will be spent if nodes need to be
+synchronized often. Also, if the nodes are subjected to severe
+changes in environmental conditions, then the accuracy of these
+short-term synchronization schemes might suffer a lot.
+       The primary objective of the thesis is to propose a way of achieving long-term time
+synchronization in sensor networks, which remains a somewhat
+unaddressed problem in current methods. Here there are three
+algorithms present to achieve a long term synchronization of a
+distributed WSN. A comparison is made and the results are presented.
+Thus a protocol can be built around these algorithms, in
+intergration with the slot allocation algorithm to be incormportated
+in the mac layer protocol. This protocol is able to achieve a long-
+term time synchronization that has the following characteristics:
+provides high precision, adaptive to environmental effects,
+energy-efficient, scalable, tunable and multi-modal.
+       The remainder of the thesis is organized as follows: Chapter 2 introduces the prob-
+lem and presents the expression governing sensor nodes clock
+behavior over long term.  Chapter 3 presents a general overview of
+the slot allocation algorithm and its effect on the synchronization
+of the network. Chapter 4 presents the algorithm for the
+synchronization of the network. Chapter 5 present the results from
+computer simulations and also a comparison of the three methods.
+Finally, Chapter 7 draws the conclusions from this thesis and
+suggests some future work.
+\newpage
+\subsection{Problem Formulation}
+\subsubsection{Sources of synchronization error}
+      The first step in designing any time-synchronization algorithm would be to under-
+stand why and where it is required. The different factors which give
+rise to errors in clocks of nodes or in synchronization algorithm
+can be divided into two main categories:
+\begin{enumerate}
+\item Oscillator Characteristics: The sensor nodes clocks run on very cheap oscillators.
+      The following two characteristics are the main sources of errors between the clocks
+      of two different nodes.
+         • Accuracy: This is a measure of difference between oscillators expected (ideal)
+           frequency and actual frequency. It is also called as resolution of the clock; its
+           maximum is specified by the manufacturer.
+         • Stability: This is oscillator tendency to stay at the same frequency over
+           time. There can be short-term instability due to environmental effects, supply
+           voltage etc.; or long-term instability due to temperature effects, oscillator
+           aging etc.
+\item System and Network issues: The non-determinism in the message delivery latency
+      is a major source of error in any synchronization algorithm, when applied into real
+      sensor networks. This can be categorized in four type of delays:
+          • Send Time: The time spent at the Sender of the times tamps to build the mes-
+            sage, i.e. the time duration between generating the times tamp and injecting
+            it into the network.
+          • Access Time: Delay occurred while waiting for access to the transmit channel.
+          • Propagation Time: Time required for the message to travel from sender to
+            receiver.
+          • Receive Time: Time needed for processing at the receivers network interface.
+\end{enumerate}
+      All the above factors result in following errors between the clocks of 2 nodes:
+\begin{itemize}
+\item Time or Phase offset: The oscillators of any two nodes can be out of phase at
+any given time, resulting into different time on both clocks. There
+can be some initial time-offset between nodes at the start of a
+synchronization procedure.
+\item Clock Bias or skew: This is the frequency error between the two clocks, since each
+of them is running at a different frequency.
+\item Clock drift: It is not just that the clocks are running at different rates, but even
+the frequency of each clock does not stay constant over a period of
+time! Clock drift arises from the instability of oscillators,
+because clocks drift from their initial frequency. If each clock
+drifts at a rate of R msec/sec, then maximum relative drift between
+two clocks can be 2R msec/sec.
+\end{itemize}
+      Even if two clocks are assumed to have the same frequency and no drift, the above
+mentioned delays in the network result in phase offset between two
+clocks. This is because when the timestamp from the sender reaches a
+receiver, the receiver adjusts its clock according to the received
+timestamp; but the sender��s clock changes in the time required for
+the timestamp to reach the receiver, due to network delays.
+      For a network of nodes, these sources give rise to errors in accuracy from an ideal
+clocks, and dispersion amongst their clocks.
+\subsubsection{Clock Drift}
+      We will now present an expression for the clock drift or phase error between two
+clocks. If we subtract the current time in one clock from the
+current time in other clock, we get the time-offset or error between
+them, at the current point of time. So predicting the value of this
+time-offset will be same as predicting the time in the clock of
+other node.
+      From the definition of frequency:
+\begin{equation}
+f = d\phi/dt \label{freq_defn}
+\end{equation}
+and integrating both sides over time,
+ \begin{equation}
+\phi =\int f(t)dt
+ \end{equation}
+where
+      f = frequency
+      $\phi$ = phase
+      t = time\newline
+      To get the expression in term of time-offset, consider
+\begin{equation}
+f_{avg} = \frac{\phi}{t}
+\end{equation}
+\begin{equation}
+t = \frac{\phi}{f}
+\end{equation}
+For an oscillator,
+\begin{equation}
+f_i(t) = f_o + \Delta f + f_d(t-t_o) + f_r(t)
+\end{equation}
+where\newline
+      $t_0$ = starting time \newline
+      $\Delta f$ = nominal, time varying phase \newline
+      $f_i$ = phase, or time error \newline
+      $f_d$ = the frequency drift which occurs due to temprature \newline
+      $f_0$ = the adjusted frequency , constant for an oscillator\newline
+      $f_r$ = short-term frequency instability (noise) term \newline
+The above equation provides a good approximation for all common
+oscillators. The nominal frequency can also be identified as the
+ideal frequency at which the oscillator is supposed to run.
+Combining the equations ??, ?? and ?? and integrating from the
+starting time to the current time t, we get,
+\begin{equation}
+t_i(t) - t_i(t_o) = \frac{1}{f_o} \int^{t_o}_{t}f_i(t)dt
+\end{equation}
+Substituting the above equations for two nodes, the time difference
+between two nodes will be
+\begin{equation}
+t_i(t) - t_j(t) = \frac{1}{f_o} \int^{t_o}_{t}[f_i(t)-f_j(t)]dt
+\end{equation}
+Thus ,
+\begin{equation}
+t_i(t) - t_j(t) = \frac{1}{f_o} \int^{t_o}_{t}[(\Delta f_i - \Delta
+f_j) + (f_{di} - f_{dj}) + (f_{ri} - f_{rj})]dt
+\end{equation}
+The short term frequency variation has zero mean and does not lead
+to accumulated time errors. Also the amplitude of these short term
+variations (clock jitter) is small enough that they do not cause the
+clock to accelerate or decelerate erratically. But the environmental
+term, primarily due to temperature, can be significant.
+\begin{figure}
+\centering
+\includegraphics[width= 1 \textwidth]{frequency_error}
+\caption{Phase error versus time for a clock oscillator}
+\label{phase_error}
+\end{figure}
+From this equation, we have derived the expression for clock drift
+or time offset between clocks of two nodes - a sender and a
+receiver. Assume that these two nodes clocks are of the same type
+and therefore, under ideal conditions, they should run at the same
+frequency, say $f_nom$ , without any initial phase error. But this
+is not possible in reality, and so each of the clocks will drift
+from its ideal conditions.
+       Let the drift of the clock of sender node from the ideal conditions, at time t, be
+\begin{equation}
+f = 1
+\end{equation}
+       Thus, the phase or time offset between two clocks at any given time results from a
+combination of initial phase offset, frequency bias, frequency drift
+and the environmental terms. As more time passes from the
+synchronization point, the drift and environmental terms become more
+significant.
+       This resulting expression is used as a model for designing the solutions, as well as
+for data simulations.
+\begin{figure}
+\centering \includegraphics[width=0.8
+\textwidth]{clocktimevsrealtime} \caption{Clock time versus real
+time} \label{fig:clocktimevsrealtime}
+\end{figure}
+\newpage
+\subsection{Synchronity protocol}
+\subsubsection{Biological Inspired Synchronization}
+Synchronicity has been observed in large biological swarms where
+individuals follow simple coordination strategies. The canonical
+example is the synchrony of fireflies observed in certain parts of
+southeast Asia [10]. The behavior of these systems can be modeled as
+a network of pulse-coupled oscillators where each node is an
+oscillator that periodically emits a self-generated pulse. Upon
+observing other oscillators� pulses, a node adjusts the phase of its
+own oscillator slightly. This simple feedback process results in the
+nodes tightly aligning their phases and achieving synchronicity.
+Peskin first introduced this model in the context of cardiac
+pacemaker cells[11]. Mirollo and Strogatz [10] provide one of the
+earliest complete analytical studies of pulse-coupled oscillator
+systems. They proved that a fully-connected (allto- all) network of
+N identical pulse-coupled oscillators would synchronize, for any N
+and any initial starting times. Recent work by Lucarelli and Wang
+[8] relaxes the all-to-all communication assumption. Drawing from
+recent results in multi-agent control, they derive a stability
+result based on nearest neighbor coupling and show convergence in
+simulation for static and time varying topologies. Their work
+demonstrates that the same simple feedback process works, even when
+nodes only observe nearest neighbors and those neighbors may change
+over time. Several groups have proposed using pulse-coupled
+synchronicity to solve various network problems. Hong and Scaglione
+[6, 5] introduce an adaptive distributed time synchronization method
+for fully-connected Ultra Wideband (UWB) networks. They use this as
+a basis for change detection consensus. Wakamiya and Murata [14]
+propose a scheme for data fusion in sensor networks where
+information collected by sensors is periodically propagated without
+any centralized control from the edge of a sensor network to a base
+station, using pulse-coupled synchronicity. Wokoma et al. [17]
+propose a weakly coupled adaptive gossip protocol for active
+networks. Each of these applications clearly demonstrates the
+utility of synchronicity as a primitive. However much of the prior
+work is evaluated only in simulation and does not consider real
+communication delay or loss. Wireless radios exhibit non-negligible
+and unpredictable delays due to channel coding, bit serialization,
+and (most importantly) backoff at the MAC layer [3, 9]. In
+traditional CSMA MAC schemes, a transmitter will delay a random
+interval before initiating transmission once the channel is clear.
+Additional random (typically exponential) backoffs are incurred
+during channel contention. On the receiving end, jitter caused by
+interrupt overhead and packet deserialization leads to additional
+unpredictable delays. Radio contention deeply impacts the firefly
+model. Multiple nodes attempting to fire simultaneously will be
+unable to do so by the very nature of the CSMA algorithm. As nodes
+achieve tighter synchronicity, contention will become increasingly
+worse as many nodes attempt to transmit simultaneously. The goal of
+this paper is to address the limitations of current communication
+assumptions and realize a real implementation of firefly-inspired
+synchronicity in sensor networks. \newpage
+\subsubsection{Slot allocation algorithm}
+\newpage
+\subsubsection{Mathematical Model}
+As it is described earlier, the firing time of the nodes should be
+synchronized to an extent in such away that the nodes are
+synchronized in the long term. The difference in the transmitting
+times of the nodes is
+\begin{equation}
+\Delta t_{ij} = t_i - t_j ,
+\end{equation}
+where $t_i$ and $t_j$ are the transmitting times of Nodes i and j.
+The transmitting time of a node at a random time after t after it is
+turned on is
+\begin{equation}
+t_i = I_i + f_it + D_i.
+\end{equation}
+The frequency of the nodes is normally distributed about the nominal
+frequency 32768Khz.The distribution of the nodes frequency is given
+by Gaussian distribution curve shown in
+$\ref{fig:clock-frequency-curve}$.
+\begin{figure}
+\centering
+\includegraphics[width=0.8
+\textwidth]{Broadside} \label{fig:clock-frequency-curve}
+\caption{Clock frequency distribution}
+\end{figure}
+\begin{equation}
+\Delta t_{ij} = I_i + f_it + D_i - ( I_j + f_jt + D_j ),
+\end{equation}
+\begin{equation}
+\Delta t_{ij} = (I_i - I_j) + (D_i-D_j) + t(f_i - f_j) ,
+\end{equation}
+where $O_i$ is the total offset of Node i, $O_{if}$ is the offset
+due to the frequency difference between the nodes, $O_{is}$ is the
+offset due to the synchronization error and $O_{id}$ is the offset
+due to clock drift of the crystal clock. Since the frequency
+distribution of the nodes is normally distributed, the difference in
+the frequencies is also normally distributed. So, in the long run,
+the time difference between the nodes is increasing
+[$\ref{fig:clocktimevsrealtime}$]. The clock drift of a crystal
+clock varies with temperature in as shown in
+[$\ref{fig:frequencyvstemp}$].
+\begin{figure}
+\centering \includegraphics[width=0.8 \textwidth]{Broadside}
+\caption{Frequency variation with temperature}
+\label{fig:frequencyvstemp}
+\end{figure}
+Thus, the offset being applied should be able to compensate for the
+phase error introduced by the drift as well as the frequency
+changes. Two ways to accomplish this. The first one is adjusting the
+clock frequency to come up with a better transmitting time. The
+second one is to adjust the next transmitting time depending on the
+current transmitting times of the node and its neighbors. In this
+thesis, we will explore the second option due to the reasons stated
+below.
+\begin{itemize}
+\item The cost of adjusting the frequency of the clock is by far more
+expensive than adjusting the next transmitting time of the node.
+\item More correct and ...
+\item
+\end{itemize}
+Application of offset compensating. Thus, the next transmitting time
+of the node is dependent on the current transmitting time of its
+neighbors in relation to its current transmitting time. We will
+denote the next transmitting time as $\tilde{t}$. Thus,
+\begin{equation}
+\tilde{t_i} = t_i + O_i ,
+\end{equation}
+where $O_i$ is given by
+\begin{equation}
+O_i = f(\Delta t_{ij}) ,
+\end{equation}
+The function f is based on an algorithm which takes the transmitting
+time differences between the node and its neighbors and determines
+the optimal offset to be added to the transmitting time of the node.
+Different algorithms are presented here and discussed with the
+simulation results presented in the last section of the projects.
+\newpage
+\subsubsection{Median algorithm with gain factor}
+In this section, we will see the median algorithm and see the
+results in the section.
+\begin{equation}
+O_i = gM ,
+\end{equation}
+where g is the gain factor introduced for a faster convergence of
+the synchronization error and M is the median of the time
+differences with the transmitting times.
+\newpage
+\subsubsection{Weight Factor with gain- Big brother Behind}
+A weight is added to the increase the influence of the closeby
+neighbors and ensure faster synchronization. In addition to that, a
+new joining neighbour can get synchronized with out disturbing the
+existing neighbours, adjusting its time to the big swarm of nodes.
+Its a metaphor of "Majority Wins".
+\begin{equation}
+O_i = \sum{w_{ij}\Delta t_{ij}} ,
+\end{equation}
+where $\sum{w_{ij}= 1}$. The next task will be how to choose the
+weight factors so that the proper guys get what they deserve.
+\newline
+One approach is
+\begin{equation}
+w_{ij} = 1 - \frac {\Delta t_{ij}}{\sum \Delta t_{ij}}
+\end{equation}
+The weight is selected by the fact that the a node joining a network
+should adjust its time with the network that it is joining. In order
+to save the computational power, the adjustment is made in a period
+of time since
+\newpage
+\subsection{Simulation and Results}
+\subsubsection{}
+\subsubsection{}
+\newpage
+\section{Conclusion and Recommendation}
+\newpage
+\begin{thebibliography}{}
+\bibitem{1} R. Mirollo and S. Strogatz, Synchronization of pulse-coupled biological oscillators, SIAM J. Appl. Math, vol. 50, no. 6, pp. 1645-1662,Dec 1990.
+\bibitem{2} Romer,K. Time Synchronization in Ad Hoc Networks. In: Proceedings of the Second ACM International Symposium on Mobile Ad Hoc Networking and Computing, Long Beach, California. 2001
+\bibitem{3}
+\bibitem{4}
+\bibitem{5}
+\bibitem{6}
+\bibitem{7}
+\bibitem{8}
+\bibitem{9}
+\bibitem{10}
+\bibitem{11}
+\bibitem{12}
+\end{thebibliography}
+\end{document}

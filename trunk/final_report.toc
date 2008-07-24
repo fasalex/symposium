@@ -1,0 +1,39 @@
+\contentsline {chapter}{\numberline {1}Introduction}{4}
+\contentsline {section}{\numberline {1.1}Wireless Sensor Networks}{4}
+\contentsline {section}{\numberline {1.2}Existing Work on WSN clock synchronization}{5}
+\contentsline {section}{\numberline {1.3}Objective and overview of the thesis}{6}
+\contentsline {chapter}{\numberline {2}Synchronization in Wireless Sensor Networks}{7}
+\contentsline {section}{\numberline {2.1}Introduction}{7}
+\contentsline {section}{\numberline {2.2}Clock Synchronization in traditional networks}{7}
+\contentsline {section}{\numberline {2.3}Wireless Sensor Networks: Why different ?}{9}
+\contentsline {section}{\numberline {2.4}The need for synchronization}{10}
+\contentsline {subsection}{\numberline {2.4.1}MyriaNed}{10}
+\contentsline {subsection}{\numberline {2.4.2}Time Division Multiple Access}{12}
+\contentsline {chapter}{\numberline {3}Problem Formulation}{14}
+\contentsline {section}{\numberline {3.1}Clock and Frequency standards}{14}
+\contentsline {section}{\numberline {3.2}Sources of synchronization error}{15}
+\contentsline {section}{\numberline {3.3}Clock Drift and Delay}{16}
+\contentsline {subsubsection}{Drift}{16}
+\contentsline {subsubsection}{Message Delay}{18}
+\contentsline {section}{\numberline {3.4}Requirements of the Algorithm}{18}
+\contentsline {subsection}{\numberline {3.4.1}Lifetime}{18}
+\contentsline {subsection}{\numberline {3.4.2}Scope}{18}
+\contentsline {subsection}{\numberline {3.4.3}Internal vs. External}{19}
+\contentsline {subsection}{\numberline {3.4.4}Energy Budget}{19}
+\contentsline {subsection}{\numberline {3.4.5}Convergence Time}{19}
+\contentsline {subsection}{\numberline {3.4.6}Simplicity}{20}
+\contentsline {chapter}{\numberline {4}Synchronity protocol}{21}
+\contentsline {section}{\numberline {4.1}Synchronization Frequency}{21}
+\contentsline {section}{\numberline {4.2}Median algorithm and its drawback?}{26}
+\contentsline {subsubsection}{Gain factors}{26}
+\contentsline {section}{\numberline {4.3}Weighted Measurments - Interferance-phobic}{27}
+\contentsline {section}{\numberline {4.4}Non Linear Least Square curve fitting}{29}
+\contentsline {section}{\numberline {4.5}Kalman Filter}{32}
+\contentsline {chapter}{\numberline {5}Results and Discussion}{35}
+\contentsline {section}{\numberline {5.1}Simulation setup}{35}
+\contentsline {section}{\numberline {5.2}Computer simulation Results}{36}
+\contentsline {section}{\numberline {5.3}Energy Consumption and Guard time tradeoff}{36}
+\contentsline {chapter}{\numberline {6}Conclusion and Recommendation}{38}
+\contentsline {chapter}{\numberline {A}Myrianed Node v2.0}{41}
+\contentsline {chapter}{\numberline {B}32KHz Crystal clock Datasheet}{42}
+\contentsline {chapter}{\numberline {C}ATmega128}{43}

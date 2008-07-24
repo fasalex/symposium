@@ -1,0 +1,35 @@
+\BOOKMARK [1][-]{section.1}{Introduction}{}
+\BOOKMARK [2][-]{subsection.1.1}{Wireless Sensor Networks}{section.1}
+\BOOKMARK [2][-]{subsection.1.2}{Existing Work on WSN clock synchronization}{section.1}
+\BOOKMARK [2][-]{subsection.1.3}{Objective and overview of the research}{section.1}
+\BOOKMARK [1][-]{section.2}{Synchronization in Wireless Sensor Networks}{}
+\BOOKMARK [2][-]{subsection.2.1}{Introduction}{section.2}
+\BOOKMARK [2][-]{subsection.2.2}{Clock Synchronization in traditional networks}{section.2}
+\BOOKMARK [2][-]{subsection.2.3}{The need for a synchronized time}{section.2}
+\BOOKMARK [2][-]{subsection.2.4}{Wireless Sensor Networks: Why different ?}{section.2}
+\BOOKMARK [1][-]{section.3}{Problem Formulation}{}
+\BOOKMARK [2][-]{subsection.3.1}{Clock and Frequency standards}{section.3}
+\BOOKMARK [2][-]{subsection.3.2}{Sources of synchronization error}{section.3}
+\BOOKMARK [2][-]{subsection.3.3}{Clock Drift and Delay}{section.3}
+\BOOKMARK [2][-]{subsection.3.4}{Requirements of the Algorithm}{section.3}
+\BOOKMARK [3][-]{subsubsection.3.4.1}{Lifetime}{subsection.3.4}
+\BOOKMARK [3][-]{subsubsection.3.4.2}{Scope}{subsection.3.4}
+\BOOKMARK [3][-]{subsubsection.3.4.3}{Internal vs. External Synchronization}{subsection.3.4}
+\BOOKMARK [3][-]{subsubsection.3.4.4}{Energy Budget}{subsection.3.4}
+\BOOKMARK [3][-]{subsubsection.3.4.5}{Convergence Time}{subsection.3.4}
+\BOOKMARK [3][-]{subsubsection.3.4.6}{Simplicity}{subsection.3.4}
+\BOOKMARK [1][-]{section.4}{Synchronicity protocol}{}
+\BOOKMARK [2][-]{subsection.4.1}{Synchronization Frequency}{section.4}
+\BOOKMARK [2][-]{subsection.4.2}{Lower and Upper bounds of Synchronization}{section.4}
+\BOOKMARK [2][-]{subsection.4.3}{Mathematical Model}{section.4}
+\BOOKMARK [3][-]{subsubsection.4.3.1}{Median algorithm and the setback}{subsection.4.3}
+\BOOKMARK [3][-]{subsubsection.4.3.2}{Weighted Measurements - Interference-phobic approach}{subsection.4.3}
+\BOOKMARK [3][-]{subsubsection.4.3.3}{Non-Linear Curve fitting - Interference elimination}{subsection.4.3}
+\BOOKMARK [3][-]{subsubsection.4.3.4}{Kalman Filter for synchronization}{subsection.4.3}
+\BOOKMARK [1][-]{section.5}{Results and Discussion}{}
+\BOOKMARK [2][-]{subsection.5.1}{Simulation setup}{section.5}
+\BOOKMARK [2][-]{subsection.5.2}{Preliminary Simulation Results}{section.5}
+\BOOKMARK [2][-]{subsection.5.3}{Measurements concerning the energy consumption}{section.5}
+\BOOKMARK [1][-]{section.6}{Conclusion and Recommendation}{}
+\BOOKMARK [1][-]{section.7}{Acknowledgment}{}
+\BOOKMARK [1][-]{section*.1}{References}{}

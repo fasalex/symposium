@@ -1,0 +1,8 @@
+\beamer@endinputifotherversion {3.07pt}
+\select@language {english}
+\beamer@sectionintoc {1}{Introduction}{3}{0}{1}
+\beamer@sectionintoc {2}{Problem formulation}{5}{0}{2}
+\beamer@sectionintoc {3}{Mathematical Model}{19}{0}{3}
+\beamer@sectionintoc {4}{Simulation results}{34}{0}{4}
+\beamer@sectionintoc {5}{Conclusions}{43}{0}{5}
+\beamer@sectionintoc {6}{Recommendations}{44}{0}{6}

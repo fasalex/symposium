@@ -1,0 +1,321 @@
+This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=latex 2008.5.8)  24 JUL 2008 11:04
+entering extended mode
+ %&-line parsing enabled.
+**report.tex
+(./report.tex
+LaTeX2e <2005/12/01>
+Babel <v3.8h> and hyphenation patterns for english, usenglishmax, dumylang, noh
+yphenation, loaded.
+(/usr/share/texmf-texlive/tex/latex/base/report.cls
+Document Class: report 2005/09/16 v1.4f Standard LaTeX document class
+(/usr/share/texmf-texlive/tex/latex/base/size10.clo
+File: size10.clo 2005/09/16 v1.4f Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@chapter=\count80
+\c@section=\count81
+\c@subsection=\count82
+\c@subsubsection=\count83
+\c@paragraph=\count84
+\c@subparagraph=\count85
+\c@figure=\count86
+\c@table=\count87
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(/usr/share/texmf-texlive/tex/latex/graphics/graphicx.sty
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf-texlive/tex/latex/graphics/keyval.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+(/usr/share/texmf-texlive/tex/latex/graphics/graphics.sty
+Package: graphics 2006/02/20 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf-texlive/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/etc/texmf/tex/latex/config/graphics.cfg
+File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
+)
+Package graphics Info: Driver file: dvips.def on input line 90.
+
+(/usr/share/texmf-texlive/tex/latex/graphics/dvips.def
+File: dvips.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
+))
+\Gin@req@height=\dimen103
+\Gin@req@width=\dimen104
+)
+(/usr/share/texmf-texlive/tex/latex/graphics/epsfig.sty
+Package: epsfig 1999/02/16 v1.7a (e)psfig emulation (SPQR)
+\epsfxsize=\dimen105
+\epsfysize=\dimen106
+)
+(/usr/share/texmf-texlive/tex/latex/psfrag/psfrag.sty
+Package: psfrag 1998/04/11 v3.04 PSfrag (MCG)
+\pfg@pcount=\count88
+\pfg@scount=\count89
+\pfg@temp=\write3
+)
+(/usr/share/texmf-texlive/tex/latex/ltxmisc/a4wide.sty
+Package: a4wide 1994/08/30
+
+(/usr/share/texmf-texlive/tex/latex/ntgclass/a4.sty
+Package: a4 2004/04/15 v1.2g A4 based page layout
+)) (./report.aux)
+\openout1 = `report.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 24.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 24.
+File: TUElogoCompact2.eps Graphic file (type eps)
+
+<TUElogoCompact2.eps>
+Overfull \hbox (343.63815pt too wide) in paragraph at lines 24--25
+ []$ 
+ []
+
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 39.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 39.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 39.
+
+Overfull \hbox (59.1106pt too wide) in paragraph at lines 34--41
+ []$ 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 44--52
+
+ []
+
+
+Overfull \hbox (32.88005pt too wide) in paragraph at lines 42--53
+  [] 
+ []
+
+[1
+
+] [1]
+Overfull \hbox (4.65108pt too wide) in paragraph at lines 73--97
+\OT1/cmr/m/n/10 Time syn-chro-niza-tion is a cru-cial com-po-nent of in-fras-tr
+uc-ture for \OT1/cmr/m/it/10 Wire-less Sen-sor Net-works\OT1/cmr/m/n/10 (WSNs).
+
+ []
+
+[2] (./report.toc [3
+
+])
+\tf@toc=\write4
+\openout4 = `report.toc'.
+
+ [4] (./report.lof [5
+
+])
+\tf@lof=\write5
+\openout5 = `report.lof'.
+
+ [6]
+Chapter 1.
+[1
+
+] [2] [3]
+Chapter 2.
+[4
+
+]
+File: ntp.eps Graphic file (type eps)
+ <ntp.eps> [5]
+File: lions.eps Graphic file (type eps)
+ <lions.eps> [6]
+File: tdmaframe.eps Graphic file (type eps)
+ <tdmaframe.eps>
+File: tdmaschedule.eps Graphic file (type eps)
+ <tdmaschedule.eps> [7]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 368.
+
+
+(/usr/share/texmf-texlive/tex/latex/base/omscmr.fd
+File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 368.
+ [8] [9] [10]
+Chapter 3.
+[11
+
+] [12]
+File: actualvsmeasuredtime.eps Graphic file (type eps)
+ <actualvsmeasuredtime.eps> [13] [14]
+File: buildingblock.eps Graphic file (type eps)
+ <buildingblock.eps> [15]
+[16] [17]
+Chapter 4.
+[18
+
+] [19]
+File: guardtime.eps Graphic file (type eps)
+ <guardtime.eps> [20] [21]
+File: lowerbound.eps Graphic file (type eps)
+ <lowerbound.eps> [22]
+Underfull \hbox (badness 10000) in paragraph at lines 899--905
+
+ []
+
+[23]
+File: node_field.eps Graphic file (type eps)
+ <node_field.eps>
+File: offsetpic.eps Graphic file (type eps)
+ <offsetpic.eps>
+Underfull \hbox (badness 10000) in paragraph at lines 955--974
+
+ []
+
+[24] [25]
+File: weight.eps Graphic file (type eps)
+ <weight.eps> [26]
+Underfull \hbox (badness 10000) in paragraph at lines 1036--1058
+
+ []
+
+[27]
+File: curvefit.eps Graphic file (type eps)
+ <curvefit.eps> [28] [29]
+Underfull \hbox (badness 10000) in paragraph at lines 1184--1206
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1184--1206
+
+ []
+
+[30] [31]
+Missing character: There is no â in font cmr10!
+Missing character: There is no € in font cmr10!
+Missing character: There is no “ in font cmr10!
+Missing character: There is no â in font cmr10!
+Missing character: There is no € in font cmr10!
+Missing character: There is no “ in font cmr10!
+ [32]
+Underfull \hbox (badness 10000) in paragraph at lines 1318--1352
+
+ []
+
+[33]
+File: guardtimesaving.eps Graphic file (type eps)
+ <guardtimesaving.eps> [34] [35]
+Chapter 5.
+File: osimodel.eps Graphic file (type eps)
+<osimodel.eps> [36
+
+]
+File: 16output-s0.eps Graphic file (type eps)
+ <16output-s0.eps>
+Underfull \hbox (badness 10000) in paragraph at lines 1454--1460
+
+ []
+
+[37]
+File: 50output-s0.eps Graphic file (type eps)
+ <50output-s0.eps>
+File: 16output-s6.eps Graphic file (type eps)
+ <16output-s6.eps>
+File: 16output-s20.eps Graphic file (type eps)
+ <16output-s20.eps> [38]
+File: 50output-s6.eps Graphic file (type eps)
+
+<50output-s6.eps>
+File: 50output-s20.eps Graphic file (type eps)
+ <50output-s20.eps> [39] [40]
+File: guardsave.eps Graphic file (type eps)
+ <guardsave.eps> [41] [42]
+Chapter 6.
+[43
+
+] [44]
+Appendix A.
+File: gainfactor.eps Graphic file (type eps)
+<gainfactor.eps>
+File: tsync.eps Graphic file (type eps)
+ <tsync.eps>
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+File: varspeed20.eps Graphic file (type eps)
+<varspeed20.eps>
+File: varspeed50.eps Graphic file (type eps)
+ <varspeed50.eps> [45
+
+]
+File: 16output-error.eps Graphic file (type eps)
+ <16output-error.eps>
+File: 50output-error.eps Graphic file (type eps)
+
+<50output-error.eps>
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[46] [47] [48]
+Appendix B.
+File: myrianode.eps Graphic file (type eps)
+<myrianode.eps> [49
+
+]
+File: myrianodearch.eps Graphic file (type eps)
+ <myrianodearch.eps>
+File: table1.eps Graphic file (type eps)
+ <table1.eps>
+File: table2.eps Graphic file (type eps)
+ <table2.eps> [50]
+File: myrianodephy.eps Graphic file (type eps)
+
+<myrianodephy.eps>
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+File: battery.eps Graphic file (type eps)
+<battery.eps> [51] [52] [53]
+Missing character: There is no â in font cmr10!
+Missing character: There is no € in font cmr10!
+Missing character: There is no ™ in font cmr10!
+Missing character: There is no â in font cmr10!
+Missing character: There is no € in font cmr10!
+Missing character: There is no “ in font cmr10!
+ [54
+
+] [55] (./report.aux)
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 841 strings out of 95087
+ 10132 string characters out of 1183279
+ 57937 words of memory out of 1500000
+ 4009 multiletter control sequences out of 10000+50000
+ 10119 words of font info for 35 fonts, out of 1200000 for 2000
+ 28 hyphenation exceptions out of 8191
+ 25i,9n,25p,1000b,336s stack positions out of 5000i,500n,6000p,200000b,5000s
+
+Output written on report.dvi (62 pages, 151148 bytes).
