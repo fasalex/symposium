@@ -33,7 +33,7 @@
 \contentsline {subsection}{\numberline {4.4.1}\textbf {Median algorithm and the setback}}{22}
 \contentsline {subsection}{\numberline {4.4.2}\textbf {Weighted Measurements - Interference-phobic approach}}{24}
 \contentsline {subsection}{\numberline {4.4.3}\textbf {Non Linear Least Squares - Interference elimination}}{26}
-\contentsline {subsubsection}{Non-Linear Least Square}{26}
+\contentsline {subsubsection}{Non Linear Least Square}{26}
 \contentsline {subsubsection}{Model Design}{28}
 \contentsline {subsection}{\numberline {4.4.4}\textbf {Discrete time Kalman Filter for synchronization}}{29}
 \contentsline {subsubsection}{Discrete time Kalman Filter}{29}
@@ -41,11 +41,11 @@
 \contentsline {section}{\numberline {4.5}\textbf {Reducing the guard time}}{32}
 \contentsline {chapter}{\numberline {5}\textbf {Results and Discussion}}{34}
 \contentsline {section}{\numberline {5.1}\textbf {Simulation setup}}{34}
-\contentsline {subsection}{\numberline {5.1.1}\textbf {Simulation Results}}{35}
+\contentsline {section}{\numberline {5.2}\textbf {Simulation Results}}{35}
 \contentsline {subsubsection}{\textbf {Case I}}{36}
 \contentsline {subsubsection}{\textbf {Case II}}{36}
 \contentsline {subsubsection}{\textbf {Case III}}{37}
-\contentsline {section}{\numberline {5.2}\textbf {Energy consumption}}{39}
+\contentsline {section}{\numberline {5.3}\textbf {Energy consumption}}{39}
 \contentsline {chapter}{\numberline {6}\textbf {Conclusion and Recommendation}}{41}
 \contentsline {section}{\numberline {6.1}Conclusion}{41}
 \contentsline {section}{\numberline {6.2}Recommendation}{42}

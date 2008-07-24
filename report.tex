@@ -502,8 +502,7 @@ can be done using two approaches, which are not exclusive. The first one is adju
 wake-up time. The second one is to adjust the next wake-up time depending on the difference between the current wake-up time of the
 node and its neighbors. In this research, the second option is explored due to:
 \begin{itemize}
-\item The cost of adjusting the frequency of the clock: This is more expensive (hardware based) than adjusting the next wake-up time of
-the node.
+\item The cost of adjusting the frequency of the clock: This is more expensive (hardware based) than adjusting the next wake-up time of the node.
 \item The complexity of the implementation: This is larger which in turn results in more energy consumption.
 \end{itemize}
 Application of offset compensating using prediction of the next wake up time is the promising approach to be implemented on the MyriaNode. The next wake-up time of the node is, thus, dependent on the current wake-up time of its neighbors in relation to its previous wake-up time,
@@ -625,7 +624,7 @@ effect of the algorithm in comparison to the other algorithms.\newline \newline
 \hline
 \end{tabular}
 \subsection{\textbf{Non Linear Least Squares - Interference elimination}}
-\subsubsection{Non-Linear Least Square}
+\subsubsection{Non Linear Least Square}
 In this section, another approach is used for synchronization of the nodes.
 \newline
 \begin{figure}
@@ -634,7 +633,8 @@ In this section, another approach is used for synchronization of the nodes.
 \caption{Curve fitting using logarithmic function} \label{curvefit}
 \end{figure}
 As the phase errors are non-linear by their stochastic nature, the curve fit should also be a non-linear curve. Normalized offset values tend to be small and follow a curve in such away that the maximum value of the offset should not be greater than the threshold value that was intended to be. See Figure $\ref{curvefit}$. 
-\newline Non Linear Least Squares (NLSS) Curve Fitting  is a mathematical procedure for finding the best fitting curve to a given set of points by minimizing the sum of the squares of the offsets ("the residuals") of the points from the curve. In order to fit the curve, we have chosen the logarithmic curve in order to meet the demand of adjusting the time offset and stabilize the network. Logarithmic
+\newline
+Non Linear Least Squares (NLSS) Curve Fitting  is a mathematical procedure for finding the best fitting curve to a given set of points by minimizing the sum of the squares of the offsets ("the residuals") of the points from the curve. In order to fit the curve, we have chosen the logarithmic curve in order to meet the demand of adjusting the time offset and stabilize the network. Logarithmic
 curve fitting calculates the best fitting logarithmic curve for a given set of data. A logarithmic function can be used to represent
 the distribution of the offsets in the neighborhood, 
 \begin{equation}
@@ -720,7 +720,7 @@ As each measurement arrives from the neighbors, an iteration is made in such a w
 network, the nodes tendency to adapt a new environment is very low, in this case resisting any change that is going to happen to its
 wake-up time. \newline
 \newline
-\begin{tabular}{  l }Algorithm for NLCF \\\hline
+\begin{tabular}{  l }Algorithm for NLLS \\\hline
 1. Nodes broadcast packets. \\  2. Each receiver records the time that the packet is received. \\
 3. Each receiver i computes its phase error to any other node j in the neighborhood. \\
 4. Each receiver i computes the optimal curve fit for the corresponding phase errors. \\
@@ -877,11 +877,12 @@ D - D_n = \frac{(2\epsilon)N}{T}.
 The decrease in the guard time of the slot is thus dependent on the algorithm's performance ($\epsilon$) and the number of slots in the
 frame. As the number of slots increases with a constant performance increase $\epsilon$, the energy conservation also increases linearly. The number of slots is determined by the MAC protocol.
 \chapter{\textbf{Results and Discussion}}
-\section{\textbf{Simulation setup}} In this section, the simulation setup is given which is used in the research to test the performance
-of the presented frame synchronization algorithms. The simulated wireless sensor network operates in the 2.4GHz ISM band at a data
-rate of 2Mbps. We use a Discrete Event Simulator (DES). 
-\newline A DES will break down a simulation into discrete chunks. Every event will occur at some countable time moment and will be given in chronological order. The advantage of this distinction is two-fold. First, simulations will not be dependant on some real-time clock. Second, events can be isolated to perform certain measurements.
-\newline One such DES is called OMNeT++$\cite{omnet}$. It provides a component architecture for models. Components are programmed in C++, then assembled into larger components and models using a high-level language. These components were merged into a joined simulation effort by academic institutes in Europe: MiXiM$\footnote{MiXiM (MIXed sIMulator) is a simulation framework for wireless and mobile networks using the OMNeT++ simulation engine.It is a collaborative project  between TU Berlin, TU Delft and Universitaet Paderborn.}$. It is specialized on wireless sensor networks. Nodes are modeled as a set of separate components stacked upon each other. Octave$\footnote{Octave is a free program for performing numerical computations which is mostly compatible with MATLAB. It is part of the GNU project.}$ is used for
+\section{\textbf{Simulation setup}}
+In this section, the simulation setup which is used in the research to test the performance of the presented frame synchronization algorithms is explained. The simulated WSN operates in the 2.4GHz ISM band at a data rate of 2Mbps. We use a Discrete Event Simulator (DES)	for the simulation. 
+\newline A DES will break down a simulation into discrete chunks. Every event will occur at some countable time moment and will be given in chronological order. The advantage of this distinction is two-fold. First, simulations will not be dependant on some real-time clock, which reduces the inaccuracies fed into the simulation. Second, events can be isolated to perform certain measurements.
+\newline 
+One such DES is called OMNeT++$\cite{omnet}$. It provides a component architecture for models. Components are programmed in C++, then assembled into larger components and models using a high-level language. These components are merged into a joined simulation environment: MiXiM$\footnote{MiXiM (MIXed sIMulator) is a simulation framework for wireless and mobile networks using the OMNeT++ simulation engine.It is a collaborative project  between TU Berlin, TU Delft and Universitaet Paderborn.}$.\newline
+Nodes are modeled as a set of separate components stacked upon each other. Octave$\footnote{Octave is a free program for performing numerical computations which is mostly compatible with MATLAB. It is part of the GNU project.}$ is used for
 interpretation of the data from the network simulator. 
 \newline
 \begin{figure}
@@ -889,28 +890,16 @@ interpretation of the data from the network simulator.
 \includegraphics[width=0.7\textwidth]{osimodel}
 \caption{Layered Model} \label{osimodel}
 \end{figure}
-As shown in Figure $\ref{osimodel}$, the synchronization is computed
-in a separate layer. Each time the message is received, the time of
-arrival is recorded and used to calculate the next wake up time of
-the node. The communication over the channels is done in a unidisc
-way. All nodes in range of the radio actually receive the data, and
-those that are outside are excluded.
-\newline The number of nodes is varied for
-different scenarios. The movement of the nodes is modeled from the
-static to an average speed of a slowly moving object. The simulation
-is conducted 1000 times to counter the effect of randomness
-introduced in the simulation.
-\subsection{\textbf{Simulation Results}}
+As shown in Figure $\ref{osimodel}$, the synchronization is computed in a separate layer. Each time the message is received, the time of arrival is recorded and used to calculate the next wake up time of the node. The communication over the channels is done in a unidisc way. All nodes in range of the radio receive the data, and those that are outside are excluded. 
+\newline
+The number of nodes is varied for different scenarios. The movement of the nodes is modeled from the static to an average speed of a slowly moving object. The simulation is conducted 1000 times to counter the effect of randomness introduced in the simulation.
+\section{\textbf{Simulation Results}}
 \begin{figure}[!h]
 \centering
 \includegraphics[width=0.7\textwidth]{16output-s0}
 \caption{16 nodes - Static} \label{16output0}
 \end{figure}
-The nodes are deployed uniformly across the field. The neighborhood
-is limited to 10 nodes. The start up time of the nodes is random,
-Gaussian distributed variable, $t_{io}$. The synchronization error
-is the difference between the wake-up time of the nodes in the
-neighborhood.
+The nodes are deployed uniformly across the field. The neighborhood is limited to 10 nodes. The start up time of the nodes is random, Gaussian distributed variable, $t_{io}$. The synchronization error is the maximum difference between the wake-up time of the nodes in the neighborhood.
 \newline
 \begin{center}
     \begin{tabular}{ | l | l |}
@@ -919,91 +908,55 @@ neighborhood.
     Radio range & 10 - 30m \\ \hline
     \end{tabular}
 \end{center}
-\subsubsection{\textbf{Case I}} In the first set of simulation, the
-synchronization error is simulated for the nodes which are static,
-hence no effect of mobility. The number of nodes is taken to be $16$
-and $50$ in the set of simulations.  \newline
+\subsubsection{\textbf{Case I}} In the first set of simulation, the synchronization error is simulated for the nodes which are static,hence no effect of mobility. The number of nodes is taken to be $20$ and $50$ in the set of simulations.  \newline
 \begin{figure}
 \centering
 \includegraphics[width=0.7\textwidth]{50output-s0}
 \caption{50 nodes - Static} \label{50output0}
 \end{figure}
-Figure $\ref{16output0}$ shows the synchronization error for $16$
-nodes operating in a static environment. KF has the lowest
-synchronization error, at an avergage of $4clk$. NLCF and WM perform
-similarly with Median at average of $13clk$. \newline Figure
-$\ref{50output0}$ is the result of a simulation for $50$ nodes. The
-synchronization error in general reduces as the number of nodes
-increases the number of neighbors, resulting in more data for the
-synchronization layer. Comparing the individual algorithms, KF has
-over $10clk$ performance improvement than the Median whereas NLCF
-and WM have a better performance ( $1clk$) than the Median.
-\subsubsection{\textbf{Case II}}In second set of simulations,
-the mobility of the nodes is taken into account. Here, the number of
-the nodes is taken to be $16$. The simulations are conducted for
-different speeds, at $6km/hr$ and $20km/hr$. Chosen speeds emulate
-the speed of a walking man and an average speed of a slowly moving
-vehicle. \newline Figure $\ref{16output6}$ shows 16 nodes with a
-constant speed of $6km/hr$ random mobility. As the results shows, WM
-and NLCF perform better the synchronization of the frame, $1 clk$
-each. KF outperforms all the best, with $10 clk$ from the median
-algorithm. \newline
+Figure $\ref{16output0}$ shows the synchronization error for $20$ nodes operating in a static environment. KF has the lowest
+precision of synchronization error, at an avergage of $4clk$. NLLS and WM perform similarly with Median at average of $13clk$. \newline 
+Figure $\ref{50output0}$ is the result of a simulation for $50$ nodes. The synchronization error in general reduces as the number of nodes increases the number of neighbors, resulting in more data for the synchronization layer. Comparing the individual algorithms, KF has over $10clk$ performance improvement than the Median whereas NLLS and WM have a better performance ($1clk$) than the Median.
+\subsubsection{\textbf{Case II}}
+In second set of simulations, the mobility of the nodes is taken into account. Here, the number of the nodes is taken to be $20$. The simulations are conducted for different speeds, at $6km/hr$ and $20km/hr$. Chosen speeds emulate the speed of a walking man and an average speed of a slowly moving vehicle. 
+\newline 
+Figure $\ref{16output6}$ shows 16 nodes with a constant speed of $6km/hr$ random mobility. As the results shows, WM and NLLS perform better the synchronization of the frame, $1 clk$ each. KF outperforms all the best, with $10 clk$ from the median
+algorithm.
+\newline
 \begin{figure}
 \centering
 \includegraphics[width=0.7\textwidth]{16output-s6}
 \caption{16 nodes - Speed 6km/hr} \label{16output6}
 \end{figure}
-The simulation is also conducted with a speed of
-$20km/hr$, having similar results(Figure $\ref{16output20}$). With
-the increase in the speed of the nodes, the precision of the
-algorithms improves. KF, with an average of of $10 clk$ performs the
-best, whereas WM and NLCF perform well too compared with the median,
-$1 clk$ and $1 clk$ respectively. The relative comparison of the
-algorithms performance improvement with the Median is shown in
-Figure $\ref{16error}$. WM and NLCF perform, on average, $8-10\%$
-better than Median. The best performer, KF, has on average $60\%$
-better performance than the Median one.
+The simulation is also conducted with a speed of $20km/hr$, having similar results(Figure $\ref{16output20}$). Withthe increase in the speed of the nodes, the precision of the algorithms improves. KF, with an average of of $10 clk$ performs the best, whereas WM and NLLS perform well too compared with the median, $1 clk$ and $1 clk$ respectively. As the dynamics of the networks increases, Median starts to have large deviations whereas NLLS and WM have a more stable performance. 
+\newline 
+The relative comparison of the algorithms performance improvement with the Median is shown in Figure $\ref{16error}$. WM and NLLS perform, on average, $8-10\%$ better than Median. The best performer, KF, has on average $60\%$ better performance than the Median one.
 \begin{figure}
 \centering
 \includegraphics[width=0.7\textwidth]{16output-s20}
 \caption{50 nodes - Speed 20km/hr} \label{16output20}
 \end{figure}
 \subsubsection{\textbf{Case III}}
-In this set of simulations, the number of the nodes is increased, to
-$50$. With slowly moving nodes ($6km/hr$), the results are shown in
-Figure $\ref{50output6}$. Large disruptions occur due to nodes
-moving slowly in the surrounding (leave the network and join again
-after some time), resulting in a larger drift with neighbors before
-getting back to the network. \newline
+In this set of simulations, the number of the nodes is increased, to $50$. With slowly moving nodes ($6km/hr$), the results are shown in Figure $\ref{50output6}$. Large disruptions occur when using Median due to nodes moving slowly in the surrounding (leave the network and join again after some time), resulting in a larger drift with neighbors before getting back to the network. NLLS and WM perform better when it comes to stability. KF has the edge, both in precison and stablity. 
+\newline
 \begin{figure}
 \centering
 \includegraphics[width=0.7\textwidth]{50output-s6}
 \caption{50 nodes - Speed 6km/hr} \label{50output6}
 \end{figure}
-With a speed of $20km/hr$, the simulation result is presented in
-Figure $\ref{50output20}$. With this speed, the performance is
-better due to the faster moving nodes, joining the networks at a
-faster rate. This helps in getting synchronized with the nodes in a
-faster time, without drifting away for a longer period of time(which
-is the case in the first set of nodes with speed of $6km/hr$).
-Again, for the set of nodes with a higher speed , a relative
-comparison is made to see the performance of the nodes with the
-median algorithm.\newline The median algorithms is shown to perform
-the worst in this case. There are a lot of disruptions in the
-network, making it more unstable whereas the other algorithms adapt
-to the changes faster.\newline In general, Figure $\ref{50error}$
-shows that KF performs the best against Median algorithm, $45\%$. WM
-and NLCF perform well against Median too, $10\%$ each. But it has
-been shown that the median is prone to error in case of high
-dynamics in the network.
+With a speed of $20km/hr$, the simulation result is presented in Figure $\ref{50output20}$. With this speed, the performance is
+better due to the faster moving nodes, joining the networks at a faster rate. This helps in getting synchronized with the nodes in a
+faster time, without drifting away for a longer period of time(which is the case in the first set of nodes with speed of $6km/hr$).
+Again, for the set of nodes with a higher speed , a relative comparison is made to see the performance of the nodes with the
+median algorithm.\newline The median algorithms is shown to perform the worst in this case. There are a lot of disruptions in the
+network, making it more unstable whereas the other algorithms adapt to the changes faster.
+\newline In general, Figure $\ref{50error}$ shows that KF performs the best against Median algorithm, $45\%$. WM and NLLS perform well against Median too, $10\%$ each. But it has been shown that the median is prone to error in case of high dynamics in the network.
 \begin{figure}
 \centering
 \includegraphics[width=0.7\textwidth]{50output-s20}
 \caption{50 nodes - Speed 20km/hr} \label{50output20}
 \end{figure}
-In general, the Kalman filter has a better precision and convergence
-speed than the rest whereas WM is also doing in precision whereas
-NLCF has a better convergence speed.
+In general, the Kalman filter has a better precision and more stability than the rest whereas WM and NLLS are more stable than the Median.
 \section{\textbf{Energy consumption}}
 \begin{figure}
 \centering
@@ -1011,80 +964,37 @@ NLCF has a better convergence speed.
 \caption{The energy consumption of Guard time per RX slot}
 \label{energyguard}
 \end{figure}
-As the results in the previous section shows, KF algorithm performs
-well in all conditions, so do WM and NLCF. The downside in
-implementing these algorithms, despite the performance gain that all
-have against the Median is the energy consumption. As the algorithms
-are going to be implemented on the sensor nodes, the energy
-consumption is a priority in the study of embedded system algorithm
-development. The algorithms are written in C and implemented on the
-test nodes to see the effect that they are going to have on the
-energy consumption of the nodes.
+As the results in the previous section shows, KF algorithm performs well in all conditions, so do WM and NLLS. The downside in
+implementing these algorithms, despite the performance gain that all have against the Median is the energy consumption. As the algorithms are going to be implemented on the sensor nodes, the energy consumption is a priority in the study of embedded system algorithm development. The algorithms are written in C and implemented on the test nodes to see the effect that they are going to have on the energy consumption of the nodes.
 \begin{center}
     \begin{tabular}{ |p{2cm} | p{4.75cm} |}
     \hline
     Algorithm & Average Execution Time \\ \hline
     M &  65 $\mu$s \\ \hline
-    NLCF & 82.5 $\mu$s \\ \hline
+    NLLS & 82.5 $\mu$s \\ \hline
     WM &   90 $\mu$s \\ \hline
     KF &  150 $\mu$s  \\ \hline
     \end{tabular}
 \label{tab}
 \end{center}
-The table shows the average execution time of the algorithms in
-comparison to implemented on the MyriaNode. This doesn't show the
-exact energy consumption of the algorithms but it can give us an
-approximation on the relative comparison of the algorithms about the
-energy consumption on the MyriaNode. As the table shows, the
-consumption of WM is 5$\%$ higher than the median algorithms. This
-is also true for NLCF and KF which consume 9$\%$ and 4 $\%$ higher
-than the median algorithm respectively. \newline In order to reduce
-the energy that is going to be spend on the algorithm with a better
-performance, the guard time of the slot can be reduced, due to a
-better performance showing by KF, WM and NLCF. The energy
-consumption of the guard time is shown in Figure
-$\ref{energyguard}$. The length of the guard time has a linear
-relation with the power being consumed in listening to the channel.
-Thus, with the performance gain obtained, the guard time of the slot
-can be decreased, hereby decreasing the energy consumption of the
-node in general. The relative energy reduction is shown in the chart
-below. Hence, by decreasing the guard time in proportion with the
-performance enhancement, we can save energy for the energy demand of
-the algorithm. This energy save is in a per slot basis. As the
-number of slots increases, the energy to be saved increases.
+The table shows the average execution time of the algorithms in comparison to implemented on the MyriaNode. This doesn't show the
+exact energy consumption of the algorithms but it can give us an approximation on the relative comparison of the algorithms about the energy consumption on the MyriaNode. As the table shows, the consumption of WM is 5$\%$ higher than the median algorithms. This
+is also true for NLLS and KF which consume 9$\%$ and 4 $\%$ higher than the median algorithm respectively. \newline In order to reduce the energy that is going to be spend on the algorithm with a better performance, the guard time of the slot can be reduced, due to a better performance showing by KF, WM and NLLS. The energy consumption of the guard time is shown in Figure
+$\ref{guardsave}$. The length of the guard time has a close-to-linear relation with the power being consumed in listening to the channel.
+Thus, with the performance gain obtained, the guard time of the slot can be decreased, hereby decreasing the energy consumption of the node in general. Hence, by decreasing the guard time in proportion with the performance enhancement, we can save energy for the energy demand of the algorithm. This energy save is in a per slot basis. As the number of slots increases, the energy to be saved increases.
 \chapter{\textbf{Conclusion and Recommendation}}
 \section{Conclusion}\noindent
-A decentralized frame synchronization of a TDMA-based WSN is achieved
-using Weighted Measurements(WM), Non Linear Curve Fitting(NLCF) and
-Kalman Filter(KF) methods. A simulation is conducted with different scenarios, especially
-taking the effect of mobility. A comparison of the algorithms with the currently implemented Median algorithm
-is conducted and the results are presented.
+A decentralized frame synchronization of a TDMA-based WSN is achieved using Weighted Measurements (WM), Non Linear Least Squares(NLLS) and Kalman Filter (KF) methods. A simulation is conducted with different scenarios, especially taking the effect of mobility. A comparison of the algorithms with the currently implemented Median algorithm is conducted and the results are presented.
 \newline
-In a static environment, the KF performs the best whereas the WM and NLCF have shown a similar performance as the
-Median. In terms of convergence time, all have shown a similar performance.
+In a static environment, the KF performs the best whereas the WM and NLLS have shown a similar performance as the Median. In terms of convergence time, all have shown a similar performance.
 \newline
-A $60\%$ improvement in the performance of the synchronization can
-achieved on average using the Kalman Filter for dynamic WSN. A lower
-improvement, $10\%$ and $8\%$ is obtained using WM and NLCF methods
-for the synchronization of TDMA frames. Both WM and NLCF show a better tolerance
-against Median in a dynamic network. KF estimation of
-the next wake up time is the best with its iterative capability and
-adaptive nature.
+A $60\%$ improvement in the performance of the synchronization can achieved on average using the Kalman Filter for dynamic WSN. A lower improvement, $10\%$ and $8\%$ is obtained using WM and NLLS methods for the synchronization of TDMA frames. Both WM and NLLS show a better tolerance against Median in a dynamic network. KF estimation of the next wake up time is the best with its iterative capability and adaptive nature.
 \newline
-Using these algorithms for a TDMA-based WSN synchronization( WM, NLCF and KF), the precision of the network increases.
-This in turn has a positive impact on the network because the synchronization period,
-$T_{sync}$ can be increased or the guard time of the node's frame,
-$t_{guard}$ can be reduced to achieve the same performance as the
-Median algorithm. Results are presented for an increased synchronization frequency.
+Using these algorithms for a TDMA-based WSN synchronization( WM, NLLS and KF), the precision of the network increases. This in turn has a positive impact on the network because the synchronization period, $T_{sync}$ can be increased or the guard time of the node's frame, $t_{guard}$ can be reduced to achieve the same performance as the Median algorithm. Results are presented for an increased synchronization frequency.
 \newline
-But in the downside, the energy consumption of the algorithms is
-greater than the Median algorithm's energy consumption as the algorithms are more complex computationally. Analysis is made and presented about the
-energy saving made by decreasing the guard time of the slot. As shown in the measurements and analysis results,
-communication is around 5 times costlier than computation, on average. A net gain of battery life can thus be achieved by reducing the guard time.
+But in the downside, the energy consumption of the algorithms is greater than the Median algorithm's energy consumption as the algorithms are more complex computationally. Analysis is made and presented about the energy saving made by decreasing the guard time of the slot. As shown in the measurements and analysis results, communication is around 5 times costlier than computation, on average. A net gain of battery life can thus be achieved by reducing the guard time.
 \newline
-Median is shown to be still the best choice in a static environment with the current implementation,with less energy consumption and simplicity into consideration. But, for dynamic networks, the other algorithms perform better, in terms of
-performance. KF has the edge due to its adaptive nature.
-
+Median is shown to be still the best choice in a static environment with the current implementation,with less energy consumption and simplicity into consideration. But, for dynamic networks, the other algorithms perform better, in terms of performance. KF has the edge due to its adaptive nature.
 \section{Recommendation}
 There are some suggestions on the future work of the algorithms.
 \begin{itemize}
@@ -1105,23 +1015,18 @@ solving the problem at its source is one approach which can be cost
 effective as well as simple in implementation. This can be achieved
 using the available resources like the temperature sensor in the
 microcontroller of the MyriaNode.
-\item In depth study of the different biased-estimation techniques can be applied to have a better performance with reduced power.
 \end{itemize}
 \appendix
 \chapter{Simulation Results}
 \section{Median as a synchronization method}
-The performance of Median algorithm is dependent on the gain factor
-used in the offset calculation. Figure $\ref{gainfactor}$ shows the
-performance of the Median algorithm for different gain factors.
+The performance of Median algorithm is dependent on the gain factor used in the offset calculation. Figure $\ref{gainfactor}$ shows the performance of the Median algorithm for different gain factors.
 \begin{figure}[!h]
 \centering
 \includegraphics[width= 0.7 \textwidth]{gainfactor}
 \caption{Median algorithm with different gain factors} \label{gainfactor}
 \end{figure}
 \section{Synchronization frequency}
-Increasing the synchronization frequency increases performance but
-the precision decrease. Figure $\ref{tsync}$ shows the performance
-of KF with varying the synchronization frequency $T_{sync}$.
+Increasing the synchronization frequency increases performance but the precision decrease. Figure $\ref{tsync}$ shows the performance of KF with varying the synchronization frequency $T_{sync}$.
 \begin{figure}[!h]
 \centering
 \includegraphics[width= 0.7 \textwidth]{tsync}
@@ -1176,8 +1081,7 @@ Median. For 50 nodes, see Figure $\ref{50error}$.
  \item Single supply voltage: 1.9V - 3.6V
 \end{itemize}
 \subsubsection{Description}
-This Wireless Sensor Node is the second generation product for the MyriaNed project. It integrates a Nordic radio module, antenna and embedded processor
-all on a PCB. The module is equipped with the software modules as they are being developed by one or more of the working groups of MyriaNed.
+This Wireless Sensor Node is the second generation product for the MyriaNed project. It integrates a Nordic radio module, antenna and embedded processor all on a PCB. The module is equipped with the software modules as they are being developed by one or more of the working groups of MyriaNed.
 \subsubsection{Architecture}
 \begin{figure}[!h]
  \centering
@@ -1233,7 +1137,7 @@ The software is documented by the other working groups of MyriaNed.
 \bibitem{taxonomy}E.Anceaume and I.Puaut. A taxonomy of clock synchronization algorithms. IRISA Research Report No. PI1103, IRISA, 1997.
 \bibitem{17}Q.Yang and J.Shi. An interference elimination method for decentralized slot synchronization in TDMA-based wireless ad hoc network.
 \bibitem{pieter} P.Anemaet. Determining G-MAC potential with $\{$S,L,SCP$\}$-MAC. Masters thesis. Technische Universteit Delft. Delft. August 2008.
-\bibitem{gossip}Gossip protocol for ....
+\bibitem{gossip}D. Gavidia, S. Voulgaris, and M. van Steen. A gossip-based distributed news service for wireless mesh networks. In Proceedings 3rd IEEE Conference on Wireless On demand Network Systems and Services (WONS), Les Menuires, France, January 2006.
 \bibitem{6}R.John. Introduction to Quartz Frequency Standards. Technical Report SLCET-TR-92-1, Army Research Laboratory, Electronics and Power Sources Directorate. October 1992.
 \bibitem{gradient}R. Fan and N. Lynch. Gradient clock synchronization. In Proceedings of the twenty-third annual ACM symposium on Principles of distributed computing (PODC ’04), pages 320–327. ACM Press, 2004.
 \bibitem{gradient2}L.Meier,and L.Thiele. Gradient clock synchronization in sensor networks. Technical report, Computer Engineering and Networks Laboratory. Swiss Federal Institute of Technology Zurich, 2005.
@@ -1241,7 +1145,7 @@ The software is documented by the other working groups of MyriaNed.
 \bibitem{9}K.Romer. Time Synchronization in Ad Hoc Networks. In Proceedings of the Second ACM International Symposium on Mobile Ad Hoc Networking and Computing, Long Beach, California. 2001.
 \bibitem{10}H.Karl and A.Willig. Protocols and Architectures for Wireless Sensor Networks.p3-6. Wiley. July 2006.
 \bibitem{11}C.Cordeiro and D.Agrawal. Ad hoc and Sensor Networks Theory and applications. p.429-441. World Scientific Publishing. 2006.
-\bibitem{1}F.Zhao and  L.Guibas. Wireless Sensor Networks: an Information Processing approach. p.107=108. Elsevier. 2004.
+\bibitem{1}F.Zhao and  L.Guibas. Wireless Sensor Networks: an Information Processing approach. p.107-108. Elsevier. 2004.
 \bibitem{texas} S.Raje. Time synchronization of in Network-centric sensor networks. Master research. University of Texas, Arlington. Texas. August 2005.
 \bibitem{14}S.PalChaudhuri and et al. Adaptive Clock Synchronization in Sensor Networks, Information Processing in Sensor Networks, April 2004.
 \bibitem{correlation}A.Ebner, H.Rohling, M.Lott, and R.Halfmann. Decentralized Slot Synchronization in Highly Dynamic Ad Hoc Networks. Proc. WPMC '02, Honolulu, Hawaii, Oct. 2002.
