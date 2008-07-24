@@ -5,37 +5,37 @@
 \contentsline {figure}{\numberline {2.3}{\ignorespaces TDMA frame}}{7}
 \contentsline {figure}{\numberline {2.4}{\ignorespaces TDMA Channel access}}{8}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Measured time versus absolute time}}{14}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Building block of a Time synchronization algorithm}}{16}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Measured time versus absolute time}}{13}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Building block of a Time synchronization algorithm}}{14}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Guard time of the nodes}}{20}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Network size and the lower bound of Synchronization}}{22}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces A WSN scenario}}{25}
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Using median for phase error correction}}{25}
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Weight factors for the phase error distribution}}{27}
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Curve fitting using logarithmic function}}{28}
-\contentsline {figure}{\numberline {4.7}{\ignorespaces Guard time saving}}{34}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Guard time of the nodes}}{18}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Network size and the lower bound of Synchronization}}{20}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces A WSN scenario}}{23}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Using median for phase error correction}}{23}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Weight factors for the phase error distribution}}{25}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Curve fitting using logarithmic function}}{26}
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Guard time saving}}{32}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Layered Model}}{37}
-\contentsline {figure}{\numberline {5.2}{\ignorespaces 16 nodes - Static}}{37}
-\contentsline {figure}{\numberline {5.3}{\ignorespaces 50 nodes - Static}}{38}
-\contentsline {figure}{\numberline {5.4}{\ignorespaces 16 nodes - Speed 6km/hr}}{39}
-\contentsline {figure}{\numberline {5.5}{\ignorespaces 50 nodes - Speed 20km/hr}}{40}
-\contentsline {figure}{\numberline {5.6}{\ignorespaces 50 nodes - Speed 6km/hr}}{40}
-\contentsline {figure}{\numberline {5.7}{\ignorespaces 50 nodes - Speed 20km/hr}}{41}
-\contentsline {figure}{\numberline {5.8}{\ignorespaces The energy consumption of Guard time per RX slot}}{41}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Layered Model}}{35}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces 16 nodes - Static}}{35}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces 50 nodes - Static}}{36}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces 16 nodes - Speed 6km/hr}}{37}
+\contentsline {figure}{\numberline {5.5}{\ignorespaces 50 nodes - Speed 20km/hr}}{38}
+\contentsline {figure}{\numberline {5.6}{\ignorespaces 50 nodes - Speed 6km/hr}}{38}
+\contentsline {figure}{\numberline {5.7}{\ignorespaces 50 nodes - Speed 20km/hr}}{39}
+\contentsline {figure}{\numberline {5.8}{\ignorespaces The energy consumption of Guard time per RX slot}}{39}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {A.1}{\ignorespaces Median algorithm with different gain factors}}{45}
-\contentsline {figure}{\numberline {A.2}{\ignorespaces Synchronization frequency on Kalman Filter}}{46}
-\contentsline {figure}{\numberline {A.3}{\ignorespaces Synchronization error for 20 nodes moving at different speed}}{47}
-\contentsline {figure}{\numberline {A.4}{\ignorespaces Synchronization error for 50 nodes moving at different speed}}{47}
-\contentsline {figure}{\numberline {A.5}{\ignorespaces Relative performance improvement of algorithms from Median - 16 nodes}}{48}
-\contentsline {figure}{\numberline {A.6}{\ignorespaces Relative performance improvement of algorithms from Median - 50 nodes}}{48}
+\contentsline {figure}{\numberline {A.1}{\ignorespaces Median algorithm with different gain factors}}{43}
+\contentsline {figure}{\numberline {A.2}{\ignorespaces Synchronization frequency on Kalman Filter}}{44}
+\contentsline {figure}{\numberline {A.3}{\ignorespaces Synchronization error for 20 nodes moving at different speed}}{45}
+\contentsline {figure}{\numberline {A.4}{\ignorespaces Synchronization error for 50 nodes moving at different speed}}{45}
+\contentsline {figure}{\numberline {A.5}{\ignorespaces Relative performance improvement of algorithms from Median - 16 nodes}}{46}
+\contentsline {figure}{\numberline {A.6}{\ignorespaces Relative performance improvement of algorithms from Median - 50 nodes}}{46}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {B.1}{\ignorespaces MyriaNode v2.0}}{49}
-\contentsline {figure}{\numberline {B.2}{\ignorespaces MyriaNode Architecture}}{50}
-\contentsline {figure}{\numberline {B.3}{\ignorespaces Radio Interface.}}{50}
-\contentsline {figure}{\numberline {B.4}{\ignorespaces External interfaces.}}{51}
-\contentsline {figure}{\numberline {B.5}{\ignorespaces MyriaNode dimensions}}{52}
-\contentsline {figure}{\numberline {B.6}{\ignorespaces Battery structure of a MyriaNode}}{52}
+\contentsline {figure}{\numberline {B.1}{\ignorespaces MyriaNode v2.0}}{47}
+\contentsline {figure}{\numberline {B.2}{\ignorespaces MyriaNode Architecture}}{48}
+\contentsline {figure}{\numberline {B.3}{\ignorespaces Radio Interface.}}{48}
+\contentsline {figure}{\numberline {B.4}{\ignorespaces External interfaces.}}{49}
+\contentsline {figure}{\numberline {B.5}{\ignorespaces MyriaNode dimensions}}{50}
+\contentsline {figure}{\numberline {B.6}{\ignorespaces Battery structure of a MyriaNode}}{50}
