@@ -31,36 +31,36 @@
 \contentsline {section}{\numberline {4.3}\textbf {Lower bound of Synchronization}}{19}
 \contentsline {section}{\numberline {4.4}\textbf {Mathematical Model}}{20}
 \contentsline {subsection}{\numberline {4.4.1}\textbf {Median algorithm and the setback}}{22}
-\contentsline {subsection}{\numberline {4.4.2}\textbf {Weighted Measurements - Interference-phobic approach}}{24}
-\contentsline {subsection}{\numberline {4.4.3}\textbf {Non Linear Least Squares - Interference elimination}}{26}
-\contentsline {subsubsection}{Non Linear Least Square}{26}
-\contentsline {subsubsection}{Model Design}{28}
+\contentsline {subsection}{\numberline {4.4.2}\textbf {Weighted Measurements - Interference-phobic approach}}{23}
+\contentsline {subsection}{\numberline {4.4.3}\textbf {Non Linear Least Squares method}}{25}
+\contentsline {subsubsection}{Non Linear Least Squares}{25}
+\contentsline {subsubsection}{Model Design}{27}
 \contentsline {subsection}{\numberline {4.4.4}\textbf {Discrete time Kalman Filter for synchronization}}{29}
 \contentsline {subsubsection}{Discrete time Kalman Filter}{29}
-\contentsline {subsubsection}{Model design}{31}
-\contentsline {section}{\numberline {4.5}\textbf {Reducing the guard time}}{32}
+\contentsline {subsubsection}{Model design}{30}
+\contentsline {section}{\numberline {4.5}\textbf {Reducing the guard time}}{31}
 \contentsline {chapter}{\numberline {5}\textbf {Results and Discussion}}{34}
 \contentsline {section}{\numberline {5.1}\textbf {Simulation setup}}{34}
 \contentsline {section}{\numberline {5.2}\textbf {Simulation Results}}{35}
-\contentsline {subsubsection}{\textbf {Case I}}{36}
+\contentsline {subsubsection}{\textbf {Case I}}{35}
 \contentsline {subsubsection}{\textbf {Case II}}{36}
-\contentsline {subsubsection}{\textbf {Case III}}{37}
-\contentsline {section}{\numberline {5.3}\textbf {Energy consumption}}{39}
-\contentsline {chapter}{\numberline {6}\textbf {Conclusion and Recommendation}}{41}
-\contentsline {section}{\numberline {6.1}Conclusion}{41}
-\contentsline {section}{\numberline {6.2}Recommendation}{42}
-\contentsline {chapter}{\numberline {A}Simulation Results}{43}
-\contentsline {section}{\numberline {A.1}Median as a synchronization method}{43}
-\contentsline {section}{\numberline {A.2}Synchronization frequency}{43}
-\contentsline {section}{\numberline {A.3}Synchronizztion error for nodes with different speeds}{44}
-\contentsline {section}{\numberline {A.4}Relative performance improvement of the algorithms}{44}
-\contentsline {chapter}{\numberline {B}MyriaNode}{47}
-\contentsline {subsubsection}{Features}{47}
-\contentsline {subsubsection}{Description}{48}
-\contentsline {subsubsection}{Architecture}{48}
-\contentsline {subsubsection}{Radio Interface}{48}
-\contentsline {subsubsection}{Mechanical and Mounting}{49}
-\contentsline {subsubsection}{Energy Supply}{50}
-\contentsline {subsubsection}{Battery}{51}
-\contentsline {subsubsection}{Programming}{51}
-\contentsline {subsubsection}{Software}{51}
+\contentsline {subsubsection}{\textbf {Case III}}{38}
+\contentsline {section}{\numberline {5.3}\textbf {Energy consumption}}{40}
+\contentsline {chapter}{\numberline {6}\textbf {Conclusion and Recommendation}}{42}
+\contentsline {section}{\numberline {6.1}\textbf {Conclusion}}{42}
+\contentsline {section}{\numberline {6.2}\textbf {Recommendation}}{43}
+\contentsline {chapter}{\numberline {A}Simulation Results}{44}
+\contentsline {section}{\numberline {A.1}\textbf {Median as a synchronization method}}{44}
+\contentsline {section}{\numberline {A.2}\textbf {Synchronization frequency}}{44}
+\contentsline {section}{\numberline {A.3}\textbf {Synchronization error for nodes with different speeds}}{46}
+\contentsline {section}{\numberline {A.4}\textbf {Relative performance improvement of the algorithms}}{46}
+\contentsline {chapter}{\numberline {B}MyriaNode}{49}
+\contentsline {subsubsection}{Features}{49}
+\contentsline {subsubsection}{Description}{50}
+\contentsline {subsubsection}{Architecture}{50}
+\contentsline {subsubsection}{Radio Interface}{50}
+\contentsline {subsubsection}{Mechanical and Mounting}{51}
+\contentsline {subsubsection}{Energy Supply}{52}
+\contentsline {subsubsection}{Battery}{53}
+\contentsline {subsubsection}{Programming}{53}
+\contentsline {subsubsection}{Software}{53}
