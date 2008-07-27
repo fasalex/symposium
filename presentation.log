@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592-1.40.4 (MiKTeX 2.6) (preloaded format=latex 2007.11.30)  14 JUN 2008 00:38
+This is pdfTeX, Version 3.141592-1.40.4 (MiKTeX 2.6) (preloaded format=latex 2007.11.30)  26 JUL 2008 20:32
 entering extended mode
 **presentation.tex
 (presentation.tex
@@ -771,7 +771,12 @@ File: freq_var.eps Graphic file (type eps)
  <freq_var.eps>
 File: frequency_error.eps Graphic file (type eps)
  <frequency_error.eps>
-Overfull \vbox (131.56807pt too high) detected at line 76
+Overfull \hbox (153.64491pt too wide) in paragraph at lines 73--73
+ [][][] 
+ []
+
+
+Overfull \vbox (16.23877pt too high) detected at line 73
  []
 
 [6
@@ -788,7 +793,7 @@ File: a_slot.eps Graphic file (type eps)
 
 ]
 LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <10.95> not available
-(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 134.
+(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 131.
  [10
 
 ]
@@ -809,43 +814,13 @@ File: node_time.eps Graphic file (type eps)
 ] [17
 
 ]
-File: output.eps Graphic file (type eps)
- <output.eps>
-Overfull \vbox (2.63876pt too high) detected at line 238
- []
 
-[18
+! LaTeX Error: File `output' not found.
 
-]
-File: output.eps Graphic file (type eps)
- <output.eps>
-Overfull \vbox (2.63876pt too high) detected at line 247
- []
-
-[19
-
-]
-File: output.eps Graphic file (type eps)
- <output.eps>
-Overfull \vbox (2.63876pt too high) detected at line 265
- []
-
-[20
-
-] [21
-
-]
-\tf@nav=\write5
-\tf@toc=\write6
-\tf@snm=\write7
- (presentation.aux) ) 
-Here is how much of TeX's memory you used:
- 13953 strings out of 95296
- 235516 string characters out of 1184884
- 344113 words of memory out of 1338085
- 16417 multiletter control sequences out of 60000
- 14042 words of font info for 42 fonts, out of 1000000 for 2000
- 14 hyphenation exceptions out of 8191
- 43i,20n,60p,362b,636s stack positions out of 5000i,500n,10000p,200000b,32768s
-
-Output written on presentation.dvi (21 pages, 259520 bytes).
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.229 \end{frame}
+                 
+? 

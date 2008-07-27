@@ -1,14 +1,13 @@
-This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=latex 2008.5.8)  25 JUL 2008 17:11
+This is pdfTeX, Version 3.141592-1.40.4 (MiKTeX 2.6) (preloaded format=latex 2007.11.30)  27 JUL 2008 15:52
 entering extended mode
- %&-line parsing enabled.
 **report.tex
-(./report.tex
+(report.tex
 LaTeX2e <2005/12/01>
-Babel <v3.8h> and hyphenation patterns for english, usenglishmax, dumylang, noh
-yphenation, loaded.
-(/usr/share/texmf-texlive/tex/latex/base/report.cls
+Babel <v3.8h> and hyphenation patterns for english, dumylang, nohyphenation, ge
+rman, ngerman, french, loaded.
+("C:\Program Files\MiKTeX 2.6\tex\latex\base\report.cls"
 Document Class: report 2005/09/16 v1.4f Standard LaTeX document class
-(/usr/share/texmf-texlive/tex/latex/base/size10.clo
+("C:\Program Files\MiKTeX 2.6\tex\latex\base\size10.clo"
 File: size10.clo 2005/09/16 v1.4f Standard LaTeX file (size option)
 )
 \c@part=\count79
@@ -24,60 +23,56 @@ File: size10.clo 2005/09/16 v1.4f Standard LaTeX file (size option)
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
 )
-(/usr/share/texmf-texlive/tex/latex/graphics/graphicx.sty
+("C:\Program Files\MiKTeX 2.6\tex\latex\graphics\graphicx.sty"
 Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
 
-(/usr/share/texmf-texlive/tex/latex/graphics/keyval.sty
+("C:\Program Files\MiKTeX 2.6\tex\latex\graphics\keyval.sty"
 Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
 \KV@toks@=\toks14
 )
-(/usr/share/texmf-texlive/tex/latex/graphics/graphics.sty
+("C:\Program Files\MiKTeX 2.6\tex\latex\graphics\graphics.sty"
 Package: graphics 2006/02/20 v1.0o Standard LaTeX Graphics (DPC,SPQR)
 
-(/usr/share/texmf-texlive/tex/latex/graphics/trig.sty
+("C:\Program Files\MiKTeX 2.6\tex\latex\graphics\trig.sty"
 Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
 )
-(/etc/texmf/tex/latex/config/graphics.cfg
+("C:\Program Files\MiKTeX 2.6\tex\latex\00miktex\graphics.cfg"
 File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
 )
 Package graphics Info: Driver file: dvips.def on input line 90.
 
-(/usr/share/texmf-texlive/tex/latex/graphics/dvips.def
+("C:\Program Files\MiKTeX 2.6\tex\latex\graphics\dvips.def"
 File: dvips.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
 ))
 \Gin@req@height=\dimen103
 \Gin@req@width=\dimen104
 )
-(/usr/share/texmf-texlive/tex/latex/nomencl/nomencl.sty
+("C:\Program Files\MiKTeX 2.6\tex\latex\nomencl\nomencl.sty"
 Package: nomencl 2005/09/22 v4.2 Nomenclature package (LN)
 \nomlabelwidth=\dimen105
 \nom@tempdim=\dimen106
 \nomitemsep=\skip43
 )
 \@nomenclaturefile=\write3
-\openout3 = `report.nlo'.
-
 
 Writing nomenclature file report.nlo
-(/usr/share/texmf-texlive/tex/latex/graphics/epsfig.sty
+("C:\Program Files\MiKTeX 2.6\tex\latex\graphics\epsfig.sty"
 Package: epsfig 1999/02/16 v1.7a (e)psfig emulation (SPQR)
 \epsfxsize=\dimen107
 \epsfysize=\dimen108
 )
-(/usr/share/texmf-texlive/tex/latex/psfrag/psfrag.sty
+("C:\Program Files\MiKTeX 2.6\tex\latex\psfrag\psfrag.sty"
 Package: psfrag 1998/04/11 v3.04 PSfrag (MCG)
 \pfg@pcount=\count88
 \pfg@scount=\count89
 \pfg@temp=\write4
 )
-(/usr/share/texmf-texlive/tex/latex/ltxmisc/a4wide.sty
+("C:\Program Files\MiKTeX 2.6\tex\latex\ltxmisc\a4wide.sty"
 Package: a4wide 1994/08/30
 
-(/usr/share/texmf-texlive/tex/latex/ntgclass/a4.sty
+("C:\Program Files\MiKTeX 2.6\tex\latex\ntgclass\a4.sty"
 Package: a4 2004/04/15 v1.2g A4 based page layout
-)) (./report.aux)
-\openout1 = `report.aux'.
-
+)) (report.aux)
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 28.
 LaTeX Font Info:    ... okay on input line 28.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 28.
@@ -125,25 +120,21 @@ Overfull \hbox (32.88005pt too wide) in paragraph at lines 61--71
 [1
 
 ] [1]
-Overfull \hbox (4.65108pt too wide) in paragraph at lines 90--100
+Overfull \hbox (4.65108pt too wide) in paragraph at lines 88--98
 \OT1/cmr/m/n/10 Time syn-chro-niza-tion is a cru-cial com-po-nent of in-fras-tr
 uc-ture for \OT1/cmr/m/it/10 Wire-less Sen-sor Net-works\OT1/cmr/m/n/10 (WSNs).
 
  []
 
-[2] (./report.toc [3
+[2] (report.toc [3
 
 ])
 \tf@toc=\write5
-\openout5 = `report.toc'.
-
- [4] (./report.lof [5
+ [4] (report.lof [5
 
 ])
 \tf@lof=\write6
-\openout6 = `report.lof'.
-
- (./report.nls [6]) [7
+ (report.nls [6]) [7
 
 ]
 Chapter 1.
@@ -162,14 +153,14 @@ File: tdmaframe.eps Graphic file (type eps)
  <tdmaframe.eps>
 File: tdmaschedule.eps Graphic file (type eps)
  <tdmaschedule.eps> [7]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 222.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 218.
 
 
-(/usr/share/texmf-texlive/tex/latex/base/omscmr.fd
+("C:\Program Files\MiKTeX 2.6\tex\latex\base\omscmr.fd"
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 222.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 218.
  [8] [9]
 Chapter 3.
 [10
@@ -188,35 +179,35 @@ File: guardtime.eps Graphic file (type eps)
  <guardtime.eps> [18] [19]
 File: lowerbound.eps Graphic file (type eps)
  <lowerbound.eps> [20]
-Underfull \hbox (badness 10000) in paragraph at lines 526--530
+Underfull \hbox (badness 10000) in paragraph at lines 519--523
 
  []
 
 [21]
 File: node_field.eps Graphic file (type eps)
- <node_field.eps> [22]
+ <node_field.eps>
 File: offsetpic.eps Graphic file (type eps)
  <offsetpic.eps>
-Underfull \hbox (badness 10000) in paragraph at lines 564--578
+Underfull \hbox (badness 10000) in paragraph at lines 557--571
 
  []
 
-[23]
+[22] [23]
 File: weight.eps Graphic file (type eps)
  <weight.eps>
-Underfull \hbox (badness 10000) in paragraph at lines 621--638
+Underfull \hbox (badness 10000) in paragraph at lines 614--631
 
  []
 
 [24]
 File: curvefit.eps Graphic file (type eps)
  <curvefit.eps> [25] [26] [27]
-Underfull \hbox (badness 10000) in paragraph at lines 728--743
+Underfull \hbox (badness 10000) in paragraph at lines 721--736
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 728--743
+Underfull \hbox (badness 10000) in paragraph at lines 721--736
 
  []
 
@@ -228,7 +219,7 @@ Missing character: There is no â in font cmr10!
 Missing character: There is no € in font cmr10!
 Missing character: There is no “ in font cmr10!
  [29]
-Underfull \hbox (badness 10000) in paragraph at lines 832--845
+Underfull \hbox (badness 10000) in paragraph at lines 825--838
 
  []
 
@@ -240,7 +231,7 @@ File: osimodel.eps Graphic file (type eps)
 <osimodel.eps> [34
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 911--913
+Underfull \hbox (badness 10000) in paragraph at lines 904--906
 
  []
 
@@ -261,11 +252,7 @@ File: 50output-s20.eps Graphic file (type eps)
 
 <50output-s20.eps> [36] [37]
 File: guardsave.eps Graphic file (type eps)
- <guardsave.eps> [38] [39]
-
-LaTeX Warning: Reference `guardsave' on page 40 undefined on input line 1000.
-
-[40] [41]
+ <guardsave.eps> [38] [39] [40] [41]
 Chapter 6.
 [42
 
@@ -273,14 +260,8 @@ Chapter 6.
 Appendix A.
 File: gainfactor.eps Graphic file (type eps)
 <gainfactor.eps>
-
-LaTeX Warning: Reference `sync6' on page 44 undefined on input line 1040.
-
-
-LaTeX Warning: Reference `sync20' on page 44 undefined on input line 1040.
-
 File: tsync0.eps Graphic file (type eps)
-<tsync0.eps>
+ <tsync0.eps>
 File: tsync6.eps Graphic file (type eps)
  <tsync6.eps>
 File: tsync20.eps Graphic file (type eps)
@@ -337,18 +318,14 @@ Missing character: There is no ™ in font cmr10!
 Missing character: There is no â in font cmr10!
 Missing character: There is no € in font cmr10!
 Missing character: There is no “ in font cmr10!
- [55] [56] (./report.aux)
-
-LaTeX Warning: There were undefined references.
-
- ) 
+ [55] [56] (report.aux) ) 
 Here is how much of TeX's memory you used:
- 957 strings out of 95087
- 11469 string characters out of 1183279
- 59394 words of memory out of 1500000
- 4115 multiletter control sequences out of 10000+50000
- 10119 words of font info for 35 fonts, out of 1200000 for 2000
- 28 hyphenation exceptions out of 8191
- 25i,9n,25p,1131b,336s stack positions out of 5000i,500n,6000p,200000b,5000s
+ 1122 strings out of 95296
+ 11575 string characters out of 1184884
+ 58984 words of memory out of 1058076
+ 4124 multiletter control sequences out of 60000
+ 10119 words of font info for 35 fonts, out of 1000000 for 2000
+ 14 hyphenation exceptions out of 8191
+ 25i,9n,25p,2148b,334s stack positions out of 5000i,500n,10000p,200000b,32768s
 
-Output written on report.dvi (64 pages, 151764 bytes).
+Output written on report.dvi (64 pages, 151744 bytes).
