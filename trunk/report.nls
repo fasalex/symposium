@@ -3,17 +3,17 @@
  \nomgroup{A}
 
   \item [{$\rho$}]\begingroup Maximum clock drift\nomeqref {3.4}
-		\nompageref{12}
+		\nompageref{13}
   \item [{$\xi_i$}]\begingroup Offset to be added to Node $i$\nomeqref {4.15}
-		\nompageref{21}
+		\nompageref{22}
   \item [{$t_{guard}$}]\begingroup Length of the guard time\nomeqref {4.2}
-		\nompageref{19}
+		\nompageref{20}
   \item [{$t_{slot}$}]\begingroup Time duration of a slot\nomeqref {4.1}
-		\nompageref{18}
+		\nompageref{19}
   \item [{$T_{sync}$}]\begingroup Synchronization frequency\nomeqref {4.1}
-		\nompageref{18}
+		\nompageref{19}
   \item [{\textit{clk}}]\begingroup A clock cycle\nomeqref {3.6}
-		\nompageref{14}
+		\nompageref{15}
   \item [{CSMA}]\begingroup Carrier Sense Multiple Access\nomeqref {2.0}
 		\nompageref{4}
   \item [{DES}]\begingroup Discrete Event Simulator\nomeqref {5.0}
@@ -23,7 +23,7 @@
   \item [{GSM}]\begingroup Global System for Mobile communications\nomeqref {2.0}
 		\nompageref{9}
   \item [{KF}]\begingroup Kalman Filter\nomeqref {5.0}\nompageref{35}
-  \item [{MAC}]\begingroup Medium Access Protocol\nomeqref {0}
+  \item [{MAC}]\begingroup Mediua Access Protocol\nomeqref {0}
 		\nompageref{ii}
   \item [{NLLS}]\begingroup Non Linear Least Squares\nomeqref {4.22}
 		\nompageref{26}
@@ -38,7 +38,7 @@
   \item [{WAN}]\begingroup Wide Area Network\nomeqref {2.0}
 		\nompageref{5}
   \item [{WM}]\begingroup Weighted Measurements\nomeqref {4.20}
-		\nompageref{23}
+		\nompageref{24}
   \item [{WSN}]\begingroup Wireless Sensor Network\nomeqref {1.0}
 		\nompageref{1}
 
