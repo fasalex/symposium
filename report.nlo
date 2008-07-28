@@ -1,5 +1,5 @@
 \nomenclatureentry{aTDMA@[{TDMA}]\begingroup Time Division Multiple Access\nomeqref {0}|nompageref}{ii}
-\nomenclatureentry{aMAC@[{MAC}]\begingroup Medium Access Protocol\nomeqref {0}|nompageref}{ii}
+\nomenclatureentry{aMAC@[{MAC}]\begingroup Mediua Access Protocol\nomeqref {0}|nompageref}{ii}
 \nomenclatureentry{aWSN@[{WSN}]\begingroup Wireless Sensor Network\nomeqref {1.0}|nompageref}{1}
 \nomenclatureentry{aRBS@[{RBS}]\begingroup Refererence Broadcast Synchronization\nomeqref {1.0}|nompageref}{2}
 \nomenclatureentry{aCSMA@[{CSMA}]\begingroup Carrier Sense Multiple Access\nomeqref {2.0}|nompageref}{4}
@@ -8,13 +8,13 @@
 \nomenclatureentry{aUTC@[{UTC}]\begingroup Coordinated Universal Time\nomeqref {2.0}|nompageref}{6}
 \nomenclatureentry{aGSM@[{GSM}]\begingroup Global System for Mobile communications\nomeqref {2.0}|nompageref}{9}
 \nomenclatureentry{aGPS@[{GPS}]\begingroup Global Positioning System\nomeqref {2.0}|nompageref}{9}
-\nomenclatureentry{a$\rho$@[{$\rho$}]\begingroup Maximum clock drift\nomeqref {3.4}|nompageref}{12}
-\nomenclatureentry{a\textit{clk}@[{\textit{clk}}]\begingroup A clock cycle\nomeqref {3.6}|nompageref}{14}
-\nomenclatureentry{a$t_{slot}$@[{$t_{slot}$}]\begingroup Time duration of a slot\nomeqref {4.1}|nompageref}{18}
-\nomenclatureentry{a$T_{sync}$@[{$T_{sync}$}]\begingroup Synchronization frequency\nomeqref {4.1}|nompageref}{18}
-\nomenclatureentry{a$t_{guard}$@[{$t_{guard}$}]\begingroup Length of the guard time\nomeqref {4.2}|nompageref}{19}
-\nomenclatureentry{a$\xi_i$@[{$\xi_i$}]\begingroup Offset to be added to Node $i$\nomeqref {4.15}|nompageref}{21}
-\nomenclatureentry{aWM@[{WM}]\begingroup Weighted Measurements\nomeqref {4.20}|nompageref}{23}
+\nomenclatureentry{a$\rho$@[{$\rho$}]\begingroup Maximum clock drift\nomeqref {3.4}|nompageref}{13}
+\nomenclatureentry{a\textit{clk}@[{\textit{clk}}]\begingroup A clock cycle\nomeqref {3.6}|nompageref}{15}
+\nomenclatureentry{a$t_{slot}$@[{$t_{slot}$}]\begingroup Time duration of a slot\nomeqref {4.1}|nompageref}{19}
+\nomenclatureentry{a$T_{sync}$@[{$T_{sync}$}]\begingroup Synchronization frequency\nomeqref {4.1}|nompageref}{19}
+\nomenclatureentry{a$t_{guard}$@[{$t_{guard}$}]\begingroup Length of the guard time\nomeqref {4.2}|nompageref}{20}
+\nomenclatureentry{a$\xi_i$@[{$\xi_i$}]\begingroup Offset to be added to Node $i$\nomeqref {4.15}|nompageref}{22}
+\nomenclatureentry{aWM@[{WM}]\begingroup Weighted Measurements\nomeqref {4.20}|nompageref}{24}
 \nomenclatureentry{aNLLS@[{NLLS}]\begingroup Non Linear Least Squares\nomeqref {4.22}|nompageref}{26}
 \nomenclatureentry{aDES@[{DES}]\begingroup Discrete Event Simulator\nomeqref {5.0}|nompageref}{34}
 \nomenclatureentry{aKF@[{KF}]\begingroup Kalman Filter\nomeqref {5.0}|nompageref}{35}
