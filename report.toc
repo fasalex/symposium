@@ -13,31 +13,31 @@
 \contentsline {section}{\numberline {3.1}\textbf {Sources of synchronization error}}{11}
 \contentsline {section}{\numberline {3.2}\textbf {Clock and Frequency standards}}{12}
 \contentsline {section}{\numberline {3.3}\textbf {Clock Time and Delay}}{13}
-\contentsline {section}{\numberline {3.4}\textbf {Performance metrics of a synchronization protocol}}{15}
-\contentsline {subsection}{\numberline {3.4.1}\textbf {Precision}}{16}
-\contentsline {subsection}{\numberline {3.4.2}\textbf {Energy costs}}{16}
-\contentsline {subsection}{\numberline {3.4.3}\textbf {Memory requirement}}{16}
-\contentsline {subsection}{\numberline {3.4.4}\textbf {Fault tolerance}}{16}
-\contentsline {chapter}{\numberline {4}\textbf {Synchronicity protocol}}{17}
-\contentsline {section}{\numberline {4.1}\textbf {Requirements of the Algorithm for MyriaNed}}{17}
-\contentsline {subsubsection}{\textbf {Precise synchronization}}{17}
-\contentsline {subsubsection}{\textbf {Lifetime}}{17}
-\contentsline {subsubsection}{\textbf {Scope}}{17}
-\contentsline {subsubsection}{\textbf {Internal vs. External Synchronization}}{18}
-\contentsline {subsubsection}{\textbf {Energy Budget}}{18}
-\contentsline {subsubsection}{\textbf {Convergence Time}}{18}
-\contentsline {subsubsection}{\textbf {Simplicity}}{18}
-\contentsline {section}{\numberline {4.2}\textbf {Synchronization Frequency}}{19}
-\contentsline {section}{\numberline {4.3}\textbf {Lower bound of Synchronization}}{20}
-\contentsline {section}{\numberline {4.4}\textbf {Mathematical Model}}{21}
-\contentsline {subsection}{\numberline {4.4.1}\textbf {Median algorithm and the setback}}{23}
-\contentsline {subsection}{\numberline {4.4.2}\textbf {Weighted Measurements - Interference-phobic approach}}{24}
-\contentsline {subsection}{\numberline {4.4.3}\textbf {Non Linear Least Squares method}}{26}
-\contentsline {subsubsection}{Non Linear Least Squares}{26}
-\contentsline {subsubsection}{Model Design}{28}
-\contentsline {subsection}{\numberline {4.4.4}\textbf {Discrete time Kalman Filter for synchronization}}{29}
-\contentsline {subsubsection}{Discrete time Kalman Filter}{29}
-\contentsline {subsubsection}{Model design}{31}
+\contentsline {section}{\numberline {3.4}\textbf {Median algorithm and the setback}}{15}
+\contentsline {section}{\numberline {3.5}\textbf {Performance metrics of a synchronization protocol}}{17}
+\contentsline {subsection}{\numberline {3.5.1}\textbf {Precision}}{17}
+\contentsline {subsection}{\numberline {3.5.2}\textbf {Energy costs}}{18}
+\contentsline {subsection}{\numberline {3.5.3}\textbf {Memory requirement}}{18}
+\contentsline {subsection}{\numberline {3.5.4}\textbf {Fault tolerance}}{18}
+\contentsline {chapter}{\numberline {4}\textbf {Synchronicity protocol}}{19}
+\contentsline {section}{\numberline {4.1}\textbf {Requirements of the Algorithm for MyriaNed}}{19}
+\contentsline {subsubsection}{\textbf {Precise synchronization}}{19}
+\contentsline {subsubsection}{\textbf {Lifetime}}{19}
+\contentsline {subsubsection}{\textbf {Scope}}{19}
+\contentsline {subsubsection}{\textbf {Internal vs. External Synchronization}}{20}
+\contentsline {subsubsection}{\textbf {Energy Budget}}{20}
+\contentsline {subsubsection}{\textbf {Convergence Time}}{20}
+\contentsline {subsubsection}{\textbf {Simplicity}}{20}
+\contentsline {section}{\numberline {4.2}\textbf {Synchronization Frequency}}{21}
+\contentsline {section}{\numberline {4.3}\textbf {Lower bound of Synchronization}}{22}
+\contentsline {section}{\numberline {4.4}\textbf {Mathematical Model}}{23}
+\contentsline {subsection}{\numberline {4.4.1}\textbf {Weighted Measurements - Interference-phobic approach}}{25}
+\contentsline {subsection}{\numberline {4.4.2}\textbf {Non Linear Least Squares method}}{27}
+\contentsline {subsubsection}{Non Linear Least Squares}{27}
+\contentsline {subsubsection}{Model Design}{29}
+\contentsline {subsection}{\numberline {4.4.3}\textbf {Discrete time Kalman Filter for synchronization}}{30}
+\contentsline {subsubsection}{Discrete time Kalman Filter}{30}
+\contentsline {subsubsection}{Model design}{32}
 \contentsline {section}{\numberline {4.5}\textbf {Reducing the guard time}}{32}
 \contentsline {chapter}{\numberline {5}\textbf {Results and Discussion}}{34}
 \contentsline {section}{\numberline {5.1}\textbf {Simulation setup}}{34}
