@@ -104,7 +104,7 @@ senses. Various applications are realized using sensor networks$\cite{10}$. As t
 distributed system. In sensor networks, a number of factors makes flexible and robust time synchronization particularly important and
 more difficult to achieve than in centralized networks.
 Collaboration among nodes is often required for different purposes$\cite{11}$. A common view of physical time is a basic requirement for nodes to reason about events that occur in the physical world. In addition to these domain-specific requirements, sensor network applications often rely on synchronization as typical distributed systems do. These applications include proper \textit{Time Division Multiple Access} (TDMA) scheduling, database queries, cryptography and authentication schemes, coordination of future action, interaction with users and ordering logged events during system debugging$\cite{1}$.
-\section{\textbf{Existing Work on WSN clock synchronization}}\par
+\section{\textbf{Existing Work on WSN synchronization}}\par
 Several algorithms have been proposed and researched for synchronization in WSNs. The \textit{Reference Broadast Synchronization} (RBS)\nomenclature{RBS}{Refererence Broadcast Synchronization} stated in $\cite{2}$ is an important scheme in the area of WSN synchronization. It achieves a Receiver-Receiver pairwise synchronization to remove sender nondeterminism and results in a good precision of a few microseconds. It also provides clock frequency estimates between two receivers using a linear regression technique. A decentralized slot synchronization algorithm for TDMA-based networks is presented in $\cite{3}$. It uses the topology of the nodes as a means to weigh the phase error of the sender with the receiver. \paragraph*{}
 Another method for achieving a network-wide synchronization is suggested by $\cite{texas}$. This approach establishes a table to
 correspond the clock of the sender with that of the receiver clock so that a good estimation of the neighbors clock is achieved using different estimation techniques. Another approach is used in $\cite{4}$ to use the metaphor of fireflies to the existing problem of synchronization. The method bases itself for the synchronization of the network where the nodes are on the same domain, firing at the same time. A different approach to weight-based synchronization for interference elimination for a TDMA based ad-hoc networks is presented in  $\cite{6}$. The algorithm achieves synchronization in a decentralized manner using the nodes offset with its neighbors with a goal of eliminating the interference. Correlation method is used in $\cite{correlation}$ inorder to decode the message and learn about the status of the sender node which is used for synchronization.
@@ -126,7 +126,7 @@ clocks of the nodes are less than perfect; they will never run at exactly the sa
 thus to let them share the same schedule, the small timing error needs to be compensated. Second, there has to be a certain algorithm
 to allocate the slots among the nodes; they cannot simply all start broadcasting in the first slot, since that would cause nothing but
 collisions. The research on slot allocation algorithms is being conducted alongside this research$\cite{pieter}$.
-\section{\textbf{Clock Synchronization in centralized networks}}
+\section{\textbf{Synchronization in centralized networks}}
 In a centralized system, the solution to clock drift is trivial: the centralized server will dictate the system time because time is unambiguous. With the centralized concept in mind, different protocols have been proposed and implemented to achieve synchronization in those networks, \textit{Network Time Protocol} (NTP)\nomenclature{NTP}{Network Time Protocol} being the most popular$\cite{5}$.
 \paragraph*{}
 Infrastructure advantage being the most important factor, NTP is one of the most accurate and flexible means of sending time over the Internet. The protocol is designed to compensate for some, but not all, network time delays between the server and the client. NTP is most successful across local area networks and can give accuracy as good as a few milliseconds. On the world wide web, however, time transfer delays are at the mercy of server traffic and network bottlenecks, and accuracy figures cannot be quoted as easily. NTP uses a round time delay to a universal time reference so that it can adjust the clock of the networked component. It measures delays within the network and within the algorithms on the machine on which it is running. Using  these tools and techniques, it is able to synchronize clocks to within milliseconds of each other when connected on a Local Area Network and within hundreds of milliseconds of each other when connected to a \textit{Wide Area Network} (WAN)\nomenclature{WAN}{Wide Area Network}. Figure $\ref{ntp}$ shows the simplified structure of how the NTP protocol works to synchronize client computers.
@@ -593,7 +593,7 @@ effect of the algorithm in comparison to the other algorithms.\paragraph*{}
 \end{tabular}
 \subsection{\textbf{Non Linear Least Squares method}}
 \subsubsection{Non Linear Least Squares}
-\textbf{Non-Linear Least Squares} \par
+\textbf{Non-Linear Least Squares} \paragraph*{}
 \begin{figure}[b]
 \centering
 \includegraphics[width=2.5in]{curvefit}
@@ -606,13 +606,13 @@ In order to meet the demand of adjusting the time offset and stabilize the netwo
 \begin{equation}
  f(x_i,\beta)= \beta _1 + \beta_2log(x_i),
 \end{equation}
-where $\beta_1$ and $\beta_2$ are the parameters to be estimated.\par
+where $\beta_1$ and $\beta_2$ are the parameters to be estimated.\paragraph*{}
 Normalized phase error values tend to be small and follow a curve in such away that the maximum value of the phase error should not be greater than the threshold value that was intended to be, the synchronization error. See Figure $\ref{curvefit}$.
-\par
+\paragraph*{}
 Using a set of $n$ data points(corresponding to $n$ neighbors) which are ($x_1$, $y_1$),
 ($x_2$, $y_2$),$\dots$,($x_n$, $y_n$), and a curve (model function)
 $y= f(x, \beta)$, that in addition to the variable $x$ can be used to calculate the offset.
-\par
+\paragraph*{}
 It is desired to find the vector $\beta$ of parameters $(\beta_1, \beta_2)$ such that the curve fits best the given data in the least squares, that is, the sum of squares
 \begin{equation}
     S=\sum_{i=1}^{n}r_i^2 ,
@@ -622,7 +622,7 @@ is minimized, where the residuals $r_i$ are given by
     r_i = y_i - f(x_i,\beta),
 \end{equation}
 for i=1,2,$\dots$, $n$.
-\par
+\paragraph*{}
 The minimum value of $S$ occurs when the gradient is zero. Hence, there are gradient equations to be solved:
 \begin{equation}
     \frac{\partial S}{\partial \beta_j}=2\sum_i r_i\frac{\partial r_i}{\partial \beta_j}=0 \ (j=1,2).
@@ -672,14 +672,14 @@ The normal equations are then
 \begin{equation}
     \left(J^TWJ\right)\Delta  \beta=J^TW\Delta y.
 \end{equation}
-\textbf{Model Design}\par
+\textbf{Model Design}\paragraph*{}
 As the algorithm is decentralized, the next wake-up time of the node depends on the current offset that it has with the other nodes. The distribution of the phase error is the crucial factor in deciding the type of curve to fit in. The phase errors shows how many time units that the neighbor node is out of touch with the node in focus. The larger the phase error is, the more out-of-sync the node is.\par
 The set of data are the measured phase errors of the node and the parameters $\beta_1$ and $\beta_2$ are estimated using a least squares approximation for the function
 \begin{equation}
  f(x_i,\beta)= \beta _1 + \beta_2log(x_i),
 \end{equation}
 The initial values of the parameters $\beta_1$ and $\beta_2$ is estimated taking into account
-the state of the network to be. \par
+the state of the network to be. \paragraph*{}
 As each measurement arrives from the neighbors, the parameters are calculated in such a way that the measurement error from a pre-determined offset value is reduced. This ensures that the offset to be added in the next wake-up time doesn't diverge in a large amount from the predicted value.
 \paragraph*{}
 \begin{tabular}{  l }Algorithm for NLLS \\\hline \hline
