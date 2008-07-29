@@ -1,10 +1,10 @@
 \contentsline {chapter}{\numberline {1}\textbf {Introduction}}{1}
 \contentsline {section}{\numberline {1.1}\textbf {Wireless Sensor Networks}}{1}
-\contentsline {section}{\numberline {1.2}\textbf {Existing Work on WSN clock synchronization}}{2}
+\contentsline {section}{\numberline {1.2}\textbf {Existing Work on WSN synchronization}}{2}
 \contentsline {section}{\numberline {1.3}\textbf {Objective and overview of the research}}{2}
 \contentsline {chapter}{\numberline {2}\textbf {Synchronization in Wireless Sensor Networks}}{4}
 \contentsline {section}{\numberline {2.1}\textbf {Introduction}}{4}
-\contentsline {section}{\numberline {2.2}\textbf {Clock Synchronization in centralized networks}}{5}
+\contentsline {section}{\numberline {2.2}\textbf {Synchronization in centralized networks}}{5}
 \contentsline {section}{\numberline {2.3}\textbf {The need for a synchronized time}}{6}
 \contentsline {subsubsection}{Data Integration}{6}
 \contentsline {subsubsection}{TDMA schedule}{7}
@@ -13,9 +13,8 @@
 \contentsline {subsubsection}{\textbf {Precise synchronization}}{10}
 \contentsline {subsubsection}{\textbf {Lifetime}}{10}
 \contentsline {subsubsection}{\textbf {Scope}}{10}
-\contentsline {subsubsection}{\textbf {Internal vs. External Synchronization}}{11}
+\contentsline {subsubsection}{\textbf {Internal vs. External Synchronization}}{10}
 \contentsline {subsubsection}{\textbf {Energy Budget}}{11}
-\contentsline {subsubsection}{\textbf {Convergence Time}}{11}
 \contentsline {subsubsection}{\textbf {Simplicity}}{11}
 \contentsline {chapter}{\numberline {3}\textbf {Problem Formulation}}{12}
 \contentsline {section}{\numberline {3.1}\textbf {Sources of synchronization error}}{12}
@@ -26,42 +25,41 @@
 \contentsline {subsection}{\numberline {3.4.2}\textbf {Performance metrics of a synchronization protocol}}{17}
 \contentsline {subsubsection}{\textbf {Precision}}{17}
 \contentsline {subsubsection}{\textbf {Energy costs}}{17}
-\contentsline {subsubsection}{\textbf {Memory requirement}}{18}
-\contentsline {subsubsection}{\textbf {Fault tolerance}}{18}
-\contentsline {section}{\numberline {3.5}\textbf {Median algorithm and the setback}}{18}
-\contentsline {chapter}{\numberline {4}\textbf {Synchronicity protocol}}{21}
-\contentsline {section}{\numberline {4.1}\textbf {Synchronization Frequency}}{21}
-\contentsline {section}{\numberline {4.2}\textbf {Lower bound of Synchronization}}{23}
-\contentsline {section}{\numberline {4.3}\textbf {Mathematical Model}}{24}
-\contentsline {subsection}{\numberline {4.3.1}\textbf {Weighted Measurements - Interference-phobic approach}}{25}
-\contentsline {subsection}{\numberline {4.3.2}\textbf {Non Linear Least Squares method}}{27}
-\contentsline {subsubsection}{Non Linear Least Squares}{27}
-\contentsline {subsection}{\numberline {4.3.3}\textbf {Discrete time Kalman Filter for synchronization}}{30}
-\contentsline {subsubsection}{Discrete time Kalman Filter}{30}
-\contentsline {subsubsection}{Model design}{32}
-\contentsline {section}{\numberline {4.4}\textbf {Reducing the guard time}}{33}
-\contentsline {chapter}{\numberline {5}\textbf {Results and Discussion}}{35}
-\contentsline {section}{\numberline {5.1}\textbf {Simulation setup}}{35}
-\contentsline {section}{\numberline {5.2}\textbf {Simulation Results}}{36}
-\contentsline {subsubsection}{\textbf {Case I}}{36}
-\contentsline {subsubsection}{\textbf {Case II}}{37}
-\contentsline {subsubsection}{\textbf {Case III}}{39}
-\contentsline {section}{\numberline {5.3}\textbf {Energy consumption}}{40}
-\contentsline {chapter}{\numberline {6}\textbf {Conclusion and Recommendation}}{43}
-\contentsline {section}{\numberline {6.1}\textbf {Conclusion}}{43}
-\contentsline {section}{\numberline {6.2}\textbf {Recommendation}}{44}
-\contentsline {chapter}{\numberline {A}Simulation Results}{45}
-\contentsline {section}{\numberline {A.1}\textbf {Median as a synchronization method}}{45}
-\contentsline {section}{\numberline {A.2}\textbf {Synchronization frequency}}{45}
-\contentsline {section}{\numberline {A.3}\textbf {Synchronization error for nodes with different speeds}}{47}
-\contentsline {section}{\numberline {A.4}\textbf {Relative performance improvement of the algorithms}}{47}
-\contentsline {chapter}{\numberline {B}MyriaNode}{50}
-\contentsline {subsubsection}{Features}{50}
-\contentsline {subsubsection}{Description}{51}
-\contentsline {subsubsection}{Architecture}{51}
-\contentsline {subsubsection}{Radio Interface}{51}
-\contentsline {subsubsection}{Mechanical and Mounting}{52}
-\contentsline {subsubsection}{Energy Supply}{53}
-\contentsline {subsubsection}{Battery}{53}
-\contentsline {subsubsection}{Programming}{54}
-\contentsline {subsubsection}{Software}{54}
+\contentsline {subsubsection}{\textbf {Memory requirement}}{17}
+\contentsline {subsubsection}{\textbf {Fault tolerance}}{17}
+\contentsline {section}{\numberline {3.5}\textbf {Median algorithm and the setback}}{17}
+\contentsline {chapter}{\numberline {4}\textbf {Synchronicity protocol}}{20}
+\contentsline {section}{\numberline {4.1}\textbf {Synchronization Frequency}}{20}
+\contentsline {section}{\numberline {4.2}\textbf {Mathematical Model}}{22}
+\contentsline {subsection}{\numberline {4.2.1}\textbf {Weighted Measurements - Interference-phobic approach}}{23}
+\contentsline {subsection}{\numberline {4.2.2}\textbf {Non Linear Least Squares method}}{25}
+\contentsline {subsubsection}{Non Linear Least Squares}{25}
+\contentsline {subsection}{\numberline {4.2.3}\textbf {Discrete time Kalman Filter for synchronization}}{28}
+\contentsline {subsubsection}{Discrete time Kalman Filter}{28}
+\contentsline {subsubsection}{Model design}{30}
+\contentsline {section}{\numberline {4.3}\textbf {Reducing the guard time}}{31}
+\contentsline {chapter}{\numberline {5}\textbf {Results and Discussion}}{33}
+\contentsline {section}{\numberline {5.1}\textbf {Simulation setup}}{33}
+\contentsline {section}{\numberline {5.2}\textbf {Simulation Results}}{34}
+\contentsline {subsubsection}{\textbf {Case I}}{34}
+\contentsline {subsubsection}{\textbf {Case II}}{35}
+\contentsline {subsubsection}{\textbf {Case III}}{37}
+\contentsline {section}{\numberline {5.3}\textbf {Energy consumption}}{38}
+\contentsline {chapter}{\numberline {6}\textbf {Conclusion and Recommendation}}{41}
+\contentsline {section}{\numberline {6.1}\textbf {Conclusion}}{41}
+\contentsline {section}{\numberline {6.2}\textbf {Recommendation}}{42}
+\contentsline {chapter}{\numberline {A}Simulation Results}{43}
+\contentsline {section}{\numberline {A.1}\textbf {Median as a synchronization method}}{43}
+\contentsline {section}{\numberline {A.2}\textbf {Synchronization frequency}}{43}
+\contentsline {section}{\numberline {A.3}\textbf {Synchronization error for nodes with different speeds}}{45}
+\contentsline {section}{\numberline {A.4}\textbf {Relative performance improvement of the algorithms}}{45}
+\contentsline {chapter}{\numberline {B}MyriaNode}{48}
+\contentsline {subsubsection}{Features}{48}
+\contentsline {subsubsection}{Description}{49}
+\contentsline {subsubsection}{Architecture}{49}
+\contentsline {subsubsection}{Radio Interface}{49}
+\contentsline {subsubsection}{Mechanical and Mounting}{50}
+\contentsline {subsubsection}{Energy Supply}{51}
+\contentsline {subsubsection}{Battery}{51}
+\contentsline {subsubsection}{Programming}{52}
+\contentsline {subsubsection}{Software}{52}
