@@ -86,7 +86,7 @@
 \section*{\begin{center}Abstract\end{center}}
 Synchronization is a crucial component of infrastructure for \textit{Wireless Sensor Networks}(WSNs). Most applications of WSNs
 make extensive use of time synchronization mechanisms like \emph{Time Division Multiple Access} \nomenclature{TDMA}{Time Division Multiple Access} scheduling, accurate timestamping of events, coordinate activities of the network or data fusion. The unique requirements of WSNs, compared to centralized networks, in terms of precision, lifetime, energy and scope of the synchronization achieved, make the synchronization methods developed for centralized systems unsuitable for WSNs. This motivates the research of synchronization methods which are aligned to the specific properties of WSN. Median algorithm is implemented currently on the wireless sensor nodes in MyriaNed$\footnote{MyriaNed is a project to create a large functional network of 10,000 nodes with wireless communication for research on protocols, power management, programming models, and security.}$ project.
-\paragraph*{} 
+\paragraph*{}
 In this research, the flaw in the Median algorithm is explored and three algorithms have been proposed to achieve a decentralized, stable, and energy-efficient synchronization of a WSN. The algorithms achieve synchronization by using the phase error of a node's wake-up time with that of the neighboring node's, without actually exchanging the information about the clock time of the sender. So, the method avoids time keeping on the messages (time stamping) which reduces the message overload. The algorithms can be integrated with the slot allocation algorithm to form the MAC\nomenclature{MAC}{Mediua Access Protocol} layer protocol for a better throughput. The research is concluded with the comparison of three algorithms in terms of energy consumption and performance with the Median. A low energy-consumption or a better convergence as well as the length of the guard time can be used as a metric for selecting the algorithm.
 \tableofcontents
 \listoffigures
@@ -167,7 +167,7 @@ TDMA is a channel access method for shared medium (usually radio) networks. It a
 channel by dividing the signal into different time slots. The users transmit in rapid succession, one after the other, each using its
 own time slot. This allows multiple stations to share the same transmission medium while using only the part of the bandwidth they
 require. Figure $\ref{tdmaframe}$ shows how a time frame is divided into receiving and transmitting slots. In the time frame, the active
-slot is divided into one transmitting slot and many receiving slots. 
+slot is divided into one transmitting slot and many receiving slots.
 \begin{figure}
 \centering
 \includegraphics[width=0.6 \textwidth]{tdmaframe}
@@ -209,7 +209,7 @@ last longer. Some applications might need a global timescale while some others c
 numbers. Now, a very good synchronization with \textit{GPS}\nomenclature{GPS}{Global Positioning System} receivers can be obtained, but it will be unreasonable to put an expensive and energy-hungry GPS receivers on a sensor node.
 \end{itemize}
 All the above factors make the problem of time synchronization more challenging in case of WSNs. Keeping this in mind, we can formulate
-some design requirements for WSN frame synchronization. 
+some design requirements for WSN frame synchronization.
 \section{\textbf{Requirements of the Algorithm for MyriaNed}}
 \subsubsection{\textbf{Precise synchronization}}
 Synchronization cab be of two types: Course and Precise synchronization. Course synchronization is implemented when a node is joining in the network. After a newly joining node listened the synchronization information sent by the other nodes in the network, it adjusts its time slot reference to the time when it detects the synchronization information, which includes the propagation delay. Precise synchronization is implemented when a node has already joined in the network, which repeatedly adjusts the diversion of its time slot reference caused by propagation delay and clock drift. In this research, we focus on precise synchronization.
@@ -338,7 +338,7 @@ C_i(t) & = & C_i(t_o) + (t-t_o) +\frac{\Delta f}{f_o}(t-t_o) \\
 \end{eqnarray*}
 The amplitude of the short term variations due to noise $f_r(t)$ (clock
 jitter) is small enough that they do not cause the clock to
-accelerate or decelerate in a large amount in the long run. 
+accelerate or decelerate in a large amount in the long run.
 \paragraph*{}
 Thus, the phase or time offset between two clocks at any given time results from: a
 combination of initial phase offset, frequency bias, calibration
@@ -349,7 +349,7 @@ model the clock drift of an oscillator.\paragraph*{}
 \textbf{Definition}: A clock cycle (clk)(\nomenclature{\textit{clk}}{A clock cycle} )
 is the time between two adjacent pulses of the oscillator. The
 number of these pulses per second is known as the clock speed,
-measured in kHz, MHz.\paragraph*{} 
+measured in kHz, MHz.\paragraph*{}
 \textbf{Deefinition}: Wake-up time \nomenclature{\textit{Wake-up time}}{Time that the node starts listening.} is the time that the node starts to listen to the channel.
 \section{\textbf{Building blocks and performance metrics of a synchronization protocol}}
 \subsection{\textbf{Building blocks of a synchronization block}}
@@ -471,7 +471,7 @@ relation,
 It is a good practice to design systems having a $T_{sync}$ greater than the time frame. It increases the battery life of a node. However,
 this has a negative impact on the communciation of the nodes.
 \paragraph*{}
-To obtain the value of $T_{sync}$ for a particular system with a given duty cycle, 
+To obtain the value of $T_{sync}$ for a particular system with a given duty cycle,
 \begin{equation}
 t_{guard} \geq 4\rho \frac{T_{sync}}{T}
 \end{equation}
@@ -582,7 +582,7 @@ Hence, the weight moves towards the large phase errors if the node is a new-come
 \paragraph*{}
 Using the weighted approach, a series of measurements will be used to estimate the next wake-up time of the node, giving less
 value/emphasis to the nodes which are out of reach from the other nodes. The simulation result is shown in the next section to see the
-effect of the algorithm in comparison to the other algorithms.\paragraph*{} 
+effect of the algorithm in comparison to the other algorithms.\paragraph*{}
 \begin{tabular}{  l }Algorithm for WM \\\hline \hline
 1. Nodes broadcast packets. \\  2. Each receiver records the time that the packet is received. \\
 3. Each receiver i computes its phase error to any other node j in the neighborhood. \\
@@ -782,7 +782,7 @@ be put in the previous value. It indicates how fast/slow is the next wake up tim
 The initial estimates are selected from the previous firing time of the node. Hence,the initial values of $x$ and $P$ are estimated from the previous values, one period earlier. This ensures that the nodes are on the same track as the previous time, since the neighbors remain the same with some exception of mobility and interference. \paragraph*{}
 Hence, to tackle the dynamic nature of the WSN, the new node joining the network should be synchronized with the already established "status quo" of the network. In the filter design, the covariance matrices $R$ and $Q$ also have a significant role in the overall implementation of the algorithm. $R$ represents how we value the measured values to affect the result of the outcome and $Q$ sends a signal as to how we have to evaluate the estimated value. \paragraph*{} The estimated values, which base on a stable background are more prone to be right after a series of firings. On the contrary, the measured values have large deviations in such away that more of the weight is going to the estimated values, tending to stabilize the network. \paragraph*{} The update equations are applied in the series of measurement
 to end up in an optimal(next time) wake-up time of the node.
-\paragraph*{} 
+\paragraph*{}
 \begin{tabular}{  l }Algorithm for Kalman Filter \\ \hline \hline
 1. Nodes broadcast packets. \\  2. Each receiver records the time that the packet is received. \\
 3. Each receiver i computes its phase error to any other node j in the neighborhood. \\
