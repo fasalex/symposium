@@ -6,37 +6,37 @@
 \contentsline {figure}{\numberline {2.4}{\ignorespaces TDMA Channel access}}{8}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {3.1}{\ignorespaces Measured time versus absolute time}}{15}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Building blocks of a synchronization algorithm}}{16}
-\contentsline {figure}{\numberline {3.3}{\ignorespaces A WSN scenario}}{18}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Building blocks of a synchronization algorithm}}{17}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces A WSN scenario}}{19}
 \contentsline {figure}{\numberline {3.4}{\ignorespaces Using median for phase error correction}}{19}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Guard time for drift compensation}}{21}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Weight factors for the phase error distribution}}{24}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Curve fitting using logarithmic function}}{25}
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Guard time and }}{31}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Guard time for drift compensation}}{22}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Weight factors for the phase error distribution}}{25}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Curve fitting using logarithmic function}}{28}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Guard time and }}{32}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Abstraction Model}}{34}
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Synchronization error for 20 nodes - Static}}{35}
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Synchronization error for 50 nodes - Static}}{36}
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Synchronization error for 20 nodes - Speed 6km/hr}}{36}
-\contentsline {figure}{\numberline {5.5}{\ignorespaces Synchronization error for 50 nodes - Speed 20km/hr}}{37}
-\contentsline {figure}{\numberline {5.6}{\ignorespaces Synchronization error for 50 nodes - Speed 6km/hr}}{38}
-\contentsline {figure}{\numberline {5.7}{\ignorespaces Synchronization error for 50 nodes - Speed 20km/hr}}{39}
-\contentsline {figure}{\numberline {5.8}{\ignorespaces The energy consumption of Guard time per RX slot}}{39}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Abstraction Model}}{35}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Synchronization error for 20 nodes - Static}}{36}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Synchronization error for 50 nodes - Static}}{37}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Synchronization error for 20 nodes - Speed 6km/hr}}{37}
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Synchronization error for 50 nodes - Speed 20km/hr}}{38}
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Relative performance improvement of algorithms from Median - 20 nodes}}{39}
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Synchronization error for 50 nodes - Speed 6km/hr}}{39}
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Synchronization error for 50 nodes - Speed 20km/hr}}{40}
+\contentsline {figure}{\numberline {5.9}{\ignorespaces Relative performance improvement of algorithms from Median - 50 nodes}}{40}
+\contentsline {figure}{\numberline {5.10}{\ignorespaces The energy consumption of Guard time per RX slot}}{41}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {A.1}{\ignorespaces Median algorithm with different gain factors}}{43}
-\contentsline {figure}{\numberline {A.2}{\ignorespaces Synchronization error of a KF for static nodes with different $T_{sync}$}}{44}
-\contentsline {figure}{\numberline {A.3}{\ignorespaces Synchronization error of a KF for nodes at 6$km/hr$ with different $T_{sync}$}}{44}
-\contentsline {figure}{\numberline {A.4}{\ignorespaces Synchronization error of a KF for nodes at 20$km/hr$ with different $T_{sync}$}}{45}
-\contentsline {figure}{\numberline {A.5}{\ignorespaces Synchronization error for 20 nodes moving at different speed}}{46}
-\contentsline {figure}{\numberline {A.6}{\ignorespaces Synchronization error for 50 nodes moving at different speed}}{46}
-\contentsline {figure}{\numberline {A.7}{\ignorespaces Relative performance improvement of algorithms from Median - 20 nodes}}{47}
-\contentsline {figure}{\numberline {A.8}{\ignorespaces Relative performance improvement of algorithms from Median - 50 nodes}}{47}
+\contentsline {figure}{\numberline {A.1}{\ignorespaces Median algorithm with different gain factors}}{45}
+\contentsline {figure}{\numberline {A.2}{\ignorespaces Synchronization error of a KF for static nodes with different $T_{sync}$}}{46}
+\contentsline {figure}{\numberline {A.3}{\ignorespaces Synchronization error of a KF for nodes at 6$km/hr$ with different $T_{sync}$}}{47}
+\contentsline {figure}{\numberline {A.4}{\ignorespaces Synchronization error of a KF for nodes at 20$km/hr$ with different $T_{sync}$}}{47}
+\contentsline {figure}{\numberline {A.5}{\ignorespaces Synchronization error for 20 nodes moving at different speeds}}{48}
+\contentsline {figure}{\numberline {A.6}{\ignorespaces Synchronization error for 50 nodes moving at different speeds}}{48}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {B.1}{\ignorespaces MyriaNode v2.0}}{48}
-\contentsline {figure}{\numberline {B.2}{\ignorespaces MyriaNode Architecture}}{49}
-\contentsline {figure}{\numberline {B.3}{\ignorespaces Radio Interface.}}{49}
-\contentsline {figure}{\numberline {B.4}{\ignorespaces External interfaces.}}{50}
-\contentsline {figure}{\numberline {B.5}{\ignorespaces MyriaNode dimensions}}{51}
-\contentsline {figure}{\numberline {B.6}{\ignorespaces Battery structure of a MyriaNode}}{52}
+\contentsline {figure}{\numberline {B.1}{\ignorespaces MyriaNode v2.0}}{49}
+\contentsline {figure}{\numberline {B.2}{\ignorespaces MyriaNode Architecture}}{50}
+\contentsline {figure}{\numberline {B.3}{\ignorespaces Radio Interface.}}{50}
+\contentsline {figure}{\numberline {B.4}{\ignorespaces External interfaces.}}{51}
+\contentsline {figure}{\numberline {B.5}{\ignorespaces MyriaNode dimensions}}{52}
+\contentsline {figure}{\numberline {B.6}{\ignorespaces Battery structure of a MyriaNode}}{53}

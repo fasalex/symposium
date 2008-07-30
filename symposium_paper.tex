@@ -13,6 +13,7 @@
 % paper title
 \title{Decentralized Frame Synchronization of a TDMA-based Wireless Sensor Network}
 % author names and affiliations
+
 % use a multiple column layout for up to three different
 % affiliations
 \author{\IEEEauthorblockN{}
@@ -28,27 +29,8 @@ Email: f.a.assegei@student.tue.nl}}
 \maketitle
 
 \begin{abstract}
-Synchronization is a crucial component of infrastructure for
-\textit{Wireless Sensor Networks}(WSNs). Most applications of WSNs
-make extensive use of synchronization mechanisms like  \emph{Time
-Division Multiple Access} (TDMA) scheduling, accurate timestamping
-of events, coordinate activities of the network or data fusion. The
-unique requirements of WSNs in terms of precision, lifetime, energy
-and scope of the synchronization achieved make the traditional
-synchronization methods unsuitable for WSNs. This motivates the
-research of synchronization methods which are aligned to the
-specific challenges posed on WSN synchronization. \par In this
-research, three algorithms have been developed to achieve a
-decentralized, fault-tolerant and energy-efficient synchronization
-of a TDMA-based WSN. The algorithms achieve synchronization by using
-the phase error of a node's wake-up time with that of the
-neighboring node's, without actually exchanging the information
-about the clock time of the sender. So, the methods avoid time
-keeping on the messages (time stamping) which reduces the message
-overload. The algorithms can be integrated with the slot allocation
-algorithm  for a better throughput. The research is concluded with
-the comparison of these algorithms in terms of energy consumption
-and performance with the Median algorithm which is currently implemented.
+Synchronization is a crucial component of infrastructure for \textit{Wireless Sensor Networks} (WSNs). Most applications of WSNs make extensive use of time synchronization mechanisms like \emph{Time Division Multiple Access} (TDMA) scheduling, accurate timestamping of events, coordinate activities of the network or data fusion. The unique requirements of WSNs, compared to centralized networks, in terms of precision, lifetime, energy and scope of the synchronization achieved, make the synchronization methods developed for centralized systems unsuitable for WSNs. This motivates the research of synchronization methods which are aligned to the specific properties of WSN. Median algorithm is implemented currently on the wireless sensor nodes in MyriaNed$\footnote{MyriaNed is a project to create a large functional network of 10,000 nodes with wireless communication for research on protocols, power management, programming models, and security.}$ project.
+In this research, the flaw in the Median algorithm is explored and three algorithms have been proposed to achieve a decentralized, stable, and energy-efficient synchronization of a WSN. The algorithms achieve synchronization by using the phase error of a node's wake-up time with that of the neighboring node's, without actually exchanging the information about the clock time of the sender. So, the method avoids time keeping on the messages (time stamping) which reduces the message overload. The algorithms can be integrated with the slot allocation algorithm to form the \textit{Media Access Protocol} (MAC) layer protocol for a better throughput. The research is concluded with the comparison of three algorithms in terms of energy consumption and performance with the Median. A low energy-consumption or a better convergence as well as the length of the guard time can be used as a metric for selecting the algorithm.
 \end{abstract}
 \begin{IEEEkeywords}
 adhoc networks, frame synchronization, decentralized synchronization, wireless sensor networks.
@@ -140,7 +122,7 @@ All the above factors result in the following errors between two nodes:
 %\caption{Measured time versus real time}
 %\label{fig:clocktimevsrealtime}
 %\end{figure}
- From the definition of frequency:
+From the definition of frequency:
 \begin{equation}
 f = d\phi/dt \label{freq_defn} ,
 \end{equation}
@@ -173,16 +155,16 @@ C_i(t) - C_i(t_o) = \frac{1}{f_o} \int^{t}_{t_o}f_i(\tau)d\tau ,
 \end{equation}
 \begin{eqnarray*}
 C_i(t) - C_i(t_o) & = & \frac{1}{f_o} \int^{t}_{t_o}{[f_o + \Delta f + a(\tau-t_o)  } \\
- &  & {} + \Delta f_e(\tau-t_o) + f_r(\tau)]d\tau ,
+ &  & {} + \Delta f_e(\tau) + f_r(\tau)]d\tau ,
 \label{fasika}
 \end{eqnarray*}
 \begin{eqnarray*}
 C_i(t) & = & C_i(t_o) + (t-t_o) +\frac{\Delta f}{f_o}(t-t_o) \\
-& & + \frac{a}{2f_o}(t-t_o)^2 + \frac{\Delta f_e}{2f_o}(t-t_o)^2 +
+& & + \frac{a}{2f_o}(t-t_o)^2 + \frac{1}{f_o}\int^{t}_{t_o}{f_e(\tau)d\tau} +
 \frac{1}{f_o}\int^{t}_{t_o}{f_r(\tau)d\tau} .
 \end{eqnarray*}
 \subsection{\textbf{Median algorithm and the setback}}
-\par The Median algorithm is currently implemented in the MyriaNode.
+\par The Median algorithm is currently implemented in the MyriaNode. With the simplicity concerning the computational need, it is the best fit for WSN requirments discussed in the previous secion.
 The algorithm is described as follows:
 \begin{enumerate}
 \item Nodes broadcast packets.
@@ -204,7 +186,7 @@ t_{i}^{(n+1)} = t_i^{(n)} + T_i^{(n)} - k\xi_i^{(n)},
 \end{equation}
 where $k$ is the gain factor.
 \end{enumerate}
-\begin{figure}[b]
+\begin{figure}
 \centering
 \includegraphics[width=2.5in]{node_field}
 \caption{A WSN scenario} \label{wsn}
@@ -217,12 +199,12 @@ performance.
 \begin{equation}
 \xi_9 = \frac{\Delta t_{910} + \Delta t_{39}}{2}.
 \end{equation}
-\begin{figure}[t]
+\begin{figure}
 \centering
 \includegraphics[width= 2.5in]{offsetpic}
 \caption{Using median for phase error correction} \label{fasik}
 \end{figure}
- With Node 10 being isolated from the well established
+With Node 10 being isolated from the well established
 network, it has a major drift from the other nodes. Being in sync
 with the other nodes, Node 9 will drift away from the network after
 its adjustment with the Node 10. It will take more time to
@@ -231,15 +213,9 @@ synchronization using the Median.
 \par So, in order to address this problem, three algorithms are explored in the next section to realize an energy-efficient, more precise and simple frame synchronization.
 \section{\textbf{Synchronicity protocol}}
 \subsection{\textbf{Synchronization Frequency}}
- \textbf{Precise synchronization}: Precise synchronization is implemented when a node has already joined in the network, which repeatedly adjusts the diversion of its time slot reference caused by propagation delay and clock drift. \par 
-\par 
+\textbf{Precise synchronization}: Precise synchronization is implemented when a node has already joined in the network, which repeatedly adjusts the diversion of its time slot reference caused by propagation delay and clock drift. \par 
 Decreasing the timing of the synchronization and do periodic execution of the synchronization of the algorithm greatly reduces
 the energy consumption of the WSN. Thus, a synchronization period, $T_{sync}$, is defined as the period in which the network can stay synchronized without the application of the synchronization algorithm.
-\begin{figure}
-\centering
-\includegraphics[width=2.5in]{guardtime}
-\caption{Guard time of the nodes} \label{guardtime}
-\end{figure}
 \par A time slot can be defined as being expressed in a
 number of clock cycles as
 \begin{equation}
@@ -255,9 +231,13 @@ t_{diff} = 2\frac{T_{sync}}{T}\rho ,
 where the factor of $2$ reflects the worst case scenario where each
 node's clock drifts in the opposite direction.\par
 In achieving frame synchronization in a TDMA scheduling, a guard time is given for a fault tolerance which is used to accommodate the
-phase errors, as shown in Figure $\ref{guardtime}$.  Since the
-relative time difference between two nodes can be in two direction,
-the guard time needs to be twice $t_{diff}$,
+phase errors, as shown in Figure $\ref{guardtime}$. 
+\begin{figure}[b]
+\centering
+\includegraphics[width=2.5in]{guardtime}
+\caption{Guard time of the nodes} \label{guardtime}
+\end{figure}
+Since the relative time difference between two nodes can be in two direction, the guard time needs to be twice $t_{diff}$,
 \begin{equation}
 t_{guard}= 2t_{diff} = 4\frac{T_{sync}}{T}\rho.
 \end{equation}
@@ -390,30 +370,12 @@ network.
 whereas the second one describes how the node is positioned in the network topology which surrounds it.
 \par
 Using the WM approach, a series of measurements will be used to estimate the next wake-up time of the node, giving less value/emphasis to the nodes which are out of reach from the neighboring nodes.
-\subsubsection{\textbf{Non Linear Least Squares - Interference
-elimination}}
-\textbf{Non-Linear Least Squares} \par
-\begin{figure}[b]
-\centering
-\includegraphics[width=2.5in]{curvefit}
-\caption{Curve fitting using logarithmic function} \label{curvefit}
-\end{figure}
-Non Linear Least Squares (NLLS) curve fitting  is a mathematical procedure for
-finding the best fitting curve to a given set of points by
-minimizing the sum of the squares of the offsets ("the residuals")
-of the points from the curve. \par
-In order to meet the demand of adjusting the time offset and stabilize the network, the logarithmic curve is chosen. A logarithmic function can be used to represent the distribution of the offsets in the neighborhood,
-\begin{equation}
- f(x_i,\beta)= \beta _1 + \beta_2log(x_i),
-\end{equation}
-where $\beta_1$ and $\beta_2$ are the parameters to be estimated.\par
-Normalized phase error values tend to be small and follow a curve in such away that the maximum value of the phase error should not be greater than the threshold value that was intended to be, the synchronization error. See Figure $\ref{curvefit}$.
-\par
-Using a set of $n$ data points(corresponding to $n$ neighbors) which are ($x_1$, $y_1$),
-($x_2$, $y_2$),$\dots$,($x_n$, $y_n$), and a curve (model function)
-$y= f(x, \beta)$, that in addition to the variable $x$ can be used to calculate the offset.
-\par
-It is desired to find the vector $\beta$ of parameters $(\beta_1, \beta_2)$ such that the curve fits best the given data in the least squares, that is, the sum of squares
+\subsubsection{\textbf{Non Linear Least Squares}}
+\textbf{Non-Linear Least Squares} \par 
+Non Linear Least Squares (NLLS) is a method to fit a set of $n$ observations with a model that is non-linear in $m$ unknown parameters by minimizing the sum of the squares of the errors ("the residuals"). 
+\par 
+Using a set of $n$ data points which are ($x_1$, $y_1$), ($x_2$, $y_2$),$\dots$,($x_n$, $y_n$), and a curve (model function) $y= f(x, \beta)$, that in addition to the variable $x$ also depends on $m$ parameters($\beta_1,\beta_2,...,\beta_m$). 
+It is desired to find the vector $\beta$ of parameters such that the curve best fits the given data in the least squares, that is, the sum of squares
 \begin{equation}
     S=\sum_{i=1}^{n}r_i^2 ,
 \end{equation}
@@ -422,20 +384,18 @@ is minimized, where the residuals $r_i$ are given by
     r_i = y_i - f(x_i,\beta),
 \end{equation}
 for i=1,2,$\dots$, $n$.
-\par
-The minimum value of $S$ occurs when the gradient is zero. Hence, there are gradient equations to be solved:
+\par 
+The minimum value of $S$ occurs when the gradient is zero. Hence, there are $m$ gradient equations to be solved:
 \begin{equation}
-    \frac{\partial S}{\partial \beta_j}=2\sum_i r_i\frac{\partial r_i}{\partial \beta_j}=0 \ (j=1,2).
+    \frac{\partial S}{\partial \beta_j}=2\sum_i r_i\frac{\partial r_i}{\partial \beta_j}=0 \ (j=1,2...,m).
 \end{equation}
 In a non-linear system, the derivatives $\frac{\partial r_i}{\partial \beta_j}$ are functions of both the independent
-variable and the parameters. These gradient equations do not have a
-closed solution. Instead, initial values must be chosen for the
-parameters. Then, the parameters are refined iteratively, that is,
-the values are obtained by successive approximation,
+variable and the parameters. These gradient equations do not have a closed solution. Instead, initial values must be chosen for the
+parameters. Then, the parameters are refined iteratively, that is, the values are obtained by successive approximation,
 \begin{equation}
     \beta_j^{k+1}=\beta^k_j+\Delta \beta_j.
 \end{equation}
-Here, $k$ is an iteration number and the vector of increments, $\Delta \beta_j$, is known as the shift vector. At each iteration,
+for $j=1,2...,m.$ Here, $k$ is an iteration number and the vector of increments, $\Delta \beta_j$, is known as the shift vector. At each iteration,
 the model is linearized by approximation to a first-order Taylor series expansion about $\beta^k$.
 \begin{equation}
     f(x_i,\beta)\approx f(x_i,\beta^k) +\sum_j \frac{\partial f(x_i, \beta^k)}{\partial \beta_j} \left(\beta^k_j -\beta_j \right)
@@ -451,7 +411,7 @@ next. Thus, in terms of the linearized model,
 \end{equation}
 and the residuals are given by
 \begin{equation}
-    r_i=\Delta y_i- \sum_{j=1}^{2} J_{ij}\Delta\beta_j,
+    r_i=\Delta y_i- \sum_{j=1}^{m} J_{ij}\Delta\beta_j,
 \end{equation}
 where
 \begin{equation}
@@ -462,16 +422,25 @@ equating to $0$, a matrix notation can be found
 \begin{equation}
     \left(J^TJ\right)\Delta  \beta=J^T\Delta y
 \end{equation}
-When the observations are not equally reliable, as in case of WSNs
-which are being studied, a weighted sum of squares may be minimized
-using the weights (Figure $\ref{weight}$),
+/%When the observations are not equally reliable, as in case of WSNs which are being studied, a weighted sum of squares may be minimized using the weights (Figure $\ref{weight}$), \begin{equation}     S=\sum_{i=1}^{i=n}W_{ii}r_i^2. \end{equation} The normal equations are then \begin{equation}     \left(J^TWJ\right)\Delta  \beta=J^TW\Delta y. \end{equation}
+\textbf{Model Design}\par
+As the algorithm is decentralized, the next wake-up time of the node depends on the current offset that it has with the other nodes. The distribution of the phase error is the crucial factor in deciding the type of curve to fit in. The phase errors shows how many time units that the neighbor node is out of touch with the node in focus. The larger the phase error is, the more out-of-sync the node is.\par
+The set of data are the measured phase errors of the node with its neighbors.  In order to meet the demand of adjusting the time offset and stabilize the network, the logarithmic curve with the model 
 \begin{equation}
-    S=\sum_{i=1}^{i=n}W_{ii}r_i^2.
-\end{equation}
-The normal equations are then
-\begin{equation}
-    \left(J^TWJ\right)\Delta  \beta=J^TW\Delta y.
-\end{equation}
+ f(x_i,\beta)= \beta _1 + \beta_2log(x_i),
+\end{equation} 
+is chosen. \par 
+A logarithmic function can be used to represent the distribution of the offsets in the neighborhood, as shown in Figure $\ref{curvefit}$. 
+Normalized phase error values tend to be small and follow a curve in such away that the maximum value of the phase error should not be greater than the threshold value that was intended to be, the synchronization error. 
+\begin{figure}
+\centering
+\includegraphics[width=2.5in]{curvefit}
+\caption{Curve fitting using logarithmic function} \label{curvefit}
+\end{figure}
+\par 
+The initial values of the parameters $\beta_1$ and $\beta_2$ is estimated taking into account the state of the network to be. \par 
+As each measurement arrives from the neighbors, the parameters are calculated in such a way that the measurement error from a pre-determined offset value is reduced. This ensures that the offset to be added in the next wake-up time doesn't diverge in a large amount from the predicted value.
+%When the observations are not equally reliable, as in case of WSNs which are being studied, a weighted sum of squares may be minimized using the weights (Figure $\ref{weight}$), \begin{equation}  S=\sum_{i=1}^{n}W_{ii}r_i^2. \end{equation} The normal equations are then \begin{equation}   \left(J^TWJ\right)\Delta  \beta=J^TW\Delta y. \end{equation}
 \textbf{Model Design}\par
 As the algorithm is decentralized, the next wake-up time of the node depends on the current offset that it has with the other nodes. The distribution of the phase error is the crucial factor in deciding the type of curve to fit in. The phase errors shows how many time units that the neighbor node is out of touch with the node in focus. The larger the phase error is, the more out-of-sync the node is.\par
 The set of data are the measured phase errors of the node and the parameters $\beta_1$ and $\beta_2$ are estimated using a least squares approximation for the function
@@ -708,6 +677,7 @@ In general, the Kalman filter has a better precision and convergence
 speed than the rest whereas WM and NLLS has a better tolerance to a dynamic network.
 \subsection{\textbf{Measurements concerning the energy consumption}}
 \begin{figure}[b]
+\centering
 \includegraphics[width=0.5\textwidth]{guardsave}
 \caption{The energy consumption of Guard time per RX slot}
 \label{energyguard}
@@ -750,31 +720,16 @@ node in general. Hence, by decreasing the guard time in proportion with the
 performance enhancement, energy for the demand of
 the algorithm can be saved.
 \section{\textbf{Conclusion and Recommendation}}
- A decentralized frame synchronization of a TDMA-based WSN is achieved
-using Weighted Measurements(WM), Non Linear Least Squares(NLLS) and
-Kalman Filter(KF) methods. A simulation is conducted with different scenarios, especially
-taking the effect of mobility. A comparison of the algorithms with the currently implemented Median algorithm
-is conducted and the results are presented.
+A decentralized frame synchronization of a TDMA-based WSN is achieved using Weighted Measurements (WM), Non Linear Least Squares(NLLS) and Kalman Filter (KF) methods. A simulation is conducted with different scenarios, especially taking the effect of mobility. A comparison of the algorithms with the currently implemented Median algorithm is conducted and the results are presented.
 \par
-In a static environment, the KF performs the best whereas the WM and NLLS have shown a similar performance as the
-Median. In terms of convergence time, all have shown a similar performance.
-\par
-A $60\%$ improvement in the performance of the synchronization can
-achieved on average using the Kalman Filter for dynamic WSN. A lower
-improvement, $5\%$ and $4\%$ is obtained using WM and NLLS methods
-for the synchronization of TDMA frames. Both WM and NLLS show a better tolerance
-against Median in a dynamic network. KF estimation of
-the optimal offset is the best with its iterative capability and
-adaptive nature.\par Median is shown to be still the best choice in a static environment with the current implementation,with less energy consumption and simplicity into consideration. But, for dynamic networks, the other algorithms perform better, in terms of
-performance.
-\par But in the downside, the energy consumption of the algorithms is
-greater than the Median algorithm's energy consumption as the algorithms are more complex computationally. Analysis is made and presented about the energy saving made by decreasing the guard time of the slot.
-\par  As suggestions for future work, a Software Defined Radio (SDR) for the inspection of the nodes' wake-up times, evaluation and enhancements on the algorithms, being implemented on the MyriaNodes, can be used. In addition, different software power minimization techniques can be applied to further reduce the power consumption of the algorithms' implementation, making it more energy-efficient for implementation.  As part of reducing the phase error between the clocks, compensating the frequency error using the available resource on the sensor nodes can be used. This can be achieved using the resources like the temperature sensor in the
-microcontroller of the MyriaNode.
-\section{\textbf{Acknowledgment}}This research is part of the MyriaNed$\footnote{MyriaNed is a project to create a large
-functional network of 10,000 nodes with wireless communication for
-research on protocols, power management, programming models, and
-security.}$ Project. The author would like to thank Frits van der Wateren from Chess$\cite{chess}$ Innovation Team for his continuous support, suggestions and advice during the project. Many thanks to dr.ir. Peter Smulders, prof.dr.ir. Erik Fledderus and prof.dr.ir. Peter Baltus from TU/e for their guidance.
+In a static environment, the KF performs the best whereas the WM and NLLS have shown a similar performance as the Median. In terms of convergence time, all have shown a similar performance.
+\par 
+A $60\%$ improvement in the performance of the synchronization can achieved on average using the Kalman Filter for dynamic WSN. A lower improvement, $8\%$ and $6\%$ is obtained using WM and NLLS methods for the synchronization of TDMA frames. Both WM and NLLS show a better tolerance against Median in a dynamic network. Having a faster adaptation to the changes in the network made the algorithms preffered ones to a network characterized with dynamic behaviour. KF estimation of the next wake up time is the best with its iterative capability and adaptive nature. KF has also better stability, better resistant to topology changes occuring in the network.
+\par 
+Using these algorithms for a TDMA-based WSN synchronization( WM, NLLS and KF), the precision of the network as well as the stablity of the algorithm increases. This in turn has a positive impact on the energy consumption of the nodes because the synchronization period, $T_{sync}$ can be increased or the guard time of the node's frame, $t_{guard}$ can be reduced to achieve the same performance as the Median algorithm. Results are presented and discussed.
+\par But in the downside, the energy consumption of the algorithms is greater than the Median algorithm's energy consumption as the algorithms are more complex computationally. Analysis is made and presented about the energy saving made by decreasing the guard time of the slot. Communication is in general around 5 times costlier than computation on MyriaNodes. A net gain of battery life can thus be achieved by reducing the guard time. Median is shown to be still the best choice in a static environment with the current implementation,with less energy consumption and simplicity into consideration. But, for dynamic networks, the other algorithms perform better, in terms of performance. KF has the edge due to its adaptive nature.
+\par Different software power minimization techniques can be applied to further reduce the power consumption of the proposed algorithms implementation, making them more energy efficient for implementation. Upon the completion of the ongoing project on developing a Software Defined Radio (SDR) for the inspection of the nodes' wake-up times, a proper evaluation and enhancements on the algorithms, being implemented on the MyriaNodes, is achievable. Real time feedbacks can be used to improve the algorithms towards perfection. 
+\section{\textbf{Acknowledgment}}This research is part of the MyriaNed$\footnote{MyriaNed is a project to create a large functional network of 10,000 nodes with wireless communication for research on protocols, power management, programming models, and security.}$ Project. The author would like to thank Frits van der Wateren from Chess$\cite{chess}$ Innovation Team for his continuous support, suggestions and advice during the project. Many thanks to dr.ir. Peter Smulders, prof.dr.ir. Erik Fledderus and prof.dr.ir. Peter Baltus from TU/e for their guidance.
 \begin{thebibliography}{\textbf{References}}
 \bibitem{2}J.Elson, L.Girod, D.Estrin. Fine-grained network time synchronization using reference broadcasts. Proceedings of the 5th Symposium on Operating Systems Design and Implementation ,2002.
 \bibitem{3}Q.Yang, and et al. A Decentralized Slot Synchronization Algorithm for TDMA-Based Ad Hoc Networks.

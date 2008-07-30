@@ -1,5 +1,5 @@
 \nomenclatureentry{aTDMA@[{TDMA}]\begingroup Time Division Multiple Access\nomeqref {0}|nompageref}{ii}
-\nomenclatureentry{aMAC@[{MAC}]\begingroup Mediua Access Protocol\nomeqref {0}|nompageref}{ii}
+\nomenclatureentry{aMAC@[{MAC}]\begingroup Media Access Protocol\nomeqref {0}|nompageref}{ii}
 \nomenclatureentry{aWSN@[{WSN}]\begingroup Wireless Sensor Network\nomeqref {1.0}|nompageref}{1}
 \nomenclatureentry{aRBS@[{RBS}]\begingroup Refererence Broadcast Synchronization\nomeqref {1.0}|nompageref}{2}
 \nomenclatureentry{aCSMA@[{CSMA}]\begingroup Carrier Sense Multiple Access\nomeqref {2.0}|nompageref}{4}
@@ -11,9 +11,9 @@
 \nomenclatureentry{a$\rho$@[{$\rho$}]\begingroup Maximum clock drift\nomeqref {3.4}|nompageref}{14}
 \nomenclatureentry{a\textit{clk}@[{\textit{clk}}]\begingroup A clock cycle\nomeqref {3.6}|nompageref}{16}
 \nomenclatureentry{a\textit{Wake-up time}@[{\textit{Wake-up time}}]\begingroup Time that the node starts listening.\nomeqref {3.6}|nompageref}{16}
-\nomenclatureentry{a$t_{slot}$@[{$t_{slot}$}]\begingroup Time duration of a slot\nomeqref {4.1}|nompageref}{20}
-\nomenclatureentry{a$T_{sync}$@[{$T_{sync}$}]\begingroup Synchronization frequency\nomeqref {4.1}|nompageref}{21}
-\nomenclatureentry{a$t_{guard}$@[{$t_{guard}$}]\begingroup Length of the guard time\nomeqref {4.2}|nompageref}{21}
-\nomenclatureentry{a$\xi_i$@[{$\xi_i$}]\begingroup Offset to be added to Node $i$\nomeqref {4.14}|nompageref}{23}
-\nomenclatureentry{aDES@[{DES}]\begingroup Discrete Event Simulator\nomeqref {5.0}|nompageref}{33}
-\nomenclatureentry{aKF@[{KF}]\begingroup Kalman Filter\nomeqref {5.0}|nompageref}{34}
+\nomenclatureentry{a$t_{slot}$@[{$t_{slot}$}]\begingroup Time duration of a slot\nomeqref {4.1}|nompageref}{21}
+\nomenclatureentry{a$T_{sync}$@[{$T_{sync}$}]\begingroup Synchronization frequency\nomeqref {4.1}|nompageref}{22}
+\nomenclatureentry{a$t_{guard}$@[{$t_{guard}$}]\begingroup Length of the guard time\nomeqref {4.2}|nompageref}{22}
+\nomenclatureentry{a$\xi_i$@[{$\xi_i$}]\begingroup Offset to be added to Node $i$\nomeqref {4.14}|nompageref}{24}
+\nomenclatureentry{aDES@[{DES}]\begingroup Discrete Event Simulator\nomeqref {5.0}|nompageref}{34}
+\nomenclatureentry{aKF@[{KF}]\begingroup Kalman Filter\nomeqref {5.0}|nompageref}{35}
