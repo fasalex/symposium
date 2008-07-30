@@ -19,47 +19,46 @@
 \contentsline {chapter}{\numberline {3}\textbf {Problem Formulation}}{12}
 \contentsline {section}{\numberline {3.1}\textbf {Sources of synchronization error}}{12}
 \contentsline {section}{\numberline {3.2}\textbf {Clock and Frequency standards}}{13}
-\contentsline {section}{\numberline {3.3}\textbf {Clock Time and Delay}}{14}
-\contentsline {section}{\numberline {3.4}\textbf {Building blocks and performance metrics of a synchronization protocol}}{16}
-\contentsline {subsection}{\numberline {3.4.1}\textbf {Building blocks of a synchronization block}}{16}
-\contentsline {subsection}{\numberline {3.4.2}\textbf {Performance metrics of a synchronization protocol}}{17}
+\contentsline {subsection}{\numberline {3.2.1}\textbf {Clock time}}{14}
+\contentsline {section}{\numberline {3.3}\textbf {Building blocks and performance metrics of a synchronization protocol}}{16}
+\contentsline {subsection}{\numberline {3.3.1}\textbf {Building blocks of a synchronization block}}{16}
+\contentsline {subsection}{\numberline {3.3.2}\textbf {Performance metrics of a synchronization protocol}}{17}
 \contentsline {subsubsection}{\textbf {Precision}}{17}
 \contentsline {subsubsection}{\textbf {Energy costs}}{17}
 \contentsline {subsubsection}{\textbf {Memory requirement}}{17}
-\contentsline {subsubsection}{\textbf {Fault tolerance}}{17}
-\contentsline {section}{\numberline {3.5}\textbf {Median algorithm and the setback}}{17}
-\contentsline {chapter}{\numberline {4}\textbf {Synchronicity protocol}}{20}
-\contentsline {section}{\numberline {4.1}\textbf {Synchronization Frequency}}{20}
-\contentsline {section}{\numberline {4.2}\textbf {Mathematical Model}}{22}
-\contentsline {subsection}{\numberline {4.2.1}\textbf {Weighted Measurements - Interference-phobic approach}}{23}
-\contentsline {subsection}{\numberline {4.2.2}\textbf {Non Linear Least Squares method}}{25}
-\contentsline {subsubsection}{Non Linear Least Squares}{25}
-\contentsline {subsection}{\numberline {4.2.3}\textbf {Discrete time Kalman Filter for synchronization}}{28}
-\contentsline {subsubsection}{Discrete time Kalman Filter}{28}
+\contentsline {subsubsection}{\textbf {Fault tolerance}}{18}
+\contentsline {section}{\numberline {3.4}\textbf {Median algorithm and the setback}}{18}
+\contentsline {chapter}{\numberline {4}\textbf {Synchronicity protocol}}{21}
+\contentsline {section}{\numberline {4.1}\textbf {Synchronization Frequency}}{21}
+\contentsline {section}{\numberline {4.2}\textbf {Mathematical Model}}{23}
+\contentsline {subsection}{\numberline {4.2.1}\textbf {Weighted Measurements - Interference-phobic approach}}{24}
+\contentsline {subsection}{\numberline {4.2.2}\textbf {Non Linear Least Squares method}}{26}
+\contentsline {subsubsection}{Non Linear Least Squares}{26}
+\contentsline {subsection}{\numberline {4.2.3}\textbf {Discrete time Kalman Filter for synchronization}}{29}
+\contentsline {subsubsection}{Discrete time Kalman Filter}{29}
 \contentsline {subsubsection}{Model design}{30}
 \contentsline {section}{\numberline {4.3}\textbf {Reducing the guard time}}{31}
-\contentsline {chapter}{\numberline {5}\textbf {Results and Discussion}}{33}
-\contentsline {section}{\numberline {5.1}\textbf {Simulation setup}}{33}
-\contentsline {section}{\numberline {5.2}\textbf {Simulation Results}}{34}
-\contentsline {subsubsection}{\textbf {Case I}}{34}
-\contentsline {subsubsection}{\textbf {Case II}}{35}
-\contentsline {subsubsection}{\textbf {Case III}}{37}
-\contentsline {section}{\numberline {5.3}\textbf {Energy consumption}}{38}
-\contentsline {chapter}{\numberline {6}\textbf {Conclusion and Recommendation}}{41}
-\contentsline {section}{\numberline {6.1}\textbf {Conclusion}}{41}
-\contentsline {section}{\numberline {6.2}\textbf {Recommendation}}{42}
-\contentsline {chapter}{\numberline {A}Simulation Results}{43}
-\contentsline {section}{\numberline {A.1}\textbf {Median as a synchronization method}}{43}
-\contentsline {section}{\numberline {A.2}\textbf {Synchronization frequency}}{43}
-\contentsline {section}{\numberline {A.3}\textbf {Synchronization error for nodes with different speeds}}{45}
-\contentsline {section}{\numberline {A.4}\textbf {Relative performance improvement of the algorithms}}{45}
-\contentsline {chapter}{\numberline {B}MyriaNode}{48}
-\contentsline {subsubsection}{Features}{48}
-\contentsline {subsubsection}{Description}{49}
-\contentsline {subsubsection}{Architecture}{49}
-\contentsline {subsubsection}{Radio Interface}{49}
-\contentsline {subsubsection}{Mechanical and Mounting}{50}
-\contentsline {subsubsection}{Energy Supply}{51}
-\contentsline {subsubsection}{Battery}{51}
-\contentsline {subsubsection}{Programming}{52}
-\contentsline {subsubsection}{Software}{52}
+\contentsline {chapter}{\numberline {5}\textbf {Results and Discussion}}{34}
+\contentsline {section}{\numberline {5.1}\textbf {Simulation setup}}{34}
+\contentsline {section}{\numberline {5.2}\textbf {Simulation Results}}{35}
+\contentsline {subsubsection}{\textbf {Case I}}{35}
+\contentsline {subsubsection}{\textbf {Case II}}{36}
+\contentsline {subsubsection}{\textbf {Case III}}{38}
+\contentsline {section}{\numberline {5.3}\textbf {Energy consumption}}{41}
+\contentsline {chapter}{\numberline {6}\textbf {Conclusion and Recommendation}}{43}
+\contentsline {section}{\numberline {6.1}\textbf {Conclusion}}{43}
+\contentsline {section}{\numberline {6.2}\textbf {Recommendation}}{44}
+\contentsline {chapter}{\numberline {A}Simulation Results}{45}
+\contentsline {section}{\numberline {A.1}\textbf {Median as a synchronization method}}{45}
+\contentsline {section}{\numberline {A.2}\textbf {Synchronization frequency}}{46}
+\contentsline {section}{\numberline {A.3}\textbf {Synchronization error for nodes with different speeds}}{46}
+\contentsline {chapter}{\numberline {B}MyriaNode}{49}
+\contentsline {subsubsection}{Features}{49}
+\contentsline {subsubsection}{Description}{50}
+\contentsline {subsubsection}{Architecture}{50}
+\contentsline {subsubsection}{Radio Interface}{50}
+\contentsline {subsubsection}{Mechanical and Mounting}{51}
+\contentsline {subsubsection}{Energy Supply}{52}
+\contentsline {subsubsection}{Battery}{52}
+\contentsline {subsubsection}{Programming}{53}
+\contentsline {subsubsection}{Software}{53}
