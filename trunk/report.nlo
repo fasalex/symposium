@@ -1,5 +1,5 @@
-\nomenclatureentry{aTDMA@[{TDMA}]\begingroup Time Division Multiple Access\nomeqref {0}|nompageref}{ii}
-\nomenclatureentry{aMAC@[{MAC}]\begingroup Media Access Protocol\nomeqref {0}|nompageref}{ii}
+\nomenclatureentry{aTDMA@[{TDMA}]\begingroup Time Division Multiple Access\nomeqref {0}|nompageref}{i}
+\nomenclatureentry{aMAC@[{MAC}]\begingroup Media Access Protocol\nomeqref {0}|nompageref}{i}
 \nomenclatureentry{aWSN@[{WSN}]\begingroup Wireless Sensor Network\nomeqref {1.0}|nompageref}{1}
 \nomenclatureentry{aRBS@[{RBS}]\begingroup Refererence Broadcast Synchronization\nomeqref {1.0}|nompageref}{2}
 \nomenclatureentry{aCSMA@[{CSMA}]\begingroup Carrier Sense Multiple Access\nomeqref {2.0}|nompageref}{4}
