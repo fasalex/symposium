@@ -1,4 +1,4 @@
-This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=latex 2008.5.8)  30 JUL 2008 17:00
+This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=latex 2008.5.8)  31 JUL 2008 17:35
 entering extended mode
  %&-line parsing enabled.
 **symposium_paper.tex
@@ -214,24 +214,42 @@ File: node_field.eps Graphic file (type eps)
  <node_field.eps>
 File: offsetpic.eps Graphic file (type eps)
  <offsetpic.eps>
+Overfull \hbox (6.0pt too wide) in paragraph at lines 211--212
+ [][] 
+ []
+
 File: guardtime.eps Graphic file (type eps)
- <guardtime.eps> [3] [4]
+<guardtime.eps> [3]
+Underfull \vbox (badness 1281) has occurred while \output is active []
+
+ [4]
 File: weight.eps Graphic file (type eps)
- <weight.eps>
-Underfull \hbox (badness 1389) in paragraph at lines 377--379
+
+<weight.eps>
+Overfull \hbox (6.0pt too wide) in paragraph at lines 355--356
+ [][] 
+ []
+
+
+Underfull \hbox (badness 1389) in paragraph at lines 375--377
 \OT1/ptm/m/n/10 that in ad-di-tion to the vari-able $\OML/cmm/m/it/10 x$ \OT1/p
 tm/m/n/10 also de-pends on $\OML/cmm/m/it/10 m$
  []
 
+[5]
 File: curvefit.eps Graphic file (type eps)
-<curvefit.eps> [5]
+ <curvefit.eps>
+Overfull \hbox (6.0pt too wide) in paragraph at lines 433--434
+ [][] 
+ []
+
 Missing character: There is no â in font cmr10!
 Missing character: There is no € in font cmr10!
 Missing character: There is no “ in font cmr10!
 Missing character: There is no â in font cmr10!
 Missing character: There is no € in font cmr10!
 Missing character: There is no “ in font cmr10!
- [6]
+[6]
 File: 16output-s0.eps Graphic file (type eps)
  <16output-s0.eps>
 File: 50output-s0.eps Graphic file (type eps)
@@ -239,47 +257,49 @@ File: 50output-s0.eps Graphic file (type eps)
 File: 16output-s6.eps Graphic file (type eps)
  <16output-s6.eps>
 File: 16output-s20.eps Graphic file (type eps)
-
-<16output-s20.eps>
+ <16output-s20.eps>
 File: 16output-error.eps Graphic file (type eps)
- <16output-error.eps>
-File: 50output-s6.eps Graphic file (type eps)
- <50output-s6.eps>
-File: 50output-s20.eps Graphic file (type eps)
- <50output-s20.eps>
-[7]
-Underfull \vbox (badness 7576) has occurred while \output is active []
 
-File: 50output-error.eps Graphic file (type eps)
-
-<50output-error.eps>
-File: guardsave.eps Graphic file (type eps)
- <guardsave.eps>
-Overfull \hbox (6.0pt too wide) in paragraph at lines 681--682
+<16output-error.eps>
+Overfull \hbox (6.0pt too wide) in paragraph at lines 614--615
  [][] 
  []
 
-[8] [9]
-Underfull \hbox (badness 10000) in paragraph at lines 736--737
+File: 50output-s6.eps Graphic file (type eps)
+<50output-s6.eps>
+File: 50output-s20.eps Graphic file (type eps)
+ <50output-s20.eps> [7] [8]
+File: 50output-error.eps Graphic file (type eps)
+ <50output-error.eps>
+Overfull \hbox (6.0pt too wide) in paragraph at lines 649--650
+ [][] 
+ []
+
+File: guardsave.eps Graphic file (type eps)
+<guardsave.eps>
+Overfull \hbox (6.0pt too wide) in paragraph at lines 658--659
+ [][] 
+ []
+
+[9]
+Underfull \hbox (badness 10000) in paragraph at lines 710--711
 []\OT1/ptm/m/n/8 NTP Pub-lic Ser-vices Project
  []
 
 
-Overfull \hbox (18.24326pt too wide) in paragraph at lines 750--751
+Overfull \hbox (18.24326pt too wide) in paragraph at lines 725--726
 []$\OML/cmm/m/it/8 http \OT1/cmr/m/n/8 : \OML/cmm/m/it/8 ==www:golledge:co:uk=p
 df=products=xtl[]sm=cc\OT1/cmr/m/n/8 7\OML/cmm/m/it/8 v:pdf$ 
  []
 
-[10
-
-] (./symposium_paper.aux) ) 
+[10] (./symposium_paper.aux) ) 
 Here is how much of TeX's memory you used:
- 1840 strings out of 95087
- 29811 string characters out of 1183279
- 83400 words of memory out of 1500000
- 5026 multiletter control sequences out of 10000+50000
+ 1841 strings out of 95087
+ 29819 string characters out of 1183279
+ 83404 words of memory out of 1500000
+ 5027 multiletter control sequences out of 10000+50000
  29257 words of font info for 66 fonts, out of 1200000 for 2000
  28 hyphenation exceptions out of 8191
- 35i,9n,38p,999b,309s stack positions out of 5000i,500n,6000p,200000b,5000s
+ 35i,9n,38p,993b,309s stack positions out of 5000i,500n,6000p,200000b,5000s
 
-Output written on symposium_paper.dvi (10 pages, 65556 bytes).
+Output written on symposium_paper.dvi (10 pages, 64612 bytes).
