@@ -64,8 +64,8 @@
 \contentsline {subsubsection}{Description and architecture}{50}
 \contentsline {subsubsection}{Radio Interface}{51}
 \contentsline {subsubsection}{Mechanical and Mounting}{51}
-\contentsline {subsubsection}{Energy Supply}{51}
+\contentsline {subsubsection}{Energy Supply}{52}
 \contentsline {subsubsection}{Battery}{52}
-\contentsline {subsubsection}{Programming}{53}
+\contentsline {subsubsection}{Programming}{52}
 \contentsline {subsubsection}{Software}{53}
 \contentsline {chapter}{References}{53}

@@ -84,11 +84,12 @@
 \addcontentsline{toc}{chapter}{Abstract}
 \section*{\begin{center}Abstract\end{center}}
 Synchronization is a crucial component of infrastructure for \textit{Wireless Sensor Networks}(WSNs). Most applications of WSNs
-make extensive use of time synchronization mechanisms like \emph{Time Division Multiple Access} \nomenclature{TDMA}{Time Division Multiple Access} scheduling, accurate timestamping of events, coordinate activities of the network or data fusion. The unique requirements of WSNs, compared to centralized networks, in terms of precision, lifetime, energy and scope of the synchronization achieved, make the synchronization methods developed for centralized systems unsuitable for WSNs. This motivates the research of synchronization methods which are aligned to the specific properties of WSN. Median$\cite{median}$ algorithm is implemented currently on the wireless sensor nodes in MyriaNed$\footnote{MyriaNed is a project to create a large functional network of 10,000 nodes with wireless communication for research on protocols, power management, programming models, and security.}$ project. In this research, the flaw in the Median algorithm is explored and three algorithms have been proposed to achieve a decentralized, stable, and energy-efficient synchronization of a WSN. The algorithms achieve synchronization by using the phase error of a node's wake-up time with that of the neighboring node's, without actually exchanging the information about the clock time of the sender. So, the method avoids time keeping on the messages (time stamping) which reduces the message overload. The algorithms can be integrated with the slot allocation algorithm to form the MAC\nomenclature{MAC}{Media Access Protocol} layer protocol for a better throughput. The research is concluded with the comparison of three algorithms in terms of energy consumption and performance with the Median. A low energy-consumption or a better convergence as well as the length of the guard time can be used as a metric for selecting the algorithm.
+make extensive use of synchronization mechanisms like \emph{Time Division Multiple Access} \nomenclature{TDMA}{Time Division Multiple Access} scheduling, accurate timestamping of events, coordinate activities of the network or data fusion. The unique requirements of WSNs, compared to centralized networks, in terms of precision, lifetime, energy and scope of the synchronization achieved, make the synchronization methods developed for centralized systems unsuitable for WSNs. This motivates the research of synchronization methods which are aligned to the specific properties of WSN. Median$\cite{median}$ algorithm is implemented currently on the wireless sensor nodes in MyriaNed$\footnote{MyriaNed is a DevLab\cite{devlab} project to create a large functional network of 10,000 nodes with wireless communication for research on protocols, power management, programming models, and security.}$ project. In this research, the flaw in the Median algorithm is explored and three algorithms have been proposed to achieve a decentralized, stable, and energy-efficient synchronization of a WSN. The algorithms achieve synchronization by using the phase error of a node's wake-up time with that of the neighboring node's, without actually exchanging the information about the clock time of the sender. So, the method avoids time keeping on the messages (time stamping) which reduces the message overload. The algorithms can be integrated with the slot allocation algorithm to form the MAC\nomenclature{MAC}{Media Access Protocol} layer protocol for a better throughput. The research is concluded with the comparison of three algorithms in terms of energy consumption and performance with the Median. A low energy-consumption or a better convergence as well as the length of the guard time can be used as a metric for selecting the algorithm.
 \newpage
 \addcontentsline{toc}{chapter}{Acknowledgment}
 \section*{\begin{center}Acknowledgment\end{center}}
-%I would like to express my sincere gratitude to Frits van der Wateren from Chess Innovation Team, my supervisor, for all the support he has given me during the project. I am greatly indebted to him for all the insight and support that he showed in every phase of my research. His  patience, and dedication helped me immensely in maintaining a positive outlook during the highs and lows of the project. Acknowledgment is also due to dr.ir.Peter Smulders for providing the support and advice during the project. I am also greatly indebted to prof.dr.ir.Erik Fledderus for providing me the opportunity to work on such an interesting topic for my Master's thesis. He has open doors whenever I have soemthing to ask. His willingness to help made him the best.\paragraph*{}  I also like to thank prof.dr.ir.Peter Baltus and prof.dr.ir.Jean-Paul Linnartz for taking time to serve on my thesis panel. \paragraph*{} \paragraph*{} I am indebted to thank my friend Simon for his beging there during the ups and downs of my journey during my masters study. As we have started the journey together, he was with me all along the way since then. He was an inspiration during the time where I went down. We have spent all the time, full of fun.\paragraph*{} \paragraph*{}  Special thanks to my friend, Aman Meisso, whom without his help, it would have been very difficult to successfully finish the research. He is just an inclredibly nice person. \paragraph*{} \paragraph*{} No words can describe how grateful I am to my mohter, Etye and my brother, Teddy and my sister Hana, who showed immense faith in me. I would also like to thank them for taking care of me in every phase of my studies by providing every support, which made it possible to pursue my dream of higher studies and kept me focussed during my journey. I owe all my success in life to them. \paragraph*{} \paragraph*{}  I want to thank all my friends at TU/e, for their help and encouragement, for being there during the difficult times. Yenu, Teme, Frew and Esae have been amazing friends during the time I was in Eindvhoen. The days I have spent with them in Eindhoven are something I will treasure for a lifetime. I consider myself fortunate to have got such good friends.
+It has been a long journey since I joined the graduate program at TU/e. During this time, I have come across some wonderful people which without their help, this would not have been possible. \paragraph*{}
+Firstly, I would like to express my sincere gratitude to Frits van der Wateren from Chess Innovation Team, my supervisor, for all the support he has given me during the project. I am greatly indebted to him for all the insight and support that he showed in every phase of the project. Acknowledgment is also due to dr.ir.Peter Smulders for providing guidance during the project. \paragraph*{} I am greatly indebted to prof.dr.ir.Erik Fledderus for providing me the opportunity to work on such an interesting topic for my Master's thesis. He has been expremely helpful, and was always availble whenever I needed help. \paragraph*{}  I also like to thank prof.dr.ir.Peter Baltus and prof.dr.ir.Jean-Paul Linnartz for taking time to serve on my thesis panel. \paragraph*{} I dont want to waste this oppertunity without mentioning Simon, whom I have started the journey together. We have been together during the ups and downs of the two years of   masters study. As we have started the journey together, he was with me all along the way since then. He was an inspiration during the time where I went down. We have spent all the time, full of fun.\paragraph*{} Special thanks to my friend, Aman Meisso, whom without his help, it would have been very difficult to successfully finish the research. \paragraph*{} No words can describe how grateful I am to my mohter, Etye and my brother, Teddy and my sister Hana, who showed immense faith in me. I would also like to thank them for taking care of me in every phase of my studies by providing every support, which made it possible to pursue my dream of higher studies and kept me focussed during my journey.\paragraph*{}Finally, I want to thank all my friends at TU/e, for their help and encouragement and for making our stay so much fun. Yenu, Teme, Frew and Esae, the days I have spent with them in Eindhoven are something I will treasure for a lifetime.
 \newpage
 \addcontentsline{toc}{chapter}{Contents}
 \tableofcontents
@@ -852,7 +853,7 @@ One such DES is called OMNeT++$\cite{omnet}$. It provides a component architectu
 \includegraphics[width=0.6\textwidth]{osimodel}
 \caption{Abstraction Model} \label{osimodel}
 \end{figure}
-As shown in Figure $\ref{osimodel}$, the synchronization is computed in a separate abstaraction layer. Each time the message is received, the time of arrival is recorded and used to calculate the next wake up time of the node. The communication over the channels is done in a unidisc way. All nodes in range of the radio receive the data, and those that are outside are excluded. The number of nodes is varied for different scenarios. The movement of the nodes is modeled from the static to an average speed of a slowly moving object. The simulation is conducted 1000 times to counter the effect of randomness introduced in the simulation.
+As shown in Figure $\ref{osimodel}$, the synchronization is computed in a separate abstaraction layer. Each time the message is received, the time of arrival is recorded and used to calculate the next wake up time of the node. The communication over the channels is done in a unidisc way. All nodes in range of the radio receive the data, and those that are outside are excluded. The number of nodes is varied for different scenarios. The movement of the nodes is modeled from the static to an average speed of a slowly moving object. The simulation is conducted 100 times to counter the effect of randomness introduced in the simulation.
 \section{\textbf{Simulation Results}}
 The nodes are deployed uniformly across the field. %The neighborhood is limited to 10 nodes.
 The start up time of the nodes is random, Gaussian distributed variable, $t_{io}$. The synchronization error, as a metric, is defined here as  the maximum difference between the wake-up time of the nodes in the neighborhood.
@@ -1064,15 +1065,14 @@ The synchronization error increases as the number of nodes increases, as dictate
 \label{diffspeed}
 \end{figure}
 The simulation is also conducted for different cosntant speed of the nodes, which basically shows not a big deviation from static nodes. Figure $\ref{diffspeed}$ shows the performance of the KF for different constant speed of 20 nodes.
-
 %%%
 %%%
 %%%
 %%%
 \chapter{MyriaNode}
-\begin{wrapfigure}{r}{0.5\textwidth}
+\begin{wrapfigure}{r}{0.4\textwidth}
   \begin{center}
-    \includegraphics[width=0.48\textwidth]{myrianode}
+    \includegraphics[width=0.38\textwidth]{myrianode}
   \end{center}
   \caption{MyriaNode v2.0}
 \end{wrapfigure}
@@ -1091,7 +1091,7 @@ The simulation is also conducted for different cosntant speed of the nodes, whic
  \item Single supply voltage: 1.9V - 3.6V
 \end{itemize}
 \begin{wrapfigure}{r}{0.5\textwidth}
-\vspace{-40pt}
+\vspace{-50pt}
   \begin{center}
     \includegraphics[width=0.48\textwidth]{myrianodearch}
   \end{center}
@@ -1099,17 +1099,24 @@ The simulation is also conducted for different cosntant speed of the nodes, whic
   \label{myrianodearch}
 \end{wrapfigure}
 \subsubsection{Description and architecture}
-This Wireless Sensor Node is the second generation product for the MyriaNed project. It integrates a Nordic radio module, antenna and embedded processor all on a PCB. The module is equipped with the software modules as they are being developed by one or more of the working groups of MyriaNed.
+This Wireless Sensor Node is the second generation product for the MyriaNed project. It integrates a Nordic$\cite{nordic}$ radio module, antenna and embedded processor all on a PCB. The module is equipped with the software modules as they are being developed by one or more of the working groups of MyriaNed.
 \subsubsection{Radio Interface}
-SPI is used as interface between the processor and the radio, with the following interconnections:
-\begin{figure}[!h]
- \centering
-    \includegraphics[width=0.6\textwidth]{table1}
+\begin{wrapfigure}{r}{0.5\textwidth}
+\vspace{-30pt}
+  \begin{center}
+    \includegraphics[width=0.48\textwidth]{table1}
+  \end{center}
   \caption{Radio interfaces}
   \label{table1}
-\end{figure}
-\paragraph*{}
-\begin{figure}[!h]
+\end{wrapfigure}
+SPI is used as interface between the processor and the radio, with the following interconnections:
+%\begin{figure}[!h]
+% \centering
+%    \includegraphics[width=0.6\textwidth]{table1}
+%  \caption{Radio interfaces}
+%  \label{table1}
+%\end{figure}
+\begin{figure}
  \centering
     \includegraphics[width=0.6\textwidth]{table2}
   \caption{External interfaces}
@@ -1123,52 +1130,65 @@ SPI is used as interface between the processor and the radio, with the following
   \caption{MyriaNode dimentions}
   \label{myrianodephy}
 \end{wrapfigure}
-Figure $\ref{myrianodephy}$ shows the top (component) view of the module. It can be mounted as a Surface Mount Device (SMD) directly onto a base PCB. The antenna area must be positioned in free air.
+Figure $\ref{myrianodephy}$ shows the top (component) view of the module. It can be mounted as a Surface Mount Device (SMD) directly onto a base PCB. The antenna area must be positioned% in free air.
 \subsubsection{Energy Supply}
 Both the embedded processor and the radio are connected to the same supply rail. The supply voltage must therefore remain in a range that meet the supply voltage specifications of both devices, which is: 1.9V - 3.6V. \paragraph*{}
-In order to reduce conversion noise of the ADC to a minimum, the power decoupling circuit is implemented following the guidelines in the datasheet of the ATMega645. \paragraph*{}
-The energy consumption very much depend es on the network parameters and application software. Under average conditions of a network cycle time of 1s, and a frame size of 32 bytes, the node can last for at least 5 years on a Lithium Thionyl Chloride battery of 900mAh.
+In order to reduce conversion noise of the ADC to a minimum, the power decoupling circuit is implemented following the guidelines in the datasheet of the ATMega645$\cite{atmega}$. \paragraph*{}
+\begin{wrapfigure}{r}{0.5\textwidth}
+  \begin{center}
+    \includegraphics[width=0.48\textwidth]{battery}
+  \end{center}
+  \caption{Battery structure of  a MyriaNode}
+  \label{battery}
+\end{wrapfigure}
+The energy consumption very much depends on the network parameters and application software. Under average conditions of a network cycle time of 1s, and a frame size of 32 bytes, the node can last for at least 5 years on a Lithium Thionyl Chloride battery of 900mAh.
 \paragraph*{}
 The voltage level of a new Lithium Thionyl Chloride battery is 3.67V, while the absolute maximum operating voltage of the nRF24L01 is 3.60V. This requires a voltage reduction circuit. The most simple one is to connect the node via a diode to the battery, as is shown in Figure $\ref{battery}$.
 \subsubsection{Battery}
-The ER14250STU from EMB is a Lithium Thionyl Chloride battery. It has a form factor of 1/2 AA size, and has a capacity of 1000mAh.
+The ER14250$\cite{bat}$ from EMB is a Lithium Thionyl Chloride battery. It has a form factor of 1/2 AA size, and has a capacity of 1000mAh.
 \subsubsection{Programming}
-The node can be programmed and debugged via the JTAG interface. Although there are many second source suppliers of JTAG development tools, it is advised to use the AVR JTAGICE mkII from Atmel, ordering code: ATJTAGICE2.
+The node can be programmed and debugged via the JTAG interface. Although there are many second source suppliers of JTAG development tools, it is advised to use the AVR JTAGICE mkII from Atmel, ordering code: ATJTAGICE2$\cite{jtag}$.
 \subsubsection{Software}
 The software is documented by the other working groups of MyriaNed.
-\begin{figure}
-\centering
-    \includegraphics[width=0.48\textwidth]{battery}
-  \caption{Battery structure of  a MyriaNode}
-  \label{battery}
-\end{figure}
+%\begin{figure}
+%\centering
+%    \includegraphics[width=0.48\textwidth]{battery}
+%  \caption{Battery structure of  a MyriaNode}
+%  \label{battery}
+%\end{figure}
 \addcontentsline{toc}{chapter}{References}
 \begin{thebibliography}{\textbf{References}}
 \bibitem{4}A.Tyrrell, and et al. Firefly synchronization in ad hoc networks, in Proc. MiNEMA Workshop 2006, February, 2006.
-\bibitem{gossip}D. Gavidia, S. Voulgaris, and M. van Steen. A gossip-based distributed news service for wireless mesh networks. In Proceedings 3rd IEEE Conference on Wireless On demand Network Systems and Services (WONS), Les Menuires, France, January 2006.\bibitem{correlation}A.Ebner, H.Rohling, M.Lott, and R.Halfmann. Decentralized Slot Synchronization in Highly Dynamic Ad Hoc Networks. Proc. WPMC '02, Honolulu, Hawaii, Oct. 2002.
-\bibitem{taxonomy}E.Anceaume and I.Puaut. A taxonomy of clock synchronization algorithms. IRISA Research Report No. PI1103, IRISA, 1997.\bibitem{mutualsync}E.Souour and M.Nakagawa. Mutual decentralized synchronization for intervechicle communications. IEEE Transactions and Vehicular Technology, Vol.48, Issue 6, pp.2015-2027.
-\bibitem{2}J.Elson, L.Girod and D.Estrin. Fine-grained network time synchronization using reference broadcasts. Proceedings of the 5th Symposium on Operating Systems Design and Implementation, Boston, Massachusetts, USA, December 9–11, 2002.
-\bibitem{7}J.Elson and D.Estrin. Time Synchronization for Wireless Sensor Networks. In Proceedings of the 15th International Parallel and Distributed Processing Symposium. IEEE Computer Society, April 23-27. 2001.
-\bibitem{5}NTP Public Services Project http://support.ntp.org/bin/view/Main/WebHome.
-\bibitem{median} R.Tjoa and et al. Clock drift reduction for relative time slot tdma-based sensor networks. PIMRC 2004. 15th IEEE International Symposium. Vol.2, 5-8 , pp.1042 - 1047. Sept. 2004.
-\bibitem{3}Q.Yang, and et al. A Decentralized Slot Synchronization Algorithm for TDMA-Based Ad Hoc Networks. Wireless Communications, Networking and Mobile Computing, 2007. Vol.21, Issue 25, pp.1717 - 1721, Sept. 2007 .
-\bibitem{17}Q.Yang and J.Shi. An interference elimination method for decentralized slot synchronization in TDMA-based wireless ad hoc network. Intelligent Signal Processing and Communication Systems, 2007. Nov.28,2007-Dec.1,2007. pp.236-239.
-\bibitem{pieter}P.Anemaet. Determining G-MAC potential with $\{$S,L,SCP$\}$-MAC. Masters thesis. Technische Universteit Delft. Delft. August 2008.
-\bibitem{6}R.John. Introduction to Quartz Frequency Standards. Technical Report SLCET-TR-92-1, Army Research Laboratory, Electronics and Power Sources Directorate. October 1992.
-\bibitem{gradient}R. Fan and N. Lynch. Gradient clock synchronization. In Proceedings of the twenty-third annual ACM symposium on Principles of distributed computing (PODC ’04), pages 320–327. ACM Press, 2004.
-\bibitem{gradient2}L.Meier,and L.Thiele. Gradient clock synchronization in sensor networks. Technical report, Computer Engineering and Networks Laboratory. Swiss Federal Institute of Technology Zurich, 2005.
-\bibitem{9}K.Romer. Time Synchronization in Ad Hoc Networks. In Proceedings of the Second ACM International Symposium on Mobile Ad Hoc Networking and Computing, Long Beach, California. 2001.
-\bibitem{10}H.Karl and A.Willig. Protocols and Architectures for Wireless Sensor Networks.p3-6. Wiley. July 2006.
+\bibitem{correlation}A.Ebner, H.Rohling, M.Lott, and R.Halfmann. Decentralized Slot Synchronization in Highly Dynamic Ad Hoc Networks. Proc. WPMC '02, Honolulu, Hawaii, Oct. 2002.
 \bibitem{11}C.Cordeiro and D.Agrawal. Ad hoc and Sensor Networks Theory and applications. p.429-441. World Scientific Publishing. 2006.
+\bibitem{gossip}D. Gavidia, S. Voulgaris, and M. van Steen. A gossip-based distributed news service for wireless mesh networks. In Proceedings 3rd IEEE Conference on Wireless On demand Network Systems and Services (WONS), Les Menuires, France, January 2006.
+\bibitem{taxonomy}E.Anceaume and I.Puaut. A taxonomy of clock synchronization algorithms. IRISA Research Report No. PI1103, IRISA, 1997.\bibitem{mutualsync}E.Souour and M.Nakagawa. Mutual decentralized synchronization for intervechicle communications. IEEE Transactions and Vehicular Technology, Vol.48, Issue 6, pp.2015-2027.
 \bibitem{1}F.Zhao and  L.Guibas. Wireless Sensor Networks: an Information Processing approach. p.107-108. Elsevier. 2004.
-\bibitem{texas} S.Raje. Time synchronization of in Network-centric sensor networks. Master research. University of Texas, Arlington. Texas. August 2005.
-\bibitem{14}S.PalChaudhuri and et al. Adaptive Clock Synchronization in Sensor Networks, Information Processing in Sensor Networks, April 2004.
 \bibitem{16}G.Werner-Allen and et al. Firefly-inspired sensor network synchronicity with realistic radio effects. Proceedings of the 3rd international conference on Embedded networked sensor systems, San Diego, California. November 2005.
+\bibitem{10}H.Karl and A.Willig. Protocols and Architectures for Wireless Sensor Networks.p3-6. Wiley. July 2006.
+\bibitem{19}$http://pdfserv.maxim-ic.com/en/an/AN58.pdf$.
 \bibitem{18} $http://www.golledge.co.uk/pdf/products/xtl\_sm/cc7v.pdf$
-\bibitem{19} $http://pdfserv.maxim-ic.com/en/an/AN58.pdf$.
 \bibitem{omnet}$http://www.omnetpp.org$.
 \bibitem{kalm}$http://www.cs.unc.edu/~welch/kalman/$.
 \bibitem{chess}$http://www.chess.nl$.
+\bibitem{devlab}$http://www.devlab.nl.$
+\bibitem{nordic}$http://www.nordicsemi.no/files/Product/data\_sheet/Product\_Specification\_nRF24L01\_1.0.pdf.$
+\bibitem{jtag}$http://www.atmel.com/dyn/resources/prod\_documents/doc2489.pdf.$
+\bibitem{atmega}$http://www.atmel.com/dyn/resources/prod\_documents/doc2570.pdf.$
+\bibitem{bat}$http://www.nrgeurope.com.$
+\bibitem{2}J.Elson, L.Girod and D.Estrin. Fine-grained network time synchronization using reference broadcasts. Proceedings of the 5th Symposium on Operating Systems Design and Implementation, Boston, Massachusetts, USA, December 9–11, 2002.
+\bibitem{7}J.Elson and D.Estrin. Time Synchronization for Wireless Sensor Networks. In Proceedings of the 15th International Parallel and Distributed Processing Symposium. IEEE Computer Society, April 23-27. 2001.
+\bibitem{9}K.Romer. Time Synchronization in Ad Hoc Networks. In Proceedings of the Second ACM International Symposium on Mobile Ad Hoc Networking and Computing, Long Beach, California. 2001.
+\bibitem{gradient2}L.Meier,and L.Thiele. Gradient clock synchronization in sensor networks. Technical report, Computer Engineering and Networks Laboratory. Swiss Federal Institute of Technology Zurich, 2005.
+\bibitem{5}NTP Public Services Project http://support.ntp.org/bin/view/Main/WebHome.
+\bibitem{3}Q.Yang, and et al. A Decentralized Slot Synchronization Algorithm for TDMA-Based Ad Hoc Networks. Wireless Communications, Networking and Mobile Computing, 2007. Vol.21, Issue 25, pp.1717 - 1721, Sept. 2007 .
+\bibitem{17}Q.Yang and J.Shi. An interference elimination method for decentralized slot synchronization in TDMA-based wireless ad hoc network. Intelligent Signal Processing and Communication Systems, 2007. Nov.28,2007-Dec.1,2007. pp.236-239.
+\bibitem{pieter}P.Anemaet. Determining G-MAC potential with $\{$S,L,SCP$\}$-MAC. Masters thesis. Technische Universteit Delft. Delft. August 2008.
+\bibitem{median}R.Tjoa and et al. Clock drift reduction for relative time slot tdma-based sensor networks. PIMRC 2004. 15th IEEE International Symposium. Vol.2, 5-8 , pp.1042 - 1047. Sept. 2004.
+\bibitem{6}R.John. Introduction to Quartz Frequency Standards. Technical Report SLCET-TR-92-1, Army Research Laboratory, Electronics and Power Sources Directorate. October 1992.
+\bibitem{gradient}R. Fan and N. Lynch. Gradient clock synchronization. In Proceedings of the twenty-third annual ACM symposium on Principles of distributed computing (PODC ’04), pages 320–327. ACM Press, 2004.
+\bibitem{texas}S.Raje. Time synchronization of in Network-centric sensor networks. Master research. University of Texas, Arlington. Texas. August 2005.
+\bibitem{14}S.PalChaudhuri and et al. Adaptive Clock Synchronization in Sensor Networks, Information Processing in Sensor Networks, April 2004.
 \end{thebibliography}
 \end{document}
 \textbf{``Unnecessary synchronization wastes resources; insufficient

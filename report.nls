@@ -12,24 +12,24 @@
 		\nompageref{20}
   \item [{$T_{sync}$}]\begingroup Synchronization frequency\nomeqref {4.1}
 		\nompageref{21}
-  \item [{\textit{clk}}]\begingroup A clock cycle\nomeqref {3.6}
+  \item [{\textit{clk}}]\begingroup A clock cycle\nomeqref {3.8}
 		\nompageref{16}
-  \item [{\textit{Wake-up time}}]\begingroup Time that the node starts listening.\nomeqref {3.6}
+  \item [{\textit{Wake-up time}}]\begingroup Time that the node starts listening.\nomeqref {3.8}
 		\nompageref{16}
   \item [{CSMA}]\begingroup Carrier Sense Multiple Access\nomeqref {2.0}
 		\nompageref{4}
   \item [{DES}]\begingroup Discrete Event Simulator\nomeqref {5.0}
-		\nompageref{33}
+		\nompageref{32}
   \item [{GPS}]\begingroup Global Positioning System\nomeqref {2.0}
 		\nompageref{9}
   \item [{GSM}]\begingroup Global System for Mobile communications\nomeqref {2.0}
 		\nompageref{9}
-  \item [{KF}]\begingroup Kalman Filter\nomeqref {5.0}\nompageref{34}
+  \item [{KF}]\begingroup Kalman Filter\nomeqref {5.0}\nompageref{33}
   \item [{MAC}]\begingroup Media Access Protocol\nomeqref {0}
 		\nompageref{i}
   \item [{NTP}]\begingroup Network Time Protocol\nomeqref {2.0}
 		\nompageref{5}
-  \item [{RBS}]\begingroup Refererence Broadcast Synchronization\nomeqref {1.0}
+  \item [{RBS}]\begingroup Reference Broadcast Synchronization\nomeqref {1.0}
 		\nompageref{2}
   \item [{TDMA}]\begingroup Time Division Multiple Access\nomeqref {0}
 		\nompageref{i}
