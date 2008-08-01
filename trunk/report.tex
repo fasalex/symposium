@@ -84,7 +84,7 @@
 \addcontentsline{toc}{chapter}{Abstract}
 \section*{\begin{center}Abstract\end{center}}
 Synchronization is a crucial component of infrastructure for \textit{Wireless Sensor Networks}(WSNs). Most applications of WSNs
-make extensive use of synchronization mechanisms like \emph{Time Division Multiple Access} \nomenclature{TDMA}{Time Division Multiple Access} scheduling, accurate timestamping of events, coordinate activities of the network or data fusion. The unique requirements of WSNs, compared to centralized networks, in terms of precision, lifetime, energy and scope of the synchronization achieved, make the synchronization methods developed for centralized systems unsuitable for WSNs. This motivates the research of synchronization methods which are aligned to the specific properties of WSN. Median$\cite{median}$ algorithm is implemented currently on the wireless sensor nodes in MyriaNed$\footnote{MyriaNed is a DevLab\cite{devlab} project to create a large functional network of 10,000 nodes with wireless communication for research on protocols, power management, programming models, and security.}$ project. In this research, the flaw in the Median algorithm is explored and three algorithms have been proposed to achieve a decentralized, stable, and energy-efficient synchronization of a WSN. The algorithms achieve synchronization by using the phase error of a node's wake-up time with that of the neighboring node's, without actually exchanging the information about the clock time of the sender. So, the method avoids time keeping on the messages (time stamping) which reduces the message overload. The algorithms can be integrated with the slot allocation algorithm to form the MAC\nomenclature{MAC}{Media Access Protocol} layer protocol for a better throughput. The research is concluded with the comparison of three algorithms in terms of energy consumption and performance with the Median. A low energy-consumption or a better convergence as well as the length of the guard time can be used as a metric for selecting the algorithm.
+make extensive use of synchronization mechanisms like \emph{Time Division Multiple Access} \nomenclature{TDMA}{Time Division Multiple Access} scheduling, accurate time stamping of events, coordinate activities of the network or data fusion. The unique requirements of WSNs, compared to centralized networks, in terms of precision, lifetime, energy and scope of the synchronization achieved, make the synchronization methods developed for centralized systems unsuitable for WSNs. This motivates the research of synchronization methods which are aligned to the specific properties of WSN. Median$\cite{median}$ algorithm is implemented currently on the wireless sensor nodes in MyriaNed$\footnote{MyriaNed is a DevLab\cite{devlab} project to create a large functional network of 10,000 nodes with wireless communication for research on protocols, power management, programming models, and security.}$ project. In this research, the flaw in the Median algorithm is explored and three algorithms have been proposed to achieve a decentralized, stable, and energy-efficient synchronization of a WSN. The algorithms achieve synchronization by using the phase error of a node's wake-up time with that of the neighboring node's, without actually exchanging the information about the clock time of the sender. So, the method avoids time keeping on the messages (time stamping) which reduces the message overload. The algorithms can be integrated with the slot allocation algorithm to form the MAC\nomenclature{MAC}{Media Access Protocol} layer protocol for a better throughput. The research is concluded with the comparison of three algorithms in terms of energy consumption and performance with the Median. A low energy-consumption or a better convergence as well as the length of the guard time can be used as a metric for selecting the algorithm.
 \newpage
 \addcontentsline{toc}{chapter}{Acknowledgment}
 \section*{\begin{center}Acknowledgment\end{center}}
@@ -165,12 +165,12 @@ reduce the idle listening time even more, the listening nodes can turn off the r
 and the start of a new slot. In theory, there will not be any idle listening. There are some pitfalls to this approach. Firstly, the
 clocks of the nodes are less than perfect; they will never run at exactly the same clock-speed. To keep the nodes synchronized and
 thus to let them share the same schedule, the small timing error needs to be compensated. Second, there has to be a certain algorithm
-to allocate the slots among the nodes; they cannot simply all start broadcasting in the first slot, since that would cause nothing but
+to allocate the slots among the nodes. They cannot simply all start broadcasting in the first slot, since that would cause nothing but
 collisions. The research on slot allocation algorithms is being conducted alongside this research$\cite{pieter}$.
 \section{\textbf{Synchronization in centralized networks}}
 In a centralized system, the solution to clock drift is trivial: the centralized server will dictate the system time because time is unambiguous. With the centralized concept in mind, different protocols have been proposed and implemented to achieve synchronization in those networks, \textit{Network Time Protocol} (NTP)\nomenclature{NTP}{Network Time Protocol} being the most popular$\cite{5}$.
 \paragraph*{}
-Infrastructure advantage being the most important factor, NTP is one of the most accurate and flexible means of sending time over the Internet. The protocol is designed to compensate for some, but not all, network time delays between the server and the client. NTP is most successful across local area networks and can give accuracy as good as a few milliseconds. On the world wide web, however, time transfer delays are at the mercy of server traffic and network bottlenecks, and accuracy figures cannot be quoted as easily. NTP uses a round time delay to a universal time reference so that it can adjust the clock of the networked component. It measures delays within the network and within the algorithms on the machine on which it is running. Using  these tools and techniques, it is able to synchronize clocks to within milliseconds of each other when connected on a Local Area Network and within hundreds of milliseconds of each other when connected to a \textit{Wide Area Network} (WAN)\nomenclature{WAN}{Wide Area Network}. Figure $\ref{ntp}$ shows the simplified structure of how the NTP protocol works to synchronize client computers.
+Due to the infrastructure advantage, NTP is one of the most accurate and flexible means of sending time over the Internet. The protocol is designed to compensate for some, but not all, network time delays between the server and the client. NTP is most successful across local area networks and can give accuracy as good as a few milliseconds. On the world wide web, however, time transfer delays are at the mercy of server traffic and network bottlenecks, and accuracy figures cannot be quoted as easily. NTP uses a round time delay to a universal time reference so that it can adjust the clock of the networked component. It measures delays within the network and within the algorithms on the machine on which it is running. Using  these tools and techniques, it is able to synchronize clocks to within milliseconds of each other when connected on a Local Area Network and within hundreds of milliseconds of each other when connected to a \textit{Wide Area Network} (WAN)\nomenclature{WAN}{Wide Area Network}. Figure $\ref{ntp}$ shows the simplified structure of how the NTP protocol works to synchronize client computers.
 \begin{figure}
 \centering
 \includegraphics[width= 0.5 \textwidth]{ntp}
@@ -178,7 +178,7 @@ Infrastructure advantage being the most important factor, NTP is one of the most
 \end{figure}
 The tiered nature of the NTP time distribution tree enables a user to choose the accuracy needed by selecting a level (stratum) within
 the tree for machine placement. A time server placed higher in the tree (lower stratum number), provides a higher likelihood of
-agreement with the \textit{UTC}\nomenclature{UTC}{Coordinated Universal Time} time standard.
+agreement with the \textit{UTC}\nomenclature{UTC}{Coordinated Universal Time} standard.
 \paragraph*{}
 Synchronization in distributed systems takes a different kind of approach since there is no central authority to be referred
 in case of time requests. Central nodes can be assigned as to play the role of a server as in the case of the centralized system.
@@ -197,20 +197,13 @@ Data collection is the main task of the sensor nodes, hence data gathering and i
 \label{lions}
 \end{figure}
 \paragraph*{}
-There are many applications which need data fusion such as signal
-enhancement (noise reduction), source localization, process control,
-and source coding. It would seem to be a natural match to implement
-such algorithms in distributed sensor networks, and there has been
-great interest in doing so. However, much of the extensive prior art
-in the field assumes centralized sensor fusion. That is, even if the
-sensors gathering data are distributed, they are often assumed to be
-wired into a single processor. Centralized processing makes use of
-implicit time synchronization. Sensor channels sampled by the same
-processor also share a common time base. Figure $\ref{lions}$ shows
-one example of data fusion application. In order to locate the
-moving object, in this case the lion, nodes have to have a common
-notion of time. Upon integration, not only the location of the lion
-but also the time when the lion was spotted is necessary. So, having
+There are many applications which need data fusion such as signal enhancement (noise reduction), source localization, process control,
+and source coding. It would seem to be a natural match to implement such algorithms in distributed sensor networks, and there has been
+great interest in doing so. However, much of the extensive prior art in the field assumes centralized sensor fusion. That is, even if the
+sensors gathering data are distributed, they are often assumed to be wired into a single processor. Centralized processing makes use of
+implicit time synchronization. Sensor channels sampled by the same processor also share a common time base. Figure $\ref{lions}$ shows
+one example of data fusion application. In order to locate the moving object, in this case the lion, nodes have to have a common
+notion of time. Upon integration, not only the location of the lion but also the time when the lion was spotted is necessary. So, having
 the same notion of time is important.
 \subsubsection{TDMA schedule}
 As previously stated, the WSN being developed at Chess uses a TDMA protocol for channel access, hence the reason for synchronization.
@@ -236,7 +229,7 @@ Each neighbor has a different transmitting slot so that there will be no collisi
 \includegraphics[width=0.6\textwidth]{tdmaschedule}
 \caption{TDMA Channel access} \label{tdmasch}
 \end{figure}
-As it is implemented in WSN, the duty cycle is of prime importance due to the energy requirement of the nodes. A duty cycle is fixed length of time which is divided into a communication time and sleeping time (Figure $\ref{tdmasch}$). Major benefits can be achieved
+As it is implemented in WSN, the duty cycle is of prime importance due to the energy requirement of the nodes. A duty cycle is the fraction of time that a system is in an "active" state. Figure $\ref{tdmasch}$ shows the time is divided into active time and sleeping time. Major benefits can be achieved
 by using this scheduled communication/sleeping protocol:
 \begin{itemize}
 \item Low duty cycles - a node can operate in low duty cycles, hence reducing the energy consumption of the nodes.
@@ -245,7 +238,7 @@ by using this scheduled communication/sleeping protocol:
 \end{itemize}
 The scheduled communication/sleeping protocol, the multihop scheme and the rippling of the message through the network are best implemented using a TDMA scheme. Usually, this medium access scheme is best suited for the infrastructure mode where the base stations schedule the TDMA slots for each node (e.g. GSM). However, such structure is not used in WSN. The scheduling of the TDMA slots is made locally by reaching an agreement between direct neighbors.
 \paragraph*{}
-Each node has a crystal oscillator that has a certain accuracy, which results in time drifts. This causes the TDMA time slot boundaries to drift when we compare two nodes with the same schedule. Hence, the need for synchronization is vital for the seamless communication of the nodes. But synchronization in WSNs is more challenging, which is explained in the next section.
+Each node has a crystal oscillator which has a drift. This causes the TDMA time slot boundaries to drift when we compare two nodes with the same schedule. Hence, the need for synchronization is vital for the seamless communication of the nodes. But synchronization in WSNs is more challenging, which is explained in the next section.
 \section{\textbf{Wireless Sensor Networks: Why different ?}}
 Are synchronization methods developed for centralized systems applicable in the case of WSNs? Many assumptions in the centralized schemes do not hold in the case of WSNs. Some of these factors can be described as follows:
 \begin{itemize}
@@ -259,14 +252,13 @@ last longer. Some applications might need a global timescale while some others c
 \item \textbf{Cost of the Nodes}: Sensor nodes are very small in size and must be cheap cost wise since they are implemented in large
 numbers. Now, a very good synchronization with \textit{GPS}\nomenclature{GPS}{Global Positioning System} receivers can be obtained, but it will be unreasonable to put an expensive and energy-hungry GPS receivers on a sensor node.
 \end{itemize}
-All the above factors make the problem of time synchronization more challenging in case of WSNs. Keeping this in mind, we can formulate
-some design requirements for WSN frame synchronization.
-\section{\textbf{Requirements of the Algorithm for MyriaNed}}
+All of the factors mentioned above make the problem of time synchronization more challenging in case of WSNs. Keeping this in mind, we can formulate some design requirements for WSN frame synchronization.
+\section{\textbf{Requirements of the algorithm for MyriaNed}}
 \subsubsection{\textbf{Precise synchronization}}
-Synchronization cab be of two types: Course and Precise synchronization. Course synchronization is implemented when a node is joining in the network. After a newly joining node listened the synchronization information sent by the other nodes in the network, it adjusts its time slot reference to the time when it detects the synchronization information, which includes the propagation delay. Precise synchronization is implemented when a node has already joined in the network, which repeatedly adjusts the diversion of its time slot reference caused by propagation delay and clock drift. In this research, we focus on precise synchronization.
+Synchronization cab be of two types: Course and Precise synchronization. Course synchronization is implemented when a node is joining in the network. After a newly joining node listened the synchronization information sent by the other nodes in the network, it adjusts its time slot reference to the time when it detects the synchronization information, which includes the propagation delay. Precise synchronization is implemented when a node has already joined the network, which repeatedly adjusts the diversion of its time slot reference caused by propagation delay and clock drift. In this research, we focus on precise synchronization.
 \subsubsection{\textbf{Lifetime}} Lifetime is the interval that clocks remain synchronized, or the interval over which a particular
 timescale is defined. Sensor networks need synchronization over a wide range of lifetimes, ranging from less than a second to a few years
-years. In our implementation here, the length of lifetime required for synchronization is throughout the life time of the network since
+years. In our implementation, the length of lifetime required for synchronization is throughout the life time of the network since
 the primary reason for the synchronization of the MyriaNed network is for TDMA frame synchronization.
 \subsubsection{\textbf{Scope}} The scope is the size of the region in which a timescale is defined. In some cases, the scope may be purely
 geographic (e.g., distance in meters). In other contexts, it is more useful to think about the logical distance, such as the number of
@@ -292,7 +284,7 @@ which give rise to errors in the clocks of nodes or in synchronization algorithm
 \begin{enumerate}
 \item \textbf{Oscillator Characteristics}: The sensor nodes' clocks run on very cheap oscillators. The following two characteristics are the main sources of errors between the clocks of two different nodes.
          \begin{description}
-         \item \emph{\textbf{Accuracy}}: This is a measure of difference between oscillators expected (ideal) frequency and actual frequency. It is also called as the calibration tolerance of the clock; its maximum is specified by the manufacturer.
+         \item \emph{\textbf{Accuracy}}: This is a measure of difference between oscillator's expected (ideal) frequency and actual frequency. Its maximum is specified by the manufacturer.
          \item \emph{\textbf{Stability}}: This is the oscillator's tendency to stay at the same frequency over time. There can be short-term instability due to environmental effects, supply voltage, long-term instability due to temperature effects and crystal aging.
       \end{description}
 \item \textbf{Hardware and Environmental factors}: The non-determinism in the message delivery latency is a major source of error in any synchronization algorithm, when applied into real sensor networks. This can be categorized in four type of delays:
@@ -300,13 +292,13 @@ which give rise to errors in the clocks of nodes or in synchronization algorithm
          \item \emph{\textbf{Send Time}}: The time spent at the sender to build the message, i.e. the time duration between generating the message and injecting it into the network.
          \item \emph{\textbf{Access Time}}: Delay occurred while waiting for access to the transmit channel.
          \item \emph{\textbf{Propagation Time}}: Time required for the message to travel from sender to receiver.
-         \item \emph{\textbf{Receive Time}}: Time needed for processing at the receivers network interface.
+         \item \emph{\textbf{Receive Time}}: Time needed for processing at the receiver's network interface.
       \end{description}
 \end{enumerate}
       All the above factors result in following errors between the clocks of two nodes:
 \begin{description}
 \item \textbf{Phase error}: The oscillators of any two nodes can be out of phase at any given time, resulting in different time on both clocks. There can be some initial difference between nodes' clocks at the start of a synchronization procedure. It describes how far apart are the clocks at a given time.
-\item \textbf{Frequency error}: Frequency error, in contrast, measures the difference in the clock rates. This metric is important because it predicts the growth of phase error over time. That is, if clocks are perfectly synchronized now, at what rate are they drifting apart? How well will they be synchronized in 60 seconds?
+\item \textbf{Frequency error}: Frequency error measures the difference in the clock rates. This metric is important because it predicts the growth of phase error over time. That is, if clocks are perfectly synchronized now, at what rate are they drifting apart? How well will they be synchronized in 60 seconds?
 \item \textbf{Clock drift}: It is not just that the clocks are running at different rates, but even the frequency of each clock does not stay constant over a period of time. Clock drift arises from the instability of oscillators. For instance, if each clock drifts at a rate of $\theta$ msec/sec, then maximum relative drift between two clocks can be 2$\theta$ msec/sec.
 \end{description}
 Even if two clocks are assumed to have the same frequency and no drift, the above mentioned delays in the network result in phase
@@ -317,24 +309,23 @@ to errors in accuracy from an ideal clocks, and dispersion amongst their clocks.
 The quality of a clock usually amounts to its frequency stability which is the ability of its frequency standard to emit
 events at a constant frequency over time. The absolute value of the frequency compared to the desired value or, its frequency accuracy
 is also important. Calibration can easily compensate for an inaccurate but stable clock.
-\paragraph*{} As per our motive to a synchronized clock, clocks are very important in this research: the error bound achieved by a clock
-synchronization method is linked to both the error inherent in the method itself, and the stability of the clocks' frequency. In fact,
+\paragraph*{} As per our motive to a synchronized clock, clocks are very important in this research. The error bound achieved by a clock
+synchronization method is linked to both the error inherent in the method itself, and the stability of the clock's frequency. In fact,
 to some extent, the two are interchangeable. Stable clocks can compensate for a synchronization channel between them that is prone
 to large but unbiased errors: many synchronization events can be averaged over a long time. Similarly, a precise synchronization
 channel can compensate for a poor-stability crystal oscillator whereas frequent synchronization minimizes the time in-between when the
 clock is left to fend for itself.
 \paragraph*{}
-Many types of frequency standards exist. In general, as their stability and accuracy increase, so do their power requirements,
+Many types of frequency standards exist. In general, as the stability and accuracy of the clocks increase, so do their power requirements,
 size, and cost, all of which are important in WSNs. Most commonly found in computer clocks are quartz crystal oscillators,
 characterized by $\cite{6}$. Quartz crystals are attractive because they are inexpensive, small, use little power, and perform
 surprisingly well despite their low resource requirements. The frequency generated by a quartz oscillator is affected by a number
-of environmental factors: the voltage applied to it, the ambient temperature, acceleration in space (e.g., shock or attitude
+of environmental factors: the voltage applied, the ambient temperature, acceleration in space (e.g., shock or altitude
 changes), magnetic fields, and so forth. More subtle effects as the oscillator ages also cause longer-term frequency changes. The
 inexpensive oscillators commonly found in computers have a nominal frequency accuracy on the order of between $10^4$ to $10^6$ that is,
 two similar but uncalibrated oscillators will drift apart between 1 and 100 microseconds every second, or, between about 0.1 and 10
-seconds per day $\cite{6}$ $\cite{7}$. However, their frequency stability is significantly better with a change in frequency of one
-part in $10^9$ to $10^{11}$ when averaged over several seconds or more. In our implementation, a 32 kHz crystal clock $\cite{18}$
-$\cite{19}$  is used in the MyriaNode$\footnote{MyriaNode is the sensor node which is built for the project MyriaNed.}$.
+seconds per day $\cite{6},\cite{7}$. However, their frequency stability is significantly better with a change in frequency of one
+part in $10^9$ to $10^{11}$ when averaged over several seconds or more. In our implementation, a 32 kHz crystal clock $\cite{18},\cite{19}$  is used in the MyriaNode$\footnote{MyriaNode is the sensor node which is built for the project MyriaNed.}$.
 \subsection{\textbf{Clock time}}
 In this section, we will see the clock time and its expression. From the definition of frequency:
 \begin{equation}
@@ -352,7 +343,7 @@ C(t) = \frac{1}{f_o}\int_{t_o}^{t} {f(\tau)d\tau} + C(t_o) ,
 \end{equation}
 where $f(\tau)$ is the frequency of the clock, $f_o$ is the nominal frequency of the crystal oscillator and $t_o$ is the start time of
 the node. The exact clock drift is hard to predict because it depends on environmental influences (such as temperature, pressure
-and power voltage). One can usually assume that the clock drift of a computer clock doesn't exceed a maximum value $\rho$ . This means
+and power). One can usually assume that the clock drift of a computer clock doesn't exceed a maximum value $\rho$ . This means
 that it can be assumed
 \begin{equation}
 1-\rho \leq \frac{dC(t)}{dt} \leq 1+\rho ,
@@ -420,7 +411,7 @@ $\ref{block}$.
 \section{\textbf{Performance metrics of a synchronization protocol}}
 There are different metrics in which a synchronization algorithm can be measured. Some of the parameters are discussed below.
 \subsubsection{\textbf{Precision}}
-Deterministic algorithms guarantee absolute upper bounds on the synchronization error between the nodes or with respect to external time source. In this case, the maximum synchronization error between a node and real time or between two nodes is interesting; for stochastic algorithms (which can only give stochastic bounds in the sense that that synchronization error is with some probability smaller than a prescribed bound), the mean error, the error variance or some other quantity is relevant.
+Deterministic algorithms guarantee absolute upper bounds on the synchronization error between the nodes or with respect to external time source. In this case, the maximum synchronization error between a node and real time or between two nodes is interesting; for stochastic algorithms (which can only give stochastic bounds in the sense that synchronization error is with some probability smaller than a prescribed bound), the mean error, the error variance or some other quantity is relevant.
 \subsubsection{\textbf{Energy costs}}
 The energy costs of a time synchronization protocol depend on several factors: the number of packets exchanged in one round of the algorithm, the amount of computation needed to process the packets, and the required synchronization frequency.
 \subsubsection{\textbf{Memory requirement}}
@@ -477,7 +468,7 @@ So, in order to address this problem, three algorithms are proposed to realize a
 \chapter{\textbf{Synchronicity protocol}}
 \section{\textbf{Synchronization Frequency}}\paragraph*{}
 Before presenting the algorithms, the synchronization frequency is shwon here in order to build up the model to the implementation of the algorithms. A time interval is usually left vacant (i.e., during which no data is sent) on a transmission channel that can be used for synchronization and/or compensating for a signal distortion. In achieving frame synchronization in a TDMA scheduling, a guard time is given for a fault tolerance which is used to accommodate the phase errors, as shown in Figure $\ref{guardtime}$. The guard time provides a safety margin against symbol interference in the time between sequential operations such as transmission, encoding, decoding or switching. The message has the error tolerance of a guard time. As the guard time increases, the probability that the message is received in the time slot increases. But in its downturn, it consumes energy as the node is listening throughout this time.
-\paragraph*{} Decreasing the timing of the synchronization and do periodic execution of the synchronization of the algorithm greatly reduces
+\paragraph*{} Decreasing the timing of the synchronization and do periodic execution of the synchronization algorithm greatly reduces
 the energy consumption of the wireless sensor network. Thus, a synchronization period, $T_{sync}$, is defined here as the period in which the network can stay synchronized without the application of the synchronization algorithm.
 \begin{figure}
 \centering
@@ -485,7 +476,7 @@ the energy consumption of the wireless sensor network. Thus, a synchronization p
 \caption{Guard time for drift compensation} \label{guardtime}
 \end{figure}
 \paragraph*{}
-A time slot can be defined as being expressed in a number of clock cycles as
+A slot can be expressed in a number of clock cycles as
 \begin{equation}
 t_{slot} = kT ,
 \end{equation}
@@ -534,7 +525,7 @@ t_{slot} \geq t_{guard} + T_{tx}
 Hence, there is a trade-off in determining $T_{sync}$: increasing $T_{sync}$ reduces the energy costs of synchronization, but decreases the network perfromance. This is because the synchronization done less frequently so than nodes might drift out of synchronization in the mean time.
 \section{\textbf{Mathematical Model}}
 As it is described earlier, the wake up time of the nodes should be synchronized in such away that the nodes are synchronized in the
-long term, as the TDMA scheduling requires. As part of the message, the nodes are transmitting the slot number which they are transmitting. This information is used in the calculation of the time that the message is sent.
+long term, as the TDMA scheduling requires. As part of the message, the nodes send the slot number which they are transmitting to the neighbours. This information is used in determining the time that the message is sent.
 \paragraph*{}
 The difference between the transmitting times of node $i$ and node $j$ is
 \begin{equation}
@@ -624,7 +615,7 @@ whereas the second one describes how the node is positioned in the network topol
 3. Each receiver i computes its phase error to any other node j in the neighborhood. \\
 4. Each receiver i computes the ...values for the corresponding phase errors. \\
 5. Each receiver i computes the weight for each ....value. \\
-6. Each receiver i computes the offset using the weigh factor method. \\
+6. Each receiver i computes the offset using the weight factor method. \\
 7. Each receiver adjusts its wake up time using the offset.\\
 \hline \hline
 \end{tabular}
@@ -767,7 +758,7 @@ Following these, we can see the equation more deeply.
 \tilde x_k = \tilde x_k + K(z_k-H\tilde x_k).
 \label{updatekalman}
 \end{equation}
-The difference $z_k - H\tilde x_k$ in $\ref{updatekalman}$ is called the the residual. The residual reflects the discrepancy between the
+The difference $z_k - H\tilde x_k$ in $\ref{updatekalman}$ is called the residual. The residual reflects the discrepancy between the
 predicted measurement $H\tilde x_k$ and the actual measurement $z_k$. A residual of zero means that the two are in complete
 agreement. \paragraph*{}
 The matrix K in ($\ref{kalmangain}$) is chosen to be the gain or blending factor that minimizes the posteriori error covariance. Taking the derivative of the trace of the result with respect to K, setting that result equal to zero, and then solving for K, we get
@@ -778,7 +769,7 @@ K_k = P_kH^{T}(HP_kH^{T} + R)^{-1}
 K_k = \frac{P_kH^T}{HP_kH^T + R}.
 \label{gain}
 \end{equation}
-Looking at ($\ref{gain}$), it is seen that as the measurement error covariance $R$ approaches zero, the gain K weights the residual more
+Looking at ($\ref{gain}$), it can be seen that as the measurement error covariance $R$ approaches zero, the gain K weights the residual more
 heavily. Specifically,
 \begin{equation}
 \mathop {\lim }\limits_{R_k \to 0 } {K_k} = H^{-1}.
@@ -827,7 +818,7 @@ where $T$ is the period of a time frame. \paragraph*{} Substituting ($\ref{slot}
 D= \frac{N(2x+T_{slot}}{T}.
 \end{equation}
 With the better performance achievement with the other algorithms, the guard time can be reduced depending on the precision of the
-algorithm. Let $\epsilon$ be the guard time reduction in clock cycles. Hence, the new guard time will be $2x-\epsilon$.
+algorithm. Let $\epsilon$ be the guard time reduction in clock cycles. Hence, the new guard time will be $2(x-\epsilon)$.
 \paragraph*{} The new duty cycle becomes
 \begin{equation}
 D_n=\frac{(2(x-\epsilon)+T_x)N}{T}.
@@ -844,7 +835,7 @@ The decrease in the guard time of the slot is thus dependent on the algorithm's 
 frame. As the number of slots increases with a constant performance increase $\epsilon$, the energy conservation also increases linearly. The number of slots is determined by the MAC protocol.
 \chapter{\textbf{Results and Discussion}}
 \section{\textbf{Simulation setup}}
-The simulation setup which is used in the research to test the performance of the presented frame synchronization algorithms is explained in this section. The simulated WSN operates in the 2.4GHz ISM band at a data rate of 2Mbps. We use a Discrete Event Simulator (DES) for the simulation. A DES\nomenclature{DES}{Discrete Event Simulator} will break down a simulation into discrete chunks. Every event will occur at some countable time moment and will be given in chronological order. The advantage of this distinction is two-fold. First, simulations will not be dependant on some real-time clock, which reduces the inaccuracies fed into the simulation. Second, events can be isolated to perform certain measurements.
+The simulation setup which is used in the research to test the performance of the presented frame synchronization algorithms is explained in this section. The simulated WSN operates in the 2.4GHz ISM band at a data rate of 2Mbps. We use a Discrete Event Simulator (DES) for the simulation. A DES\nomenclature{DES}{Discrete Event Simulator} will break down a simulation into discrete chunks. Every event will occur at some countable time moment and will be given in chronological order. The advantage is two-fold. First, simulations will not be dependant on some real-time clock, which reduces the inaccuracies fed into the simulation. Second, events can be isolated to perform certain measurements.
 \paragraph*{}
 One such DES is called OMNeT++$\cite{omnet}$. It provides a component architecture for models. Components are programmed in C++, then assembled into larger components and models using a high-level language. These components are merged into a joined simulation environment: MiXiM$\footnote{MiXiM (MIXed sIMulator) is a simulation framework for wireless and mobile networks using the OMNeT++ simulation engine.It is a collaborative project  between TU Berlin, TU Delft and Universitaet Paderborn.}$. Nodes are modeled as a set of separate components stacked upon each other. Octave$\footnote{Octave is a free program for performing numerical computations which is mostly compatible with MATLAB. It is part of the GNU project.}$ is used for interpretation of the data from the network simulator.
 \paragraph*{}
@@ -883,7 +874,7 @@ Figure $\ref{50output0}$ is the result of a simulation for $50$ nodes. The synch
 \subsubsection{\textbf{Case II}}
 In second set of simulations, the mobility of the nodes is taken into account. Here, the number of the nodes is taken to be $20$. The simulations are conducted for different speeds, at $6km/hr$ and $20km/hr$. Chosen speeds emulate the speed of a walking man and an average speed of a slowly moving vehicle.
 \paragraph*{}
-Figure $\ref{16output6}$ shows 20 nodes with a speed which is an independent gaussian variable with mean $6km/hr$ and standard deviation of 1$km/hr$. As the results shows, WM and NLLS perform better concernig the synchronization of the frame, $1 clk$ each. KF outperforms all, with $8 clk$ from the Median algorithm.
+Figure $\ref{16output6}$ shows 20 nodes with a speed which is an independent gaussian variable with mean $6km/hr$ and standard deviation of 1$km/hr$. As the results show, WM and NLLS perform better concernig the synchronization of the frame, $1 clk$ each. KF outperforms all, with $8 clk$ from the Median algorithm.
 \paragraph*{}
 \begin{figure}
 \centering
@@ -995,7 +986,7 @@ synchronize the nodes' logical clocks as closely as possible, while satisfying c
 \end{figure} \paragraph*{}
 There are different approaches towards the lower bound that a synchronization algorithm achieve. In $\cite{gradient}$, the clock drift is taken to be zero and the delay impact on the lower bound of the synchronization algorithm is presented. But a more realistic approach is presented in $\cite{gradient2}$. Gradient clock synchronization is shown to require that the skew between any two nodes' logical clocks be
 bounded by a nondecreasing function of the uncertainty in message delay (call this the distance) between the two nodes. Nearby nodes
-are required to be closely synchronized, and allow faraway nodes to be more loosely synchronized. Hence, the result is that the worst
+are required to be closely synchronized, and allow far away nodes to be more loosely synchronized. Hence, the result is that the worst
 case clock skew between two nodes at distance $d$ from each other is
 \begin{equation}
 \Delta L \geq \frac{\tilde \rho d}{8(1+\tilde \rho)}\frac{log(n-1)}{log(\frac{8(1+\tilde \rho)}{\tilde \rho}log(n-1))}.

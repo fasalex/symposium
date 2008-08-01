@@ -67,11 +67,11 @@ achieve a long-term decentralized frame synchronization of a WSN in
 an energy-efficient method which employs no timestamping on the
 messages. The method use the phase errors between the receiver and
 its neighbors, without actually estimating the neighbor's clock as a
-way of achieving long-term frame synchronization. In this research,
+way of achieving synchronization. In this research,
 three algorithms are presented and compared with the Median algorithm in terms of performance and
 energy consumption.
 \par The remainder of the paper is organized as follows:
-Section II discusses the synchronization error and presents the set back of the Median algorithm.
+Section II discusses the sources of synchronization error and presents the set back of the Median algorithm.
 Section III presents the mathematical models of the proposed algorithms for the synchronization of the network.
 In Section IV, simulation results are presented and analysis of the results in addition to the comparison of the methods with respect to energy consumption is discussed. Finally, Section V draws the conclusions from the research and suggests future work.
 \section{\textbf{Problem Formulation}}
@@ -103,7 +103,7 @@ The different factors which give rise to errors between two nodes can be identif
       \end{itemize}
 \textbf{Hardware and environmental factors}: The non-determinism in the message delivery latency can be categorized in four type of delays:
       \begin{itemize}
-         \item \emph{\textbf{Send time}}: The time spent at the Sender to build the message.
+         \item \emph{\textbf{Send time}}: The time spent at the sender to build the message.
          \item \emph{\textbf{Access time}}: Delay occurred while waiting for access to the transmit channel.
          \item \emph{\textbf{Propagation time}}: Time required for the message to travel from sender to receiver.
          \item \emph{\textbf{Receive time}}: Time needed for processing at the receivers.
@@ -137,7 +137,7 @@ Thus, the clock time is described as
 C(t) = \frac{1}{f_o}\int_{t_o}^{t} {f(\tau)d\tau} + C(t_o) ,
 \label{clock}
 \end{equation}
-where $f(\tau)$ is the frequency of the clock, $f_o$ is the nominal frequency of the crystal oscillator and $t_o$ is the start time of the node. \par The exact clock drift is hard to predict because it depends on environmental influences but can usually assumed that it clock doesn't exceed a maximum value $\rho$. This means that it can be assumed
+where $f(\tau)$ is the frequency of the clock, $f_o$ is the nominal frequency of the crystal oscillator and $t_o$ is the start time of the node. \par The exact clock drift is hard to predict because it depends on environmental influences but can be usually assumed that it doesn't exceed a maximum value $\rho$. This means that it can be assumed
 \begin{equation}
 1-\rho \leq \frac{dC(t)}{dt} \leq 1+\rho ,
 \end{equation}
@@ -164,13 +164,12 @@ C_i(t) & = & C_i(t_o) + (t-t_o) +\frac{\Delta f}{f_o}(t-t_o) \\
 & & + \frac{a}{2f_o}(t-t_o)^2 + \frac{1}{f_o}\int^{t}_{t_o}{f_e(\tau)d\tau} +
 \frac{1}{f_o}\int^{t}_{t_o}{f_r(\tau)d\tau} .
 \end{eqnarray*}
-A 32 kHz crystal clock $\cite{18}$ $\cite{19}$  is used in the MyriaNode$\footnote{MyriaNode is the prototype sensor node which is built for the project MyriaNed.}$. Some notes to be considered in the model includes:
+A 32 kHz crystal clock $\cite{18}$ $\cite{19}$  is used in the MyriaNode$\footnote{MyriaNode is the prototype sensor node which is built for the project MyriaNed.}$. Some notes to be considered in the model are:
 \begin{itemize}
 \item The amplitude of the short term variations due to noise $f_r(t)$ (clock jitter) is small enough that they do not cause the clock to
 accelerate or decelerate in a large amount in the long run.
 \item Individual clock properties are assumed to be uncorrelated.
-\item Clock parameters are normally distributed. The variances of the constants in the clock drift equation (initial time error,
-initial frequency error, aging rate)$\cite{18}$ $\cite{19}$ are all inputs to the model.
+\item Clock parameters are normally distributed. The variances of the constants (initial time, initial frequency error, aging rate)$\cite{18},\cite{19}$ are all inputs to the model.
 \item The spread in clock time grows almost linearly as a function of time, due to the dominance of the linear term in the clock drift equation.
 \end{itemize}
 \subsection{\textbf{Median algorithm and the setback}}
@@ -186,7 +185,7 @@ any other node j in the neighborhood as
 \end{equation}
 where $t_i$ is the wake-up time of node $i$ and $t_j$ is the wake-up
 time of node $j$ at the $n^{th}$ period.
-\item Receivers compute the median of the phase errors
+\item Receivers compute the median of the phase errors,
 \begin{equation}
 \xi_i^{(n)} = median(\Delta t_{ij}^{(n)}) , \forall j
 \end{equation}
@@ -201,7 +200,7 @@ where $G$ is the gain factor.
 \includegraphics[width=0.4\textwidth]{node_field}
 \caption{A WSN scenario} \label{wsn}
 \end{figure}
-By multiplying the median with a gain factor,i.e. $G\xi_i^{(n)}$, the output can be adjusted for better performance.
+By multiplying the median with a gain factor, $G\xi_i^{(n)}$, the output can be adjusted for better performance.
 \par As per the application of Median, there are setbacks on its implementation. In some test-cases, the algorithm fails to converge or stays unsynchronized for a certain period of time.
 \par A typical scenario is presented where the Median algorithm takes a longer time to achieve synchronization. In Figure $\ref{wsn}$, a distribution of nodes is shown. Node 10 joins  the stable network communication through Node 9. Assume Node 9 belongs to two broadcast domains, Node 3's and Node 10's. Thus, upon the application of the median algorithm, the node tends to adjust its wake-up time with the median of the phase errors from its neighbors, Node 3 and Node 10. Adjusting the wake-up time, the offset is
 \begin{equation}
@@ -212,11 +211,8 @@ By multiplying the median with a gain factor,i.e. $G\xi_i^{(n)}$, the output can
 \includegraphics[width= 0.5\textwidth]{offsetpic}
 \caption{Using median for phase error correction} \label{fasik}
 \end{figure}
-With Node 10 being isolated from the well established
-network, it has a major drift from the other nodes. Being in sync
-with the other nodes, Node 9 will drift away from the network after
-its adjustment with the Node 10. It will take more time to
-synchronize with the network again. Figure $\ref{fasik}$ shows the state of the network after the
+Being in synchronization with the other nodes, Node 9 will drift away from the network after
+its adjustment with the Node 10. It will take Node 9 more time to synchronize with the network again. Figure $\ref{fasik}$ shows the state of the network after the
 synchronization using the Median.
 \par So, in order to address this problem, three algorithms are proposed in the next section to realize an energy-efficient, more precise and simple frame synchronization.
 \section{\textbf{Synchronicity protocol}}
@@ -224,7 +220,7 @@ synchronization using the Median.
 %\textbf{Precise synchronization}: Precise synchronization is implemented when a node has already joined in the network, which repeatedly adjusts the diversion of its time slot reference caused by propagation delay and clock drift. \par
 Decreasing the timing of the synchronization and do periodic execution of the synchronization of the algorithm greatly reduces
 the energy consumption of the WSN. Thus, a synchronization period, $T_{sync}$, is defined as the period in which the network can stay synchronized without the application of the synchronization algorithm.
-\par A time slot can be defined as being expressed in a
+\par A slot can be expressed in a
 number of clock cycles as
 \begin{equation}
 t_{slot} = kT ,
@@ -273,7 +269,7 @@ t_{slot} \geq t_{guard} + T_{tx}
 In general, there is a trade-off in determining $T_{sync}$: increasing $T_{sync}$ reduces the energy costs of synchronization, whereas decreasing the network performance.
 \subsection{\textbf{Mathematical model}}
  As part of the message, nodes are transmitting the slot number which they are transmitting. This information is used in the determination of the time that the message is sent. Each message
-that is send within a time slot is exactly received by a neighbor at
+that is sent within a slot is exactly received by a neighbor at
 a known clock tick number
 \begin{equation}
 tick_{rx} = T_{tx}+ \frac{t_{guard}}{2} \label{tick}
@@ -285,11 +281,11 @@ The difference between the wake up times of node $i$ and node $j$ is
 \end{equation}
 where $t_i$ and $t_j$ are the wake-up times of node $i$ and node $j$
 at the $n^{th}$ period. \par
-The wake-up time of a node at a random time after $n$ periods of firings after it is turned on is
+The wake-up time of a node after $n$ periods of firings after it is turned on is
 \begin{equation}
 t_i^{(n)} = \sum_{n} T_i^{(n)} + t_{io},
 \end{equation}
-where  $T_i^{(n)}$ is the period of the crystal clock at the $n^{th}$ period which changes with time according to ($\ref{frequency}$) and $t_{io}$ is the initial start-up time of the node. The frequency of the node varies due to the different factors mentioned in ($\ref{frequency}$). \par
+where  $T_i^{(n)}$ is the period of the crystal clock at the $n^{th}$ period which changes with time according to ($\ref{frequency}$) and $t_{io}$ is the initial start-up time of the node.\par
 The difference in the wake-up time of the nodes is given by
 \begin{eqnarray}
 \Delta t_{ij} & = & \sum_{n}T_i^{(n)} + t_{io}- (\sum_{n}T_j^{(n)} +
@@ -323,7 +319,7 @@ the optimal offset to be added to the next wake-up time of the node.
 \par Three algorithms are proposed and presented in the next subsections.
 \subsubsection{\textbf{Weighted Measurements}}
 One form of approach to tackle the dynamic behavior of a WSN, due to channel conditions as well as collisions, is a
-Weighted Measurement (WM) approach. Using this approach, different
+Weighted Measurements (WM) approach. Using this approach, different
 weights are given to the different measurements. A weight is added to
 increase the influence of the close by neighbors and ensure
 faster synchronization. In addition to that, a new joining neighbor
@@ -350,10 +346,10 @@ faster time. The weight is selected in such a way that the a node
 joining a network should adjust its time with the network that it is
 joining. After each measurement, a phase error is associated with
 the weight  factor to which shows how far is the node concerning the
-time that it drifted away from its neighbors. \par \noindent In the
-selection of the weight factor, two steps are taken. \par \noindent
+time that it drifted away from its neighbors. 
+\par \noindent In the selection of the weight factor, two steps are taken. \par \noindent
 Firstly, each phase error $\Delta t_{ij}$ is first associated with
-value, $\delta_{ij}$, in order to weigh how far the neighbor node
+a value, $\delta_{ij}$, in order to weigh how far the neighbor node
 has drifted. The values are calculated as:
 \begin{equation}
 \delta_{ij} = ae^{-b\Delta t_{ij}}.
@@ -363,7 +359,7 @@ has drifted. The values are calculated as:
 \includegraphics[width= 0.5\textwidth]{weight}
 \caption{Weight factors for the phase error distribution}
 \label{weight}
-\end{figure}
+\end{figure} \noindent
 The parameters $a$ and $b$ are selected using the initial conditions,
 $\delta_{ij}=0.1$ for $\Delta t_{ij}$ = $t_{guard}$ and $\delta_{ij}=1$ for $\Delta t_{ij}$ = 0. As shown in Figure $\ref{weight}$,
 the closer the phase error is to zero, the higher value it is given. The assignment of high values to  small
@@ -379,7 +375,7 @@ the neighbors. \par \noindent Hence, the weight factor is
 \begin{array}{l l}
   1 - \delta_{ij},& \quad \mbox{if $mean(\delta_{ij}$) $<$ 0.5}\\
  \delta_{ij}, & \quad \mbox{if $mean(\delta_{ij}$) $>$ 0.5}\\ \end{array} \right. \]
-where $m$ is the mean function.
+where $mean$ is the average function.
 The weight then moves towards the large phase errors if the node is a new-comer that wants to join the "already established" network.
 \par WM is a two step process in which the first one describes how the node has drifted away from its neighbors
 whereas the second one describes how the node is positioned in the network topology which surrounds it. Using the WM approach, a series of measurements will be used to estimate the next wake-up time of the node, giving less value/emphasis to the nodes which are out of reach from the neighboring nodes.
@@ -407,7 +403,7 @@ parameters. Then, the parameters are refined iteratively, that is, the values ar
 \begin{equation}
     \beta_j^{p+1}=\beta^p_j+\Delta \beta_j.
 \end{equation}
-for $j=1,2...,m.$ Here, $p$ is an iteration number and the vector of increments, $\Delta \beta_j$, is known as the shift vector. At each iteration, the model is linearized by approximation to a first-order Taylor series expansion about $\beta^p$.
+for $j=1,2...,m.$ Here, $p$ is an iteration number and the vector of increments, $\Delta \beta_j$, is the shift vector. At each iteration, the model is linearized by approximation to a first-order Taylor series expansion about $\beta^p$.
 \begin{equation}
     f(x_i,\beta)\approx f(x_i,\beta^p) +\sum_j \frac{\partial f(x_i, \beta^p)}{\partial \beta_j} \left(\beta^p_j -\beta_j \right)
 \end{equation}
@@ -441,8 +437,7 @@ In order to meet the demand of adjusting the time offset and stabilize the netwo
 \begin{equation}
  f(x_i,\beta)= \beta _1 + \beta_2log(x_i),
 \end{equation}
-is chosen. \par
-A logarithmic function can be used to represent the distribution of the offsets in the neighborhood, as shown in Figure $\ref{curvefit}$.
+is chosen. A logarithmic function can be used to represent the distribution of the offsets in the neighborhood, as shown in Figure $\ref{curvefit}$.
 Normalized phase error values tend to be small and follow a curve in such away that the maximum value of the phase error should not be greater than the threshold value that was intended to be, the synchronization error.
 \begin{figure}
 \centering
@@ -457,8 +452,8 @@ calculated in such a way that the measurement error from a
 pre-determined offset value is reduced. This ensures that the offset
 to be added in the next wake-up time doesn't diverge in a large
 amount from the predicted value.
-\subsubsection{\textbf{Discrete time Kalman Filter for synchronization}}
-The Kalman Filter$\cite{kalm}$ estimates a process by using a form of feedback
+\subsubsection{\textbf{Discrete time kalman filter for synchronization}}
+The kalman filter$\cite{kalm}$ estimates a process by using a form of feedback
 control: the filter estimates the process state at some time and
 then obtains feedback in the form of (noisy) measurements. As such,
 the equations for the Kalman filter fall into two groups: time
@@ -600,7 +595,7 @@ interpretation of the data from the network simulator.
 \end{figure*}
 The nodes are deployed uniformly across the field.%  The neighborhood is limited to 10 nodes.
 The start up time of the nodes is random, gaussian distributed variable, $t_{io}$. The
-synchronization error is the difference between the wake-up time of the nodes in the
+synchronization error is the maximum difference between the wake-up time of the nodes in the
 neighborhood.
 \begin{center}
     \begin{tabular}{ | l | l |}
@@ -630,7 +625,7 @@ Figure $\ref{16output6}$ shows 20 nodes with a speed which is an independent gau
 \par
 The speed of the nodes is increased to be an independent gaussian random variable with mean $20km/hr$ and standard deviation $1km/hr$. The simulation results is presented, Figure $\ref{16output20}$. With the increase in the speed of the nodes, the precision of the algorithms improves. KF, with an average of of $10 clk$ performs the best, whereas WM and NLLS perform well too compared with the median, $1 clk$ and $1 clk$ respectively. As the dynamics of the networks increases, Median becomes more unstable and exhibits large synchronization error. NLLS and WM have a more stable performance when the network becomes dynamic with constantly changing connection between the nodes.
 \par
-The relative comparison of the algorithms performance improvement with the Median is shown in Figure $\ref{16error}$ for nodes moving at $20km/hr$. WM and NLLS perform, on average, $6-8\%$ better than Median, but with more tolerance in handling the disruptions. The best performer, KF, has on average $60\%$ better performance than the Median one.
+The relative comparison of the algorithms performance improvement with the Median is shown in Figure $\ref{16output-error}$ for nodes moving at $20km/hr$. WM and NLLS perform, on average, $6-8\%$ better than Median, but with more tolerance in handling the disruptions. The best performer, KF, has on average $60\%$ better performance than the Median one.
 \begin{figure}
 \centering \includegraphics[width=0.5\textwidth]{16output-error}
 \caption{Relative error of the algorithms w.r.t. Median for 20 nodes}
@@ -649,7 +644,7 @@ In this set of simulations, the number of the nodes is increased, to $50$. With 
 \par With a speed of $20km/hr$, the simulation results are presented in Figure $\ref{50output20}$. As the speed increases, the unstability on the synchronization of the nodes also increases, which makes the Median more prone to errors. WM has better tolerance towards mobility of the nodes, whereas the NLLS does well regarding stability. KF has the best precision against Median, at $7clk$. As the speed increases, the precision of the synchronization increases too. 
 \par
 For the set of nodes with a higher speed , a relative comparison is made to see the performance of the nodes with the Median algorithm.
-The Median algorithm is shown to perform the worst in this case. There are a lot of disruptions in the network, making it more unstable whereas the other algorithms adapt to the changes faster. Figure $\ref{50error}$ shows that KF performs the best against Median algorithm, $45\%$. WM and NLLS perform well against Median too, $5\%$ on average. It has been shown that the median is prone to error in case of high dynamics in the network.
+The Median algorithm is shown to perform the worst in this case. There are a lot of disruptions in the network, making it more unstable whereas the other algorithms adapt to the changes faster. Figure $\ref{50output-error}$ shows that KF performs the best against Median algorithm, $45\%$. WM and NLLS perform well against Median too, $5\%$ on average. It has been shown that the median is prone to error in case of high dynamics in the network.
 \begin{figure}
 \centering \includegraphics[width=0.5\textwidth]{50output-error}
 \caption{Relative error of the algorithms w.r.t. Median for 50 nodes}
@@ -692,7 +687,9 @@ the energy consumption of the nodes because the synchronization
 period, $T_{sync}$ can be increased or the guard time of the node's
 frame, $t_{guard}$ can be reduced to achieve the same performance as
 the Median algorithm. Results are presented and discussed.
-\par But in the downside, the energy consumption of the algorithms is greater than the Median algorithm's energy consumption as the algorithms are more complex computationally. Analysis is made and presented about the energy saving made by decreasing the guard time of the slot. Communication is in general around 5 times costlier than computation on MyriaNodes. A net gain of battery life can thus be achieved by reducing the guard time. Median is shown to be still the best choice in a static environment with the current implementation,with less energy consumption and simplicity into consideration. But, for dynamic networks, the other algorithms perform better, in terms of performance. KF has the edge due to its adaptive nature.
+\par But in the downside, the energy consumption of the algorithms is greater than the Median algorithm's energy consumption as the algorithms are more complex computationally. Analysis is made and presented about the energy saving made by decreasing the guard time of the slot. Communication is in general around 5 times costlier than computation on MyriaNodes. A net gain of battery life can thus be achieved by reducing the guard time. 
+\par 
+Median is shown to be still the best choice in a static environment with the current implementation,with less energy consumption and simplicity into consideration. But, for dynamic networks, the other algorithms perform better, in terms of performance. KF has the edge due to its adaptive nature.
 \par Different software power minimization techniques can be applied to further reduce the power consumption of the proposed algorithms implementation, making them more energy efficient for implementation. Upon the completion of the ongoing project on developing a Software Defined Radio (SDR) for the inspection of the nodes' wake-up times, a proper evaluation and enhancements on the algorithms, being implemented on the MyriaNodes, is achievable. Real time feedbacks can be used to improve the algorithms towards perfection.
 \section{\textbf{Acknowledgment}}This research is part of the MyriaNed Project. The author would like to thank Frits van der Wateren from Chess$\cite{chess}$ Innovation Team for his continuous support, suggestions and advice during the project. Many thanks to dr.ir. Peter Smulders, prof.dr.ir. Erik Fledderus and prof.dr.ir. Peter Baltus from TU/e for their guidance.
 \begin{thebibliography}{\textbf{References}}
