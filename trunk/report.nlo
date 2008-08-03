@@ -15,5 +15,5 @@
 \nomenclatureentry{a$T_{sync}$@[{$T_{sync}$}]\begingroup Synchronization frequency\nomeqref {4.1}|nompageref}{21}
 \nomenclatureentry{a$t_{guard}$@[{$t_{guard}$}]\begingroup Length of the guard time\nomeqref {4.2}|nompageref}{21}
 \nomenclatureentry{a$\xi_i$@[{$\xi_i$}]\begingroup Offset to be added to Node $i$\nomeqref {4.14}|nompageref}{23}
-\nomenclatureentry{aDES@[{DES}]\begingroup Discrete Event Simulator\nomeqref {5.0}|nompageref}{32}
-\nomenclatureentry{aKF@[{KF}]\begingroup Kalman Filter\nomeqref {5.0}|nompageref}{33}
+\nomenclatureentry{aDES@[{DES}]\begingroup Discrete Event Simulator\nomeqref {5.0}|nompageref}{31}
+\nomenclatureentry{aKF@[{KF}]\begingroup Kalman Filter\nomeqref {5.0}|nompageref}{32}

@@ -42,30 +42,30 @@
 \contentsline {subsection}{\numberline {4.2.3}\textbf {Discrete time kalman filter for synchronization}}{27}
 \contentsline {subsubsection}{Discrete time kalman filter}{27}
 \contentsline {subsubsection}{Model design}{29}
-\contentsline {section}{\numberline {4.3}\textbf {Reducing the guard time}}{30}
-\contentsline {chapter}{\numberline {5}\textbf {Results and discussion}}{32}
-\contentsline {section}{\numberline {5.1}\textbf {Simulation setup}}{32}
-\contentsline {section}{\numberline {5.2}\textbf {Simulation results}}{33}
-\contentsline {subsubsection}{\textbf {Case I}}{33}
-\contentsline {subsubsection}{\textbf {Case II}}{34}
-\contentsline {subsubsection}{\textbf {Case III}}{36}
-\contentsline {section}{\numberline {5.3}\textbf {Energy consumption}}{39}
-\contentsline {chapter}{\numberline {6}\textbf {Conclusion and recommendation}}{41}
-\contentsline {section}{\numberline {6.1}\textbf {Conclusion}}{41}
-\contentsline {section}{\numberline {6.2}\textbf {Recommendation}}{42}
-\contentsline {chapter}{\numberline {A}\textbf {Lower bound of synchronization}}{43}
-\contentsline {chapter}{\numberline {B}Simulation results}{45}
-\contentsline {section}{\numberline {B.1}\textbf {Median as a synchronization method}}{45}
-\contentsline {section}{\numberline {B.2}\textbf {Synchronization frequency}}{46}
-\contentsline {section}{\numberline {B.3}\textbf {Synchronization error for nodes with different speeds}}{46}
-\contentsline {section}{\numberline {B.4}\textbf {The number of nodes and speed on KF}}{47}
-\contentsline {chapter}{\numberline {C}MyriaNode}{50}
-\contentsline {subsubsection}{Features}{50}
-\contentsline {subsubsection}{Description and architecture}{50}
-\contentsline {subsubsection}{Radio interface}{51}
-\contentsline {subsubsection}{Mechanical and Mounting}{51}
-\contentsline {subsubsection}{Energy Supply}{52}
-\contentsline {subsubsection}{Battery}{52}
-\contentsline {subsubsection}{Programming}{52}
-\contentsline {subsubsection}{Software}{53}
-\contentsline {chapter}{References}{53}
+\contentsline {section}{\numberline {4.3}\textbf {Reducing the guard time}}{29}
+\contentsline {chapter}{\numberline {5}\textbf {Results and discussion}}{31}
+\contentsline {section}{\numberline {5.1}\textbf {Simulation setup}}{31}
+\contentsline {section}{\numberline {5.2}\textbf {Simulation results}}{32}
+\contentsline {subsubsection}{\textbf {Case I}}{32}
+\contentsline {subsubsection}{\textbf {Case II}}{33}
+\contentsline {subsubsection}{\textbf {Case III}}{35}
+\contentsline {section}{\numberline {5.3}\textbf {Energy consumption}}{38}
+\contentsline {chapter}{\numberline {6}\textbf {Conclusion and recommendation}}{40}
+\contentsline {section}{\numberline {6.1}\textbf {Conclusion}}{40}
+\contentsline {section}{\numberline {6.2}\textbf {Recommendation}}{41}
+\contentsline {chapter}{\numberline {A}\textbf {Lower bound of synchronization}}{42}
+\contentsline {chapter}{\numberline {B}Simulation results}{44}
+\contentsline {section}{\numberline {B.1}\textbf {Median as a synchronization method}}{44}
+\contentsline {section}{\numberline {B.2}\textbf {Synchronization frequency}}{45}
+\contentsline {section}{\numberline {B.3}\textbf {Synchronization error for nodes with different speeds}}{45}
+\contentsline {section}{\numberline {B.4}\textbf {The number of nodes and speed on KF}}{46}
+\contentsline {chapter}{\numberline {C}MyriaNode}{49}
+\contentsline {subsubsection}{Features}{49}
+\contentsline {subsubsection}{Description and architecture}{49}
+\contentsline {subsubsection}{Radio interface}{50}
+\contentsline {subsubsection}{Mechanical and Mounting}{50}
+\contentsline {subsubsection}{Energy Supply}{51}
+\contentsline {subsubsection}{Battery}{51}
+\contentsline {subsubsection}{Programming}{51}
+\contentsline {subsubsection}{Software}{52}
+\contentsline {chapter}{References}{52}

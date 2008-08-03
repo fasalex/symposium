@@ -393,7 +393,7 @@ The synchronization protocols can be decomposed into four conceptual building bl
 $\ref{block}$.
 \begin{figure}
  \centering
-\includegraphics[width= 0.6 \textwidth]{buildingblock}
+\includegraphics[width= 0.4 \textwidth]{buildingblock}
 \caption{Building blocks of a synchronization algorithm}
 \label{block}
 \end{figure}
@@ -699,7 +699,7 @@ current state and error covariance estimates to obtain the a priori estimates fo
 The kalman filter addresses the general problem of trying to estimate the state $x$ of a discrete-time controlled process that is
 governed by the stochastic difference equation
 \begin{equation}
- x_k = Hx_{k-1} + Bu_k + w_{k-1} ,
+ x_k = Ax_{k-1} + Bu_k + w_{k-1} ,
 \end{equation}
 with a measurement $z$ that is
 \begin{equation}
@@ -738,14 +738,6 @@ e_k^- = x_k – \tilde x_k^- ,
 \end{equation}
 \begin{equation}
 e_k =  x_k – \tilde x_k.
-\end{equation}
-The a priori estimate error covariance is then
-\begin{equation}
-P_k^- = E[ e_k^- e_k^{-T} ]
-\end{equation}
-and the a posteriori estimate error covariance is
-\begin{equation}
-P_k = E[e_k e_k^T]
 \end{equation}
 Following these, we can see the equation more deeply.
 \begin{equation}
@@ -948,7 +940,7 @@ A decentralized frame synchronization of a TDMA-based WSN is achieved using Weig
 \paragraph*{}
 In a static environment, the KF performs the best whereas the WM and NLLS have shown a similar performance as the Median. In terms of convergence time, all have shown a similar performance.
 \paragraph*{}
-A $60\%$ improvement in the performance of the synchronization can achieved on average using the Kalman Filter for dynamic WSN. A lower improvement, $8\%$ and $6\%$ is obtained using WM and NLLS methods for the synchronization of TDMA frames. Both WM and NLLS show a better tolerance against Median in a dynamic network. Having a faster adaptation to the changes in the network made the algorithms preffered ones to a network characterized with dynamic behaviour. KF estimation of the next wake up time is the best with its iterative capability and adaptive nature. KF has also better stability, better resistant to topology changes occuring in the network.
+Both WM and NLLS show a better tolerance against Median in a dynamic network. Having a faster adaptation to the changes in the network made the algorithms preffered ones to a network characterized with dynamic behaviour. KF estimation of the next wake up time is the best with its iterative capability and adaptive nature. KF has also better stability, better resistant to topology changes occuring in the network.
 \paragraph*{}
 Using these algorithms for a TDMA-based WSN synchronization( WM, NLLS and KF), the precision of the network as well as the stablity of the algorithm increases. This in turn has a positive impact on the energy consumption of the nodes because the synchronization period, $T_{sync}$ can be increased or the guard time of the node's frame, $t_{guard}$ can be reduced to achieve the same performance as the Median algorithm. Results are presented and discussed.
 \paragraph*{}

@@ -15,32 +15,32 @@
 \contentsline {figure}{\numberline {4.3}{\ignorespaces Curve fitting using logarithmic function}}{27}
 \contentsline {figure}{\numberline {4.4}{\ignorespaces Guard time and reducing duty cycle}}{30}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Abstraction model}}{33}
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Synchronization error for 20 nodes - static}}{34}
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Synchronization error for 50 nodes - static}}{35}
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Synchronization error for 20 nodes - speed 6km/hr}}{35}
-\contentsline {figure}{\numberline {5.5}{\ignorespaces Synchronization error for 50 nodes - speed 20km/hr}}{36}
-\contentsline {figure}{\numberline {5.6}{\ignorespaces Relative performance improvement of algorithms from Median - 20 nodes}}{37}
-\contentsline {figure}{\numberline {5.7}{\ignorespaces Synchronization error for 50 nodes - speed 6km/hr}}{37}
-\contentsline {figure}{\numberline {5.8}{\ignorespaces Synchronization error for 50 nodes - speed 20km/hr}}{38}
-\contentsline {figure}{\numberline {5.9}{\ignorespaces Relative performance improvement of algorithms from Median - 50 nodes}}{38}
-\contentsline {figure}{\numberline {5.10}{\ignorespaces The energy consumption of guard time per RX slot}}{39}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Abstraction model}}{32}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Synchronization error for 20 nodes - static}}{33}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Synchronization error for 50 nodes - static}}{34}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Synchronization error for 20 nodes - speed 6km/hr}}{34}
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Synchronization error for 50 nodes - speed 20km/hr}}{35}
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Relative performance improvement of algorithms from Median - 20 nodes}}{36}
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Synchronization error for 50 nodes - speed 6km/hr}}{36}
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Synchronization error for 50 nodes - speed 20km/hr}}{37}
+\contentsline {figure}{\numberline {5.9}{\ignorespaces Relative performance improvement of algorithms from Median - 50 nodes}}{37}
+\contentsline {figure}{\numberline {5.10}{\ignorespaces The energy consumption of guard time per RX slot}}{38}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {A.1}{\ignorespaces Network size and the lower bound of synchronization}}{43}
+\contentsline {figure}{\numberline {A.1}{\ignorespaces Network size and the lower bound of synchronization}}{42}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {B.1}{\ignorespaces Median algorithm with different gain factors}}{45}
-\contentsline {figure}{\numberline {B.2}{\ignorespaces Synchronization error of a KF for static nodes with different $T_{sync}$}}{46}
-\contentsline {figure}{\numberline {B.3}{\ignorespaces Synchronization error of a KF for nodes at 6$km/hr$ with different $T_{sync}$}}{47}
-\contentsline {figure}{\numberline {B.4}{\ignorespaces Synchronization error of a KF for nodes at 20$km/hr$ with different $T_{sync}$}}{47}
-\contentsline {figure}{\numberline {B.5}{\ignorespaces Synchronization error for 20 nodes moving at different speeds}}{48}
-\contentsline {figure}{\numberline {B.6}{\ignorespaces Synchronization error for 50 nodes moving at different speeds}}{48}
-\contentsline {figure}{\numberline {B.7}{\ignorespaces Synchronization error of KF for different number of static nodes}}{49}
-\contentsline {figure}{\numberline {B.8}{\ignorespaces Synchronization error of 20 nodes with different constant speed (in km/hr)}}{49}
+\contentsline {figure}{\numberline {B.1}{\ignorespaces Median algorithm with different gain factors}}{44}
+\contentsline {figure}{\numberline {B.2}{\ignorespaces Synchronization error of a KF for static nodes with different $T_{sync}$}}{45}
+\contentsline {figure}{\numberline {B.3}{\ignorespaces Synchronization error of a KF for nodes at 6$km/hr$ with different $T_{sync}$}}{46}
+\contentsline {figure}{\numberline {B.4}{\ignorespaces Synchronization error of a KF for nodes at 20$km/hr$ with different $T_{sync}$}}{46}
+\contentsline {figure}{\numberline {B.5}{\ignorespaces Synchronization error for 20 nodes moving at different speeds}}{47}
+\contentsline {figure}{\numberline {B.6}{\ignorespaces Synchronization error for 50 nodes moving at different speeds}}{47}
+\contentsline {figure}{\numberline {B.7}{\ignorespaces Synchronization error of KF for different number of static nodes}}{48}
+\contentsline {figure}{\numberline {B.8}{\ignorespaces Synchronization error of 20 nodes with different constant speed (in km/hr)}}{48}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {C.1}{\ignorespaces MyriaNode v2.0}}{50}
-\contentsline {figure}{\numberline {C.2}{\ignorespaces MyriaNode architecture}}{50}
-\contentsline {figure}{\numberline {C.4}{\ignorespaces External interfaces}}{51}
-\contentsline {figure}{\numberline {C.3}{\ignorespaces Radio interfaces}}{51}
-\contentsline {figure}{\numberline {C.5}{\ignorespaces MyriaNode dimentions}}{52}
-\contentsline {figure}{\numberline {C.6}{\ignorespaces Battery structure of a MyriaNode}}{52}
+\contentsline {figure}{\numberline {C.1}{\ignorespaces MyriaNode v2.0}}{49}
+\contentsline {figure}{\numberline {C.2}{\ignorespaces MyriaNode architecture}}{49}
+\contentsline {figure}{\numberline {C.4}{\ignorespaces External interfaces}}{50}
+\contentsline {figure}{\numberline {C.3}{\ignorespaces Radio interfaces}}{50}
+\contentsline {figure}{\numberline {C.5}{\ignorespaces MyriaNode dimentions}}{51}
+\contentsline {figure}{\numberline {C.6}{\ignorespaces Battery structure of a MyriaNode}}{51}
