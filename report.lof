@@ -3,31 +3,31 @@
 \contentsline {figure}{\numberline {2.1}{\ignorespaces A simple NTP diagram}}{5}
 \contentsline {figure}{\numberline {2.2}{\ignorespaces Tracking the movement of an object}}{6}
 \contentsline {figure}{\numberline {2.3}{\ignorespaces TDMA frame}}{7}
-\contentsline {figure}{\numberline {2.4}{\ignorespaces TDMA Channel access}}{8}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces TDMA channel access}}{8}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {3.1}{\ignorespaces Measured time versus absolute time}}{15}
 \contentsline {figure}{\numberline {3.2}{\ignorespaces Building blocks of a synchronization algorithm}}{16}
 \contentsline {figure}{\numberline {3.3}{\ignorespaces A WSN scenario}}{18}
 \contentsline {figure}{\numberline {3.4}{\ignorespaces Using median for phase error correction}}{19}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Guard time for drift compensation}}{21}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Guard time for drift compensation}}{20}
 \contentsline {figure}{\numberline {4.2}{\ignorespaces Weight factors for the phase error distribution}}{24}
 \contentsline {figure}{\numberline {4.3}{\ignorespaces Curve fitting using logarithmic function}}{27}
 \contentsline {figure}{\numberline {4.4}{\ignorespaces Guard time and reducing duty cycle}}{30}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Abstraction Model}}{33}
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Synchronization error for 20 nodes - Static}}{34}
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Synchronization error for 50 nodes - Static}}{35}
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Synchronization error for 20 nodes - Speed 6km/hr}}{35}
-\contentsline {figure}{\numberline {5.5}{\ignorespaces Synchronization error for 50 nodes - Speed 20km/hr}}{36}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Abstraction model}}{33}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Synchronization error for 20 nodes - static}}{34}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Synchronization error for 50 nodes - static}}{35}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Synchronization error for 20 nodes - speed 6km/hr}}{35}
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Synchronization error for 50 nodes - speed 20km/hr}}{36}
 \contentsline {figure}{\numberline {5.6}{\ignorespaces Relative performance improvement of algorithms from Median - 20 nodes}}{37}
-\contentsline {figure}{\numberline {5.7}{\ignorespaces Synchronization error for 50 nodes - Speed 6km/hr}}{37}
-\contentsline {figure}{\numberline {5.8}{\ignorespaces Synchronization error for 50 nodes - Speed 20km/hr}}{38}
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Synchronization error for 50 nodes - speed 6km/hr}}{37}
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Synchronization error for 50 nodes - speed 20km/hr}}{38}
 \contentsline {figure}{\numberline {5.9}{\ignorespaces Relative performance improvement of algorithms from Median - 50 nodes}}{38}
-\contentsline {figure}{\numberline {5.10}{\ignorespaces The energy consumption of Guard time per RX slot}}{39}
+\contentsline {figure}{\numberline {5.10}{\ignorespaces The energy consumption of guard time per RX slot}}{39}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {A.1}{\ignorespaces Network size and the lower bound of Synchronization}}{43}
+\contentsline {figure}{\numberline {A.1}{\ignorespaces Network size and the lower bound of synchronization}}{43}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {B.1}{\ignorespaces Median algorithm with different gain factors}}{45}
 \contentsline {figure}{\numberline {B.2}{\ignorespaces Synchronization error of a KF for static nodes with different $T_{sync}$}}{46}
