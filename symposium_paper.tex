@@ -32,7 +32,7 @@ Email: f.a.assegei@student.tue.nl}}
 Synchronization is a crucial component of infrastructure for \textit{Wireless Sensor Networks} (WSNs). Most applications of WSNs make extensive use of synchronization mechanisms. The unique requirements of WSNs, compared to centralized networks, in terms of precision, lifetime, energy and scope of the synchronization achieved, make the synchronization methods developed for centralized systems unsuitable for WSNs. This motivates the research of synchronization methods which are aligned to the specific properties of WSN. Median$\cite{median}$ algorithm is implemented currently on the wireless sensor nodes in MyriaNed$\footnote{MyriaNed is a DevLab\cite{devlab} project to create a large functional wireless sensor network for research on protocols, power management, programming models, and security.}$ project. In this research, the flaw in the Median algorithm is explored and three algorithms are proposed to achieve a decentralized, stable, and energy-efficient synchronization of a TDMA-based WSN. The algorithms achieve synchronization by using the phase errors of a node's clock with that of the neighboring nodes', without actually exchanging the information about the clock time of the sender. So, the methods avoid time keeping on the messages (time stamping) which reduces the message overload. Results from simulation of the models are presented and discussed. The research is concluded with the comparison of the proposed algorithms in terms of energy consumption and performance with the Median. Low energy-consumption or a better convergence as well as the length of the guard time can be used as a metric for selecting the algorithm.
 \end{abstract}
 \begin{IEEEkeywords}
-adhoc networks, frame synchronization, decentralized synchronization, wireless sensor networks.
+adhoc networks synchronization, decentralized synchronization, wireless sensor networks synchronization.
 \end{IEEEkeywords}
 \section{\textbf{Introduction}}
 \subsection{\textbf{Synchronization in wireless sensor networks}}
@@ -142,13 +142,13 @@ where $f(\tau)$ is the frequency of the clock, $f_o$ is the nominal frequency of
 %\end{equation}
 %where $\rho$ represents the maximum clock drift.
 Note that different clocks have different maximum clock drift values $\rho$.\par The frequency of the clock is dependent on different
-factors and can be given as
+factors and can be given$\cite{clockwhite}$ as
 \begin{equation}
 f_i(t) = f_o + \Delta f + a(t-t_o) + \Delta
-f_e(t) + f_r(t) \label{frequency}
+f_e(t) + \Delta f_n(t) \label{frequency}
 \end{equation}
 where \par $t_o$ = the start time of the clock, \par $a$ = aging factor,  \par $f_o$ = nominal frequency, \par $\Delta
-f$ = calibration error,\par $f_r(t)$ = frequency instability (noise) term, \par $\Delta f_e$ = frequency error which occurs
+f$ = calibration error,\par $\Delta f_n(t)$ = frequency instability (noise) term, \par $\Delta f_e(t)$ = frequency error which occurs
 due to outside factors like temperature, voltage instability. \par
 From ($\ref{clock}$) and ($\ref{frequency}$),
 \begin{equation}
@@ -156,20 +156,20 @@ C_i(t) - C_i(t_o) = \frac{1}{f_o} \int^{t}_{t_o}f_i(\tau)d\tau ,
 \end{equation}
 \begin{eqnarray*}
 C_i(t) - C_i(t_o) & = & \frac{1}{f_o} \int^{t}_{t_o}{[f_o + \Delta f + a(\tau-t_o)  } \\
- &  & {} + \Delta f_e(\tau) + f_r(\tau)]d\tau ,
+ &  & {} + \Delta f_e(\tau) + \Delta f_n(\tau)]d\tau ,
 \label{fasika}
 \end{eqnarray*}
 \begin{eqnarray*}
 C_i(t) & = & C_i(t_o) + (t-t_o) +\frac{\Delta f}{f_o}(t-t_o) \\
 & & + \frac{a}{2f_o}(t-t_o)^2 + \frac{1}{f_o}\int^{t}_{t_o}{\Delta f_e(\tau)d\tau} +
-\frac{1}{f_o}\int^{t}_{t_o}{f_r(\tau)d\tau} .
+\frac{1}{f_o}\int^{t}_{t_o}{\Delta f_n(\tau)d\tau} .
 \end{eqnarray*}
-A 32 kHz crystal clock $\cite{18}$ $\cite{19}$  is used in the MyriaNode$\footnote{MyriaNode is the prototype sensor node which is built for the project MyriaNed.}$. Some notes to be considered in the model are:
+A 32 kHz crystal clock $\cite{18,19}$  is used in the MyriaNode$\footnote{MyriaNode is the prototype sensor node which is built for the project MyriaNed.}$. Some notes to be considered in the model are:
 \begin{itemize}
-\item The amplitude of the short term variations due to noise $f_r(t)$ (clock jitter) is small enough that they do not cause the clock to
+\item The amplitude of the short term variations due to noise $\Delta f_n(t)$ (clock jitter) is small enough that they do not cause the clock to
 accelerate or decelerate in a large amount in the long run.
 \item Individual clock properties are assumed to be uncorrelated.
-\item Clock parameters are normally distributed. The variances of the constants (initial time, initial frequency error, aging rate)$\cite{18},\cite{19}$ are all inputs to the model.
+\item Clock parameters are normally distributed. The variances of the constants (initial time, initial frequency error, aging rate)$\cite{18,19}$ are all inputs to the model.
 \item The spread in clock time grows almost linearly as a function of time, due to the dominance of the linear term in the clock drift equation.
 \end{itemize}
 \subsection{\textbf{Median algorithm and the setback}}
@@ -224,8 +224,8 @@ the energy consumption of the WSN. Thus, a synchronization period, $T_{sync}$, i
 number of clock cycles as
 \begin{equation}
 t_{slot} = kT ,
-\end{equation} where $T$ is the period of the time frame in clock cycles and
-$t_{slot}$ is the time duration of a TDMA slot and $k$ is a constant.
+\end{equation} where $T$ is the period of the frame in clock cycles and
+$t_{slot}$ is the duration of a TDMA slot and $k$ is a constant.
 \par With a synchronization period $T_{sync}$ and the
 maximum clock drift of a clock $\rho$ , the maximum time difference
 between a sender and a receiver is
@@ -371,7 +371,7 @@ Secondly, the weight factor is calculated based on the distribution
 of the assigned values for each phase error. If all the phase errors
 are in the first half of the graph, this corresponds to the fact
 that the node has drifted away from most of the neighbors. Hence,
-the synchronization is made to adjust the nodes wakeup time towards
+the synchronization is made to adjust the nodes wake-up time towards
 the neighbors. \par \noindent Hence, the weight factor is
 \[w_{ij} = \left\{
 \begin{array}{l l}
@@ -465,14 +465,14 @@ current state and error covariance estimates to obtain the a priori
 estimates for the next time step.
 \par
 The Kalman filter addresses the general problem of trying to
-estimate the state $x$ of a discrete-time controlled process that is
+estimate the state $x \in R$ of a discrete-time controlled process that is
 governed by the linear stochastic difference equation
 \begin{equation}
- x_k = Ax_{k-1} + Bu_k + w_{k-1} ,
+ x_k = Ax_{k-1} + Bu_k + w_{k-1} , \label{mainkal}
 \end{equation}
-with a measurement $z$ that is
+with a measurement $z \in R$ that is
 \begin{equation}
- z_k = Hx_k + v_k.
+ z_k = Hx_k + v_k. \label{meakal}
 \end{equation}
 The random variables $w_k$ and $v_k$ represent the process and
 measurement noise (respectively). They are assumed to be
@@ -484,9 +484,28 @@ distributions
 \begin{equation}
  p(v) \approx N(0,R).
 \end{equation}
-With the initial estimates of $x_{k-1}$ and $P_{k-1}$
+The $n\ x\ n$ matrix $A$ in $\ref{mainkal}$ relates the state at the previous time step $k-1$ to the state at the current step $k$, in the absence of either a driving function or process noise. Note that in practice $A$ might change with each time step, but                                                                   
+here we assume it is constant. The n × l matrix $B$ relates the optional control input $u \in R$ to the state $x$. The $m\ x\ n$ matrix $H$ in $\ref{meakal}$ the relates the state to the measurement $z_k$. In practice, $H$ might change with each time step or
+measurement, but here we assume it is constant.
+\par
+We define $\tilde x_k^- \in R$ (note the “super minus”) to be our a priori state estimate at step k given knowledge of the process prior to step $k$, and $\tilde x_k \in R$ to be our a posteriori state estimate at step $k$ given measurement $z_k$. Hence, a priori and a posteriori estimate errors are defined as
 \begin{equation}
-x_k = Hx_{k-1} + Bu_k
+e_k^- = x_k – \tilde x_k^- ,
+\end{equation}
+\begin{equation}
+e_k =  x_k – \tilde x_k.
+\end{equation}
+The a priori estimate error covariance is then
+\begin{equation}
+P_k^- = E[ e_k^- e_k^{-T} ]
+\end{equation}
+and the a posteriori estimate error covariance is
+\begin{equation}
+P_k = E[e_k e_k^T]
+\end{equation}
+With the initial estimates of $x_{k-1}$ and $P_{k-1}$, the predictor equations are 
+\begin{equation}
+x_k = Hx_{k-1} + Bu_k,
 \end{equation}
 \begin{equation}
 P_k = HP_{k-1}H^T + Q.
@@ -506,14 +525,7 @@ P_k = (I-K_kH)P_k
 The time update equations can also be thought of as predictor
 equations, while the measurement update equations can be thought of
 as corrector equations.
-\par
-Hence, a priori and a posteriori estimate errors are defined as
-\begin{equation}
-e_k^- = x_k – \tilde x_k^- ,
-\end{equation}
-\begin{equation}
-e_k =  x_k – \tilde x_k.
-\end{equation}
+\par 
 The update equation is
 \begin{equation}
 \tilde x_k = \tilde x_k + K(z_k-H\tilde x_k).
@@ -551,7 +563,7 @@ Specifically,
 The transition matrix $A$ plays an important role in achieving
 the proper synchronization. It indicates how fast/slow is the next wake up time should be compared
 to it's previous value and/or neighbors. The initial estimates of $x$ and $P$ are selected from the
-previous firing time of the node, one period earlier. This ensures that the nodes are on the same track as the previous time, since the neighbors remain the same with some exception of mobility and interference. $H$ is used to \par
+previous firing time of the node, one period earlier. This ensures that the nodes are on the same track as the previous time, since the neighbors remain the same with some exception of mobility and interference. $H$ is a factor used to compare the predicted value to the measured value. \par
 In the filter design, the covariance matrices $R$ and $Q$ have a significant
 role in the overall implementation of the algorithm. $R$ represents how
  the measurements are valued to affect the outcome and $Q$
@@ -622,18 +634,18 @@ KF outperforms all, with $6 clk$. Median algorithm has a disruptions
 which made the network out-of-synchronization which occurred due to
 the mobility of the nodes.
 \par
-The speed of the nodes is increased to be an independent gaussian random variable with mean $20km/hr$ and standard deviation $1km/hr$. The simulation results is presented, Figure $\ref{16output20}$. KF, with an average of of $5 clk$ performs the best, whereas WM and NLLS perform well at $12 clk$ each. As the dynamics of the networks increases, Median becomes more unstable and exhibits large synchronization error. NLLS and WM have a stable performance when the network becomes dynamic with constantly changing connection between the nodes.
+The speed of the nodes is increased to be an independent gaussian random variable with mean $20km/hr$ and standard deviation $1km/hr$. The simulation results are presented in Figure $\ref{16output20}$. KF, with an average of of $5 clk$ performs the best, whereas WM and NLLS perform well at $12 clk$ each. As the dynamics of the networks increases, Median becomes more unstable and exhibits large synchronization error. NLLS and WM have a stable performance when the network becomes dynamic with constantly changing connection between the nodes.
 \par
 The relative comparison of the algorithms performance improvement with the Median is shown in Figure $\ref{16output-error}$ for nodes moving at $20km/hr$. WM and NLLS perform, on average, $6-8\%$ better than Median, but with more tolerance in handling the disruptions. The best performer, KF, has on average $60\%$ better performance than the Median one.
 \begin{figure}
 \centering \includegraphics[width=0.5\textwidth]{16output-error}
 \caption{Relative error of the algorithms w.r.t. Median for 20 nodes}
-\label{16relerror}
+\label{16output-error}
 \end{figure}
 \subsubsection{\textbf{Case III}}
 \begin{figure*}
 \centerline{ \subfloat[Speed -
-6km/hr]{\includegraphics[width=0.5\textwidth]{50output-s6}
+5km/hr]{\includegraphics[width=0.5\textwidth]{50output-s6}
 \label{50output6}} \hfil \subfloat[Speed -
 20km/hr]{\includegraphics[width=0.5\textwidth]{50output-s20}
 \label{50output20}}} \caption{Simulation results for 50 Nodes}
@@ -662,30 +674,46 @@ The Median algorithm is shown to perform the worst in this case. There are a lot
 \begin{figure}
 \centering \includegraphics[width=0.5\textwidth]{50output-error}
 \caption{Relative error of the algorithms w.r.t. Median for 50 nodes}
-\label{50relerror}
+\label{50output-error}
 \end{figure}
 The Kalman filter has a better precision and stability than the rest whereas WM and NLLS has a better tolerance to a dynamic network.
-\subsection{\textbf{Measurements concerning the energy consumption}}
-\begin{figure}[b]
-\centering
-\includegraphics[width=0.5\textwidth]{guardsave}
-\caption{The energy consumption of guard time per RX slot}
-\label{guardsave}
-\end{figure}
-As the results in the previous subsection shows, KF algorithm performs well in all conditions, so do WM and NLLS when stability is a vital metric. The downside in implementing these algorithms, despite the performance gain that all have against the Median is the energy consumption. As the algorithms are going to be implemented on the sensor nodes, the energy consumption is a priority in the study of embedded system algorithm development in WSN. The algorithms are written in C and implemented on the test nodes to see the effect that they are going to have on the energy consumption of the nodes.
+\subsection{\textbf{Measurements concerning the energy consumption}}\noindent
+%\begin{figure}[b]
+%\centering
+%\includegraphics[width=0.5\textwidth]{guardsave}
+%\caption{The energy consumption of guard time per RX slot}
+%\label{guardsave}
+%\end{figure}
+\textbf{Additional energy expenditure}\par \noindent
+As the results in the previous subsection shows, KF algorithm performs well in all conditions, so do WM and NLLS when stability is a vital metric. The downside in implementing these algorithms, despite the performance gain achieved, is the energy consumption. As the algorithms are going to be implemented on the sensor nodes, the energy consumption is a priority in embedded system algorithm development. The algorithms are written in C and implemented on the test nodes to see the effect that they are going to have on the energy consumption of the nodes and presented below.
 \begin{center}
-    \begin{tabular}{ |p{2cm} | p{2.75cm} |}
+    \begin{tabular}{ |p{1.5cm} | p{2cm} |p{2cm} |p{1.75cm} | }
     \hline
-    Algorithm & Average Execution Time \\ \hline
-    M &  65 $\mu$s \\ \hline
-    NLLS & 82.5 $\mu$s \\ \hline
-    WM &   90 $\mu$s \\ \hline
-    KF &  150 $\mu$s  \\ \hline
+    Algorithm & Average Execution Time per frame & Increase in execution time per frame & Energy Consumed per frame \\ \hline
+    M &  65 $\mu$s & 0 & 0  \\ \hline
+    NLLS & 82.5 $\mu$s & 7.5$\mu$s & 63 $pJ$  \\ \hline
+    WM &   90 $\mu$s & 25$\mu$s & 210 $pJ$ \\ \hline
+    KF &  150 $\mu$s  & 85$\mu$s &  714 $pJ$\\ \hline
     \end{tabular}
 \label{tab}
 \end{center}
-In order to reduce the energy that is going to be spent on the algorithm with a better performance, the guard time of the slot can be reduced, due to a better performance showing by KF, WM and NLLS. The energy consumption of the guard time is shown in Figure $\ref{guardsave}$. The length of the guard time has a close-to-linear relation with the power being consumed in listening to the channel.
-Thus, with the performance gain obtained, the guard time of the slot can be decreased, hereby decreasing the energy consumption of the node in general. This energy save is in a per slot basis. As the number of slots increases, the energy to be saved increases.
+The results shown in the above table do not reflect the exact energy consumption of the algorithms as the energy consumption is dependent on other factors besides the execution time. But it can be used to put the comparison into perspective. \newline
+\textbf{Energy gain}\par \noindent
+%As communication costs more than computation[datsheet MyriaNode v2.0], a tradeoff can be done.
+In order to reduce the energy that is going to be spent on the algorithm with a better performance, the guard time of the slot can be reduced, due to a better performance showing by KF, WM and NLLS. 
+Hence, $t_{guard}$ for KF is taken to be 10$clk$ whereas the guard time for WM and NLLS is taken to be $24clk$ each from the simulation results. $t_{guard}$ for the Median is taken to be 26$clk$. The number of slots is taken to be 10, so the total guard time per frame will be 10 times $t_{guard}$. In the following table, the energy saving is calculated in comparison with the Median. 
+\begin{center}
+    \begin{tabular}{ |p{1.5cm} | p{2cm} |p{2cm} | p{1.75cm} |  }
+    \hline
+    Algorithm & Guard time per frame & Reduction in $t_{guard}$ per frame & Energy saving per frame\\ \hline
+    M &  792 $\mu$s x 10 & 0 & 0 \\ \hline
+    NLLS & 732 $\mu$s x 10 & 600 $\mu$s & 16.27$\mu J$\\ \hline
+    WM &   732 $\mu$s x 10 & 600 $\mu$s & 16.27$\mu J$ \\ \hline
+    KF &  305 $\mu$s x 10 & 4.87$ms$ & 132.07$mJ$\\ \hline
+    \end{tabular}
+\label{tab}
+\end{center}
+The length of the guard time has a close-to-linear relation with the power being consumed in listening to the channel. Thus, with the performance gain obtained, the guard time of the slot can be decreased, hereby decreasing the energy consumption of the node in general. Comparing the energy consumption and the energy expenditures, a large net gain can be obtained from the proposed algorithms. It can be noted here that communication costs more than computation (as listening radio consumes more energy than CPU active time). Since the length of the guard time is dependent on the number of slots, the energy to be saved increases as the number of slots increases.
 \section{\textbf{Conclusion and Recommendation}}
 A decentralized synchronization algorithm of a TDMA-based WSN is proposed using Weighted Measurements (WM), Non Linear Least Squares(NLLS) and Kalman Filter (KF) methods. A simulation is conducted with different scenarios, especially taking the effect of mobility. A comparison of the algorithms with the currently implemented Median algorithm is conducted and the results are presented.
 \par
@@ -699,13 +727,13 @@ capability and adaptive nature. KF has also better stability, better
 resistant to topology changes occurring in the network.
 \par
 Using these algorithms for a TDMA-based WSN synchronization (WM, NLLS and KF), the precision of the synchronization error as well as the stability increases. This in turn has a positive impact on the energy consumption of the nodes because the synchronization period, $T_{sync}$ can be increased or the guard time of the node's frame, $t_{guard}$, can be reduced to achieve the same performance as the Median algorithm. Results are presented and discussed.
-\par But in the downside, the energy consumption of the algorithms is greater than the Median algorithm's energy consumption as the algorithms are more complex computationally. Analysis is made and presented about the energy saving made by decreasing the guard time of the slot. Communication is in general around 5 times costlier than computation on MyriaNodes, when put in perspective. A net gain of battery life can thus be achieved by reducing the guard time.
-\par Different software power minimization techniques can be applied to further reduce the power consumption of the proposed algorithms implementation, making them more energy efficient for implementation. Upon the completion of the ongoing project on developing a Software Defined Radio (SDR) for the inspection of the nodes' wake-up times, a proper evaluation and enhancements on the algorithms, being implemented on the MyriaNodes, is achievable. Real time feedbacks can be used to improve the algorithms towards perfection.
+\par But in the downside, the energy consumption of the algorithms is greater than the Median algorithm's energy consumption as the algorithms are more complex computationally. Analysis is made and presented about the energy saving made by decreasing the guard time of the slot. Communication is in general more expensive than computation on MyriaNodes, when put into perspective. A net gain of battery life can thus be achieved by reducing the guard time.
+\par Different software power minimization techniques can be applied to further reduce the power consumption of the proposed algorithms, making them more energy efficient for implementation. Evaluation and enhancements on the proposed algorithms can be done after implementing them on the MyriaNodes. Real time feedbacks can be used to improve the algorithms towards perfection.
 \section{\textbf{Acknowledgment}}This research is part of the MyriaNed Project. The author would like to thank Frits van der Wateren from Chess$\cite{chess}$ Innovation Team for his continuous support, suggestions and advice during the project. Many thanks to dr.ir. Peter Smulders, prof.dr.ir. Erik Fledderus and prof.dr.ir. Peter Baltus from TU/e for their guidance.
 \begin{thebibliography}{\textbf{References}}
 \bibitem{correlation}A.Ebner, H.Rohling, M.Lott, and R.Halfmann. Decentralized Slot Synchronization in Highly Dynamic Ad Hoc Networks. Proc. WPMC '02, Honolulu, Hawaii, Oct. 2002.
 \bibitem{11}C.Cordeiro and D.Agrawal. Ad hoc and Sensor Networks Theory and applications. p.429-441. World Scientific Publishing. 2006.\bibitem{1}F.Zhao and  L.Guibas. Wireless Sensor Networks: an Information Processing approach. p.107-108. Elsevier. 2004.\bibitem{taxonomy}E.Anceaume and I.Puaut. A taxonomy of clock synchronization algorithms. IRISA Research Report No. PI1103, IRISA, 1997.\bibitem{10}H.Karl and A.Willig. Protocols and Architectures for Wireless Sensor Networks.p3-6. Wiley. July 2006.
-%\bibitem{clockwhite}Symmetricom, Inc. Stochastic Model Estimation of network time variance. USA.2004
+\bibitem{clockwhite}Symmetricom, Inc. Stochastic Model Estimation of network time variance. USA.2004
 \bibitem{18} $http://www.golledge.co.uk/pdf/products/xtl\_sm/cc7v.pdf$
 \bibitem{19} $http://pdfserv.maxim-ic.com/en/an/AN58.pdf$.
 \bibitem{omnet}$http://www.omnetpp.org$.

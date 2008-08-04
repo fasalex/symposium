@@ -23,6 +23,7 @@
 %\setlength\paragraph*skip{0.25in}
 
 \title{\textbf{Decentralized frame synchronization of a TDMA-based wireless sensor network}}
+%\title{\textbf{በበጎ ፈካዱ ሁሉ በርሱ ሆነ}}
 \author{Fasika A. Assegei}
 \date{August 14, 2008}
 \begin{document}
@@ -349,32 +350,31 @@ and power). One can usually assume that the clock drift of a crystal clock doesn
 \caption{Measured time versus absolute time} \label{clocktime}
 \end{figure}
 Note that different clocks have different maximum clock drift values
-$\rho$.\paragraph*{} The frequency of the clock is dependent on many factors and is given as
+$\rho$. The frequency of the clock is dependent on many factors and is given$\cite{clockwhite}$ as
 \begin{equation}
-f_i(t) = f_o + \Delta f + a(t-t_o) + \Delta f_e(t) + f_r(t)
+f_i(t) = f_o + \Delta f + a(t-t_o) + \Delta f_e(t) + \Delta f_n(t)
 \label{frequency}
 \end{equation}
 where \newline $t_o$ = the start time of the clock, \newline $a$ = aging factor, \newline $f_o$ = nominal frequency, \newline $\Delta
-f$ = calibration error, \newline $f_r(t)$ = frequency instability (noise) term,\newline $\Delta f_e$ = frequency error which occurs
+f$ = calibration error, \newline $\Delta f_n(t)$ = frequency instability (noise) term,\newline $\Delta f_e$ = frequency error which occurs
 due to outside factors such as temperature and voltage instability.\newline
 The nominal frequency is the ideal frequency at which the oscillator is supposed to run. \paragraph*{} Hence, all the above factors affect the value of $\rho$. From ($\ref{clock}$) and ($\ref{frequency}$), we get
 \begin{equation}
 C_i(t) - C_i(t_o) = \frac{1}{f_o} \int^{t}_{t_o}f_i(\tau)d\tau ,
 \end{equation}
 \begin{equation}
-C_i(t) - C_i(t_o) = \frac{1}{f_o} \int^{t}_{t_o}{[f_o + \Delta f + a(\tau-t_o)  } + \Delta f_e(\tau) + f_r(\tau)]d\tau ,
+C_i(t) - C_i(t_o) = \frac{1}{f_o} \int^{t}_{t_o}{[f_o + \Delta f + a(\tau-t_o)  } + \Delta f_e(\tau) + \Delta f_r(\tau)]d\tau ,
 \label{fasika}
 \end{equation}
 \begin{equation}
 C_i(t) =  C_i(t_o) + (t-t_o) +\frac{\Delta f}{f_o}(t-t_o) + \frac{a}{2f_o}(t-t_o)^2 + \frac{1}{f_o}\int^{t}_{t_o}{f_e(\tau)d\tau} +
-\frac{1}{f_o}\int^{t}_{t_o}{f_r(\tau)d\tau} .
+\frac{1}{f_o}\int^{t}_{t_o}{\Delta f_n(\tau)d\tau} .
 \label{freqmodel}
 \end{equation}
 \paragraph*{}
 Here are some notes to be considered in the model.
 \begin{itemize}
-\item The amplitude of the short term variations due to noise $f_r(t)$ (clock jitter) is small enough that they do not cause the clock to
-accelerate or decelerate in a large amount in the long run.
+\item The amplitude of the short term variations due to noise $\Delta f_n(t)$ (clock jitter) is small enough that they do not cause the clock to accelerate or decelerate in a large amount in the long run.
 \item Individual clock properties are uncorrelated. This may not be exactly true for clocks in the same building, with similar temperature cycles, but correlation effects are expected to be small.
 \item Clock parameters are normally distributed. The variances of the constants in the clock drift equation (initial time error,
 initial frequency error, aging rate) are all inputs to the model.
@@ -839,7 +839,7 @@ The start up time of the nodes is random, Gaussian distributed variable, $t_{io}
     \begin{tabular}{ | l | l |}
     \hline
     Duration time frame & 1s \\ \hline
-    Radio range & 10 - 30m \\ \hline
+    Data rate & 2Mbps \\ \hline
     \end{tabular}
 \end{center}
 The simulation is conducted in different scenarios and some test case results are presented here for discussion. Results with different scenarios and parameters are included in Appendix A.
@@ -1164,6 +1164,7 @@ The software is documented by the other working groups of MyriaNed.
 \bibitem{median}R.Tjoa and et al. Clock drift reduction for relative time slot tdma-based sensor networks. PIMRC 2004. 15th IEEE International Symposium. Vol.2, 5-8 , pp.1042 - 1047. Sept. 2004.
 \bibitem{6}R.John. Introduction to Quartz Frequency Standards. Technical Report SLCET-TR-92-1, Army Research Laboratory, Electronics and Power Sources Directorate. October 1992.
 \bibitem{gradient}R. Fan and N. Lynch. Gradient clock synchronization. In Proceedings of the twenty-third annual ACM symposium on Principles of distributed computing (PODC ’04), pages 320–327. ACM Press, 2004.
+\bibitem{clockwhite}Symmetricom, Inc. Stochastic Model Estimation of network time variance. USA.2004
 \bibitem{texas}S.Raje. Time synchronization of in Network-centric sensor networks. Master research. University of Texas, Arlington. Texas. August 2005.
 \bibitem{14}S.PalChaudhuri and et al. Adaptive Clock Synchronization in Sensor Networks, Information Processing in Sensor Networks, April 2004.
 \end{thebibliography}
