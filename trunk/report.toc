@@ -26,7 +26,7 @@
 \contentsline {section}{\numberline {3.2}\textbf {Clock and frequency standards}}{13}
 \contentsline {subsection}{\numberline {3.2.1}\textbf {Clock time}}{14}
 \contentsline {section}{\numberline {3.3}\textbf {Building blocks of a synchronization protocol}}{16}
-\contentsline {section}{\numberline {3.4}\textbf {Performance metrics of a synchronization protocol}}{17}
+\contentsline {section}{\numberline {3.4}\textbf {Performance metrics of a synchronization protocol}}{16}
 \contentsline {subsubsection}{\textbf {Precision}}{17}
 \contentsline {subsubsection}{\textbf {Energy costs}}{17}
 \contentsline {subsubsection}{\textbf {Memory requirement}}{17}
