@@ -52,7 +52,7 @@ $\cite{3}$. This method uses the topology of the nodes as a means to
 weigh the phase error between the sender and the receiver.
 \par
 Another approach stated in $\cite{texas}$ establishes a table to correspond
-the clock of the sender with that of the receiver's clock so that a
+the clock of the sender with the receiver so that a
 good estimation of the neighbors clock is achieved using different
 estimation techniques. A different approach to a weight-based
 synchronization for interference elimination of a TDMA-based ad-hoc
@@ -76,7 +76,7 @@ Section III presents the mathematical models of the proposed algorithms for the 
 In Section IV, simulation results are presented. Analysis of the results in addition to the comparison of the methods with respect to performance and energy consumption is discussed. Finally, Section V draws the conclusions from the research and suggests future work.
 \section{\textbf{Problem Formulation}}
 \subsection{\textbf{Wireless sensor networks: Why different ?}}
- Are synchronization methods developed for centralized systems applicable in the case of WSNs? Many
+Are synchronization methods developed for centralized systems applicable in the case of WSNs? Many
 assumptions in the centralized schemes do not hold in the case
 of WSNs. Some of these factors are:
 \begin{itemize}
@@ -93,7 +93,7 @@ others can work with a relative timescale.
 \end{itemize}
 \subsection{\textbf{Sources of synchronization error}}
 The different factors which give rise to errors between two nodes can be identified as:\par \noindent
-\textbf{Oscillator characteristics}: The following two oscillator characteristics are the main sources of errors between the clocks of two different nodes.
+\textbf{Oscillator characteristics}: The following two oscillator characteristics are prone to error.
          \begin{itemize}
          \item \emph{\textbf{Accuracy}}: is a measure of the difference between oscillators expected (ideal)
            frequency and actual frequency.
@@ -105,7 +105,7 @@ The different factors which give rise to errors between two nodes can be identif
          \item \emph{\textbf{Send time}}: The time spent at the sender to build the message.
          \item \emph{\textbf{Access time}}: Delay occurred while waiting for access to the transmit channel.
          \item \emph{\textbf{Propagation time}}: Time required for the message to travel from sender to receiver.
-         \item \emph{\textbf{Receive time}}: Time needed for processing at the receivers.
+         \item \emph{\textbf{Receive time}}: Time needed for processing at the receiver.
       \end{itemize}
 Some definitions which are used in the paper are presented below.
 \begin{itemize}
@@ -113,7 +113,7 @@ Some definitions which are used in the paper are presented below.
 \item \textbf{Frequency error}: Frequency error measures the difference in the clock rates.
 \item \textbf{Clock drift}: It is not just that the clocks are running at different rates, but the frequency of each clock does not stay constant over a period of time.
 \item \textbf{Clock cycle (\textit{clk})}: The time between two adjacent pulses of the oscillator.
-\item \textbf{Wake up time}:Time that the node starts listening.
+\item \textbf{Wake-up time}:Time that the node starts listening.
 \end{itemize}
 \subsection{\textbf{Clock time}}
 %\begin{figure}[b]
@@ -149,7 +149,7 @@ f_e(t) + \Delta f_n(t) \label{frequency}
 \end{equation}
 where \par $t_o$ = the start time of the clock, \par $a$ = aging factor,  \par $f_o$ = nominal frequency, \par $\Delta
 f$ = calibration error,\par $\Delta f_n(t)$ = frequency instability (noise) term, \par $\Delta f_e(t)$ = frequency error which occurs
-due to outside factors like temperature, voltage instability. \par
+due to outside factors like temperature and voltage instability. \par
 From ($\ref{clock}$) and ($\ref{frequency}$),
 \begin{equation}
 C_i(t) - C_i(t_o) = \frac{1}{f_o} \int^{t}_{t_o}f_i(\tau)d\tau ,
@@ -178,14 +178,13 @@ The algorithm is described as follows:
 \begin{enumerate}
 \item Nodes broadcast packets.
 \item Each receiver records the time that the packet is received according to the local clock.
-\item Each receiver $i$ computes its phase error to
-any other node j in the neighborhood as
+\item Each receiver $i$ computes its phase error to any other node $j$ in the neighborhood as
 \begin{equation}
-\Delta t_{ij}^{(n)} = t_i^{(n)} - t_j^{(n)} ,
+\Delta t_{ij}^{(n)} = t_i^{(n)} - t_j^{(n)} ,\label{err}
 \end{equation}
 where $t_i$ is the wake-up time of node $i$ and $t_j$ is the wake-up
 time of node $j$ at the $n^{th}$ period.
-\item Receivers compute the median of the phase errors,
+\item Receivers compute the offset, $\xi_i$, which is the median of the phase errors,
 \begin{equation}
 \xi_i^{(n)} = median(\Delta t_{ij}^{(n)}) , \forall j
 \end{equation}
@@ -204,28 +203,25 @@ By multiplying the median with a gain factor, $G\xi_i^{(n)}$, the output can be 
 \par As per the application of Median, there are setbacks on its implementation. In some test-cases, the algorithm fails to converge or stays unsynchronized for a certain period of time.
 \par A typical scenario is presented where the Median algorithm takes a longer time to achieve synchronization. In Figure $\ref{wsn}$, a distribution of nodes is shown. Node 10 joins  the stable network communication through Node 9. Assume Node 9 belongs to two broadcast domains, Node 3's and Node 10's. Thus, upon the application of the median algorithm, the node tends to adjust its wake-up time with the median of the phase errors from its neighbors, Node 3 and Node 10. Adjusting the wake-up time, the offset is
 \begin{equation}
-\xi_9 = \frac{\Delta t_{910} + \Delta t_{39}}{2}.
+\xi_9 = \frac{\Delta t_{9,10} + \Delta t_{9,3}}{2}.
 \end{equation}
 \begin{figure}
 \centering
 \includegraphics[width= 0.5\textwidth]{offsetpic}
 \caption{Using median for phase error correction} \label{fasik}
 \end{figure}
-Being in synchronization with the other nodes, Node 9 will drift away from the network after
-its adjustment with the Node 10. It will take Node 9 more time to synchronize with the network again. Figure $\ref{fasik}$ shows the state of the network after the
-synchronization using the Median.
+Being in synchronization with the other nodes, Node 9 will drift away from the network after its adjustment with Node 10. Therefore, it will take Node 9 more time to synchronize with the network again. Figure $\ref{fasik}$ shows the state of the network after the synchronization using the Median.
 \par So, in order to address this problem, three algorithms are proposed in the next section to realize an energy-efficient, more precise and simple frame synchronization.
 \section{\textbf{Synchronicity protocol}}
 \subsection{\textbf{Synchronization frequency}}
 %\textbf{Precise synchronization}: Precise synchronization is implemented when a node has already joined in the network, which repeatedly adjusts the diversion of its time slot reference caused by propagation delay and clock drift. \par
-Decreasing the timing of the synchronization and do periodic execution of the synchronization of the algorithm greatly reduces
-the energy consumption of the WSN. Thus, a synchronization period, $T_{sync}$, is defined as the period in which the network can stay synchronized without the application of the synchronization algorithm.
-\par A slot can be expressed in a
+Decreasing the timing of the synchronization and executing the synchronization algorithms periodically reduces
+the energy consumption of the WSN greatly. Thus, a synchronization period, $T_{sync}$, is defined as the period in which the network can stay synchronized without the application of the synchronization algorithm.
+\par A TDMA, $t_{slot}$, slot can be expressed in a
 number of clock cycles as
 \begin{equation}
 t_{slot} = kT ,
-\end{equation} where $T$ is the period of the frame in clock cycles and
-$t_{slot}$ is the duration of a TDMA slot and $k$ is a constant.
+\end{equation} where $T$ is the period of the frame in clock cycles and $k$ is a constant.
 \par With a synchronization period $T_{sync}$ and the
 maximum clock drift of a clock $\rho$ , the maximum time difference
 between a sender and a receiver is
@@ -276,19 +272,13 @@ clock tick number
 \begin{equation}
 tick_{rx} = T_{tx}+ \frac{t_{guard}}{2} \label{tick}
 \end{equation}
-Whenever this number is not equal with the desired one, a phase error is observed. \par
-The difference between the wake up times of node $i$ and node $j$ is
-\begin{equation}
-\Delta t_{ij}^{(n)} = t_i^{(n)} - t_j^{(n)} ,
-\end{equation}
-where $t_i$ and $t_j$ are the wake-up times of node $i$ and node $j$
-at the $n^{th}$ period. \par
+Whenever $\ref{tick}$ is not satisfied, a phase error is observed. \par
 The wake-up time of a node after $n$ periods of firings after it is turned on is
 \begin{equation}
 t_i^{(n)} = \sum_{n} T_i^{(n)} + t_{io},
 \end{equation}
 where  $T_i^{(n)}$ is the period of the crystal clock at the $n^{th}$ period which changes with time according to ($\ref{frequency}$) and $t_{io}$ is the initial start-up time of the node.\par
-The difference in the wake-up time of the nodes is given by
+The difference in the wake-up time, $\ref{err}$, of the nodes is therefore given by
 \begin{eqnarray}
 \Delta t_{ij} & = & \sum_{n}T_i^{(n)} + t_{io}- (\sum_{n}T_j^{(n)} +
 t_{jo}) \\ &=& (\sum_{n}T_i^{(n)} - \sum_{n}T_j^{(n)}) +
@@ -301,8 +291,8 @@ depending on the difference between the current wake-up time of the
 node and its neighbors. In this research, the second option is
 explored due to:
 \begin{itemize}
-\item The cost of adjusting the frequency of the clock, and
-\item The complexity of the implementation.
+\item The high cost of adjusting the frequency of the clock, and
+\item The increased complexity of the implementing the first one.
 \end{itemize}
 Hence, the next wake-up time of the node is
 dependent on the current wake-up time of its neighbors in relation
@@ -331,7 +321,7 @@ The offset is then
 \begin{equation}
 \xi_i^{(n)} = \sum{w_{ij}^{(n)}\Delta t_{ij}^{(n)}} ,
 \end{equation}
-where $\sum{w_{ij}^{(n)}= 1}$.
+where $\sum{w_{ij}^{(n)}= 1}$ and $w_{ij}$ is the weight factor for the phase error,$\Delta t_{ij}$.
 \par
 The weighted adjustment is used to modify the next wake-up time of
 the node,
@@ -343,16 +333,15 @@ t_i^{(n)}+ T_i^{(n)} -
 \end{eqnarray*}
 \par
 The main task in this model is how to choose the weight factors
-so that the stability of the network (time wise) is achieved in a
-faster time. The weight is selected in such a way that the a node
+so that the stability of the network (time wise) is achieved faster. The weight is selected in such a way that the a node
 joining a network should adjust its time with the network that it is
 joining. After each measurement, a phase error is associated with
 the weight  factor to which shows how far is the node concerning the
 time that it drifted away from its neighbors.
 \par \noindent In the selection of the weight factor, two steps are taken. \par \noindent
-Firstly, each phase error $\Delta t_{ij}$ is first associated with
-a value, $\delta_{ij}$, in order to weigh how far the neighbor node
-has drifted. The values are calculated as:
+Firstly, each phase error $\Delta t_{ij}$ is associated with
+a value, $\delta_{ij}$. $\delta_{ij}$ is used to weigh how far the neighbor nodes
+has drifted. The $\delta$ values are calculated as:
 \begin{equation}
 \delta_{ij} = ae^{-b\Delta t_{ij}}.
 \end{equation}
@@ -379,12 +368,12 @@ the neighbors. \par \noindent Hence, the weight factor is
  \delta_{ij}, & \quad \mbox{if $mean(\delta_{ij}$) $>$ 0.5}\\ \end{array} \right. \]
 where $mean$ is the average function.
 The weight then moves towards the large phase errors if the node is a new-comer that wants to join the "already established" network.
-\par WM is a two step process in which the first one describes how the node has drifted away from its neighbors
-whereas the second one describes how the node is positioned in the network topology which surrounds it. Using the WM approach, a series of measurements will be used to estimate the next wake-up time of the node, giving less value/emphasis to the nodes which are out of reach from the neighboring nodes.
+\par Therefore, in WM the first step describes how the node has drifted away from its neighbors
+whereas the second step describes how the node is positioned in the network topology which surrounds it. Using the WM approach, a series of measurements will be used to estimate the next wake-up time of the node, giving less value/emphasis to the nodes which are out of reach from the neighboring nodes.
 \subsubsection{\textbf{Non Linear Least Squares}}
 \par Non Linear Least Squares (NLLS) is a method to fit a set of $n$ observations with a model that is non-linear in $m$ unknown parameters by minimizing the sum of the squares of the errors ("the residuals").
 \par
-Using a set of $n$ data points which are ($x_1$, $y_1$), ($x_2$, $y_2$),$\dots$,($x_n$, $y_n$), and a curve (model function) $y= f(x, \beta)$, that in addition to the variable $x$ also depends on $m$ parameters($\beta_1,\beta_2,...,\beta_m$).
+It uses a set of $n$ data points which are ($x_1$, $y_1$), ($x_2$, $y_2$),$\dots$,($x_n$, $y_n$), and a curve (model function) $y= f(x, \beta)$, that in addition to the variable $x$ also depends on $m$ parameters($\beta_1,\beta_2,...,\beta_m$).
 It is desired to find the vector $\beta$ of parameters such that the curve best fits the given data in the least squares, that is, the sum of squares
 \begin{equation}
     S=\sum_{i=1}^{n}r_i^2 ,
@@ -395,9 +384,9 @@ is minimized, where the residuals $r_i$ are given by
 \end{equation}
 for i=1,2,$\dots$, $n$.
 \par
-The minimum value of $S$ occurs when the gradient is zero. Hence, there are $m$ gradient equations to be solved:
+The minimum value of $S$ occurs when the gradient is zero. Hence, there are $m$ gradient equations to be solved where
 \begin{equation}
-    \frac{\partial S}{\partial \beta_j}=2\sum_i r_i\frac{\partial r_i}{\partial \beta_j}=0 \ (j=1,2...,m).
+    \frac{\partial S}{\partial \beta_j}=2\sum_i r_i\frac{\partial r_i}{\partial \beta_j}=0 \ \quad for j=1,2...,m.
 \end{equation}
 In a non-linear system, the derivatives $\frac{\partial r_i}{\partial \beta_j}$ are functions of both the independent
 variable and the parameters. These gradient equations do not have a closed solution. Instead, initial values must be chosen for the
@@ -413,7 +402,7 @@ for $j=1,2...,m.$ Here, $p$ is an iteration number and the vector of increments,
  f(x_i,\beta) =f(x_i, \beta^p)+\sum_j J_{ij} \Delta\beta_j.
 \end{equation}
 The Jacobian, $J$, is a function of constants, the independent
-variable and the parameters, so it changes from one iteration to the
+variable and the parameters. So, it changes from one iteration to the
 next. Thus, in terms of the linearized model,
 \begin{equation}
 \frac{\partial r_i}{\partial \beta_j}=-J_{ij}
@@ -427,7 +416,7 @@ where
  \Delta y_i=y_i- f(x_i, \beta^p).
 \end{equation}
 Substituting these expressions into the gradient equations and
-equating to $0$, a matrix notation can be found
+equating to $0$, the resulting system of equations can be represented as a a matrix notation as
 \begin{equation}
     \left(J^TJ\right)\Delta  \beta=J^T\Delta y.
 \end{equation}
@@ -440,15 +429,15 @@ In order to meet the demand of adjusting the time offset and stabilize the netwo
  f(x_i,\beta)= \beta _1 + \beta_2log(x_i),
 \end{equation}
 is chosen. A logarithmic function can be used to represent the distribution of the offsets in the neighborhood, as shown in Figure $\ref{curvefit}$.
-Normalized phase error values tend to be small and follow a curve in such away that the maximum value of the phase error should not be greater than the threshold value that was intended to be, the synchronization error.
+Normalized phase error values tend to be small and follow a curve in such away that the maximum value of the phase error should not be greater than the synchronization error.
 \begin{figure}
 \centering
 \includegraphics[width=0.5\textwidth]{curvefit}
 \caption{Curve fitting using logarithmic function} \label{curvefit}
 \end{figure}
 \par
-The initial values of the parameters $\beta_1$ and $\beta_2$ is
-estimated taking into account the state of a synchronized network.
+The initial values of the parameters $\beta_1$ and $\beta_2$ are
+estimated using the state of a synchronized network taking into account.
 As each measurement arrives from the neighbors, the parameters are
 calculated in such a way that the measurement error from a
 pre-determined offset value is reduced. This ensures that the offset
@@ -456,15 +445,15 @@ to be added in the next wake-up time doesn't diverge in a large
 amount from the predicted value.
 \subsubsection{\textbf{Discrete time kalman filter for synchronization}}
 The kalman filter$\cite{kalm}$ estimates a process by using a form of feedback
-control: the filter estimates the process state at some time and
+control. It estimates the process state at some time and
 then obtains feedback in the form of (noisy) measurements. As such,
 the equations for the Kalman filter fall into two groups: time
 update equations and measurement update equations. The time update
 equations are responsible for projecting forward (in time) the
-current state and error covariance estimates to obtain the a priori
+current state and error covariance estimates to obtain apriori
 estimates for the next time step.
 \par
-The Kalman filter addresses the general problem of trying to
+The kalman filter addresses the general problem of trying to
 estimate the state $x \in R$ of a discrete-time controlled process that is
 governed by the linear stochastic difference equation
 \begin{equation}
@@ -475,8 +464,8 @@ with a measurement $z \in R$ that is
  z_k = Hx_k + v_k. \label{meakal}
 \end{equation}
 The random variables $w_k$ and $v_k$ represent the process and
-measurement noise (respectively). They are assumed to be
-independent (of each other), white, and with normal probability
+measurement noise respectively. They are assumed to be
+independent of each other, white, and with normal probability
 distributions
 \begin{equation}
  p(w) \approx N(0,Q),
@@ -522,25 +511,11 @@ x_k = x_k + K_k(z_k - Hx_x)
 \begin{equation}
 P_k = (I-K_kH)P_k
 \end{equation}
-The time update equations can also be thought of as predictor
-equations, while the measurement update equations can be thought of
-as corrector equations.
-\par 
-The update equation is
-\begin{equation}
-\tilde x_k = \tilde x_k + K(z_k-H\tilde x_k).
-\label{updatekalman}
-\end{equation}
-The difference $z_k - H\tilde x_k$ in ($\ref{updatekalman}$) is called
-the residual. The residual reflects the discrepancy between the
-predicted measurement $H\tilde x_k$ and the actual measurement
-$z_k$. A residual of zero means that the two are in complete
-agreement. \par
 The matrix K in ($\ref{kalmangain}$) is
 chosen to be the gain or blending factor that minimizes the
 posteriori error covariance. Taking the derivative of the trace of
-the result with respect to K, setting that result equal to zero, and
-then solving for K,
+the resulting derivative with respect to K, setting that result equal to zero, and
+then solving for K provides
 \begin{equation}
 K_k = P_kH^{T}(HP_kH^{T} + R)^{-1}
 \end{equation}
@@ -559,9 +534,23 @@ Specifically,
 \begin{equation}
 \mathop {\lim }\limits_{P_k \to 0 } {K_k} = 0.
 \end{equation}
+The time update equations can also be thought of as predictor
+equations, while the measurement update equations can be thought of
+as corrector equations.
+\par 
+The update equation is
+\begin{equation}
+\tilde x_k = \tilde x_k + K(z_k-H\tilde x_k).
+\label{updatekalman}
+\end{equation}
+The difference $z_k - H\tilde x_k$ in ($\ref{updatekalman}$) is called
+the residual. The residual reflects the discrepancy between the
+predicted measurement $H\tilde x_k$ and the actual measurement
+$z_k$. A residual of zero means that the two are in complete
+agreement. \par
 \textbf{Filter design} \par
 The transition matrix $A$ plays an important role in achieving
-the proper synchronization. It indicates how fast/slow is the next wake up time should be compared
+the proper synchronization. It indicates how fast/slow the next wake up time should be compared
 to it's previous value and/or neighbors. The initial estimates of $x$ and $P$ are selected from the
 previous firing time of the node, one period earlier. This ensures that the nodes are on the same track as the previous time, since the neighbors remain the same with some exception of mobility and interference. $H$ is a factor used to compare the predicted value to the measured value. \par
 In the filter design, the covariance matrices $R$ and $Q$ have a significant
@@ -639,7 +628,7 @@ The speed of the nodes is increased to be an independent gaussian random variabl
 The relative comparison of the algorithms performance improvement with the Median is shown in Figure $\ref{16output-error}$ for nodes moving at $20km/hr$. WM and NLLS perform, on average, $6-8\%$ better than Median, but with more tolerance in handling the disruptions. The best performer, KF, has on average $60\%$ better performance than the Median one.
 \begin{figure}
 \centering \includegraphics[width=0.5\textwidth]{16output-error}
-\caption{Relative error of the algorithms w.r.t. Median for 20 nodes}
+\caption{Relative error of the algorithms with respect to Median for 20 nodes}
 \label{16output-error}
 \end{figure}
 \subsubsection{\textbf{Case III}}
@@ -673,7 +662,7 @@ For the set of nodes with a higher speed , a relative comparison is made to see 
 The Median algorithm is shown to perform the worst in this case. There are a lot of disruptions in the network, making it more unstable whereas the other algorithms adapt to the changes faster. Figure $\ref{50output-error}$ shows that KF performs the best against Median algorithm, $45\%$. WM and NLLS perform well against Median too, $20\%$ on average. It has been shown that the median is prone to error in case of high dynamics in the network.
 \begin{figure}
 \centering \includegraphics[width=0.5\textwidth]{50output-error}
-\caption{Relative error of the algorithms w.r.t. Median for 50 nodes}
+\caption{Relative error of the algorithms with respect to Median for 50 nodes}
 \label{50output-error}
 \end{figure}
 The Kalman filter has a better precision and stability than the rest whereas WM and NLLS has a better tolerance to a dynamic network.

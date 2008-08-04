@@ -23,7 +23,7 @@
 %\setlength\paragraph*skip{0.25in}
 
 \title{\textbf{Decentralized frame synchronization of a TDMA-based wireless sensor network}}
-%\title{\textbf{በበጎ ፈካዱ ሁሉ በርሱ ሆነ}}
+%\title{\textbf{� � ጎ ፈካዱ ሁሉ � ርሱ ሆነ}}
 \author{Fasika A. Assegei}
 \date{August 14, 2008}
 \begin{document}
@@ -85,7 +85,7 @@
 \addcontentsline{toc}{chapter}{Abstract}
 \section*{\begin{center}Abstract\end{center}}
 Synchronization is a crucial component of infrastructure for \textit{Wireless Sensor Networks}(WSNs). Most applications of WSNs
-make extensive use of synchronization mechanisms like \emph{Time Division Multiple Access} \nomenclature{TDMA}{Time Division Multiple Access} scheduling, accurate time stamping of events, coordinate activities of the network or data fusion. The unique requirements of WSNs, compared to centralized networks, in terms of precision, lifetime, energy and scope of the synchronization achieved, make the synchronization methods developed for centralized systems unsuitable for WSNs. This motivates the research of synchronization methods which are aligned to the specific properties of WSN. Median$\cite{median}$ algorithm is implemented currently on the wireless sensor nodes in MyriaNed$\footnote{MyriaNed is a DevLab\cite{devlab} project to create a large functional network of 10,000 nodes with wireless communication for research on protocols, power management, programming models, and security.}$ project. In this research, the flaw in the Median algorithm is explored and three algorithms have been proposed to achieve a decentralized, stable, and energy-efficient synchronization of a WSN. The algorithms achieve synchronization by using the phase error of a node's wake-up time with that of the neighboring node's, without actually exchanging the information about the clock time of the sender. So, the method avoids time keeping on the messages (time stamping) which reduces the message overload. The algorithms can be integrated with the slot allocation algorithm to form the MAC\nomenclature{MAC}{Media Access Protocol} layer protocol for a better throughput. The research is concluded with the comparison of three algorithms in terms of energy consumption and performance. A low energy-consumption or a better convergence as well as the length of the guard time can be used as a metric for selecting the algorithm.
+make extensive use of synchronization mechanisms like \emph{Time Division Multiple Access} \nomenclature{TDMA}{Time Division Multiple Access} scheduling, accurate time stamping of events, coordinate activities of the network or data fusion. The unique requirements of WSNs in terms of precision, lifetime, energy and scope of the synchronization achieved, make the synchronization methods developed for centralized systems unsuitable for WSNs. This motivates the research of synchronization methods which are aligned to the specific properties of WSN. Median$\cite{median}$ algorithm is implemented currently on the wireless sensor nodes in MyriaNed$\footnote{MyriaNed is a DevLab\cite{devlab} project to create a large functional network of 10,000 nodes with wireless communication for research on protocols, power management, programming models, and security.}$ project. In this research, the flaw in the Median algorithm is explored and three algorithms have been proposed to achieve a decentralized, stable, and energy-efficient synchronization of a WSN. The algorithms achieve synchronization by using the phase error of a node's wake-up time with those of the neighboring nodes, without actually exchanging the information about the clock time of the sender. So, the method avoids time keeping on the messages (time stamping) which reduces the message overload. The algorithms can be integrated with the slot allocation algorithm to form the MAC\nomenclature{MAC}{Media Access Protocol} layer protocol for a better throughput. The research is concluded with the comparison of three algorithms in terms of energy consumption and performance. A low energy-consumption or a better convergence as well as the length of the guard time can be used as a metric for selecting the algorithm.
 \newpage
 \addcontentsline{toc}{chapter}{Acknowledgment}
 \section*{\begin{center}Acknowledgment\end{center}}
@@ -123,23 +123,9 @@ frequency estimates between two receivers using a linear regression
 technique. A decentralized slot synchronization algorithm for
 TDMA-based networks is presented in $\cite{3}$. It uses the topology
 of the nodes as a means to weigh the phase error of the sender with
-the receiver. \paragraph*{} Another method for achieving a
-network-wide synchronization is suggested by $\cite{texas}$. This
-approach establishes a table to correspond the clock of the sender
-with that of the receiver clock so that a good estimation of the
-neighbors clock is achieved using different estimation techniques.
-Another approach is used in $\cite{4}$ to use the metaphor of
-fireflies to the existing problem of synchronization. The method
-bases itself for the synchronization of the network where the nodes
-are on the same domain, firing at the same time. A different
-approach to weight-based synchronization for interference
-elimination for a TDMA based ad-hoc networks is presented in
-$\cite{6}$. The algorithm achieves synchronization in a
-decentralized manner using the nodes offset with its neighbors with
-a goal of eliminating the interference. Correlation method is used
-in $\cite{correlation}$ in order to decode the message and learn
-about the status of the sender node which is used for
-synchronization.
+the receiver.
+\paragraph*{} Another method for achieving a network-wide synchronization is suggested by $\cite{texas}$. This approach establishes a table to correspond the clock of the sender with the receiver so that a good estimation of the neighbors clock is achieved using different estimation techniques. Another approach is used in $\cite{4}$ to use the metaphor of fireflies to the existing problem of synchronization. The method bases itself for the synchronization of the network where the nodes are on the same domain, firing at the same time. A different  approach to weight-based synchronization for interference elimination for a TDMA based ad-hoc networks is presented in
+$\cite{6}$. The algorithm achieves synchronization in a decentralized manner using the nodes offset with its neighbors with a goal of eliminating the interference. Correlation method is used in $\cite{correlation}$ in order to decode the message and learn about the status of the sender node which is used for synchronization.
 \section{\textbf{Objective and overview of the research}}
 Upon the literature survey performed, it is observed that some of
 the synchronization schemes use a central (master) node in order to
