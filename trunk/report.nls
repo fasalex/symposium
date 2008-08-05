@@ -4,27 +4,24 @@
 
   \item [{$\rho$}]\begingroup Maximum clock drift\nomeqref {3.3}
 		\nompageref{14}
-  \item [{$\xi_i$}]\begingroup Offset to be added to Node $i$\nomeqref {4.14}
-		\nompageref{23}
-  \item [{$t_{guard}$}]\begingroup Length of the guard time\nomeqref {4.2}
+  \item [{$\xi_i$}]\begingroup Offset to be added to Node $i$\nomeqref {4.12}
+		\nompageref{22}
+  \item [{$t_{guard}$}]\begingroup Length of the guard time\nomeqref {4.1}
 		\nompageref{21}
-  \item [{$t_{slot}$}]\begingroup Time duration of a slot\nomeqref {4.1}
+  \item [{$t_{slot}$}]\begingroup Time duration of a slot\nomeqref {4.2}
 		\nompageref{21}
-  \item [{$T_{sync}$}]\begingroup Synchronization frequency\nomeqref {4.1}
-		\nompageref{21}
-  \item [{\textit{clk}}]\begingroup A clock cycle\nomeqref {3.7}
-		\nompageref{16}
-  \item [{\textit{Wake-up time}}]\begingroup Time that the node starts listening.\nomeqref {3.7}
-		\nompageref{16}
+  \item [{$T_{sync}$}]\begingroup Synchronization frequency\nomeqref {4.0}
+		\nompageref{20}
+  \item [{\textit{clk}}]\begingroup A clock cycle\nomeqref {3.0}
+		\nompageref{13}
+  \item [{\textit{Wake-up time}}]\begingroup Time that the node starts listening.\nomeqref {3.0}
+		\nompageref{13}
   \item [{CSMA}]\begingroup Carrier Sense Multiple Access\nomeqref {2.0}
 		\nompageref{4}
-  \item [{DES}]\begingroup Discrete Event Simulator\nomeqref {5.0}
-		\nompageref{31}
   \item [{GPS}]\begingroup Global Positioning System\nomeqref {2.0}
 		\nompageref{9}
   \item [{GSM}]\begingroup Global System for Mobile communications\nomeqref {2.0}
 		\nompageref{9}
-  \item [{KF}]\begingroup Kalman Filter\nomeqref {5.0}\nompageref{32}
   \item [{MAC}]\begingroup Media Access Protocol\nomeqref {0}
 		\nompageref{i}
   \item [{NTP}]\begingroup Network Time Protocol\nomeqref {2.0}
