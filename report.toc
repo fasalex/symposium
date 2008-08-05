@@ -34,7 +34,7 @@
 \contentsline {section}{\numberline {3.5}\textbf {Median algorithm and the setback}}{17}
 \contentsline {chapter}{\numberline {4}\textbf {Synchronicity protocol}}{20}
 \contentsline {section}{\numberline {4.1}\textbf {Synchronization frequency}}{20}
-\contentsline {section}{\numberline {4.2}\textbf {Mathematical model}}{22}
+\contentsline {section}{\numberline {4.2}\textbf {Mathematical model}}{21}
 \contentsline {subsection}{\numberline {4.2.1}\textbf {Weighted measurements}}{23}
 \contentsline {subsection}{\numberline {4.2.2}\textbf {Non linear least squares method}}{25}
 \contentsline {subsubsection}{Non linear Least squares}{25}
@@ -45,27 +45,27 @@
 \contentsline {section}{\numberline {4.3}\textbf {Reducing the guard time}}{29}
 \contentsline {chapter}{\numberline {5}\textbf {Results and discussion}}{31}
 \contentsline {section}{\numberline {5.1}\textbf {Simulation setup}}{31}
-\contentsline {section}{\numberline {5.2}\textbf {Simulation results}}{32}
-\contentsline {subsubsection}{\textbf {Case I}}{32}
-\contentsline {subsubsection}{\textbf {Case II}}{33}
-\contentsline {subsubsection}{\textbf {Case III}}{35}
-\contentsline {section}{\numberline {5.3}\textbf {Energy consumption}}{38}
-\contentsline {chapter}{\numberline {6}\textbf {Conclusion and recommendation}}{40}
-\contentsline {section}{\numberline {6.1}\textbf {Conclusion}}{40}
-\contentsline {section}{\numberline {6.2}\textbf {Recommendation}}{41}
-\contentsline {chapter}{\numberline {A}\textbf {Lower bound of synchronization}}{42}
-\contentsline {chapter}{\numberline {B}Simulation results}{44}
-\contentsline {section}{\numberline {B.1}\textbf {Median as a synchronization method}}{44}
-\contentsline {section}{\numberline {B.2}\textbf {Synchronization frequency}}{45}
-\contentsline {section}{\numberline {B.3}\textbf {Synchronization error for nodes with different speeds}}{45}
+\contentsline {section}{\numberline {5.2}\textbf {Simulation results}}{31}
+\contentsline {subsubsection}{\textbf {Case I}}{31}
+\contentsline {subsubsection}{\textbf {Case II}}{32}
+\contentsline {subsubsection}{\textbf {Case III}}{33}
+\contentsline {section}{\numberline {5.3}\textbf {Energy consumption}}{37}
+\contentsline {chapter}{\numberline {6}\textbf {Conclusion and recommendation}}{39}
+\contentsline {section}{\numberline {6.1}\textbf {Conclusion}}{39}
+\contentsline {section}{\numberline {6.2}\textbf {Recommendation}}{40}
+\contentsline {chapter}{\numberline {A}\textbf {Lower bound of synchronization}}{41}
+\contentsline {chapter}{\numberline {B}Simulation results}{42}
+\contentsline {section}{\numberline {B.1}\textbf {Median as a synchronization method}}{42}
+\contentsline {section}{\numberline {B.2}\textbf {Synchronization frequency}}{43}
+\contentsline {section}{\numberline {B.3}\textbf {Synchronization error for nodes with different speeds}}{44}
 \contentsline {section}{\numberline {B.4}\textbf {The number of nodes and speed on KF}}{46}
-\contentsline {chapter}{\numberline {C}MyriaNode}{49}
-\contentsline {subsubsection}{Features}{49}
-\contentsline {subsubsection}{Description and architecture}{49}
-\contentsline {subsubsection}{Radio interface}{50}
-\contentsline {subsubsection}{Mechanical and Mounting}{50}
-\contentsline {subsubsection}{Energy Supply}{51}
-\contentsline {subsubsection}{Battery}{51}
-\contentsline {subsubsection}{Programming}{51}
-\contentsline {subsubsection}{Software}{52}
-\contentsline {chapter}{References}{52}
+\contentsline {chapter}{\numberline {C}MyriaNode}{47}
+\contentsline {subsubsection}{Features}{47}
+\contentsline {subsubsection}{Description and architecture}{47}
+\contentsline {subsubsection}{Radio interface}{48}
+\contentsline {subsubsection}{Mechanical and Mounting}{48}
+\contentsline {subsubsection}{Energy Supply}{49}
+\contentsline {subsubsection}{Battery}{49}
+\contentsline {subsubsection}{Programming}{49}
+\contentsline {subsubsection}{Software}{50}
+\contentsline {chapter}{References}{50}

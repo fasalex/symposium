@@ -1,4 +1,4 @@
-This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=latex 2008.5.8)  4 AUG 2008 17:39
+This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=latex 2008.5.8)  5 AUG 2008 17:15
 entering extended mode
  %&-line parsing enabled.
 **report.tex
@@ -83,7 +83,11 @@ Package: a4wide 1994/08/30
 
 (/usr/share/texmf-texlive/tex/latex/ntgclass/a4.sty
 Package: a4 2004/04/15 v1.2g A4 based page layout
-)) (./report.aux)
+)) (./report.aux
+
+LaTeX Warning: Label `tab' multiply defined.
+
+)
 \openout1 = `report.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 29.
@@ -103,8 +107,7 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <5> on input line 43.
 File: TUElogoCompact2.eps Graphic file (type eps)
-
-<TUElogoCompact2.eps>
+ <TUElogoCompact2.eps>
 Overfull \hbox (343.63815pt too wide) in paragraph at lines 43--44
  []$ 
  []
@@ -164,14 +167,14 @@ File: tdmaframe.eps Graphic file (type eps)
  <tdmaframe.eps> [6] [7]
 File: tdmaschedule.eps Graphic file (type eps)
  <tdmaschedule.eps>
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 235.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 200.
 
 
 (/usr/share/texmf-texlive/tex/latex/base/omscmr.fd
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 235.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 200.
  [8] [9] [10] [11]
 Chapter 3.
 [12
@@ -190,9 +193,9 @@ Chapter 4.
 File: guardtime.eps Graphic file (type eps)
 <guardtime.eps> [20
 
-] [21] [22] [23]
+] [21] [22]
 File: weight.eps Graphic file (type eps)
- <weight.eps> [24] [25]
+ <weight.eps> [23] [24] [25]
 File: curvefit.eps Graphic file (type eps)
  <curvefit.eps>
 [26] [27]
@@ -206,45 +209,106 @@ Missing character: There is no “ in font cmr10!
 File: guardtimesaving.eps Graphic file (type eps)
  <guardtimesaving.eps> [29] [30]
 Chapter 5.
-File: osimodel.eps Graphic file (type eps)
-<osimodel.eps> [31
-
-]
 File: 16output-s0.eps Graphic file (type eps)
- <16output-s0.eps>
+<16output-s0.eps>
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 File: 50output-s0.eps Graphic file (type eps)
-<50output-s0.eps> [32]
+<50output-s0.eps> [31
+
+] [32]
 File: 16output-s6.eps Graphic file (type eps)
  <16output-s6.eps>
 File: 16output-s20.eps Graphic file (type eps)
  <16output-s20.eps>
-File: 16output-error.eps Graphic file (type eps)
 
+LaTeX Warning: Reference `16output-error' on page 33 undefined on input line 80
+3.
+
+File: 16output-error.eps Graphic file (type eps)
 <16output-error.eps> [33] [34]
 File: 50output-s6.eps Graphic file (type eps)
  <50output-s6.eps>
 File: 50output-s20.eps Graphic file (type eps)
  <50output-s20.eps>
+
+LaTeX Warning: Reference `50output-error' on page 35 undefined on input line 82
+8.
+
 File: 50output-error.eps Graphic file (type eps)
+<50output-error.eps>
 
-<50output-error.eps> [35] [36]
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[35] [36]
+Overfull \hbox (2.071pt too wide) in paragraph at lines 869--869
+[]\OT1/cmr/m/n/10 Algorithm| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 869--869
+[]\OT1/cmr/m/n/10 Increase in
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 869--869
+\OT1/cmr/m/n/10 ex-e-cu-tion
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 869--869
+\OT1/cmr/m/n/10 time per
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 869--869
+[]\OT1/cmr/m/n/10 Energy
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 869--869
+\OT1/cmr/m/n/10 Con-sumed
+ []
+
+[37]
+Overfull \hbox (2.071pt too wide) in paragraph at lines 885--885
+[]\OT1/cmr/m/n/10 Algorithm| 
+ []
+
+
+Underfull \hbox (badness 5274) in paragraph at lines 885--885
+[]\OT1/cmr/m/n/10 Guard time
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 885--885
+[]\OT1/cmr/m/n/10 Reduction
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 885--885
+[]\OT1/cmr/m/n/10 Energy
+ []
+
+
+Underfull \hbox (badness 2671) in paragraph at lines 885--885
+\OT1/cmr/m/n/10 sav-ing per
+ []
+
 File: guardsave.eps Graphic file (type eps)
- <guardsave.eps> [37] [38] [39]
+<guardsave.eps> [38]
 Chapter 6.
-[40
+[39
 
-] [41]
+] [40]
 Appendix A.
-File: lowerbound.eps Graphic file (type eps)
-<lowerbound.eps> [42
+[41
 
-] [43]
+]
 Appendix B.
 File: gainfactor.eps Graphic file (type eps)
-<gainfactor.eps> [44
+<gainfactor.eps> [42
 
 ]
 File: tsync0.eps Graphic file (type eps)
@@ -259,46 +323,47 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
+[43]
 File: varspeed20.eps Graphic file (type eps)
-<varspeed20.eps>
+ <varspeed20.eps> [44]
 File: varspeed50.eps Graphic file (type eps)
- <varspeed50.eps> [45]
+ <varspeed50.eps>
 File: diffno.eps Graphic file (type eps)
  <diffno.eps>
 File: diffspeed.eps Graphic file (type eps)
- <diffspeed.eps> [46]
-[47] [48]
+ <diffspeed.eps>
+[45] [46]
 Appendix C.
 File: myrianode.eps Graphic file (type eps)
 <myrianode.eps>
 
 Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 1070.
+put line 1032.
 
 File: myrianodearch.eps Graphic file (type eps)
 <myrianodearch.eps>
 File: table1.eps Graphic file (type eps)
- <table1.eps> [49
+ <table1.eps> [47
 
 ]
 File: table2.eps Graphic file (type eps)
  <table2.eps>
 
 Package wrapfig Warning: Collision between wrapping environments on input line 
-1103.
+1065.
 
 File: myrianodephy.eps Graphic file (type eps)
 <myrianodephy.eps>
 
-Package wrapfig Warning: Stationary wrapfigure forced to float on input line 11
-10.
+Package wrapfig Warning: Stationary wrapfigure forced to float on input line 10
+72.
 
-[50]
+[48]
 File: battery.eps Graphic file (type eps)
- <battery.eps> [51] [52] [53
+ <battery.eps> [49] [50] [51
 
 ]
-Overfull \hbox (78.63936pt too wide) in paragraph at lines 1152--1153
+Overfull \hbox (78.63936pt too wide) in paragraph at lines 1114--1115
 []$\OML/cmm/m/it/10 http \OT1/cmr/m/n/10 : \OML/cmm/m/it/10 ==www:nordicsemi:no
 =files=Product=data[]sheet=Product[]Specification[]nRF\OT1/cmr/m/n/10 24\OML/cm
 m/m/it/10 L\OT1/cmr/m/n/10 01[]1\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 0\OML/cmm/m/i
@@ -308,7 +373,7 @@ t/10 :pdf:$
 Missing character: There is no â in font cmr10!
 Missing character: There is no € in font cmr10!
 Missing character: There is no “ in font cmr10!
-[54]
+[52]
 Missing character: There is no â in font cmr10!
 Missing character: There is no € in font cmr10!
 Missing character: There is no ™ in font cmr10!
@@ -316,19 +381,26 @@ Missing character: There is no â in font cmr10!
 Missing character: There is no € in font cmr10!
 Missing character: There is no “ in font cmr10!
 
-Underfull \hbox (badness 1418) in paragraph at lines 1167--1168
+Underfull \hbox (badness 1418) in paragraph at lines 1129--1130
 []\OT1/cmr/m/n/10 Symmetricom, Inc. Stochas-tic Model Es-ti-ma-tion of net-work
  time vari-ance.
  []
 
-[55] (./report.aux) ) 
+[53] (./report.aux)
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
+ ) 
 Here is how much of TeX's memory you used:
- 1033 strings out of 95087
- 12379 string characters out of 1183279
+ 1032 strings out of 95087
+ 12361 string characters out of 1183279
  59574 words of memory out of 1500000
- 4185 multiletter control sequences out of 10000+50000
+ 4186 multiletter control sequences out of 10000+50000
  10119 words of font info for 35 fonts, out of 1200000 for 2000
  28 hyphenation exceptions out of 8191
- 25i,9n,25p,1913b,334s stack positions out of 5000i,500n,6000p,200000b,5000s
+ 25i,10n,25p,2054b,334s stack positions out of 5000i,500n,6000p,200000b,5000s
 
-Output written on report.dvi (63 pages, 149292 bytes).
+Output written on report.dvi (61 pages, 149628 bytes).

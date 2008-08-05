@@ -23,7 +23,7 @@
 %\setlength\paragraph*skip{0.25in}
 
 \title{\textbf{Decentralized frame synchronization of a TDMA-based wireless sensor network}}
-%\title{\textbf{  ጎ ፈካዱ ሁሉ  ርሱ ሆነ}}
+%\title{\textbf{በበጎ ፈካዱ ሁሉ በርሱ ሆነ}}
 \author{Fasika A. Assegei}
 \date{August 14, 2008}
 \begin{document}
@@ -83,14 +83,14 @@
 \pagestyle{plain}
 \pagenumbering{roman}
 \addcontentsline{toc}{chapter}{Abstract}
-\section*{\begin{center}\begin{Huge}Abstract\end{Huge}\end{center}}
+\section*{\begin{center}Abstract\end{center}}
 Synchronization is a crucial component of infrastructure for \textit{Wireless Sensor Networks}(WSNs). Most applications of WSNs
-make extensive use of synchronization mechanisms like \emph{Time Division Multiple Access} \nomenclature{TDMA}{Time Division Multiple Access} scheduling, accurate time stamping of events, coordinate activities of the network or data fusion. The unique requirements of WSNs in terms of precision, lifetime, energy and scope of the synchronization achieved, make the synchronization methods developed for centralized systems unsuitable for WSNs. This motivates the research of synchronization methods which are aligned to the specific properties of WSN.  Interfering nodes, due to mobility and newly incoming nodes, lead to diverging synchronization algorithms.  Median$\cite{median}$ algorithm is implemented currently on the wireless sensor nodes in MyriaNed$\footnote{MyriaNed is a DevLab\cite{devlab} project to create a large functional network of 10,000 nodes with wireless communication for research on protocols, power management, programming models, and security.}$ project. In this research, the flaw in the Median algorithm is explored and three algorithms have been proposed to achieve a decentralized, stable, and energy-efficient synchronization of a WSN. The algorithms achieve synchronization by using the phase error of a node's wake-up time with those of the neighboring nodes, without exchanging the information about the clock time of the sender. So, the method avoids time keeping on the messages (time stamping) which reduces the overall overload. Stability of the algorithms is simulated in a highly dynamic network. Results from simulation of the models are presented and discussed. The algorithms can be integrated with the slot allocation algorithm to form the MAC\nomenclature{MAC}{Media Access Protocol} layer protocol for a better throughput. The research is concluded with the comparison of three algorithms in terms of energy consumption and performance. A low energy-consumption or a better convergence as well as the length of the guard time can be used as a metric for selecting the algorithm.
+make extensive use of synchronization mechanisms like \emph{Time Division Multiple Access} \nomenclature{TDMA}{Time Division Multiple Access} scheduling, accurate time stamping of events, coordinate activities of the network or data fusion. The unique requirements of WSNs, compared to centralized networks, in terms of precision, lifetime, energy and scope of the synchronization achieved, make the synchronization methods developed for centralized systems unsuitable for WSNs. This motivates the research of synchronization methods which are aligned to the specific properties of WSN. Median$\cite{median}$ algorithm is implemented currently on the wireless sensor nodes in MyriaNed$\footnote{MyriaNed is a DevLab\cite{devlab} project to create a large functional network of 10,000 nodes with wireless communication for research on protocols, power management, programming models, and security.}$ project. In this research, the flaw in the Median algorithm is explored and three algorithms have been proposed to achieve a decentralized, stable, and energy-efficient synchronization of a WSN. The algorithms achieve synchronization by using the phase error of a node's wake-up time with that of the neighboring node's, without actually exchanging the information about the clock time of the sender. So, the method avoids time keeping on the messages (time stamping) which reduces the message overload. The algorithms can be integrated with the slot allocation algorithm to form the MAC\nomenclature{MAC}{Media Access Protocol} layer protocol for a better throughput. The research is concluded with the comparison of three algorithms in terms of energy consumption and performance. A low energy-consumption or a better convergence as well as the length of the guard time can be used as a metric for selecting the algorithm.
 \newpage
 \addcontentsline{toc}{chapter}{Acknowledgment}
-\section*{\begin{center}\begin{Huge}Acknowledgment\end{Huge}\end{center}}
+\section*{\begin{center}Acknowledgment\end{center}}
 %It has been a long journey since I joined the graduate program at TU/e. During this time, I have come across some wonderful people which without their help, this would not have been possible. \paragraph*{}
-%Firstly, I would like to express my sincere gratitude to Frits van der Wateren from Chess Innovation Team, my supervisor, for all the support he has given me during the project. I am greatly indebted to him for all the insight and support that he showed in every phase of the project. Acknowledgment is also due to dr.ir.Peter Smulders and prof.dr.ir. Peter Baltus for providing guidance during the project. \paragraph*{} I am greatly indebted to prof.dr.ir.Erik Fledderus for providing me the opportunity to work on such an interesting topic for my Master's thesis. He has been expremely helpful, and was always availble whenever I needed help. \paragraph*{}  I also like to thank prof.dr.ir.Peter Baltus and prof.dr.ir.Jean-Paul Linnartz for taking time to serve on my thesis panel. \paragraph*{} I want to say thanks for my collegues at Chess Innovation team for the wonderful time that I had. For the fun and serious times that I have.\paragraph*{} Special thanks to my friends, Simon, Aman, and the all-in gang in Eindhvoen. I want to thank all my friends at TU/e, for their help and encouragement and for making our stay so much fun. Yenu, Teme, Frew and Esae, the days I have spent with them in Eindhoven are something I will treasure for a lifetime. \paragraph*{} No words can describe how grateful I am to my mohter, Etye and my brother, Teddy and my sister Hana, who showed immense faith in me. Thanks.\paragraph*{}Finally, 
+%Firstly, I would like to express my sincere gratitude to Frits van der Wateren from Chess Innovation Team, my supervisor, for all the support he has given me during the project. I am greatly indebted to him for all the insight and support that he showed in every phase of the project. Acknowledgment is also due to dr.ir.Peter Smulders for providing guidance during the project. \paragraph*{} I am greatly indebted to prof.dr.ir.Erik Fledderus for providing me the opportunity to work on such an interesting topic for my Master's thesis. He has been expremely helpful, and was always availble whenever I needed help. \paragraph*{}  I also like to thank prof.dr.ir.Peter Baltus and prof.dr.ir.Jean-Paul Linnartz for taking time to serve on my thesis panel. \paragraph*{} I dont want to waste this oppertunity without mentioning Simon, whom I have started the journey together. We have been together during the ups and downs of the two years of   masters study. As we have started the journey together, he was with me all along the way since then. He was an inspiration during the time where I went down. We have spent all the time, full of fun.\paragraph*{} Special thanks to my friend, Aman Meisso, whom without his help, it would have been very difficult to successfully finish the research. \paragraph*{} No words can describe how grateful I am to my mohter, Etye and my brother, Teddy and my sister Hana, who showed immense faith in me. I would also like to thank them for taking care of me in every phase of my studies by providing every support, which made it possible to pursue my dream of higher studies and kept me focussed during my journey.\paragraph*{}Finally, I want to thank all my friends at TU/e, for their help and encouragement and for making our stay so much fun. Yenu, Teme, Frew and Esae, the days I have spent with them in Eindhoven are something I will treasure for a lifetime.
 \newpage
 \addcontentsline{toc}{chapter}{Contents}
 \tableofcontents
@@ -102,30 +102,58 @@ make extensive use of synchronization mechanisms like \emph{Time Division Multip
 \pagenumbering{arabic}
 \section{\textbf{Wireless sensor networks}}\par
 Technological advances have led to the development of low-cost sensors, which are capable of wireless communication and
-data processing. WSNs\nomenclature{WSN}{Wireless Sensor Network} are distributed networks of such sensors, dedicated to closely observing real-world phenomena. Such sensors can be embedded in the environment or enabled with mobility. They can be deployed in
-inaccessible, dangerous or hostile environments. The sensors need to configure themselves in a communication network in order to collect information that has to be pieced together to have a broader picture of the environment than what each sensor individually
+data processing. WSNs\nomenclature{WSN}{Wireless Sensor Network} are distributed networks of such sensors, dedicated to closely observing
+real-world phenomena. Such sensors may be embedded in the environment or enabled with mobility. They can be deployed in
+inaccessible, dangerous or hostile environments. The sensors need to configure themselves in a communication network in order to collect
+information that has to be pieced together to have a broader picture of the environment than what each sensor individually
 senses. Various applications are realized using sensor networks$\cite{10}$. As the WSNs become an integral part of the modern era, addressing issues in designing such networks becomes necessary.
 \paragraph*{} One of the design issues in WSN technology is synchronization, which is a critical piece of infrastructure in any
 distributed system. In sensor networks, a number of factors makes flexible and robust time synchronization particularly important and
-more difficult to achieve than in centralized networks. Collaboration among nodes is often required for different purposes$\cite{11}$. A common view of physical time is a basic requirement for nodes to reason about events that occur in the physical world. In addition to these domain-specific requirements, sensor network applications often rely on synchronization as typical distributed systems do. These applications include proper \textit{Time Division Multiple Access} (TDMA) scheduling, database queries, cryptography and authentication schemes, coordination of future action, interaction with users and ordering logged events during system debugging$\cite{1}$.
+more difficult to achieve than in centralized networks.
+Collaboration among nodes is often required for different purposes$\cite{11}$. A common view of physical time is a basic requirement for nodes to reason about events that occur in the physical world. In addition to these domain-specific requirements, sensor network applications often rely on synchronization as typical distributed systems do. These applications include proper \textit{Time Division Multiple Access} (TDMA) scheduling, database queries, cryptography and authentication schemes, coordination of future action, interaction with users and ordering logged events during system debugging$\cite{1}$.
 \section{\textbf{Existing work on WSN synchronization}}\par
-Several algorithms have been proposed and researched for synchronization in WSNs. The \textit{Reference Broadcast
-Synchronization} (RBS)\nomenclature{RBS}{Reference Broadcast Synchronization} stated in $\cite{2}$ is an important scheme in the
-area of WSN synchronization. It achieves a Receiver-Receiver pairwise synchronization to remove sender nondeterminism and results
-in a good precision of a few microseconds. It also provides clock frequency estimates between two receivers using a linear regression
-technique. But a central node is needed for broadcasting reference signals in order to achieve synchronization. Another approach to a decentralized slot synchronization for TDMA-based networks is presented in $\cite{3}$. It uses the topology of the nodes as a means to weigh the phase error of the sender with the receiver.In this case, higher message overhead is observed in sending the degree of connection (topology information).
-paragraph*{} Another method for achieving a network-wide synchronization is suggested by $\cite{texas}$. This approach establishes a table to correspond the clock of the sender with the receiver so that a good estimation of the neighbors clock is achieved using different estimation techniques. But message overhead is high as the messages are timestamped. This approach is most suitable for staic networks as the neighbours are constantly changing. 
-%Another approach is used in $\cite{4}$ to use the metaphor of fireflies to the existing problem of synchronization. The method bases itself for the synchronization of the network where the nodes are on the same domain, firing at the same time.
- A different  approach to weight-based synchronization for interference elimination for a TDMA based ad-hoc networks is presented in
-$\cite{6}$. The algorithm achieves synchronization in a decentralized manner using the nodes offset with its neighbors with a goal of eliminating the interference. The algorithm achieves synchronization by eliminating the impact of interferencing nodes. But this method directly eliminates nodes which are newly joining or interfering nodes. Correlation method is used in $\cite{correlation}$ in order to decode the message and learn about the status of the sender node which is used for synchronization. High message overhead is the setback of the algorithm.
+Several algorithms have been proposed and researched for
+synchronization in WSNs. The \textit{Reference Broadcast
+Synchronization} (RBS)\nomenclature{RBS}{Reference Broadcast
+Synchronization} stated in $\cite{2}$ is an important scheme in the
+area of WSN synchronization. It achieves a Receiver-Receiver
+pairwise synchronization to remove sender nondeterminism and results
+in a good precision of a few microseconds. It also provides clock
+frequency estimates between two receivers using a linear regression
+technique. A decentralized slot synchronization algorithm for
+TDMA-based networks is presented in $\cite{3}$. It uses the topology
+of the nodes as a means to weigh the phase error of the sender with
+the receiver. \paragraph*{} Another method for achieving a
+network-wide synchronization is suggested by $\cite{texas}$. This
+approach establishes a table to correspond the clock of the sender
+with that of the receiver clock so that a good estimation of the
+neighbors clock is achieved using different estimation techniques.
+Another approach is used in $\cite{4}$ to use the metaphor of
+fireflies to the existing problem of synchronization. The method
+bases itself for the synchronization of the network where the nodes
+are on the same domain, firing at the same time. A different
+approach to weight-based synchronization for interference
+elimination for a TDMA based ad-hoc networks is presented in
+$\cite{6}$. The algorithm achieves synchronization in a
+decentralized manner using the nodes offset with its neighbors with
+a goal of eliminating the interference. Correlation method is used
+in $\cite{correlation}$ in order to decode the message and learn
+about the status of the sender node which is used for
+synchronization.
 \section{\textbf{Objective and overview of the research}}
 Upon the literature survey performed, it is observed that some of
 the synchronization schemes use a central (master) node in order to
-achieve a synchronization with the nodes.  Besides, some schemes build a table
+achieve a synchronization with the nodes. Some schemes build a table
 relating the clock of the sender and the receiver using timestamping
-the messages, thus predicting the clock of the sender's clock. Upon the schemes which uses the decentralized methods, interferance and mobility are the least addressed issures. As to our interest, there are schemes which implement a completely decentralized schemes. Since nodes are subjected to severe changes in environmental conditions, the accuracy of these synchronization schemes might suffer a lot due to the dynamics of the network. As part of the MyriaNed project, Median is used in the synchronization of the wireless sensor nodes implemented in the project.
+the messages, thus predicting the clock of the sender's clock. As to
+our interest, there are schemes which implement a completely
+decentralized schemes. Since nodes are subjected to severe changes
+in environmental conditions, the accuracy of these short-term
+synchronization schemes might suffer a lot due to the dynamics of
+the network. As part of the MyriaNed project, Median is used in
+the synchronization of the wireless sensor nodes implemented in the project.
 \paragraph*{}
-The primary objective of this research is to address the problems in the Median and develop an algorithm to achieve a decentralized long-term synchronization of a WSN in an energy-efficient method which employs no timestamping on the messages. The algorithm is aimed to replace the currently implemented Median algorithm.  Hence, three algorithms are proposed and compared with Median algorithm in terms of performance and energy consumption. The methods use the phase errors between the receiver and its neighbors, without estimating the neighbor's clock as a way of achieving long-term synchronization. Through integration with the MAC layer protocol, a better throughput can be obtained. The algorithms developed have the following characteristics: provides higher precision, adaptive to environmental effects, energy-efficient and achieve long-term synchronization.
+The primary objective of this research is to address the problems in the Median and develop an algorithm to achieve a decentralized long-term synchronization of a WSN in an energy-efficient method which employs no timestamping on the messages. The algorithm is aimed to replace the currently implemented Median algorithm.  Hence, three algorithms are proposed and compared with Median algorithm in terms of performance and energy consumption. The methods use the phase errors between the receiver and its neighbors, without actually estimating the neighbor's clock as a way of achieving long-term synchronization. Through integration with the MAC layer protocol, a better throughput can be obtained. The algorithms developed have the following characteristics: provides higher precision, adaptive to environmental effects, energy-efficient and achieve long-term synchronization.
 \paragraph*{} The remainder of the paper is organized as follows:  Chapter 2 presents a general overview of synchronization in WSN and the need for a synchronized time. Chapter 3 discusses the synchronization error and discusses the problem associated with the Median algorithm. Chapter 4 presents the mathematical models of the proposed algorithms for the synchronization of the network. In Chapter 5, simulation results are presented. Analysis of the results in addition to the comparison of the methods with respect to energy consumption are discussed. Finally, Chapter 6 draws the conclusions from the research and suggests future work.
 \chapter{\textbf{Synchronization in wireless sensor networks}}
 \section{\textbf{Introduction}}
@@ -134,7 +162,9 @@ Chess$\cite{chess}$ created a MAC protocol for gossip communication, gMAC, for t
 A number of approaches have been introduced for different multiple access techniques, of which \textit{Carrier Sense Multiple Access} (CSMA)\nomenclature{CSMA}{Carrier Sense Multiple Access} and TDMA are the most common. One problem with CSMA is the time that passes when the radio is busy with idle listening time. Nodes need to listen to the radio for periods of time before they can actually send data.
 \paragraph*{}
 In TDMA, time is divided into discrete slots. Nodes transmit in rapid succession in one slot and listen in the others. To
-reduce the idle listening time even more, the listening nodes can turn off the radio for the time between the end of the last receiver slot and the start of a new slot. In theory, there will not be any idle listening. There are some pitfalls to this approach. Firstly, the clocks of the nodes are less than perfect; they will never run at exactly the same clock-speed. To keep the nodes synchronized and
+reduce the idle listening time even more, the listening nodes can turn off the radio for the time between the end of the last receiver slot
+and the start of a new slot. In theory, there will not be any idle listening. There are some pitfalls to this approach. Firstly, the
+clocks of the nodes are less than perfect; they will never run at exactly the same clock-speed. To keep the nodes synchronized and
 thus to let them share the same schedule, the small timing error needs to be compensated. Second, there has to be a certain algorithm
 to allocate the slots among the nodes. They cannot simply all start broadcasting in the first slot, since that would cause nothing but
 collisions. The research on slot allocation algorithms is being conducted alongside this research$\cite{pieter}$.
@@ -170,20 +200,25 @@ Data collection is the main task of the sensor nodes, hence data gathering and i
 \paragraph*{}
 There are many applications which need data fusion such as signal enhancement (noise reduction), source localization, process control,
 and source coding. It would seem to be a natural match to implement such algorithms in distributed sensor networks, and there has been
-great interest in doing so. However, much of the extensive prior art in the field assumes centralized sensor fusion. That is, even if the sensors gathering data are distributed, they are often assumed to be wired into a single processor. Centralized processing makes use of implicit time synchronization. Sensor channels sampled by the same processor also share a common time base. Figure $\ref{lions}$ shows one example of data fusion application. In order to locate the moving object, in this case the lion, nodes have to have a common notion of time. Upon integration, not only the location of the lion but also the time when the lion was spotted is necessary. So, having the same notion of time is important.
+great interest in doing so. However, much of the extensive prior art in the field assumes centralized sensor fusion. That is, even if the
+sensors gathering data are distributed, they are often assumed to be wired into a single processor. Centralized processing makes use of
+implicit time synchronization. Sensor channels sampled by the same processor also share a common time base. Figure $\ref{lions}$ shows
+one example of data fusion application. In order to locate the moving object, in this case the lion, nodes have to have a common
+notion of time. Upon integration, not only the location of the lion but also the time when the lion was spotted is necessary. So, having
+the same notion of time is important.
 \subsubsection{TDMA schedule}
 As previously stated, the WSN being developed at Chess uses a TDMA protocol for channel access, hence the reason for synchronization.
-TDMA is a channel access method for shared medium networks. It allows several users to share the same frequency
+TDMA is a channel access method for shared medium (usually radio) networks. It allows several users to share the same frequency
 channel by dividing the signal into different time slots. The users transmit in rapid succession, one after the other, each using its
 own time slot. This allows multiple stations to share the same transmission medium while using only the part of the bandwidth they
-require. Figure $\ref{tdmaframe}$ shows how a time frame is divided into receiving and transmitting slots. In the time frame, the active slot is divided into one transmitting slot and many receiving slots.
+require. Figure $\ref{tdmaframe}$ shows how a time frame is divided into receiving and transmitting slots. In the time frame, the active
+slot is divided into one transmitting slot and many receiving slots.
 \begin{figure}
 \centering
 \includegraphics[width=0.4 \textwidth]{tdmaframe}
 \caption{TDMA frame} \label{tdmaframe}
 \end{figure}
-\paragraph*{} 
-In this approach, nodes use time slots in order to communicate with each other. It is considered that two nodes have
+\paragraph*{} In this approach, nodes use time slots in order to communicate with each other. It is considered that two nodes have
 their TDMA schedule synchronized when the numbers of the current time slot of any of the TDMA schedules involved are the same for any
 given moment in time. The types of the slot may be different, TX or RX. To successfully initiate a network, the nodes has to be
 synchronized and capable to send and receive messages. To establish a link between neighboring nodes, a particular node needs to know
@@ -225,23 +260,31 @@ Synchronization cab be of two types: Course and Precise synchronization. Course 
 timescale is defined. Sensor networks need synchronization over a wide range of lifetimes, ranging from less than a second to a few years
 years. In our implementation, the length of lifetime required for synchronization is throughout the life time of the network since
 the primary reason for the synchronization of the MyriaNed network is for TDMA frame synchronization.
-\subsubsection{\textbf{Scope}} The scope is the size of the region in which a timescale is defined. In some cases, the scope may be purely geographic (e.g., distance in meters). In other contexts, it is more useful to think about the logical distance, such as the number of hops through a network. Naturally, these two forms are correlated in a sensor network, scaled by its radio's nominal range. A node moving across the field, should be synchronized to the remaining nodes, which it might join again after some periods. A disruption of communication can also result in the disappearance of a node where after some periods of out-of-sight, a communication link can be established again. During the 'come-back', the node should be able to adapt its clock to the remaining nodes in the neighborhood.
+\subsubsection{\textbf{Scope}} The scope is the size of the region in which a timescale is defined. In some cases, the scope may be purely
+geographic (e.g., distance in meters). In other contexts, it is more useful to think about the logical distance, such as the number of
+hops through a network. Naturally, these two forms are correlated in a sensor network, scaled by its radio's nominal range. A node moving across the field, should be synchronized to the remaining nodes, which it might join again after some periods. A disruption of communication can also result in the disappearance of a node where after some periods of out-of-sight, a communication link can be established again. During the 'come-back', the node should be able to adapt its clock to the remaining nodes in the neighborhood.
 \subsubsection{\textbf{Internal vs. External Synchronization}}
 In many distributed systems, synchronization simply means adjusting the clock to a correct time from an outside source. This
-definition implies that a notion of the correct time, such as UTC, exists. However, in sensor networks, UTC is not always needed. There are situations where distributed nodes need to be synchronized, but not necessarily with the absolute time.
-In many cases, the exact time at which the action is executed is far less important than ensuring that all nodes act simultaneously. This includes TDMA frame scheduling. This function requires internal or relative synchronization: the network must be internally consistent, but its relationship to outside time standards is not needed or known.
-\subsubsection{\textbf{Energy budget}} The need for energy efficiency permeates virtually in all aspects of sensor networks design. The exact energy constraints are difficult to quantify because there is a wide range of hardware found across the spectrum of network
-implementations, and often within a single network. Some nodes have high power batteries and run all the time; others are so constrained that they only wake up occasionally, take a single sensor reading, transmit it and then immediately returning to sleep.
+definition implies that a notion of the correct time, such as UTC, exists. However, in sensor networks, UTC is not always needed. There
+are situations where distributed nodes need to be synchronized, but not necessarily with the absolute time.
+In many cases, the exact time at which the action is executed is far less important than ensuring that all nodes act simultaneously. This
+includes TDMA frame scheduling. This function requires internal or relative synchronization: the network must be internally consistent,
+but its relationship to outside time standards is not needed or known.
+\subsubsection{\textbf{Energy budget}} The need for energy efficiency permeates virtually in all aspects of sensor networks design. The
+exact energy constraints are difficult to quantify because there is a wide range of hardware found across the spectrum of network
+implementations, and often within a single network. Some nodes have high power batteries and run all the time; others are so constrained that
+they only wake up occasionally, take a single sensor reading, transmit it and then immediately returning to sleep.
 %\subsubsection{\textbf{Convergence Time}} The importance of convergence time as a metric is directly tied to the need for energy efficiency. If energy would not be a concern, the chosen form of synchronization could simply be left running continuously. Though convergence time might be important due to its effect on network start-up, it would make no difference in the steady-state. However, in this energy-constrained world, systems are often forced to power down as many services as possible for as long as possible. This makes convergence time important to consider.
-\subsubsection{\textbf{Simplicity}} Extra overhead in the message should be avoided. A timestamp is not needed in the frame in order to decrease the message overload. This in turn has an advantage in the energy-constraint WSN, although it passes most of the burden to the synchronization algorithm to determine the next wake-up time of the node.
+\subsubsection{\textbf{Simplicity}} Extra overhead in the message should be avoided. A timestamp is not needed in the frame in order to decrease the message overload. Thus, this in turn has an advantage in the energy-constraint WSN, although it passes most of the burden to the synchronization algorithm to determine the next wake-up time of the node.
 %\paragraph*{}These complications are startling to look for a new arena for the synchronization of WSNs.
 \chapter{\textbf{Problem formulation}}
 \section{\textbf{Sources of synchronization error}}
-The first step in designing any time-synchronization algorithm would be to understand why and where it is required. The different factors which give rise to errors between the clocks of two nodes can be divided into two main categories:
+The first step in designing any time-synchronization algorithm would be to understand why and where it is required. The different factors
+which give rise to errors in the clocks of nodes or in synchronization algorithm can be divided into two main categories:
 \begin{enumerate}
-\item \textbf{Oscillator Characteristics}: The sensor nodes' clocks run on very cheap oscillators. The following two characteristics are prone to error.
+\item \textbf{Oscillator Characteristics}: The sensor nodes' clocks run on very cheap oscillators. The following two characteristics are the main sources of errors between the clocks of two different nodes.
          \begin{description}
-         \item \emph{\textbf{Accuracy}}: This is a measure of difference between oscillator's expected (ideal) frequency and actual frequency.
+         \item \emph{\textbf{Accuracy}}: This is a measure of difference between oscillator's expected (ideal) frequency and actual frequency. Its maximum is specified by the manufacturer.
          \item \emph{\textbf{Stability}}: This is the oscillator's tendency to stay at the same frequency over time. There can be short-term instability due to environmental effects, supply voltage, long-term instability due to temperature effects and crystal aging.
       \end{description}
 \item \textbf{Hardware and environmental factors}: The non-determinism in the message delivery latency is a major source of error in any synchronization algorithm, when applied into real sensor networks. This can be categorized in four type of delays:
@@ -252,17 +295,16 @@ The first step in designing any time-synchronization algorithm would be to under
          \item \emph{\textbf{Receive time}}: Time needed for processing at the receiver's network interface.
       \end{description}
 \end{enumerate}
-Even if two clocks are assumed to have the same frequency and no drift, the above mentioned delays in the network result in phase
-error between two clocks. This is because when the message from the sender reaches a receiver, the receiver adjusts its clock according to the received message. But the sender's clock changes in the mean time due to network delays. For a network of nodes, delays give rise to errors in accuracy from an ideal clocks, and dispersion amongst their clocks. \paragraph*{}
-     Below are presented definitions which are used throughout the paper.
+      All the above factors result in following errors between the clocks of two nodes:
 \begin{description}
 \item \textbf{Phase error}: The oscillators of any two nodes can be out of phase at any given time, resulting in different time on both clocks. There can be some initial difference between nodes' clocks at the start of a synchronization procedure. It describes how far apart are the clocks at a given time.
 \item \textbf{Frequency error}: Frequency error measures the difference in the clock rates. This metric is important because it predicts the growth of phase error over time. That is, if clocks are perfectly synchronized now, at what rate are they drifting apart? How well will they be synchronized in 60 seconds?
 \item \textbf{Clock drift}: It is not just that the clocks are running at different rates, but even the frequency of each clock does not stay constant over a period of time. Clock drift arises from the instability of oscillators. For instance, if each clock drifts at a rate of $\theta$ msec/sec, then maximum relative drift between two clocks can be 2$\theta$ msec/sec.
-\item \textbf{Wake-up time}: Wake-up time \nomenclature{\textit{Wake-up time}}{Time that the node starts listening.} is the time that the node starts to listen to the channel.
-\item \textbf{Clock cycle (\textit{clk})}: A clock cycle (clk)(\nomenclature{\textit{clk}}{A clock cycle} )
-is the time between two adjacent pulses of the oscillator. The number of these pulses per second is known as the clock speed, measured in kHz, MHz.
 \end{description}
+Even if two clocks are assumed to have the same frequency and no drift, the above mentioned delays in the network result in phase
+error between two clocks. This is because when the message from the sender reaches a receiver, the receiver adjusts its clock according
+to the received message. But the sender's clock changes in the mean time due to network delays. For a network of nodes, delays give rise
+to errors in accuracy from an ideal clocks, and dispersion amongst their clocks.
 \section{\textbf{Clock and frequency standards}}\par
 The quality of a clock usually amounts to its frequency stability which is the ability of its frequency standard to emit
 events at a constant frequency over time. The absolute value of the frequency compared to the desired value or, its frequency accuracy
@@ -274,10 +316,15 @@ to large but unbiased errors: many synchronization events can be averaged over a
 channel can compensate for a poor-stability crystal oscillator whereas frequent synchronization minimizes the time in-between when the
 clock is left to fend for itself.
 \paragraph*{}
-Many types of frequency standards exist. In general, as the stability and accuracy of the clocks increase, so do their power requirements,size, and cost, all of which are important in WSNs. Most commonly found in computer clocks are quartz crystal oscillators, characterized by $\cite{6}$. Quartz crystals are attractive because they are inexpensive, small, use little power, and perform surprisingly well despite their low resource requirements. The frequency generated by a quartz oscillator is affected by a number
+Many types of frequency standards exist. In general, as the stability and accuracy of the clocks increase, so do their power requirements,
+size, and cost, all of which are important in WSNs. Most commonly found in computer clocks are quartz crystal oscillators,
+characterized by $\cite{6}$. Quartz crystals are attractive because they are inexpensive, small, use little power, and perform
+surprisingly well despite their low resource requirements. The frequency generated by a quartz oscillator is affected by a number
 of environmental factors: the voltage applied, the ambient temperature, acceleration in space (e.g., shock or altitude
 changes), magnetic fields, and so forth. More subtle effects as the oscillator ages also cause longer-term frequency changes. The
-inexpensive oscillators commonly found in computers have a nominal frequency accuracy on the order of between $10^4$ to $10^6$ that is, two similar but uncalibrated oscillators will drift apart between 1 and 100 microseconds every second, or, between about 0.1 and 10 seconds per day $\cite{6},\cite{7}$. However, their frequency stability is significantly better with a change in frequency of one
+inexpensive oscillators commonly found in computers have a nominal frequency accuracy on the order of between $10^4$ to $10^6$ that is,
+two similar but uncalibrated oscillators will drift apart between 1 and 100 microseconds every second, or, between about 0.1 and 10
+seconds per day $\cite{6},\cite{7}$. However, their frequency stability is significantly better with a change in frequency of one
 part in $10^9$ to $10^{11}$ when averaged over several seconds or more. In our implementation, a 32 kHz crystal clock $\cite{18},\cite{19}$  is used in the MyriaNode$\footnote{MyriaNode is the sensor node which is built for the project MyriaNed.}$.
 \subsection{\textbf{Clock time}}
 In this section, we will see the clock time and its expression. From the definition of frequency:
@@ -327,13 +374,20 @@ C_i(t) =  C_i(t_o) + (t-t_o) +\frac{\Delta f}{f_o}(t-t_o) + \frac{a}{2f_o}(t-t_o
 \paragraph*{}
 Here are some notes to be considered in the model.
 \begin{itemize}
-\item The amplitude of the short term variations due to noise $\Delta f_n(t)$ is small enough that they do not cause the clock to accelerate or decelerate in a large amount in the long run.
+\item The amplitude of the short term variations due to noise $\Delta f_n(t)$ (clock jitter) is small enough that they do not cause the clock to accelerate or decelerate in a large amount in the long run.
 \item Individual clock properties are uncorrelated. This may not be exactly true for clocks in the same building, with similar temperature cycles, but correlation effects are expected to be small.
 \item Clock parameters are normally distributed. The variances of the constants in the clock drift equation (initial time error,
 initial frequency error, aging rate) are all inputs to the model.
 \item The spread in clock time grows almost linearly as a function of time, due to the dominance of the linear term in the clock drift equation.
 \end{itemize}
 The resulting expression in $\ref{freqmodel}$ is used to model the clock drift of an oscillator.
+\paragraph*{}
+\textbf{Definition}: A clock cycle (clk)(\nomenclature{\textit{clk}}{A clock cycle} )
+is the time between two adjacent pulses of the oscillator. The
+number of these pulses per second is known as the clock speed,
+measured in kHz, MHz.
+\paragraph*{}
+\textbf{Deefinition}: Wake-up time \nomenclature{\textit{Wake-up time}}{Time that the node starts listening.} is the time that the node starts to listen to the channel.
 \section{\textbf{Building blocks of a synchronization protocol}}
 The synchronization protocols can be decomposed into four conceptual building blocks$\cite{taxonomy}$. It is shown in Figure
 $\ref{block}$.
@@ -361,17 +415,17 @@ To estimate drift rates, a history of previous time synchronization packets is n
 How well can the algorithm cope with failing nodes, with error-prone and time-variable communication links, or even with network partitions? Can the algorithm handle mobility?
 \section{\textbf{Median algorithm and the setback}} In this section, we will see the Median algorithm which is
 currently implemented in the MyriaNode. \paragraph*{}
-With the simplicity concerning the computational need, the Median algorithm is the best fit for the energy requirment. The algorithm is described as follows:
+With the simplicity concerning the computational need, it is the best fit for WSN requirments discussed in the previous secion. The algorithm is described as follows:
 \begin{enumerate}
 \item Nodes broadcast packets.
 \item Each receiver records the time that the packet is received according to the local clock.
 \item Each receiver $i$ computes its phase error to any other node j in the neighborhood,
 \begin{equation}
-\Delta t_{ij}^{(n)} = t_i^{(n)} - t_j^{(n)} , \label{pha}
+\Delta t_{ij}^{(n)} = t_i^{(n)} - t_j^{(n)} ,
 \end{equation}
 where $t_i$ is the wake-up time of node $i$ and $t_j$ is the wake-up
 time of node $j$ at the $n^{th}$ period.
-\item Receivers compute the offset, $\xi_i$, to be the median of the phase errors,
+\item Receivers compute the median of the phase errors,
 \begin{equation}
 \xi_i^{(n)} = median(\Delta t_{ij}^{(n)}) , \forall j
 \end{equation}
@@ -387,16 +441,18 @@ t_{i}^{(n+1)} = t_i^{(n)} + T_i^{(n)} - G\xi_i^{(n)},
 \end{figure}
 where $G$ is the \textit{gain factor}. \paragraph*{}
 By multiplying the median with a gain factor, i.e. $G\xi_i^{(n)}$, the output can be adjusted for better performance. Hence a gain factor is added to ensure better precision of the synchronization error.
-\paragraph*{} \noindent 
-As per the application of Median, there are setbacks on its implementation. In some test-cases, the algorithm fails to converge or stays unsynchronized for a certain period of time. This results in a  communication disruption in places where synchronization is essential.
+\paragraph*{} As per the application of Median, there are setbacks on its implementation. In some test-cases, the algorithm fails to converge or stays unsynchronized for a certain period of time. This results in a  communication disruption in places where synchronization is essential.
 \paragraph*{} A typical scenario is presented where the Median algorithm takes a longer time to achieve synchronization. In Figure
-$\ref{wsn}$, a distribution of wireless sensor nodes is shown. Node 10 joins the stable network communication through Node 9. Assume Node 9 belongs to two broadcast domains, Node 3's and Node 10's. Thus, upon the application of the median algorithm, the node tends to
+$\ref{wsn}$, a distribution of wireless sensor nodes is shown. Node 10 joins the stable network communication through Node 9. Assume Node
+9 belongs to two broadcast domains, Node 3's and Node 10's. Thus, upon the application of the median algorithm, the node tends to
 adjust its wake-up time with the median of the offsets from its neighbors, Node 3 and Node 10. Adjusting the wake-up time, the offset to be is
 \begin{equation}
 \xi_9 = \frac{\Delta t_{910} + \Delta t_{39}}{2}.
 \end{equation}
-With Node 10 being isolated from the well established network, it has a major drift from the other nodes. Being in synchronization
-with the other nodes, Node 9 will drift away from the network after its adjustment with Node 10. Due to the adjustment, tt will take Node 9 more time to synchronize with the network again. Therefore, the performance of the median algorithm decreases with the increase in the dynamic nature of the network. Figure $\ref{fasik}$ shows the state of the network after the synchronization using the Median. Node 9 has drifted away from the networks in order to incorporate the effect of the new neighbor Node 10.
+With Node 10 being isolated from the well established network, it has a major drift from the other nodes. Being in sync
+with the other nodes, Node 9 will drift away from the network after its adjustment with the Node 10. It will take more time to
+synchronize with the network again. Hence, the performance of the median algorithm decreases with the increase in the dynamic nature of the network. Figure $\ref{fasik}$ shows the state of the network after the synchronization using the Median. Node 9 has drifted away from the
+networks in order to incorporate the effect of the new neighbor Node 10.
 \begin{figure}
 \centering
 \includegraphics[width= 0.4\textwidth]{offsetpic}
@@ -406,9 +462,20 @@ with the other nodes, Node 9 will drift away from the network after its adjustme
 So, in order to address this problem, three algorithms are proposed to realize an energy-efficient, more precise and simple frame synchronization. The algorithms are explained in the next chapter.
 \chapter{\textbf{Synchronicity protocol}}
 \section{\textbf{Synchronization frequency}}\paragraph*{}
-Before presenting the algorithms, the synchronization frequency is discussed here. 
+Before presenting the algorithms, the synchronization frequency is shwon here in order to build up the model to the implementation of the algorithms. A time interval is usually left vacant (i.e., during which no data is sent) on a transmission channel that can be used for synchronization and/or compensating for a signal distortion. In achieving frame synchronization in a TDMA scheduling, a guard time is given for a fault tolerance which is used to accommodate the phase errors, as shown in Figure $\ref{guardtime}$. The guard time provides a safety margin against symbol interference in the time between sequential operations such as transmission, encoding, decoding or switching. The message has the error tolerance of a guard time. As the guard time increases, the probability that the message is received in the time slot increases. But in its downturn, it consumes energy as the node is listening throughout this time.
 \paragraph*{} Decreasing the timing of the synchronization and do periodic execution of the synchronization algorithm greatly reduces
 the energy consumption of the wireless sensor network. Thus, a synchronization period, $T_{sync}$, is defined here as the period in which the network can stay synchronized without the application of the synchronization algorithm.
+\begin{figure}
+\centering
+\includegraphics[width=0.4 \textwidth]{guardtime}
+\caption{Guard time for drift compensation} \label{guardtime}
+\end{figure}
+\paragraph*{}
+A slot can be expressed in a number of clock cycles as
+\begin{equation}
+t_{slot} = kT ,
+\end{equation}
+where $T$ is the period of the time frame in clock cycles and $t_{slot}$\nomenclature{$t_{slot}$}{Time duration of a slot} is the time duration of a TDMA slot and $k$ is a constant.
 \paragraph*{}
 With a synchronization period $T_{sync}$\nomenclature{$T_{sync}$}{Synchronization frequency} and the maximum clock drift of a clock $\rho$ , the maximum time difference between a sender and a receiver is
 \begin{equation}
@@ -416,22 +483,22 @@ t_{diff} = 2\frac{T_{sync}}{T}\rho ,
 \end{equation}
 where the factor of $2$ reflects the worst case scenario where each node's clock drifts in the opposite direction.
 \paragraph*{}
-In the implementation of TDMA for communication, a time interval, called guard time $t_{guard}$, is usually left vacant in the beginning and end of a slot during which no data is sent. This time can be used for synchronization and compensating for a signal distortion, as shown in Figure $\ref{guardtime}$. The guard time provides a safety margin against symbol interference in the time between sequential operations such as transmission, encoding, decoding or switching. The message has the error tolerance of a guard time. As the guard time increases, the probability that the message is received in the time slot increases. But in its downturn, it consumes energy as the node is listening throughout this time.
-\begin{figure}
-\centering
-\includegraphics[width=0.4 \textwidth]{guardtime}
-\caption{Guard time for drift compensation} \label{guardtime}
-\end{figure}
 Since the relative time difference between two nodes can be in two direction, the guard time, $t_{guard}$\nomenclature{$t_{guard}$}{Length of the guard time}, needs to be twice $t_{diff}$,
 \begin{equation}
 t_{guard}= 2t_{diff} = 4\frac{T_{sync}}{T}\rho.
 \end{equation}
-At this end, the minimum duration for a time slot $t_{slot}$\nomenclature{$t_{slot}$}{Time duration of a slot} is
+At this end, the minimum duration for a time slot $t_{slot}$ is
 \begin{equation}
 t_{slot} \geq t_{guard} + T_{tx},
 \end{equation}
 where $T_{tx}$ is a system constant and it represents the required time to send a packet from one node to other.
-\paragraph*{} 
+\paragraph*{} Each message that is send within a time slot is exactly received by a neighbor at a known clock tick number
+\begin{equation}
+tick_{rx} = T_{tx}+ \frac{t_{guard}}{2} \label{tick}
+\end{equation}
+Hence, each time when a node receives a message, it has to be received exactly at the clock tick given by ($\ref{tick}$). Whenever
+this number is not equal with the desired one, a phase error is observed.
+\paragraph*{}
 Two nodes have a good communication link when they synchronize their clocks at least once every $T_{sync}$ that gives the following
 relation,
 \begin{equation}
@@ -452,17 +519,22 @@ t_{slot} \geq t_{guard} + T_{tx}
 \end{equation}
 Hence, there is a trade-off in determining $T_{sync}$: increasing $T_{sync}$ reduces the energy costs of synchronization, but decreases the network perfromance. This is because the synchronization done less frequently so than nodes might drift out of synchronization in the mean time.
 \section{\textbf{Mathematical model}}
-As part of the message, the nodes send the slot number which they are transmitting to the neighbours. This information is used in determining the time that the message is sent. This information is used in determining the time that the message is sent. Each message that is sent withtin a slot is received by a neighbor at a known clock tick number 
+As it is described earlier, the wake up time of the nodes should be synchronized in such away that the nodes are synchronized in the
+long term, as the TDMA scheduling requires. As part of the message, the nodes send the slot number which they are transmitting to the neighbours. This information is used in determining the time that the message is sent.
+\paragraph*{}
+The difference between the transmitting times of node $i$ and node $j$ is
 \begin{equation}
-tick_{rx} = T_{tx}+ \frac{t_{guard}}{2} \label{tick}
+\Delta t_{ij}^{(n)} = t_i^{(n)} - t_j^{(n)} ,
 \end{equation}
-Whenever ($\ref{tick}$) is not satisfied, a phase error is observed. The wake-up time of a node at a random time after $n$ periods of firings since it is turned on is
+where $t_i$ and $t_j$ are the wake-up times of node $i$ and node $j$ at the $n^{th}$ period. The wake-up time of a node at a random time
+after $n$ periods of firings after it is turned on is
 \begin{equation}
-t_i^{(n)} = \sum_{n} T_i^{(n)} + t_{io},\label{newphase}
+t_i^{(n)} = \sum_{n} T_i^{(n)} + t_{io},
 \end{equation}
 where  $T_i^{(n)}$ is the period of the crystal clock at the $n^{th}$ period since it changes with time according to
-($\ref{frequency}$) and $t_{io}$ is the initial start-up time of the node. The frequency of the node varies due to the different factors mentioned in ($\ref{frequency}$). \paragraph*{}
-Substituting ($\ref{newphase}$) in ($\ref{pha}$), the difference in the wake-up time of the nodes will be 
+($\ref{frequency}$) and $t_{io}$ is the initial start-up time of the node. The frequency of the node varies due to the different factors
+mentioned in ($\ref{frequency}$). \paragraph*{}
+The difference in the wake-up time of the nodes is given by
 \begin{eqnarray}
 \Delta t_{ij} & = & \sum_{n}T_i^{(n)} + t_{io}- (\sum_{n}T_j^{(n)} +
 t_{jo}) \\ &=& (\sum_{n}T_i^{(n)} - \sum_{n}T_j^{(n)}) +
@@ -473,8 +545,8 @@ can be done using two approaches, which are not exclusive. The first one is adju
 wake-up time. The second one is to adjust the next wake-up time depending on the difference between the current wake-up time of the
 node and its neighbors. In this research, the second option is explored due to:
 \begin{itemize}
-\item The high cost of adjusting the frequency of the clock: This is more expensive (hardware based) than adjusting the next wake-up time of the node.
-\item The increased complexity of implementing the first one: The more complex the implementation is, the larger the energy consumption it will result in.
+\item The cost of adjusting the frequency of the clock: This is more expensive (hardware based) than adjusting the next wake-up time of the node.
+\item The complexity of the implementation: The more complex the implementation is, the larger the energy consumption it will result in.
 \end{itemize}
 Application of offset compensating using prediction of the next wake up time is the promising approach to be implemented on the MyriaNode. The next wake-up time of the node is, thus, dependent on the current wake-up time of its neighbors in relation to its previous wake-up time,
 \begin{equation}
@@ -488,15 +560,19 @@ The function $f$ is based on an algorithm which takes the wake-up time differenc
 the optimal offset to be added to the next wake-up time of the node.
 \paragraph*{} Different algorithms are presented here and discussed with the simulation results presented in the next chapter of the report.
 \subsection{\textbf{Weighted measurements}}
-One form of approach to tackle the dynamic behavior of a WSN is a Weighted Measurements (WM) approach. Using this approach, different weights are given to the different measurements. A weight is added to
-increase the influence of the close by neighbors and ensure faster synchronization. In addition to that, a new joining neighbor
-can get synchronized with out disturbing the existing neighbors, adjusting its time to the big swarm of nodes. \paragraph*{}
-The offset is then 
+One form of approach to tackle the dynamic behavior of a WSN, due to channel conditions as well as collisions, is a
+Weighted Measurements (WM) approach. Using this approach, different
+weights are given to the different measurements. A weight is added to
+increase the influence of the close by neighbors and ensure
+faster synchronization. In addition to that, a new joining neighbor
+can get synchronized with out disturbing the existing neighbors,
+adjusting its time to the big swarm of nodes.\par
+The offset is then
 \begin{equation}
 \xi_i^{(n)} = \sum{w_{ij}^{(n)}\Delta t_{ij}^{(n)}} ,
 \end{equation}
-where $\sum{w_{ij}^{(n)}= 1}$ and $w_{ij}$ is the weight factor for the phase error $\Delta t_{ij}$.
-\paragraph*{}
+where $\sum{w_{ij}^{(n)}= 1}$.
+\par
 The weighted adjustment is used to modify the next wake-up time of the node,
 \begin{eqnarray*}
 t_i^{(n+1)} &=& t_i^{(n)} + T_i^{(n)} - \xi_i^{(n)} \\ &=& t_i^{(n)}
@@ -504,8 +580,8 @@ t_i^{(n+1)} &=& t_i^{(n)} + T_i^{(n)} - \xi_i^{(n)} \\ &=& t_i^{(n)}
 t_i^{(n)}+ T_i^{(n)} -
 \sum_{j=0}^N{w_{ij}^{(n)}(t_i^{(n)}-t_j^{(n)})} \\ &=& T_i^{(n)} + \sum_{j=0}^N{w_{ij}^{(n)}t_j^{(n)}}.
 \end{eqnarray*}
-The main task in this algorithm is how to choose the weight factors so that the stability of the network (timewise) is achieved in a faster time. After each measurement, a phase error is associated with the weight  factor to which shows how far is the node concerning the time that it drifted away from its neighbours. In the selection of the weight factor, two steps are taken. \paragraph*{} \noindent 
-Firstly, each phase error $\Delta t_{ij}$ is associated with a value, $\delta_{ij}$. $\delta_{ij}$ is used to weigh how far the neighbor nodes has drifted. The $\delta$ values are calculated as:
+The main task in this algorithm is how to choose the weight factors so that the stability of the network (timewise) is achieved in a faster time. The weight is selected in such a way that the a node joining a network should adjust its time with the network that it is joining. After each measurement, a phase error is associated with the weight  factor to which shows how far is the node concerning the time that it drifted away from its neighbours. In the selection of the weight factor, two steps are taken. \paragraph*{}
+Firstly, each phase error $\Delta t_{ij}$ is first associated with value, $\delta_{ij}$, in order to weigh how far the neighbour node has drfited. The values are calculated as:
 \begin{equation}
 \delta_{ij} = ae^{-b\Delta t_{ij}}.
 \end{equation}
@@ -515,9 +591,9 @@ Firstly, each phase error $\Delta t_{ij}$ is associated with a value, $\delta_{i
 \caption{Weight factors for the phase error distribution}
 \label{weight}
 \end{figure}
-The parameters $a$ and $b$ are selected using the initial conditions, $\delta_{ij}=0.1$ for $\Delta t_{ij}$ = $t_{guard}$ and $\delta_{ij}=1$ for $\Delta t_{ij}$ = 0. As shown in Figure $\ref{weight}$, the closer the phase error is to zero, the higher value of $\delta$ is given to the phase error. The assignment of high values to small phase errors will decrease the time it takes to synchronize  this node with the network.
+The parameters $a$ and $b$ are selected using the initial conditions, $\delta_{ij}=0.1$ for $\Delta t_{ij}$ = $t_{guard}$ and $\delta_{ij}=1$ for $\Delta t_{ij}$ = 0. As shown in Figure $\ref{weight}$, the closer the phase error is to zero, the higher value it is given. The assignment of high values to  small phase errors will decrease the time it takes to synchronize  this node with the network.
 \paragraph*{} \noindent
-Secondly, the weight factor is calculated based on the distribution of the assigned values $\delta$ for each phase error. If all or most of the phase errors are small, this corresponds to the fact that the node has drifted away from most of the neighbours. Hence, the synchroniztion is made to adjust the nodes wakeup time towards the neghbours. \paragraph*{} \noindent
+Secondly, the weight factor is calculated based on the distribution of the assigned values for each phase error. If all the phase errors are in the first half of the graph, this corresponds to the fact that the node has drifted away from most of the neighbours. Hence, the synchroniztion is made to adjust the nodes wakeup time towards the neghbours. \paragraph*{} \noindent
 Hence, the weight factor is
 \[w_{ij} = \left\{
 \begin{array}{l l}
@@ -526,7 +602,8 @@ Hence, the weight factor is
 where $m$ is the mean function.
 The weight then moves towards the large phase errors if the node is a new-comer that wants to join the "already established" network.
 \paragraph*{}
-Therefore, in WM approach, the first one describes how the node has drifted away from its neighbors whereas the second one describes how the node is positioned in the network topology which surrounds it. Using the WM approach, a series of measurements will be used to estimate the next wake-up time of the node, giving less value/emphasis to the nodes which are out of reach from the neighboring nodes. The simulation result is shown in the next section to see the effect of the algorithm in comparison to the other proposed algorithms.\paragraph*{}
+WM is a two step process in which the first one describes how the node has drifted away from its neighbors
+whereas the second one describes how the node is positioned in the network topology which surrounds it. Using the WM approach, a series of measurements will be used to estimate the next wake-up time of the node, giving less value/emphasis to the nodes which are out of reach from the neighboring nodes. The simulation result is shown in the next section to see the effect of the algorithm in comparison to the other proposed algorithms.\paragraph*{}
 \begin{tabular}{  l }Algorithm for WM \\\hline \hline
 1. Nodes broadcast packets. \\  2. Each receiver records the time that the packet is received. \\
 3. Each receiver i computes its phase error to any other node j in the neighborhood. \\
@@ -540,7 +617,7 @@ Therefore, in WM approach, the first one describes how the node has drifted away
 \subsubsection{Non linear Least squares}
 Non Linear Least Squares (NLLS) is a method to fit a set of $n$ observations with a model that is non-linear in $m$ unknown parameters by minimizing the sum of the squares of the errors ("the residuals").
 \paragraph*{}
-It uses a set of $n$ data points which are ($x_1$, $y_1$), ($x_2$, $y_2$),$\dots$,($x_n$, $y_n$), and a curve (model function) $y= f(x, \beta)$, that in addition to the variable $x$ also depends on $m$ parameters($\beta_1,\beta_2,...,\beta_m$).
+Using a set of $n$ data points which are ($x_1$, $y_1$), ($x_2$, $y_2$),$\dots$,($x_n$, $y_n$), and a curve (model function) $y= f(x, \beta)$, that in addition to the variable $x$ also depends on $m$ parameters($\beta_1,\beta_2,...,\beta_m$).
 It is desired to find the vector $\beta$ of parameters such that the curve best fits the given data in the least squares, that is, the sum of squares
 \begin{equation}
     S=\sum_{i=1}^{n}r_i^2 ,
@@ -553,7 +630,7 @@ for i=1,2,$\dots$, $n$.
 \paragraph*{}
 The minimum value of $S$ occurs when the gradient is zero. Hence, there are $m$ gradient equations to be solved:
 \begin{equation}
-    \frac{\partial S}{\partial \beta_j}=2\sum_i r_i\frac{\partial r_i}{\partial \beta_j}=0 \ \quad for \quad j=1,2...,m.
+    \frac{\partial S}{\partial \beta_j}=2\sum_i r_i\frac{\partial r_i}{\partial \beta_j}=0 \ (j=1,2...,m).
 \end{equation}
 In a non-linear system, the derivatives $\frac{\partial r_i}{\partial \beta_j}$ are functions of both the independent
 variable and the parameters. These gradient equations do not have a
@@ -561,16 +638,16 @@ closed solution. Instead, initial values must be chosen for the
 parameters. Then, the parameters are refined iteratively, that is,
 the values are obtained by successive approximation,
 \begin{equation}
-    \beta_j^{p+1}=\beta^p_j+\Delta \beta_j,
+    \beta_j^{p+1}=\beta^p_j+\Delta \beta_j.
 \end{equation}
-for $j=1,2...,m.$. Here, $p$ is an iteration number and the vector of increments, $\Delta \beta_j$, is known as the shift vector. At each iteration, the model is linearized by approximation to a first-order Taylor series expansion about $\beta^p$.
+for $j=1,2...,m.$ Here, $p$ is an iteration number and the vector of increments, $\Delta \beta_j$, is known as the shift vector. At each iteration, the model is linearized by approximation to a first-order Taylor series expansion about $\beta^p$.
 \begin{equation}
     f(x_i,\beta)\approx f(x_i,\beta^p) +\sum_j \frac{\partial f(x_i, \beta^p)}{\partial \beta_j} \left(\beta^p_j -\beta_j \right)
 \end{equation}
 \begin{equation}
  f(x_i,\beta) =f(x_i, \beta^p)+\sum_j J_{ij} \Delta\beta_j.
 \end{equation}
-The Jacobian, $J$, is a function of constants, the independent variable and the parameters. So it changes from one iteration to the
+The Jacobian, $J$, is a function of constants, the independent variable and the parameters, so it changes from one iteration to the
 next. Thus, in terms of the linearized model,
 \begin{equation}
 \frac{\partial r_i}{\partial \beta_j}=-J_{ij}
@@ -584,19 +661,19 @@ where
  \Delta y_i=y_i- f(x_i, \beta^p).
 \end{equation}
 Substituting these expressions into the gradient equations and
-equating to $0$, the resulting system of equations can be represented as a matrix notation as 
+equating to $0$, a matrix notation can be found
 \begin{equation}
     \left(J^TJ\right)\Delta  \beta=J^T\Delta y.
 \end{equation}
 \subsubsection{Model design}
-As the algorithm is decentralized, the next wake-up time of the node depends on the current phase errors that it has with the other nodes. The distribution of the phase error is the crucial factor in deciding the type of curve to fit in. The phase errors shows how many time units that the neighbor node is out of touch with the node in focus. The larger the phase error is, the more out-of-sync the node is.\paragraph*{}
+As the algorithm is decentralized, the next wake-up time of the node depends on the current phase errors that it has with the other nodes. The distribution of the phase error is the crucial factor in deciding the type of curve to fit in. The phase errors shows how many time units that the neighbor node is out of touch with the node in focus. The larger the phase error is, the more out-of-sync the node is.\par
 The set of data are the measured phase errors of the node with its neighbors.  In order to meet the demand of adjusting the time offset and stabilize the network, the logarithmic curve with the model
 \begin{equation}
  f(x_i,\beta)= \beta _1 + \beta_2log(x_i),
 \end{equation}
 is chosen. \paragraph*{}
 A logarithmic function can be used to represent the distribution of the offsets in the neighborhood, as shown in Figure $\ref{curvefit}$.
-Normalized phase error values tend to be small and follow a curve in such away that the maximum value of the phase error should not be greater than the synchronization error.
+Normalized phase error values tend to be small and follow a curve in such away that the maximum value of the phase error should not be greater than the threshold value that was intended to be, the synchronization error.
 \begin{figure}
 \centering
 \includegraphics[width=2.5in]{curvefit}
@@ -615,9 +692,9 @@ The initial values of the parameters $\beta_1$ and $\beta_2$ is estimated taking
 \end{tabular}
 \subsection{\textbf{Discrete time kalman filter for synchronization}}
 \subsubsection{Discrete time kalman filter}
-The kalman filter$\cite{kalm}$ estimates a process by using a form of feedback control. It estimates the process state at some time and then obtains feedback in the form of (noisy) measurements. As such, the equations for the kalman filter fall into two groups: time
+The kalman filter$\cite{kalm}$ estimates a process by using a form of feedback control: the filter estimates the process state at some time and then obtains feedback in the form of (noisy) measurements. As such, the equations for the kalman filter fall into two groups: time
 update equations and measurement update equations. The time update equations are responsible for projecting forward (in time) the
-current state and error covariance estimates to obtain the apriori estimates for the next time step.
+current state and error covariance estimates to obtain the a priori estimates for the next time step.
 \paragraph*{}
 The kalman filter addresses the general problem of trying to estimate the state $x$ of a discrete-time controlled process that is
 governed by the stochastic difference equation
@@ -688,7 +765,7 @@ On the other hand, as the a priori estimate error covariance $P_k$ approaches ze
 \mathop {\lim }\limits_{P_k \to 0 } {K_k} = 0.
 \end{equation}
 \subsubsection{Model design}
-The transition matrix $H$ plays an important role in achieving the proper synchronization. It indicates how fast/slow the next wake up time should be compared to it's previous value and/or neighbors. The initial estimates of $x$ and $P$ are selected from the previous firing time of the node, one period earlier. This ensures that the nodes are on the same track as the previous time, since the neighbors remain the same with some exception of mobility and interference. \paragraph*{}
+The transition matrix $H$ plays an important role in achieving the proper synchronization. It indicates how fast/slow is the next wake up time should be compared to it's previous value and/or neighbors. The initial estimates of $x$ and $P$ are selected from the previous firing time of the node, one period earlier. This ensures that the nodes are on the same track as the previous time, since the neighbors remain the same with some exception of mobility and interference. \paragraph*{}
 In the filter design, the covariance matrices $R$ and $Q$ have a significant
 role in the overall implementation of the algorithm. $R$ represents how
  the measurments are valued to affect the outcome and $Q$
@@ -741,31 +818,31 @@ Hence, with a performance increase in $\epsilon$ clk results in the duty cycle r
 D - D_n = \frac{(2\epsilon)N}{T}.
 \end{equation}
 The decrease in the guard time of the slot is thus dependent on the algorithm's performance ($\epsilon$) and the number of slots in the
-frame. As the number of slots increases with a constant performance increase $\epsilon$, the energy conservation also increases linearly.
+frame. As the number of slots increases with a constant performance increase $\epsilon$, the energy conservation also increases linearly. The number of slots is determined by the MAC protocol.
 \chapter{\textbf{Results and discussion}}
 \section{\textbf{Simulation setup}}
-%The simulation setup which is used in the research to test the performance of the presented frame synchronization algorithms is explained in this section. The simulated WSN operates in the 2.4GHz ISM band at a data rate of 2Mbps. We use a Discrete Event Simulator (DES) for the simulation. A DES\nomenclature{DES}{Discrete Event Simulator} will break down a simulation into discrete chunks. Every event will occur at some countable time moment and will be given in chronological order. The advantage is two-fold. First, simulations will not be dependant on some real-time clock, which reduces the inaccuracies fed into the simulation. Second, events can be isolated to perform certain measurements.
-%\paragraph*{}
-%One such DES is called OMNeT++$\cite{omnet}$. It provides a component architecture for models. Components are programmed in C++, then assembled into larger components and models using a high-level language. These components are merged into a joined simulation environment: MiXiM$\footnote{MiXiM (MIXed sIMulator) is a simulation framework for wireless and mobile networks using the OMNeT++ simulation engine.It is a collaborative project  between TU Berlin, TU Delft and Universitaet Paderborn.}$. Nodes are modeled as a set of separate components stacked upon each other. Octave$\footnote{Octave is a free program for performing numerical computations which is mostly compatible with MATLAB. It is part of the GNU project.}$ is used for interpretation of the data from the network simulator.
-%\paragraph*{}
-%\begin{figure}
-%\centering
-%\includegraphics[width=0.5\textwidth]{osimodel}
-%\caption{Abstraction model} \label{osimodel}
-%\end{figure}
-%As shown in Figure $\ref{osimodel}$, the synchronization is computed in a separate abstaraction layer. Each time the message is received, the time of arrival is recorded and used to calculate the next wake up time of the node. The communication over the channels is done in a unidisc way. All nodes in range of the radio receive the data, and those that are outside are excluded. The number of nodes is varied for different scenarios. The movement of the nodes is modeled from the static to an average speed of a slowly moving object. The simulation is conducted 100 times to counter the effect of randomness introduced in the simulation.
-The simulation parameters are presented in the following table.
+The simulation setup which is used in the research to test the performance of the presented frame synchronization algorithms is explained in this section. The simulated WSN operates in the 2.4GHz ISM band at a data rate of 2Mbps. We use a Discrete Event Simulator (DES) for the simulation. A DES\nomenclature{DES}{Discrete Event Simulator} will break down a simulation into discrete chunks. Every event will occur at some countable time moment and will be given in chronological order. The advantage is two-fold. First, simulations will not be dependant on some real-time clock, which reduces the inaccuracies fed into the simulation. Second, events can be isolated to perform certain measurements.
+\paragraph*{}
+One such DES is called OMNeT++$\cite{omnet}$. It provides a component architecture for models. Components are programmed in C++, then assembled into larger components and models using a high-level language. These components are merged into a joined simulation environment: MiXiM$\footnote{MiXiM (MIXed sIMulator) is a simulation framework for wireless and mobile networks using the OMNeT++ simulation engine.It is a collaborative project  between TU Berlin, TU Delft and Universitaet Paderborn.}$. Nodes are modeled as a set of separate components stacked upon each other. Octave$\footnote{Octave is a free program for performing numerical computations which is mostly compatible with MATLAB. It is part of the GNU project.}$ is used for interpretation of the data from the network simulator.
+\paragraph*{}
+\begin{figure}
+\centering
+\includegraphics[width=0.5\textwidth]{osimodel}
+\caption{Abstraction model} \label{osimodel}
+\end{figure}
+As shown in Figure $\ref{osimodel}$, the synchronization is computed in a separate abstaraction layer. Each time the message is received, the time of arrival is recorded and used to calculate the next wake up time of the node. The communication over the channels is done in a unidisc way. All nodes in range of the radio receive the data, and those that are outside are excluded. The number of nodes is varied for different scenarios. The movement of the nodes is modeled from the static to an average speed of a slowly moving object. The simulation is conducted 100 times to counter the effect of randomness introduced in the simulation.
+\section{\textbf{Simulation results}}
+The nodes are deployed uniformly across the field. %The neighborhood is limited to 10 nodes.
+The start up time of the nodes is random, Gaussian distributed variable, $t_{io}$. The synchronization error, as a metric, is defined here as  the maximum difference between the wake-up time of the nodes in the neighborhood.
+\paragraph*{}
 \begin{center}
     \begin{tabular}{ | l | l |}
     \hline
     Duration time frame & 1s \\ \hline
-    Number of slots &  10 \\ \hline
-    Attenuation constant & 2.5 \\ \hline
-    Data rate &  2Mbps \\ \hline
+    Data rate & 2Mbps \\ \hline
     \end{tabular}
 \end{center}
-The start up time of the nodes is gaussian distributed random variable, $t_{io}$. The nodes are positioned uniformly across the simulation area at the start. The proposed algorithms are KF, M, WM, NLLS which represent Kalman Filter, Median, Weighted Measurments and Non Linear Least Squares respectively. A clock cycle is represented here as $clk$ which shows the resolution of the quartz crystal clock. The synchronization error is defined as the maximum difference between the wake-up time of the nodes in the neighborhood. The simulation is conducted in different scenarios and some test case results are presented here for discussion. Results with different scenarios and parameters are also included in Appendix A.
-\section{\textbf{Simulation results}}
+The simulation is conducted in different scenarios and some test case results are presented here for discussion. Results with different scenarios and parameters are included in Appendix A.
 \subsubsection{\textbf{Case I}}
 \begin{figure}[!h]
 \centering
@@ -778,14 +855,12 @@ In the first set of simulations, the synchronization error is simulated for the 
 \includegraphics[width= 0.7\textwidth]{50output-s0}
 \caption{Synchronization error for 50 nodes - static} \label{50output0}
 \end{figure}
-Figure $\ref{16output0}$ shows the synchronization error for $20$ nodes operating in a static environment. The algorithms achieve a stable synchronization. As NLLS and WM has the same effect as the Median in case of stable network, the performance of both algorithms is similar with that of Median. Without the dynamic nature of the network, both tend to go to the average of the phase errors. KF has the best performace, at an avergage of $5clk$ since correcting the phase errors involves feedbacks which results in better precision. NLLS and WM perform similarly at average precision of $12clk$ while Median performs well at $13clk$ on average.\paragraph*{}
-Figure $\ref{50output0}$ is the result of a simulation for $50$ nodes. The synchronization error in general increases as the number of nodes increases. Comparing the individual algorithms, KF has a precision of $7clk$ whereas NLLS and WM have a better performance ($12clk$) each. Median results in a lower performance, $13clk$.
+Figure $\ref{16output0}$ shows the synchronization error for $20$ nodes operating in a static environment. KF\nomenclature{KF}{Kalman Filter} has the lowest precision of synchronization error, at an avergage of $4clk$. NLLS and WM perform similarly at average precision of $12clk$ while Median performs well at $13clk$ on average. \paragraph*{}
+Figure $\ref{50output0}$ is the result of a simulation for $50$ nodes. The synchronization error in general increases as the number of nodes increases the number of neighbors. Comparing the individual algorithms, KF has over $7clk$ performance improvement than the Median whereas NLLS and WM have a better performance ($1clk$) than the Median.
 \subsubsection{\textbf{Case II}}
-In second set of simulations, the mobility of the nodes is taken into account. Here, the number of the nodes is taken to be $20$. The simulations are conducted for different speeds, at average speeds of $6km/hr$ and $20km/hr$. The chosen speeds emulate the speed of a walking man and an average speed of a slowly moving vehicle.
+In second set of simulations, the mobility of the nodes is taken into account. Here, the number of the nodes is taken to be $20$. The simulations are conducted for different speeds, at $6km/hr$ and $20km/hr$. Chosen speeds emulate the speed of a walking man and an average speed of a slowly moving vehicle.
 \paragraph*{}
-Figure $\ref{16output6}$ shows 20 nodes with a speed which is an gaussian random variable with mean $6km/hr$ and standard
-deviation of 1$km/hr$. WM and NLLS show a better tolerance to dynamic networks due to the algorthms capapbilty to synchronize towards a more stable network. NLLS has also a better tolerance since less value is given for large phase errors. Hence, WM and NLLS perform
-better concerning the synchronization of the frame, $12 clk$ each. KF outperforms all, with an average of $6 clk$. Median algorithm has a disruptions which made the network out-of-synchronization, resulting in high synchronization errors at times. This occurs due to the mobility of the nodes which disrupts the stability networks as it tries to compute the median of the phase errors, as indicated in Chapter 3.
+Figure $\ref{16output6}$ shows 20 nodes with a speed which is an independent gaussian variable with mean $6km/hr$ and standard deviation of 1$km/hr$. As the results show, WM and NLLS perform better concernig the synchronization of the frame, $1 clk$ each. KF outperforms all, with $8 clk$ from the Median algorithm.
 \paragraph*{}
 \begin{figure}
 \centering
@@ -798,16 +873,16 @@ better concerning the synchronization of the frame, $12 clk$ each. KF outperform
 \caption{Synchronization error for 50 nodes - speed 20km/hr}
 \label{16output20}
 \end{figure}
-The speed of the nodes is changed to a gaussian random variable with mean $20km/hr$ and standard deviation $1km/hr$. The simulation results are presented in Figure $\ref{16output20}$. KF, with an average of of $5 clk$ performs the best, whereas WM and NLLS perform well at $12 clk$ each. As the dynamics of the networks increases, Median becomes more unstable and exhibits large synchronization error. NLLS and WM have a stable performance when the network becomes dynamic with constantly changing connection between the nodes.
+The speed of the nodes is increased to be an independent Gaussian random variable with mean $20km/hr$ and standard deviation $1km/hr$. The simulation results is presented, Figure $\ref{16output20}$. With the increase in the speed of the nodes, the precision of the algorithms improves. KF, with an average of of $10 clk$ performs the best, whereas WM and NLLS perform well too compared with the median, $1 clk$ and $1 clk$ respectively. As the dynamics of the networks increases, Median becomes more unstable and exhibits large synchronization error. NLLS and WM have a more stable performance when the network becomes dynamic with constantly changing connection between the nodes.
 \paragraph*{}
-The relative comparison of the algorithms performance improvement with the Median is shown in Figure $\ref{16output-error}$ for nodes moving at $20km/hr$. WM and NLLS perform, on average, $6-8\%$ better than Median, but with more tolerance in handling the disruptions. The best performer, KF, has on average $60\%$ better performance than the Median one.
+The relative comparison of the algorithms performance improvement with the Median is shown in Figure $\ref{16error}$ for nodes moving at $20km/hr$. WM and NLLS perform, on average, $6-8\%$ better than Median, but with more tolerance in handling the disruptions. The best performer, KF, has on average $60\%$ better performance than the Median one.
 \begin{figure}
 \centering
 \includegraphics[width= 0.7 \textwidth]{16output-error}
 \caption{Relative performance improvement of algorithms from Median - 20 nodes} \label{16error}
 \end{figure}
 \subsubsection{\textbf{Case III}}
-In this set of simulations, the number of the nodes is increased, to $50$. With slowly moving nodes ($6km/hr$), the results are shown in Figure $\ref{50output6}$. Large disruptions occur when using Median due to nodes moving slowly in the surrounding (leave the network and join again after some time), resulting in a larger drift with neighbors before getting back to the network. NLLS and WM perform better when it comes to stability, as out-of-sync nodes are forced to join the stable network. KF has the best preformance, both in precision and stability. On average, KF has $7clk$ as a synchronization error.
+In this set of simulations, the number of the nodes is increased, to $50$. With slowly moving nodes ($6km/hr$), the results are shown in Figure $\ref{50output6}$. Large disruptions occur when using Median due to nodes moving slowly in the surrounding (leave the network and join again after some time), resulting in a larger drift with neighbors before getting back to the network. NLLS and WM perform better when it comes to stability. KF has the edge, both in precison and stablity. On average, KF has $10clk$ better than Median.
 \paragraph*{}
 \begin{figure}
 \centering
@@ -820,12 +895,10 @@ In this set of simulations, the number of the nodes is increased, to $50$. With 
 \includegraphics[width=0.7\textwidth]{50output-s20}
 \caption{Synchronization error for 50 nodes - speed 20km/hr} \label{50output20}
 \end{figure}
-With a speed of $20km/hr$, the simulation results are presented in Figure $\ref{50output20}$. As the speed increases, the instability
-on the synchronization of the nodes also increases, which makes the Median more prone to high synchronization errors. WM has better
-tolerance towards mobility of the nodes, whereas the NLLS does well regarding stability. KF has the best precision, at $9clk$. As the
-speed increases, the precision of the synchronization increases too.
+With a speed of $20km/hr$, the simulation results are presented in Figure $\ref{50output20}$. As the speed increases, the unstability on the synchronization of the nodes also increases, which makes the Median more prone to errors. WM has better tolerance towards mobility of the nodes, whereas the NLLS does well regarding stability. KF has the best precision against Median, at $7clk$. As the speed increases, the precision of the synchronization increases too.%With this speed, the performance is better due to the faster moving nodes, joining the networks at a faster rate. This helps in getting synchronized with the nodes in a faster time, without drifting away for a longer period of time(which is the case in the first set of nodes with speed of $6km/hr$).
 \paragraph*{}
-For the set of nodes with a higher speed , a relative comparison is made to see the performance of the nodes with the Median algorithm. The Median algorithm is shown to perform the worst in this case. There are a lot of disruptions in the network, making it more unstable whereas the other algorithms adapt to the changes faster. Figure $\ref{50output-error}$ shows that KF performs the best against Median algorithm, $45\%$. WM and NLLS perform well against Median too, $20\%$ on average. It has been shown that the median is prone to error in case of high dynamics in the network.
+For the set of nodes with a higher speed , a relative comparison is made to see the performance of the nodes with the Median algorithm.
+The Median algorithm is shown to perform the worst in this case. There are a lot of disruptions in the network, making it more unstable whereas the other algorithms adapt to the changes faster. Figure $\ref{50error}$ shows that KF performs the best against Median algorithm, $45\%$. WM and NLLS perform well against Median too, $5\%$ on average. It has been shown that the median is prone to error in case of high dynamics in the network.
 \begin{figure}[!h]
 \centering
 \includegraphics[width=0.7  \textwidth]{50output-error}
@@ -834,90 +907,55 @@ For the set of nodes with a higher speed , a relative comparison is made to see 
 \paragraph*{}
 The comparison is also made using the different parameters and the results are presented in the Appendix A.
 \section{\textbf{Energy consumption}}
-%\begin{figure}
-%\centering
-%\includegraphics[width=0.7\textwidth]{guardsave}
-%\caption{The energy consumption of guard time per RX slot}
-%\label{guardsave}
-%\end{figure}
-%As the results in the previous section shows, KF algorithm performs well in all conditions, so do WM and NLLS when stability is a vital metric. The downside in implementing these algorithms, despite the performance gain that all have against the Median is the energy consumption. As the algorithms are going to be implemented on the sensor nodes, the energy consumption is a priority in the study of embedded system algorithm development in WSN. The algorithms are written in C and implemented on the test nodes to see the effect that they are going to have on the energy consumption of the nodes.
-%\begin{center}
-%    \begin{tabular}{ |p{2cm} | p{4.75cm} |}
-%    \hline
-%    Algorithm & Average Execution Time \\ \hline
-%    M &  65 $\mu$s \\ \hline
-%    NLLS & 82.5 $\mu$s \\ \hline
-%    WM &   90 $\mu$s \\ \hline
-%    KF &  195 $\mu$s  \\ \hline
-%    \end{tabular}
-%\label{tab}
-%\end{center}
-%The table $\ref{tab}$ shows the average execution time of the algorithms implemented on the test MyriaNode. This doesn't show the
-%exact energy consumption of the algorithms but it can give us an approximation on the relative comparison of the algorithms about the energy consumption on the MyriaNode. It can be mapped to the energy consumption of the algorithms.
-%%As the table shows, the consumption of WM is 5$\%$ higher than the median algorithms. This is also true for NLLS and KF which consume 9$\%$ and 4 $\%$ higher than the median algorithm respectively.
-%\paragraph*{}
-%In order to reduce the energy that is going to be spent on the algorithm with a better performance, the guard time of the slot can be reduced, due to a better performance showing by KF, WM and NLLS. The energy consumption of the guard time is shown in Figure
-%$\ref{guardsave}$. The length of the guard time has a close-to-linear relation with the power being consumed in listening to the channel.
-%Thus, with the performance gain obtained, the guard time of the slot can be decreased, hereby decreasing the energy consumption of the node in general. This energy save is in a per slot basis. As the number of slots increases, the energy to be saved increases.
-%\paragraph*{}
-%Communcation costs around 5 times more than computing, as per the measured data from Chess shows. So, by reducing the communication time and increase the computing cost of the node, a net gain in energy can be obtained.
-\textbf{Additional energy expenditure}\par \noindent
-As the results in the previous subsection shows, KF algorithm performs well in all conditions, so do WM and NLLS when stability is a vital metric. The downside in implementing these algorithms, despite the performance gain achieved, is the energy consumption. As the algorithms are going to be implemented on the sensor nodes, the energy consumption is a priority in embedded system algorithm development. The algorithms are written in C and implemented on the test nodes to see the effect that they are going to have on the energy consumption of the nodes and presented below.
-\begin{center}
-    \begin{tabular}{ |p{1.5cm} | p{2cm} |p{2cm} |p{1.75cm} | }
-    \hline
-    Algorithm & Average Execution Time per frame & Increase in execution time per frame & Energy Consumed per frame \\ \hline
-    M &  65 $\mu$s & 0 & 0  \\ \hline
-    NLLS & 82.5 $\mu$s & 7.5$\mu$s & 63 $pJ$  \\ \hline
-    WM &   90 $\mu$s & 25$\mu$s & 210 $pJ$ \\ \hline
-    KF &  150 $\mu$s  & 85$\mu$s &  714 $pJ$\\ \hline
-    \end{tabular}
-\label{tab}
-\end{center}
-The results shown in the above table do not reflect the exact energy consumption of the algorithms as the energy consumption is dependent on other factors besides the execution time. But it can be used to put the comparison into perspective. \newline
-\textbf{Energy gain}\par \noindent
-%As communication costs more than computation[datsheet MyriaNode v2.0], a tradeoff can be done.
-In order to reduce the energy that is going to be spent on the algorithm with a better performance, the guard time of the slot can be reduced, due to a better performance showing by KF, WM and NLLS. 
-Hence, $t_{guard}$ for KF is taken to be 10$clk$ whereas the guard time for WM and NLLS is taken to be $24clk$ each from the simulation results. $t_{guard}$ for the Median is taken to be 26$clk$. The number of slots is taken to be 10, so the total guard time per frame will be 10 times $t_{guard}$. In the following table, the energy saving is calculated in comparison with the Median. 
-\begin{center}
-    \begin{tabular}{ |p{1.5cm} | p{2cm} |p{2cm} | p{1.75cm} |  }
-    \hline
-    Algorithm & Guard time per frame & Reduction in $t_{guard}$ per frame & Energy saving per frame\\ \hline
-    M &  792 $\mu$s x 10 & 0 & 0 \\ \hline
-    NLLS & 732 $\mu$s x 10 & 600 $\mu$s & 16.27$\mu J$\\ \hline
-    WM &   732 $\mu$s x 10 & 600 $\mu$s & 16.27$\mu J$ \\ \hline
-    KF &  305 $\mu$s x 10 & 4.87$ms$ & 132.07$mJ$\\ \hline
-    \end{tabular}
-\label{tab}
-\end{center}
-The length of the guard time has a close-to-linear relation with the power being consumed in listening to the channel. Thus, with the performance gain obtained, the guard time of the slot can be decreased, hereby decreasing the energy consumption of the node in general. Comparing the energy consumption and the energy expenditures, a large net gain can be obtained from the proposed algorithms. It can be noted here that communication costs more than computation (as listening radio consumes more energy than CPU active time). Since the length of the guard time is dependent on the number of slots, the energy to be saved increases as the number of slots increases.\paragraph*{}
-The energy consumption of the guard time is shown in Figure $\ref{guardsave}$. The length of the guard time has a close-to-linear relation with the power being consumed in listening to the channel.
 \begin{figure}
 \centering
 \includegraphics[width=0.7\textwidth]{guardsave}
 \caption{The energy consumption of guard time per RX slot}
 \label{guardsave}
 \end{figure}
+As the results in the previous section shows, KF algorithm performs well in all conditions, so do WM and NLLS when stability is a vital metric. The downside in implementing these algorithms, despite the performance gain that all have against the Median is the energy consumption. As the algorithms are going to be implemented on the sensor nodes, the energy consumption is a priority in the study of embedded system algorithm development in WSN. The algorithms are written in C and implemented on the test nodes to see the effect that they are going to have on the energy consumption of the nodes.
+\begin{center}
+    \begin{tabular}{ |p{2cm} | p{4.75cm} |}
+    \hline
+    Algorithm & Average Execution Time \\ \hline
+    M &  65 $\mu$s \\ \hline
+    NLLS & 82.5 $\mu$s \\ \hline
+    WM &   90 $\mu$s \\ \hline
+    KF &  195 $\mu$s  \\ \hline
+    \end{tabular}
+\label{tab}
+\end{center}
+The table $\ref{tab}$ shows the average execution time of the algorithms implemented on the test MyriaNode. This doesn't show the
+exact energy consumption of the algorithms but it can give us an approximation on the relative comparison of the algorithms about the energy consumption on the MyriaNode. It can be mapped to the energy consumption of the algorithms.
+%As the table shows, the consumption of WM is 5$\%$ higher than the median algorithms. This is also true for NLLS and KF which consume 9$\%$ and 4 $\%$ higher than the median algorithm respectively.
+\paragraph*{}
+In order to reduce the energy that is going to be spent on the algorithm with a better performance, the guard time of the slot can be reduced, due to a better performance showing by KF, WM and NLLS. The energy consumption of the guard time is shown in Figure
+$\ref{guardsave}$. The length of the guard time has a close-to-linear relation with the power being consumed in listening to the channel.
+Thus, with the performance gain obtained, the guard time of the slot can be decreased, hereby decreasing the energy consumption of the node in general. This energy save is in a per slot basis. As the number of slots increases, the energy to be saved increases.
+\paragraph*{}
+Communcation costs around 5 times more than computing, as per the measured data from Chess shows. So, by reducing the communication time and increase the computing cost of the node, a net gain in energy can be obtained.
 \chapter{\textbf{Conclusion and recommendation}}
 \section{\textbf{Conclusion}}
-Decentralized synchronization algorithms are proposed for a TDMA-based WSN using Weighted Measurements (WM), Non Linear Least Squares(NLLS) and Kalman Filter (KF) methods. Simulation is conducted with different scenarios, especially taking the effect of mobility. Comparison of the algorithms with the currently implemented Median algorithm is conducted and the results are presented.
+A decentralized frame synchronization of a TDMA-based WSN is achieved using Weighted Measurements (WM), Non Linear Least Squares(NLLS) and Kalman Filter (KF) methods. A simulation is conducted with different scenarios, especially taking the effect of mobility. A comparison of the algorithms with the currently implemented Median algorithm is conducted and the results are presented.
 \paragraph*{}
-In a static environment where the nodes are stationary, the KF performs the best whereas the WM and NLLS have shown a similar performance since they incline to calculate the average of the phase errors. In terms of stability, all the three algorithms have shown a similar performance.
+In a static environment, the KF performs the best whereas the WM and NLLS have shown a similar performance as the Median. In terms of convergence time, all have shown a similar performance.
 \paragraph*{}
-WM and NLLS show a better tolerance in a dynamic network. Having a
-faster adaptation to the changes in the network made the algorithms
-preferred ones to a network characterized with dynamic behavior. KF
-estimation of the next wake up time is the best with its adaptive feedback nature. KF has also better stability, better
-resistant to topology changes occurring in the network.
+Both WM and NLLS show a better tolerance against Median in a dynamic network. Having a faster adaptation to the changes in the network made the algorithms preffered ones to a network characterized with dynamic behaviour. KF estimation of the next wake up time is the best with its iterative capability and adaptive nature. KF has also better stability, better resistant to topology changes occuring in the network.
 \paragraph*{}
-Using these algorithms for a TDMA-based WSN synchronization (WM, NLLS and KF), the precision of the synchronization error as well as the stability increases. This in turn has a positive impact on the energy consumption of the nodes because the synchronization period, $T_{sync}$ can be increased or the guard time of the node's frame, $t_{guard}$, can be reduced to achieve the same performance as the Median algorithm. Results are presented and discussed. But in the downside, the energy consumption of the algorithms is greater than the Median algorithm's energy consumption as the algorithms are more complex computationally. Analysis is made and presented about the energy saving made by decreasing the guard time of the slot. Communication is in general more expensive than computation on MyriaNodes, when put into perspective. A net gain of battery life can thus be achieved by using the proposed algorithms.
+Using these algorithms for a TDMA-based WSN synchronization( WM, NLLS and KF), the precision of the network as well as the stablity of the algorithm increases. This in turn has a positive impact on the energy consumption of the nodes because the synchronization period, $T_{sync}$ can be increased or the guard time of the node's frame, $t_{guard}$ can be reduced to achieve the same performance as the Median algorithm. Results are presented and discussed.
+\paragraph*{}
+But in the downside, the energy consumption of the algorithms is greater than the Median algorithm's energy consumption as the algorithms are more complex computationally. Analysis is made and presented about the energy saving made by decreasing the guard time of the slot. As shown in the measurements and analysis results, communication is around 5 times costlier than computation, on average. A net gain of battery life can thus be achieved by reducing the guard time.
+\paragraph*{}
+Median is shown to be still the best choice in a static environment with the current implementation,with less energy consumption and simplicity into consideration. But, for dynamic networks, the other algorithms perform better, in terms of performance. KF has the edge due to its adaptive nature.
 \section{\textbf{Recommendation}}
 \paragraph*{}
-As is the case with new design techniques for any system of protocol, there is always room for improvement. Although the performance of all our approaches are more precise and stable,  some factors which could be considered to make it a good synchronization scheme on all aspects have been identified. Below are some suggestions on the future work.
+As is the case with new design techniques for any system of protocol, there is always room for improvement. Although the performance of all our approaches are more precise and stable,  some factors which could be considered to make it a good synchronization scheme on all
+aspects have been identified. Below are some suggestions on the future work.
 \begin{itemize}
 \item
 Different software power minimization techniques can be applied to reduce the power consumption of the algorithm implementation, making them more energy efficient for implementation.
-\item  As the main sources of error for the clock inaccuracies are identified. Resolving these errors is one approach which can be cost effective as well as simple in implementation. This can be achieved using the available resources like the temperature sensor in the microcontroller of the MyriaNode. Constantly updating the temprature of the surrounding and correcting the drift on the node can achieve a better precision on the synchronization.
+\item  As the main sources of error for the clock inaccuracies are identified. Resolving these errors is one approach which can be cost effective as well as simple in implementation. This can be achieved using the available resources like the temperature sensor in the
+microcontroller of the MyriaNode. Constantly updating the temprature of the surrounding and correcting the drift on the node can achieve a better precision on the synchronization.
 \item
 Practical implementation of the algorithms and inspect the behavior is another step in pefecting the algorithms. Upon the completion of the ongoing project on developing a Software Defined Radio (SDR) for the inspection of the nodes' wake-up times, a proper evaluation and enhancements on the algorithms, being implemented on the MyriaNodes, is achievable. Real time feedbacks can be used to improve the algorithms towards perfection.
 \end{itemize}
@@ -926,13 +964,12 @@ Practical implementation of the algorithms and inspect the behavior is another s
 As in distributed synchronization, a network of nodes equipped with hardware clocks with bounded drift is considered
 here. Nodes compute logical clock values based on their hardware clocks and information that they have, and the goal is to
 synchronize the nodes' logical clocks as closely as possible, while satisfying certain validity conditions.
-%\begin{figure}[!h]
-%\centering
-%\includegraphics[width=0.5 \textwidth]{lowerbound}
-%\caption{Network size and the lower bound of synchronization}
-%\label{gradient}
-%\end{figure}
-\paragraph*{}
+\begin{figure}[!h]
+\centering
+\includegraphics[width=0.5 \textwidth]{lowerbound}
+\caption{Network size and the lower bound of synchronization}
+\label{gradient}
+\end{figure} \paragraph*{}
 There are different approaches towards the lower bound that a synchronization algorithm achieve. In $\cite{gradient}$, the clock drift is taken to be zero and the delay impact on the lower bound of the synchronization algorithm is presented. But a more realistic approach is presented in $\cite{gradient2}$. Gradient clock synchronization is shown to require that the skew between any two nodes' logical clocks be
 bounded by a nondecreasing function of the uncertainty in message delay (call this the distance) between the two nodes. Nearby nodes
 are required to be closely synchronized, and allow far away nodes to be more loosely synchronized. Hence, the result is that the worst
@@ -941,7 +978,8 @@ case clock skew between two nodes at distance $d$ from each other is
 \Delta L \geq \frac{\tilde \rho d}{8(1+\tilde \rho)}\frac{log(n-1)}{log(\frac{8(1+\tilde \rho)}{\tilde \rho}log(n-1))}.
 \end{equation}
 where $n$ is the number of nodes in the network. This means that synchronization is not only a local property, in the sense that the clock skew between two nodes depends not only on the distance between the nodes, but also on the size of the network. \paragraph*{}
-Our lower bound implies, as in the case of MyriaNed, that the TDMA protocol with a fixed slot granularity will fail as the network grows, even if the maximum degree of each node stays constant. As the network size grows, the lower bound of the synchronization also increases.
+Our lower bound implies, as in the case of MyriaNed, that the TDMA protocol with a fixed slot granularity will fail as the network grows, even if the maximum degree of each node stays constant.
+As shown in Figure $\ref{gradient}$, as the network size grows, the lower bound of the synchronization also increases.
 \chapter{Simulation results}
 \section{\textbf{Median as a synchronization method}}
 The performance of Median algorithm is dependent on the gain factor used in the offset calculation. Figure $\ref{gainfactor}$ shows the performance of the Median algorithm for different gain factors, and the optimum value of the gain factor is chosen for the comparison of Median algorithm with the proposed algorithms for synchronization.
@@ -951,15 +989,15 @@ The performance of Median algorithm is dependent on the gain factor used in the 
 \caption{Median algorithm with different gain factors} \label{gainfactor}
 \end{figure}
 \section{\textbf{Synchronization frequency}}
-Increasing the time interval in which the synchronization is made has the advantage in energy conservation. On the other hand, the performance of the network decrease as the nodes are getting sycnrhoniazed less frequently. Simulation results of different scenrarios are conducted to see the effect of the synchronizatio frequency and are presented here.
+Increasing the time interval in which the synchronization is made has the advantage in energy conservation. On the other hand, the performance of the network decrease as the nodes are getting sycnrhoniazed less frequencly. Simulation results of different scenrarios are conducted to see the effect of the synchronizatio frequency and are presented here.
 \paragraph*{}
-Simulation is conducted for different synchronization frequencies $T_{sync}$ on the KF algorithm. Figure $\ref{tsync0}$ shows the performance of KF with varying the synchronization frequency $T_{sync}$ for static nodes. As the synchronization frequency increases, the performance of the algorithm decreases, herby increasing the synchronization error. Even if this approach decreases the computational cost on the nodes, it has a negative impact by increasing the guard time, which is more expensive in energy terms.
+Simulation is conducted for different synchronization frequencies $T_{sync}$ on the KF algorithm. Figure $\ref{tsync0}$ shows the performance of KF with varying the synchronization frequency $T_{sync}$ for static nodes.
 \begin{figure}[!h]
 \centering
 \includegraphics[width= 0.7\textwidth]{tsync0}
 \caption{Synchronization error of a KF for static nodes with different $T_{sync}$} \label{tsync0}
 \end{figure}
-In this set of simulations, the speed of the nodes increased to see the effect of mobility on the synchronization frequency. Figure $\ref{tsync6}$ and Figure $\ref{tsync20}$ shows the performance of KF at different speeds, 6$km/hr$ and 20$km/hr$ respectively. As the speed increases, the synchronization error increases. Besides the synchronization error, the ability of KF to adapt to changes is also affected due to the increased in the synchronization frequency. As shown in the results, there are large disruptions in the synchronization error when the nodes speed is set to an average speed of $6km/hr$. With the increased speed, the error will be lesser as the nodes are fast in joining the network that they left.  
+Figure $\ref{tsync6}$ and Figure $\ref{tsync20}$ shows the performance of KF at different speeds, 6$km/hr$ and 20$km/hr$ respectively.
 \begin{figure}[!h]
 \centering
 \includegraphics[width= 0.7\textwidth]{tsync6}
@@ -970,11 +1008,11 @@ In this set of simulations, the speed of the nodes increased to see the effect o
 \includegraphics[width= 0.7 \textwidth]{tsync20}
 \caption{Synchronization error of a KF for nodes at 20$km/hr$ with different $T_{sync}$} \label{tsync20}
 \end{figure}
-As the speed of the nodes increases to $20km/hr$, the effect of increasing $T_{sync}$ also increases with diversions of synchronization error, but as the faster moving nodes join the network in less time, the upper bound of the synchronization error is less as the speeds increases. 
+As the speed of the nodes increases, the effect of increasing $T_{sync}$ also increases with diversions of synchronization error, making it less stable.
 \section{\textbf{Synchronization error for nodes with different speeds}}
-As in a real world scenario, a simulation is conducted with nodes having different speeds. The speed of the nodes is taken to be a gaussion distributed random variable with a mean speed of $10km/hr$ and standard deviation of $5km/hr$.
+As a real world scenario, a simulation is conducted with nodes having different speeds. The speed of the nodes is taken to be a gaussion distributed random variable with a mean speed of $10km/hr$ and standard deviation of $10km/hr$.
 \paragraph*{}
-The synchronization error for nodes travelling with different speeds is given in Figure $\ref{varspeed16}$ for 20 nodes. Similar results are obtained for the networks where unstability is observed in the Median algorithm. WM and NLLS has a good tolerance towards the dynamic nature of the network. KF has the best precision, in addition to the stabililty.
+The synchronization error for nodes travelling with different speeds is given in Figure $\ref{varspeed16}$ for 20 nodes.
 \begin{figure}
  \centering
  \includegraphics[width=0.6\textwidth]{varspeed20}
@@ -990,7 +1028,7 @@ For 50 nodes, the simulation result for is shown in Figure $\ref{varspeed50}$.In
  \label{varspeed50}
 \end{figure}
 \section{\textbf{The number of nodes and speed on KF}}
-The synchronization error increases as the number of nodes increases, as dictated by the gradient equations in $\cite{gradient}$ and $\cite{gradient2}$. Figure $\ref{diffno}$ shows the synchronization error for KF using different number of nodes, distributed across the simulation area uniformly.
+The synchronization error increases as the number of nodes increases, as dictated by the gradient equations in $\cite{gradient}$ and $\cite{gradient2}$. Figure $\ref{diffno}$ shows the synchronization error for KF using different number of nodes, distributed across the field uniformly.
 \begin{figure}[!h]
 \centering
 \includegraphics[width= 0.7 \textwidth]{diffno}
