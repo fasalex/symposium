@@ -195,7 +195,7 @@ By multiplying the median with a gain factor, $G\xi_i^{(n)}$, the output can be 
 \par As per the application of Median, there are setbacks on its implementation. In some test-cases, the algorithm fails to converge or stays unsynchronized for a certain period of time.
 \par A typical scenario is presented where the Median algorithm takes a longer time to achieve synchronization. In Figure $\ref{wsn}$, a distribution of nodes is shown. Node 10 joins  the stable network communication through Node 9. Assume Node 9 belongs to two broadcast domains, Node 3's and Node 10's. Thus, upon the application of the median algorithm, the node tends to adjust its wake-up time with the median of the phase errors from its neighbors, Node 3 and Node 10. Adjusting the wake-up time, the offset is
 \begin{equation}
-\xi_9 = \frac{\Delta t_{9,10} + \Delta t_{9,3}}{2}.
+\xi_9 = median(\Delta t_{9,10} ,\Delta t_{9,3}).
 \end{equation}
 \begin{figure}
 \centering
@@ -671,6 +671,12 @@ Hence, $t_{guard}$ for KF is taken to be 10$clk$ whereas the guard time for WM a
     \end{tabular}
 \end{center}
 The length of the guard time has a close-to-linear relation with the power being consumed in listening to the channel. Thus, with the performance gain obtained, the guard time of the slot can be decreased, hereby decreasing the energy consumption of the node in general. Comparing the energy consumption and the energy expenditures, a large net gain can be obtained from the proposed algorithms. It can be noted here that communication costs more than computation (as listening radio consumes more energy than CPU active time). Since the length of the guard time is dependent on the number of slots, the energy to be saved increases as the number of slots increases.
+\begin{figure}
+\centering
+\includegraphics[width=0.5\textwidth]{commvscompute}
+\caption{The energy gain of reducing the guard time compared with the compuational cost per RX slot}
+\label{guardsave}
+\end{figure}
 \section{\textbf{Conclusion and Recommendation}}\noindent
 \textbf{Conclusion}\par
 Decentralized synchronization algorithms are proposed for a TDMA-based WSN using Weighted Measurements (WM), Non Linear Least Squares(NLLS) and Kalman Filter (KF) methods. Simulation is conducted with different scenarios, especially taking the effect of mobility. Comparison of the algorithms with the currently implemented Median algorithm is conducted and the results are presented.

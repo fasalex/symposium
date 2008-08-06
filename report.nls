@@ -4,17 +4,17 @@
 
   \item [{$\rho$}]\begingroup Maximum clock drift\nomeqref {3.3}
 		\nompageref{14}
-  \item [{$\xi_i$}]\begingroup Offset to be added to Node $i$\nomeqref {4.12}
-		\nompageref{22}
-  \item [{$t_{guard}$}]\begingroup Length of the guard time\nomeqref {4.1}
-		\nompageref{21}
-  \item [{$t_{slot}$}]\begingroup Time duration of a slot\nomeqref {4.2}
-		\nompageref{21}
-  \item [{$T_{sync}$}]\begingroup Synchronization frequency\nomeqref {4.0}
-		\nompageref{20}
+  \item [{$\xi_i$}]\begingroup Offset to be added to Node $i$\nomeqref {4.5}
+		\nompageref{23}
+  \item [{$t_{guard}$}]\begingroup Length of the guard time\nomeqref {3.8}
+		\nompageref{18}
+  \item [{$t_{slot}$}]\begingroup Time duration of a slot\nomeqref {3.9}
+		\nompageref{18}
+  \item [{$T_{sync}$}]\begingroup Synchronization frequency\nomeqref {3.7}
+		\nompageref{18}
   \item [{\textit{clk}}]\begingroup A clock cycle\nomeqref {3.0}
 		\nompageref{13}
-  \item [{\textit{Wake-up time}}]\begingroup Time that the node starts listening.\nomeqref {3.0}
+  \item [{\textit{wakeup time}}]\begingroup Time that the node starts listening.\nomeqref {3.0}
 		\nompageref{13}
   \item [{CSMA}]\begingroup Carrier Sense Multiple Access\nomeqref {2.0}
 		\nompageref{4}
