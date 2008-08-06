@@ -431,7 +431,7 @@ As per the application of Median, there are setbacks on its implementation. In s
 $\ref{wsn}$, a distribution of wireless sensor nodes is shown. Node 10 joins the stable network communication through Node 9. Assume Node 9 belongs to two broadcast domains, Node 3's and Node 10's. Thus, upon the application of the median algorithm, the node tends to
 adjust its wakeup time with the median of the offsets from its neighbors, Node 3 and Node 10. Adjusting the wakeup time, the offset to be is
 \begin{equation}
-\xi_9 = \frac{\Delta t_{910} + \Delta t_{39}}{2}.
+\xi_9 = median(\Delta t_{9,10} , \Delta t_{9,3}).
 \end{equation}
 With Node 10 being isolated from the well established network, it has a major drift from the other nodes. Being in synchronization
 with the other nodes, Node 9 will drift away from the network after its adjustment with Node 10. Due to the adjustment, tt will take Node 9 more time to synchronize with the network again. Therefore, the performance of the median algorithm decreases with the increase in the dynamic nature of the network. Figure $\ref{fasik}$ shows the state of the network after the synchronization using the Median. Node 9 has drifted away from the networks in order to incorporate the effect of the new neighbor Node 10.
@@ -875,8 +875,8 @@ The length of the guard time has a close-to-linear relation with the power being
 The energy consumption of the guard time is shown in Figure $\ref{guardsave}$. The length of the guard time has a close-to-linear relation with the power being consumed in listening to the channel.
 \begin{figure}
 \centering
-\includegraphics[width=0.7\textwidth]{guardsave}
-\caption{The energy consumption of guard time per RX slot}
+\includegraphics[width=0.7\textwidth]{commvscompute}
+\caption{The energy gain of reducing the guard time compared with the compuational cost per RX slot}
 \label{guardsave}
 \end{figure}
 \chapter{\textbf{Conclusion and recommendation}}

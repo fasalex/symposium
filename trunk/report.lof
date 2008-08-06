@@ -23,7 +23,7 @@
 \contentsline {figure}{\numberline {5.6}{\ignorespaces Synchronization error for 50 nodes - speed 6km/hr}}{37}
 \contentsline {figure}{\numberline {5.7}{\ignorespaces Synchronization error for 50 nodes - speed 20km/hr}}{37}
 \contentsline {figure}{\numberline {5.8}{\ignorespaces Relative performance improvement of algorithms from Median - 50 nodes}}{38}
-\contentsline {figure}{\numberline {5.9}{\ignorespaces The energy consumption of guard time per RX slot}}{39}
+\contentsline {figure}{\numberline {5.9}{\ignorespaces The energy gain of reducing the guard time compared with the compuational cost per RX slot}}{39}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
