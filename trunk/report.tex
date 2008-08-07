@@ -785,7 +785,7 @@ The relative comparison of the algorithms performance improvement with the Media
 \begin{figure}
 \centering
 \includegraphics[width= 0.7 \textwidth]{16output-error}
-\caption{Relative performance improvement of algorithms from Median - 20 nodes} \label{16error}
+\caption{Relative performance improvement of algorithms from Median - 20 nodes} \label{16output-error}
 \end{figure}
 \subsubsection{\textbf{Case III}}
 In this set of simulations, the number of the nodes is increased, to $50$. With slowly moving nodes ($6km/hr$), the results are shown in Figure $\ref{50output6}$. Large disruptions occur when using Median due to nodes moving slowly in the surrounding (leave the network and join again after some time), resulting in a larger drift with neighbors before getting back to the network. NLLS and WM perform better when it comes to stability, as out-of-sync nodes are forced to join the stable network. KF has the best preformance, both in precision and stability. On average, KF has $7clk$ as a synchronization error.
@@ -810,7 +810,7 @@ For the set of nodes with a higher speed , a relative comparison is made to see 
 \begin{figure}[!h]
 \centering
 \includegraphics[width=0.7  \textwidth]{50output-error}
-\caption{Relative performance improvement of algorithms from Median - 50 nodes} \label{50error}
+\caption{Relative performance improvement of algorithms from Median - 50 nodes} \label{50output-error}
 \end{figure}
 \paragraph*{}
 The comparison is also made using the different parameters and the results are presented in the Appendix A.
@@ -843,37 +843,40 @@ The comparison is also made using the different parameters and the results are p
 %\paragraph*{}
 %Communcation costs around 5 times more than computing, as per the measured data from Chess shows. So, by reducing the communication time and increase the computing cost of the node, a net gain in energy can be obtained.
 \textbf{Additional energy expenditure}\par \noindent
-As the results in the previous subsection shows, KF algorithm performs well in all conditions, so do WM and NLLS when stability is a vital metric. The downside in implementing these algorithms, despite the performance gain achieved, is the energy consumption. As the algorithms are going to be implemented on the sensor nodes, the energy consumption is a priority in embedded system algorithm development. The algorithms are written in C and implemented on the test nodes to see the effect that they are going to have on the energy consumption of the nodes and presented below.
-\begin{center}
-    \begin{tabular}{ |p{3cm} | p{3cm} |p{3cm} |p{3cm} | }
+As the results in the previous subsection shows, KF algorithm performs well in all conditions, so do WM and NLLS when stability is a vital metric. The downside in implementing these algorithms, despite the performance gain achieved, is the energy consumption. As the algorithms are going to be implemented on the sensor nodes, the energy consumption is a priority in embedded system algorithm development. The algorithms are written in C and implemented on the test nodes to see the effect that they are going to have on the energy consumption of the nodes and presented below.\newline
+The results shown in the above table do not reflect the exact energy consumption of the algorithms as the energy consumption is dependent on other factors besides the execution time. But it can be used to put the comparison into perspective. 
+\begin{table}[!h]
+    \caption{Table to represent the energy expenditure of the algorithms} 
+    \begin{tabular}{ |c | p{3cm} | p{3cm} |c | }
     \hline
-    Algorithm & Average Execution Time per frame & Increase in execution time per frame & Energy Consumed per frame \\ \hline
+    Algorithm & Average Execution Time per frame & Increase in execution time per frame & Energy Consumed per frame \\ \hline \hline
     M &  65 $\mu$s & 0 & 0  \\ \hline
     NLLS & 82.5 $\mu$s & 7.5$\mu$s & 63 $pJ$  \\ \hline
     WM &   90 $\mu$s & 25$\mu$s & 210 $pJ$ \\ \hline
     KF &  150 $\mu$s  & 85$\mu$s &  714 $pJ$\\ \hline
     \end{tabular}
-\label{tab}
-\end{center}
-The results shown in the above table do not reflect the exact energy consumption of the algorithms as the energy consumption is dependent on other factors besides the execution time. But it can be used to put the comparison into perspective. \newline
+\label{tab1}
+\end{table}
+\newline
 \textbf{Energy gain}\par \noindent
 %As communication costs more than computation[datsheet MyriaNode v2.0], a tradeoff can be done.
 In order to reduce the energy that is going to be spent on the algorithm with a better performance, the guard time of the slot can be reduced, due to a better performance showing by KF, WM and NLLS. 
 Hence, $t_{guard}$ for KF is taken to be 10$clk$ whereas the guard time for WM and NLLS is taken to be $24clk$ each from the simulation results. $t_{guard}$ for the Median is taken to be 26$clk$. The number of slots is taken to be 10, so the total guard time per frame will be 10 times $t_{guard}$. In the following table, the energy saving is calculated in comparison with the Median. 
-\begin{center}
-    \begin{tabular}{ |p{3cm} | p{3cm} |p{3cm} | p{3cm} |  }
+\begin{table}
+        \caption{Table to show the energy saving due to the guard time reduction} 
+    \begin{tabular}{ |c | c |c | c |  }
     \hline
-    Algorithm & Guard time per frame & Reduction in $t_{guard}$ per frame & Energy saving per frame\\ \hline
+    Algorithm & Guard time per frame & Reduction in $t_{guard}$ per frame & Energy saving per frame\\ \hline \hline
     M &  792 $\mu$s x 10 & 0 & 0 \\ \hline
     NLLS & 732 $\mu$s x 10 & 600 $\mu$s & 16.27$\mu J$\\ \hline
     WM &   732 $\mu$s x 10 & 600 $\mu$s & 16.27$\mu J$ \\ \hline
     KF &  305 $\mu$s x 10 & 4870 $\mu$s & 132.07$\mu J$\\ \hline
     \end{tabular}
-\label{tab}
-\end{center}
-The length of the guard time has a close-to-linear relation with the power being consumed in listening to the channel. Thus, with the performance gain obtained, the guard time of the slot can be decreased, hereby decreasing the energy consumption of the node in general. Comparing the energy consumption and the energy expenditures, a large net gain can be obtained from the proposed algorithms. It can be noted here that communication costs more than computation (as listening radio consumes more energy than CPU active time). Since the length of the guard time is dependent on the number of slots, the energy to be saved increases as the number of slots increases.\paragraph*{}
+\label{tab2}
+\end{table}
+The length of the guard time has a close-to-linear relation with the power being consumed in listening to the channel. Thus, with the performance gain obtained, the guard time of the slot can be decreased, hereby decreasing the energy consumption of the node in general. Comparing the energy consumption and the energy expenditures, a large net gain can be obtained from the proposed algorithms. It can be noted here that communication costs more than computation (as listening radio consumes more energy than CPU active time). Since the length of the guard time is dependent on the number of slots, the energy to be saved increases as the number of slots increases.\newline
 The energy consumption of the guard time is shown in Figure $\ref{guardsave}$. The length of the guard time has a close-to-linear relation with the power being consumed in listening to the channel.
-\begin{figure}
+\begin{figure}[!h]
 \centering
 \includegraphics[width=0.7\textwidth]{commvscompute}
 \caption{The energy gain of reducing the guard time compared with the compuational cost per RX slot}
@@ -903,26 +906,26 @@ Different software power minimization techniques can be applied to reduce the po
 Practical implementation of the algorithms and inspect the behavior is another step in pefecting the algorithms. Upon the completion of the ongoing project on developing a Software Defined Radio (SDR) for the inspection of the nodes' wakeup times, a proper evaluation and enhancements on the algorithms, being implemented on the MyriaNodes, is achievable. Real time feedbacks can be used to improve the algorithms towards perfection.
 \end{itemize}
 \appendix
-\chapter{\textbf{Lower bound of synchronization}}
-As in distributed synchronization, a network of nodes equipped with hardware clocks with bounded drift is considered
-here. Nodes compute logical clock values based on their hardware clocks and information that they have, and the goal is to
-synchronize the nodes' logical clocks as closely as possible, while satisfying certain validity conditions.
-%\begin{figure}[!h]
-%\centering
-%\includegraphics[width=0.5 \textwidth]{lowerbound}
-%\caption{Network size and the lower bound of synchronization}
-%\label{gradient}
-%\end{figure}
-\paragraph*{}
-There are different approaches towards the lower bound that a synchronization algorithm achieve. In $\cite{gradient}$, the clock drift is taken to be zero and the delay impact on the lower bound of the synchronization algorithm is presented. But a more realistic approach is presented in $\cite{gradient2}$. Gradient clock synchronization is shown to require that the skew between any two nodes' logical clocks be
-bounded by a nondecreasing function of the uncertainty in message delay (call this the distance) between the two nodes. Nearby nodes
-are required to be closely synchronized, and allow far away nodes to be more loosely synchronized. Hence, the result is that the worst
-case clock skew between two nodes at distance $d$ from each other is
-\begin{equation}
-\Delta L \geq \frac{\tilde \rho d}{8(1+\tilde \rho)}\frac{log(n-1)}{log(\frac{8(1+\tilde \rho)}{\tilde \rho}log(n-1))}.
-\end{equation}
-where $n$ is the number of nodes in the network. This means that synchronization is not only a local property, in the sense that the clock skew between two nodes depends not only on the distance between the nodes, but also on the size of the network. \paragraph*{}
-Our lower bound implies, as in the case of MyriaNed, that the TDMA protocol with a fixed slot granularity will fail as the network grows, even if the maximum degree of each node stays constant. As the network size grows, the lower bound of the synchronization also increases.
+%\chapter{\textbf{Lower bound of synchronization}}
+%As in distributed synchronization, a network of nodes equipped with hardware clocks with bounded drift is considered
+%here. Nodes compute logical clock values based on their hardware clocks and information that they have, and the goal is to
+%synchronize the nodes' logical clocks as closely as possible, while satisfying certain validity conditions.
+%%\begin{figure}[!h]
+%%\centering
+%%\includegraphics[width=0.5 \textwidth]{lowerbound}
+%%\caption{Network size and the lower bound of synchronization}
+%%\label{gradient}
+%%\end{figure}
+%\paragraph*{}
+%There are different approaches towards the lower bound that a synchronization algorithm achieve. In $\cite{gradient}$, the clock drift is taken to be zero and the delay impact on the lower bound of the synchronization algorithm is presented. But a more realistic approach is presented in $\cite{gradient2}$. Gradient clock synchronization is shown to require that the skew between any two nodes' logical clocks be
+%bounded by a nondecreasing function of the uncertainty in message delay (call this the distance) between the two nodes. Nearby nodes
+%are required to be closely synchronized, and allow far away nodes to be more loosely synchronized. Hence, the result is that the worst
+%case clock skew between two nodes at distance $d$ from each other is
+%\begin{equation}
+%\Delta L \geq \frac{\tilde \rho d}{8(1+\tilde \rho)}\frac{log(n-1)}{log(\frac{8(1+\tilde \rho)}{\tilde \rho}log(n-1))}.
+%\end{equation}
+%where $n$ is the number of nodes in the network. This means that synchronization is not only a local property, in the sense that the clock skew between two nodes depends not only on the distance between the nodes, but also on the size of the network. \paragraph*{}
+%Our lower bound implies, as in the case of MyriaNed, that the TDMA protocol with a fixed slot granularity will fail as the network grows, even if the maximum degree of each node stays constant. As the network size grows, the lower bound of the synchronization also increases.
 \chapter{Simulation results}
 %\section{\textbf{Median as a synchronization method}}
 %The performance of Median algorithm is dependent on the gain factor used in the offset calculation. Figure $\ref{gainfactor}$ shows the performance of the Median algorithm for different gain factors, and the optimum value of the gain factor is chosen for the comparison of Median algorithm with the proposed algorithms for synchronization.
@@ -956,7 +959,7 @@ As the speed of the nodes increases to $20km/hr$, the effect of increasing $T_{s
 As in a real world scenario, a simulation is conducted with nodes having different speeds. The speed of the nodes is taken to be a gaussion distributed random variable with a mean speed of $10km/hr$ and standard deviation of $5km/hr$.
 \paragraph*{}
 The synchronization error for nodes travelling with different speeds is given in Figure $\ref{varspeed16}$ for 20 nodes. Similar results are obtained for the networks where unstability is observed in the Median algorithm. WM and NLLS has a good tolerance towards the dynamic nature of the network. KF has the best precision, in addition to the stabililty.
-\begin{figure}
+\begin{figure}[!h]
  \centering
  \includegraphics[width=0.7\textwidth]{varspeed20}
  \caption{Synchronization error for 20 nodes moving at different speeds}
@@ -964,13 +967,13 @@ The synchronization error for nodes travelling with different speeds is given in
 \end{figure}
 \paragraph*{}
 For 50 nodes, the simulation result for is shown in Figure $\ref{varspeed50}$.In both cases, KF performs the best out of all the algorithms whereas the tolerance of WM is better than Median. NLLS also performs better than Median interms of stablity.
-\begin{figure}
+\begin{figure}[!h]
  \centering
  \includegraphics[width=0.7\textwidth]{varspeed50}
  \caption{Synchronization error for 50 nodes moving at different speeds}
  \label{varspeed50}
 \end{figure}
-\section{\textbf{The number of nodes and speed on KF}}
+\section{\textbf{The number of nodes on KF}}
 The synchronization error increases as the number of nodes increases, as dictated by the gradient equations in $\cite{gradient}$ and $\cite{gradient2}$. Figure $\ref{diffno}$ shows the synchronization error for KF using different number of nodes, distributed across the simulation area uniformly.
 \begin{figure}[!h]
 \centering
@@ -978,17 +981,14 @@ The synchronization error increases as the number of nodes increases, as dictate
 \caption{Synchronization error of KF for different number of static nodes}
 \label{diffno}
 \end{figure}
+\section{Battery life of a Myrianode versus the guard time}
+Using a 2400 mAh battery, the battery life of a MyriaNode is calculated using the model. Figure $\ref{batterylife}$ shows how the battery life is affected by the increae in the guard time of the nodes frame. The model uses a TDMA frame of 10 slots.
 \begin{figure}[!h]
 \centering
-\includegraphics[width = 0.7\textwidth]{diffspeed}
-\caption{Synchronization error of 20 nodes with different constant speed (in km/hr)}
-\label{diffspeed}
+\includegraphics[width = 0.7\textwidth]{guardsave}
+\caption{Battery life of a Myrianode vs the guard time}
+\label{batterylife}
 \end{figure}
-The simulation is also conducted for different cosntant speed of the nodes, which basically shows not a big deviation from static nodes. Figure $\ref{diffspeed}$ shows the performance of the KF for different constant speed of 20 nodes.
-%%%
-%%%
-%%%
-%%%
 \chapter{MyriaNode}
 \begin{wrapfigure}{r}{0.4\textwidth}
   \begin{center}
@@ -1070,12 +1070,6 @@ The ER14250$\cite{bat}$ from EMB is a Lithium Thionyl Chloride battery. It has a
 The node can be programmed and debugged via the JTAG interface. Although there are many second source suppliers of JTAG development tools, it is advised to use the AVR JTAGICE mkII from Atmel, ordering code: ATJTAGICE2$\cite{jtag}$.
 \subsubsection{Software}
 The software is documented by the other working groups of MyriaNed.
-%\begin{figure}
-%\centering
-%    \includegraphics[width=0.48\textwidth]{battery}
-%  \caption{Battery structure of  a MyriaNode}
-%  \label{battery}
-%\end{figure}
 \addcontentsline{toc}{chapter}{References}
 \begin{thebibliography}{\textbf{References}}
 \bibitem{4}A.Tyrrell, and et al. "Firefly synchronization in ad hoc networks," in Proc. MiNEMA Workshop, February, 2006.
@@ -1087,24 +1081,22 @@ The software is documented by the other working groups of MyriaNed.
 \bibitem{1}F.Zhao and  L.Guibas. Wireless Sensor Networks: an Information Processing approach. pp.107-108. Elsevier. 2004.
 \bibitem{16}G.Werner-Allen and et al. Firefly-inspired sensor network synchronicity with realistic radio effects. Proceedings of the 3rd international conference on Embedded networked sensor systems, San Diego, California. November 2005.
 \bibitem{10}H.Karl and A.Willig. "Introduction" in Protocols and Architectures for Wireless Sensor Networks. pp. 3-6. Wiley. July 2006.
-\bibitem{19} Dallas semiconductor.Datasheet. Available online http://pdfserv.maxim-ic.com/en/an/AN58.pdf [Accessed on July 15,2008].
-\bibitem{18} Golledge frequency products.Datasheet. Available online http://www.golledge.co.uk/pdf/products/xtl$\_$sm/cc7v.pdf [Accessed on July 15,2008].
+\bibitem{19} Dallas semiconductor.Datasheet. Available online http:\slash \slash pdfserv.maxim-ic.com\slash en\slash an\slash AN58.pdf [Accessed on July 15,2008].
+\bibitem{18}Golledge frequency products.Datasheet.Available online http:\slash \slash www.golledge.co.uk\slash pdf\slash products\slash xtl$\_$sm\slash cc7v.pdf [Accessed on July 15,2008].
 %\bibitem{omnet}$http://www.omnetpp.org$.
-\bibitem{kalm}G.Welch and G.Bishop. "The kalman filter," University of North Carolina. Avalable online http://www.cs.unc.edu/~welch/kalman/ [Accessed on June 10, 2008].
+\bibitem{kalm}G.Welch and G.Bishop. "The kalman filter," University of North Carolina. Avalable online http:\slash \slash www.cs.unc.edu\slash ~welch\slash kalman\slash  [Accessed on June 10, 2008].
 %\bibitem{chess}$http://www.chess.nl$.
 %\bibitem{devlab}$http://www.devlab.nl.$
-\bibitem{nordic}Nordic semiconductor. Datasheet. Available online http://www.nordicsemi.no/files/Product/data$\_$sheet/Product$\_$Specification$\_$nRF24L01$\_$1.0.pdf [Accessed August 3, 2008].
-\bibitem{jtag}Atmel Datasheet. Available online.
- http://www.atmel.com/dyn/resources/prod$\_$documents/doc2489.pdf [Accessed August 3, 2008].
-\bibitem{atmega}Atmel Datasheet. Available online.
- http://www.atmel.com/dyn/resources/prod$\_$documents/doc2570.pdf. [Accessed August 3, 2008].
-\bibitem{bat}Nrgeurope. Battery datasheet. Available online. http://www.nrgeurope.com [Accessed August 3, 2008].
+\bibitem{nordic}Nordic semiconductor. Datasheet.Available online http:\slash \slash www.nordicsemi.no\slash files\slash Product\slash data$\_$sheet\slash Product$\_$Specification$\_$nRF24L01$\_$1.0.pdf [Accessed August 3, 2008].
+\bibitem{jtag}Atmel Datasheet. Available online. http:\slash \slash www.atmel.com\slash dyn\slash resources\slash prod$\_$documents\slash doc2489.pdf [Accessed August 3, 2008].
+\bibitem{atmega}Atmel Datasheet.Available online. http:\slash \slash www.atmel.com\slash dyn\slash resources\slash prod$\_$documents\slash doc2570.pdf. [Accessed August 3, 2008].
+\bibitem{bat}Nrgeurope. Battery datasheet. Available online. http:\slash \slash www.nrgeurope.com [Accessed August 3, 2008].
 \bibitem{2}J.Elson, L.Girod and D.Estrin. "
 ," Proceedings of the 5th Symposium on Operating Systems Design and Implementation, Boston, USA, 2002.
 \bibitem{7}J.Elson and D.Estrin. "Time Synchronization for Wireless Sensor Networks," In Proceedings of the 15th International Parallel and Distributed Processing Symposium. IEEE Computer Society, April 23-27. 2001.
 \bibitem{9}K.Romer. "Time Synchronization in Ad Hoc Networks," In Proceedings of the Second ACM International Symposium on Mobile Ad Hoc Networking and Computing, Long Beach, California. 2001.
 \bibitem{gradient2}L.Meier,and L.Thiele. "Gradient clock synchronization in sensor networks," Technical report, Computer Engineering and Networks Laboratory. Swiss Federal Institute of Technology Zurich, 2005.
-\bibitem{5}NTP Public Services Project. Available online http://support.ntp.org/bin/view/Main/WebHome [Accessed on June 12,2008].
+\bibitem{5}NTP Public Services Project. Available online http:\slash \slash support.ntp.org\slash bin\slash view\slash Main\slash WebHome [Accessed on June 12,2008].
 \bibitem{devlab}Project description. Available online http://www.devlab.nl [Accessed on August 6, 2008].
 \bibitem{chess}Company profile. Available online http://www.chess.nl [Accessed on August 6, 2008].
 \bibitem{3}Q.Yang, and et al. "A Decentralized Slot Synchronization Algorithm for TDMA-Based Ad Hoc Networks," Wireless Communications, Networking and Mobile Computing, Vol., Issue,21-25, pp. 1717 - 1721, 2007.
@@ -1113,7 +1105,7 @@ The software is documented by the other working groups of MyriaNed.
 \bibitem{median}R.Tjoa and et al. "Clock drift reduction for relative time slot tdma-based sensor networks," Personal, Indoor and Mobile Radio Communications, Vol.2, 5-8 , pp.1042 - 1047. Sept. 2004.
 \bibitem{6}R.John. "Introduction to Quartz Frequency Standards,". Technical Report SLCET-TR-92-1, Army Research Laboratory, Electronics and Power Sources Directorate. October 1992.
 \bibitem{gradient}R. Fan and N. Lynch. "Gradient clock synchronization," In Proceedings of the twenty-third annual ACM symposium on Principles of distributed computing, pp.320-327. ACM Press, 2004.
-\bibitem{clockwhite}Symmetricom, Inc. "Stochastic Model Estimation of network time variance," Available online http://www.symmttm.com/pdf/Network$\_$Timing/wp$\_$Stochastic$\_$Model.pdf [Accessed August 3,2008].
+\bibitem{clockwhite}Symmetricom, Inc. "Stochastic Model Estimation of network time variance," Available online http:\slash \slash www.symmttm.com\slash pdf\slash Network$\_$Timing\slash wp$\_$Stochastic$\_$Model.pdf [Accessed August 3,2008].
 \bibitem{texas}S.Raje and Q.Liang. "Time synchronization of in Network-centric sensor networks," Radio and Wireless Symposium IEEE, pp.333-336. 2007.
 \bibitem{14}S.PalChaudhuri and et al. "Adaptive Clock Synchronization in Sensor Networks," Information Processing in Sensor Networks,pp.340- 348, 2004.
 \end{thebibliography}
@@ -1143,3 +1135,15 @@ Our lower bound implies, as in the case of MyriaNed, that the TDMA protocol with
 \label{gradient}
 \end{figure}
 As shown in Figure $\ref{gradient}$, as the network size grows, the lower bound of the synchronization also increases.
+@MastersThesis{,
+author = {},
+title = {},
+school = {},
+year = {},
+OPTkey = {},
+OPTtype = {},
+OPTaddress = {},
+OPTmonth = {},
+OPTnote = {},
+OPTannote = {}
+}
