@@ -1,13 +1,14 @@
-This is pdfTeX, Version 3.141592-1.40.4 (MiKTeX 2.6) (preloaded format=latex 2007.11.30)  6 AUG 2008 22:59
+This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=latex 2008.5.8)  7 AUG 2008 16:43
 entering extended mode
+ %&-line parsing enabled.
 **report.tex
-(report.tex
+(./report.tex
 LaTeX2e <2005/12/01>
-Babel <v3.8h> and hyphenation patterns for english, dumylang, nohyphenation, ge
-rman, ngerman, french, loaded.
-("C:\Program Files\MiKTeX 2.6\tex\latex\base\report.cls"
+Babel <v3.8h> and hyphenation patterns for english, usenglishmax, dumylang, noh
+yphenation, loaded.
+(/usr/share/texmf-texlive/tex/latex/base/report.cls
 Document Class: report 2005/09/16 v1.4f Standard LaTeX document class
-("C:\Program Files\MiKTeX 2.6\tex\latex\base\size10.clo"
+(/usr/share/texmf-texlive/tex/latex/base/size10.clo
 File: size10.clo 2005/09/16 v1.4f Standard LaTeX file (size option)
 )
 \c@part=\count79
@@ -23,45 +24,47 @@ File: size10.clo 2005/09/16 v1.4f Standard LaTeX file (size option)
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
 )
-("C:\Program Files\MiKTeX 2.6\tex\latex\graphics\graphicx.sty"
+(/usr/share/texmf-texlive/tex/latex/graphics/graphicx.sty
 Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
 
-("C:\Program Files\MiKTeX 2.6\tex\latex\graphics\keyval.sty"
+(/usr/share/texmf-texlive/tex/latex/graphics/keyval.sty
 Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
 \KV@toks@=\toks14
 )
-("C:\Program Files\MiKTeX 2.6\tex\latex\graphics\graphics.sty"
+(/usr/share/texmf-texlive/tex/latex/graphics/graphics.sty
 Package: graphics 2006/02/20 v1.0o Standard LaTeX Graphics (DPC,SPQR)
 
-("C:\Program Files\MiKTeX 2.6\tex\latex\graphics\trig.sty"
+(/usr/share/texmf-texlive/tex/latex/graphics/trig.sty
 Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
 )
-("C:\Program Files\MiKTeX 2.6\tex\latex\00miktex\graphics.cfg"
+(/etc/texmf/tex/latex/config/graphics.cfg
 File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
 )
 Package graphics Info: Driver file: dvips.def on input line 90.
 
-("C:\Program Files\MiKTeX 2.6\tex\latex\graphics\dvips.def"
+(/usr/share/texmf-texlive/tex/latex/graphics/dvips.def
 File: dvips.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
 ))
 \Gin@req@height=\dimen103
 \Gin@req@width=\dimen104
 )
-("C:\Program Files\MiKTeX 2.6\tex\latex\nomencl\nomencl.sty"
+(/usr/share/texmf-texlive/tex/latex/nomencl/nomencl.sty
 Package: nomencl 2005/09/22 v4.2 Nomenclature package (LN)
 \nomlabelwidth=\dimen105
 \nom@tempdim=\dimen106
 \nomitemsep=\skip43
 )
 \@nomenclaturefile=\write3
+\openout3 = `report.nlo'.
+
 
 Writing nomenclature file report.nlo
-("C:\Program Files\MiKTeX 2.6\tex\latex\graphics\epsfig.sty"
+(/usr/share/texmf-texlive/tex/latex/graphics/epsfig.sty
 Package: epsfig 1999/02/16 v1.7a (e)psfig emulation (SPQR)
 \epsfxsize=\dimen107
 \epsfysize=\dimen108
 )
-("C:\Program Files\MiKTeX 2.6\tex\latex\wrapfig\wrapfig.sty"
+(/usr/share/texmf-texlive/tex/latex/wrapfig/wrapfig.sty
 \wrapoverhang=\dimen109
 \WF@size=\dimen110
 \c@WF@wrappedlines=\count88
@@ -69,22 +72,20 @@ Package: epsfig 1999/02/16 v1.7a (e)psfig emulation (SPQR)
 \WF@everypar=\toks15
 Package: wrapfig 2003/01/31  v 3.6
 )
-("C:\Program Files\MiKTeX 2.6\tex\latex\psfrag\psfrag.sty"
+(/usr/share/texmf-texlive/tex/latex/psfrag/psfrag.sty
 Package: psfrag 1998/04/11 v3.04 PSfrag (MCG)
 \pfg@pcount=\count89
 \pfg@scount=\count90
 \pfg@temp=\write4
 )
-("C:\Program Files\MiKTeX 2.6\tex\latex\ltxmisc\a4wide.sty"
+(/usr/share/texmf-texlive/tex/latex/ltxmisc/a4wide.sty
 Package: a4wide 1994/08/30
 
-("C:\Program Files\MiKTeX 2.6\tex\latex\ntgclass\a4.sty"
+(/usr/share/texmf-texlive/tex/latex/ntgclass/a4.sty
 Package: a4 2004/04/15 v1.2g A4 based page layout
-)) (report.aux
+)) (./report.aux)
+\openout1 = `report.aux'.
 
-LaTeX Warning: Label `tab' multiply defined.
-
-)
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 29.
 LaTeX Font Info:    ... okay on input line 29.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 29.
@@ -102,7 +103,8 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <5> on input line 43.
 File: TUElogoCompact2.eps Graphic file (type eps)
- <TUElogoCompact2.eps>
+
+<TUElogoCompact2.eps>
 Overfull \hbox (343.63815pt too wide) in paragraph at lines 43--44
  []$ 
  []
@@ -155,15 +157,19 @@ Underfull \hbox (badness 10000) in paragraph at lines 92--93
 
  []
 
-[2] (report.toc [3
+[2] (./report.toc [3
 
 ])
 \tf@toc=\write5
- [4] (report.lof [5
+\openout5 = `report.toc'.
+
+ [4] (./report.lof [5
 
 ])
 \tf@lof=\write6
- (report.nls [6]) [7
+\openout6 = `report.lof'.
+
+ (./report.nls [6]) [7
 
 ]
 Chapter 1.
@@ -185,7 +191,7 @@ File: tdmaschedule.eps Graphic file (type eps)
 LaTeX Font Info:    Try loading font information for OMS+cmr on input line 196.
 
 
-("C:\Program Files\MiKTeX 2.6\tex\latex\base\omscmr.fd"
+(/usr/share/texmf-texlive/tex/latex/base/omscmr.fd
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
@@ -238,38 +244,27 @@ File: 16output-s6.eps Graphic file (type eps)
  <16output-s6.eps>
 File: 16output-s20.eps Graphic file (type eps)
  <16output-s20.eps>
-
-LaTeX Warning: Reference `16output-error' on page 34 undefined on input line 78
-4.
-
 File: 16output-error.eps Graphic file (type eps)
+
 <16output-error.eps> [34] [35]
 File: 50output-s6.eps Graphic file (type eps)
  <50output-s6.eps>
 File: 50output-s20.eps Graphic file (type eps)
  <50output-s20.eps>
-
-LaTeX Warning: Reference `50output-error' on page 36 undefined on input line 80
-9.
-
 File: 50output-error.eps Graphic file (type eps)
+
 <50output-error.eps>
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [36] [37]
-Underfull \hbox (badness 1132) in paragraph at lines 850--850
+Underfull \hbox (badness 1132) in paragraph at lines 852--852
 []\OT1/cmr/m/n/10 Increase in ex-e-cu-
  []
 
-
-Underfull \hbox (badness 3417) in paragraph at lines 850--850
-[]\OT1/cmr/m/n/10 Energy Con-sumed
- []
-
 [38]
-Underfull \hbox (badness 10000) in paragraph at lines 866--866
-[]\OT1/cmr/m/n/10 Guard time per
+Overfull \hbox (2.26541pt too wide) in paragraph at lines 867--876
+[][]
  []
 
 File: commvscompute.eps Graphic file (type eps)
@@ -279,10 +274,6 @@ Chapter 6.
 
 ] [41]
 Appendix A.
-[42
-
-]
-Appendix B.
 File: tsync0.eps Graphic file (type eps)
 <tsync0.eps>
 File: tsync6.eps Graphic file (type eps)
@@ -298,25 +289,21 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[43
+[42
 
 ]
 File: varspeed20.eps Graphic file (type eps)
- <varspeed20.eps> [44]
+ <varspeed20.eps> [43]
 File: varspeed50.eps Graphic file (type eps)
  <varspeed50.eps>
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
 File: diffno.eps Graphic file (type eps)
- <diffno.eps>
-File: diffspeed.eps Graphic file (type eps)
- <diffspeed.eps>
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[45] [46] [47]
-Appendix C.
+<diffno.eps> [44]
+File: guardsave.eps Graphic file (type eps)
+ <guardsave.eps> [45] [46]
+Appendix B.
 File: myrianode.eps Graphic file (type eps)
 <myrianode.eps>
 
@@ -326,7 +313,7 @@ put line 1013.
 File: myrianodearch.eps Graphic file (type eps)
 <myrianodearch.eps>
 File: table1.eps Graphic file (type eps)
- <table1.eps> [48
+ <table1.eps> [47
 
 ]
 File: table2.eps Graphic file (type eps)
@@ -341,86 +328,48 @@ File: myrianodephy.eps Graphic file (type eps)
 Package wrapfig Warning: Stationary wrapfigure forced to float on input line 10
 53.
 
-[49]
+[48]
 File: battery.eps Graphic file (type eps)
- <battery.eps> [50] [51]
-Underfull \hbox (badness 10000) in paragraph at lines 1090--1091
-[]\OT1/cmr/m/n/10 Dallas semi-con-duc-tor.Datasheet. Avail-able on-line http://
-pdfserv.maxim-
- []
-
-[52
+ <battery.eps> [49] [50] [51
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 1091--1093
-[]\OT1/cmr/m/n/10 Golledge fre-quency prod-ucts.Datasheet. Avail-able on-line
+Underfull \hbox (badness 10000) in paragraph at lines 1085--1087
+[]\OT1/cmr/m/n/10 Golledge fre-quency prod-ucts.Datasheet.Available on-line htt
+p://
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1091--1093
-\OT1/cmr/m/n/10 http://www.golledge.co.uk/pdf/products/xtl$[]$sm/cc7v.pdf [Ac-c
-essed on July
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1096--1097
-[]\OT1/cmr/m/n/10 Nordic semi-con-duc-tor. Datasheet. Avail-able on-line
- []
-
-
-Overfull \hbox (50.58672pt too wide) in paragraph at lines 1096--1097
-\OT1/cmr/m/n/10 http://www.nordicsemi.no/files/Product/data$[]$sheet/Product$[]
-$Specification$[]$nRF24L01$[]$1.0.pdf
- []
-
-
-Overfull \hbox (91.50896pt too wide) in paragraph at lines 1097--1099
+Underfull \hbox (badness 10000) in paragraph at lines 1091--1092
 []\OT1/cmr/m/n/10 Atmel Datasheet. Avail-able on-line. http://www.atmel.com/dyn
-/resources/prod$[]$documents/doc2489.pdf
+/resources/
  []
 
 
-Overfull \hbox (94.28674pt too wide) in paragraph at lines 1099--1101
-[]\OT1/cmr/m/n/10 Atmel Datasheet. Avail-able on-line. http://www.atmel.com/dyn
-/resources/prod$[]$documents/doc2570.pdf.
+Underfull \hbox (badness 10000) in paragraph at lines 1092--1093
+[]\OT1/cmr/m/n/10 Atmel Datasheet.Available on-line. http://www.atmel.com/dyn/r
+esources/
+ []
+
+[52]
+Underfull \hbox (badness 4036) in paragraph at lines 1108--1109
+[]\OT1/cmr/m/n/10 Symmetricom, Inc. "Stochas-tic Model Es-ti-ma-tion of net-wor
+k time vari-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1107--1108
-[]\OT1/cmr/m/n/10 NTP Pub-lic Ser-vices Project. Avail-able on-line
+Underfull \hbox (badness 10000) in paragraph at lines 1108--1109
+\OT1/cmr/m/n/10 ance," Avail-able on-line http://www.symmttm.com/pdf/Network$[]
+$Timing/
  []
 
-[53]
-Underfull \hbox (badness 10000) in paragraph at lines 1116--1117
-[]\OT1/cmr/m/n/10 Symmetricom, Inc. "Stochas-tic Model Es-ti-ma-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1116--1117
-\OT1/cmr/m/n/10 tion of net-work time vari-ance," Avail-able on-line
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1116--1117
-\OT1/cmr/m/n/10 http://www.symmttm.com/pdf/Network$[]$Timing/wp$[]$Stochastic$[
-]$Model.pdf [Ac-
- []
-
-[54] (report.aux)
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: There were multiply-defined labels.
-
- ) 
+[53] (./report.aux) ) 
 Here is how much of TeX's memory you used:
- 1194 strings out of 95296
- 12364 string characters out of 1184884
- 59140 words of memory out of 1059256
- 4194 multiletter control sequences out of 60000
- 10119 words of font info for 35 fonts, out of 1000000 for 2000
- 14 hyphenation exceptions out of 8191
- 25i,10n,25p,2053b,334s stack positions out of 5000i,500n,10000p,200000b,32768s
+ 1026 strings out of 95087
+ 12306 string characters out of 1183279
+ 59574 words of memory out of 1500000
+ 4181 multiletter control sequences out of 10000+50000
+ 10119 words of font info for 35 fonts, out of 1200000 for 2000
+ 28 hyphenation exceptions out of 8191
+ 25i,11n,25p,2053b,334s stack positions out of 5000i,500n,6000p,200000b,5000s
 
-Output written on report.dvi (62 pages, 151532 bytes).
+Output written on report.dvi (61 pages, 149300 bytes).

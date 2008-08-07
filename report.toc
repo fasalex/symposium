@@ -53,18 +53,18 @@
 \contentsline {chapter}{\numberline {6}\textbf {Conclusion and recommendation}}{40}
 \contentsline {section}{\numberline {6.1}\textbf {Conclusion}}{40}
 \contentsline {section}{\numberline {6.2}\textbf {Recommendation}}{41}
-\contentsline {chapter}{\numberline {A}\textbf {Lower bound of synchronization}}{42}
-\contentsline {chapter}{\numberline {B}Simulation results}{43}
-\contentsline {section}{\numberline {B.1}\textbf {Synchronization frequency}}{43}
-\contentsline {section}{\numberline {B.2}\textbf {Synchronization error for nodes with different speeds}}{44}
-\contentsline {section}{\numberline {B.3}\textbf {The number of nodes and speed on KF}}{45}
-\contentsline {chapter}{\numberline {C}MyriaNode}{48}
-\contentsline {subsubsection}{Features}{48}
-\contentsline {subsubsection}{Description and architecture}{48}
-\contentsline {subsubsection}{Radio interface}{49}
-\contentsline {subsubsection}{Mechanical and Mounting}{49}
-\contentsline {subsubsection}{Energy Supply}{50}
-\contentsline {subsubsection}{Battery}{50}
-\contentsline {subsubsection}{Programming}{50}
-\contentsline {subsubsection}{Software}{51}
-\contentsline {chapter}{References}{51}
+\contentsline {chapter}{\numberline {A}Simulation results}{42}
+\contentsline {section}{\numberline {A.1}\textbf {Synchronization frequency}}{42}
+\contentsline {section}{\numberline {A.2}\textbf {Synchronization error for nodes with different speeds}}{43}
+\contentsline {section}{\numberline {A.3}\textbf {The number of nodes on KF}}{45}
+\contentsline {section}{\numberline {A.4}Battery life of a Myrianode versus the guard time}{46}
+\contentsline {chapter}{\numberline {B}MyriaNode}{47}
+\contentsline {subsubsection}{Features}{47}
+\contentsline {subsubsection}{Description and architecture}{47}
+\contentsline {subsubsection}{Radio interface}{48}
+\contentsline {subsubsection}{Mechanical and Mounting}{48}
+\contentsline {subsubsection}{Energy Supply}{49}
+\contentsline {subsubsection}{Battery}{49}
+\contentsline {subsubsection}{Programming}{49}
+\contentsline {subsubsection}{Software}{50}
+\contentsline {chapter}{References}{50}

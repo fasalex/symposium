@@ -26,18 +26,17 @@
 \contentsline {figure}{\numberline {5.9}{\ignorespaces The energy gain of reducing the guard time compared with the compuational cost per RX slot}}{39}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {A.1}{\ignorespaces Synchronization error of a KF for static nodes with different $T_{sync}$}}{43}
+\contentsline {figure}{\numberline {A.2}{\ignorespaces Synchronization error of a KF for nodes at 6$km/hr$ with different $T_{sync}$}}{43}
+\contentsline {figure}{\numberline {A.3}{\ignorespaces Synchronization error of a KF for nodes at 20$km/hr$ with different $T_{sync}$}}{44}
+\contentsline {figure}{\numberline {A.4}{\ignorespaces Synchronization error for 20 nodes moving at different speeds}}{44}
+\contentsline {figure}{\numberline {A.5}{\ignorespaces Synchronization error for 50 nodes moving at different speeds}}{45}
+\contentsline {figure}{\numberline {A.6}{\ignorespaces Synchronization error of KF for different number of static nodes}}{45}
+\contentsline {figure}{\numberline {A.7}{\ignorespaces Battery life of a Myrianode vs the guard time}}{46}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {B.1}{\ignorespaces Synchronization error of a KF for static nodes with different $T_{sync}$}}{44}
-\contentsline {figure}{\numberline {B.2}{\ignorespaces Synchronization error of a KF for nodes at 6$km/hr$ with different $T_{sync}$}}{44}
-\contentsline {figure}{\numberline {B.3}{\ignorespaces Synchronization error of a KF for nodes at 20$km/hr$ with different $T_{sync}$}}{45}
-\contentsline {figure}{\numberline {B.4}{\ignorespaces Synchronization error for 20 nodes moving at different speeds}}{46}
-\contentsline {figure}{\numberline {B.5}{\ignorespaces Synchronization error for 50 nodes moving at different speeds}}{46}
-\contentsline {figure}{\numberline {B.6}{\ignorespaces Synchronization error of KF for different number of static nodes}}{47}
-\contentsline {figure}{\numberline {B.7}{\ignorespaces Synchronization error of 20 nodes with different constant speed (in km/hr)}}{47}
-\addvspace {10\p@ }
-\contentsline {figure}{\numberline {C.1}{\ignorespaces MyriaNode v2.0}}{48}
-\contentsline {figure}{\numberline {C.2}{\ignorespaces MyriaNode architecture}}{48}
-\contentsline {figure}{\numberline {C.4}{\ignorespaces External interfaces}}{49}
-\contentsline {figure}{\numberline {C.3}{\ignorespaces Radio interfaces}}{49}
-\contentsline {figure}{\numberline {C.5}{\ignorespaces MyriaNode dimentions}}{50}
-\contentsline {figure}{\numberline {C.6}{\ignorespaces Battery structure of a MyriaNode}}{50}
+\contentsline {figure}{\numberline {B.1}{\ignorespaces MyriaNode v2.0}}{47}
+\contentsline {figure}{\numberline {B.2}{\ignorespaces MyriaNode architecture}}{47}
+\contentsline {figure}{\numberline {B.4}{\ignorespaces External interfaces}}{48}
+\contentsline {figure}{\numberline {B.3}{\ignorespaces Radio interfaces}}{48}
+\contentsline {figure}{\numberline {B.5}{\ignorespaces MyriaNode dimentions}}{49}
+\contentsline {figure}{\numberline {B.6}{\ignorespaces Battery structure of a MyriaNode}}{49}
