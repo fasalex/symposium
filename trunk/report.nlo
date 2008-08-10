@@ -15,3 +15,6 @@
 \nomenclatureentry{a$t_{guard}$@[{$t_{guard}$}]\begingroup Length of the guard time\nomeqref {3.8}|nompageref}{18}
 \nomenclatureentry{a$t_{slot}$@[{$t_{slot}$}]\begingroup Time duration of a slot\nomeqref {3.9}|nompageref}{18}
 \nomenclatureentry{a$\xi_i$@[{$\xi_i$}]\begingroup Offset to be added to Node $i$'s wakeup time\nomeqref {4.5}|nompageref}{22}
+\nomenclatureentry{aKF@[{KF}]\begingroup Kalman Filter\nomeqref {B.0}|nompageref}{51}
+\nomenclatureentry{aLS@[{LS}]\begingroup Least Squares\nomeqref {B.0}|nompageref}{51}
+\nomenclatureentry{aWM@[{WM}]\begingroup Weighted Measurments\nomeqref {B.0}|nompageref}{51}
