@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592-1.40.4 (MiKTeX 2.6) (preloaded format=latex 2007.11.30)  10 AUG 2008 03:08
+This is pdfTeX, Version 3.141592-1.40.4 (MiKTeX 2.6) (preloaded format=latex 2007.11.30)  10 AUG 2008 22:19
 entering extended mode
 **symposium_paper.tex
 (symposium_paper.tex
@@ -250,19 +250,19 @@ File: guardtime.eps Graphic file (type eps)
 <guardtime.eps> [3]
 File: weightphase.eps Graphic file (type eps)
  <weightphase.eps>
-Overfull \hbox (6.0pt too wide) in paragraph at lines 363--364
+Overfull \hbox (6.0pt too wide) in paragraph at lines 364--365
  [][] 
  []
 
 [4]
-Underfull \hbox (badness 1389) in paragraph at lines 382--384
+Underfull \hbox (badness 1389) in paragraph at lines 383--385
 \OT1/ptm/m/n/10 that in ad-di-tion to the vari-able $\OML/cmm/m/it/10 x$ \OT1/p
 tm/m/n/10 also de-pends on $\OML/cmm/m/it/10 m$
  []
 
 File: curvefit.eps Graphic file (type eps)
 <curvefit.eps>
-Overfull \hbox (6.0pt too wide) in paragraph at lines 440--441
+Overfull \hbox (6.0pt too wide) in paragraph at lines 450--451
  [][] 
  []
 
@@ -294,102 +294,89 @@ File: 50output-s6.eps Graphic file (type eps)
 File: 50output-s20.eps Graphic file (type eps)
 
 <50output-s20.eps> [7] [8]
-Underfull \hbox (badness 6348) in paragraph at lines 704--704
+Underfull \hbox (badness 6348) in paragraph at lines 743--743
 []\OT1/ptm/m/n/10 Average Ex-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 704--704
+Underfull \hbox (badness 10000) in paragraph at lines 743--743
 []\OT1/ptm/m/n/10 Increase in
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 704--704
+Underfull \hbox (badness 10000) in paragraph at lines 743--743
 \OT1/ptm/m/n/10 ex-e-cu-tion
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 704--704
+Underfull \hbox (badness 10000) in paragraph at lines 743--743
 \OT1/ptm/m/n/10 time per
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 704--704
+Underfull \hbox (badness 10000) in paragraph at lines 743--743
 []\OT1/ptm/m/n/10 Energy
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 704--704
+Underfull \hbox (badness 10000) in paragraph at lines 743--743
 \OT1/ptm/m/n/10 Con-sumed
  []
 
 
-Overfull \hbox (2.28244pt too wide) in paragraph at lines 702--711
+Overfull \hbox (2.28244pt too wide) in paragraph at lines 741--750
  [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 720--720
+Underfull \hbox (badness 10000) in paragraph at lines 758--758
 []\OT1/ptm/m/n/10 Guard time
  []
 
 
-Underfull \hbox (badness 2726) in paragraph at lines 720--720
+Underfull \hbox (badness 2726) in paragraph at lines 758--758
 []\OT1/ptm/m/n/10 Reduction in
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 720--720
+Underfull \hbox (badness 10000) in paragraph at lines 758--758
 \OML/cmm/m/it/10 t[]$ \OT1/ptm/m/n/10 per
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 720--720
+Underfull \hbox (badness 10000) in paragraph at lines 758--758
 []\OT1/ptm/m/n/10 Energy
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 720--720
+Underfull \hbox (badness 10000) in paragraph at lines 758--758
 \OT1/ptm/m/n/10 sav-ing per
  []
 
 
-Overfull \hbox (2.28244pt too wide) in paragraph at lines 718--726
+Overfull \hbox (2.28244pt too wide) in paragraph at lines 756--764
  [] 
  []
 
 File: commvscompute.eps Graphic file (type eps)
 <commvscompute.eps>
-Overfull \hbox (6.0pt too wide) in paragraph at lines 730--732
+Overfull \hbox (6.0pt too wide) in paragraph at lines 768--770
  [][] 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 727--736
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 727--736
-
- []
-
-
-Underfull \vbox (badness 8113) has occurred while \output is active []
-
- [9]
-Underfull \hbox (badness 10000) in paragraph at lines 758--759
+[9]
+Underfull \hbox (badness 10000) in paragraph at lines 794--795
 \OT1/ptm/m/n/8 Avail-able on-line http://www.golledge.co.uk/pdf/products/
  []
 
 [10] (symposium_paper.aux) ) 
 Here is how much of TeX's memory you used:
- 2669 strings out of 95296
- 38632 string characters out of 1184884
- 98534 words of memory out of 1093018
- 5762 multiletter control sequences out of 60000
+ 2668 strings out of 95296
+ 38628 string characters out of 1184884
+ 97510 words of memory out of 1093018
+ 5761 multiletter control sequences out of 60000
  30386 words of font info for 71 fonts, out of 1000000 for 2000
  14 hyphenation exceptions out of 8191
- 36i,10n,46p,1724b,317s stack positions out of 5000i,500n,10000p,200000b,32768s
+ 36i,10n,46p,1724b,319s stack positions out of 5000i,500n,10000p,200000b,32768s
 
-Output written on symposium_paper.dvi (10 pages, 68376 bytes).
+Output written on symposium_paper.dvi (10 pages, 68372 bytes).
