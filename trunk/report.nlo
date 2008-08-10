@@ -11,7 +11,7 @@
 \nomenclatureentry{a\textit{wakeup time}@[{\textit{wakeup time}}]\begingroup Time that the node starts listening.\nomeqref {3.0}|nompageref}{13}
 \nomenclatureentry{a\textit{clk}@[{\textit{clk}}]\begingroup A clock cycle\nomeqref {3.0}|nompageref}{13}
 \nomenclatureentry{a$\rho$@[{$\rho$}]\begingroup Maximum clock drift\nomeqref {3.3}|nompageref}{14}
-\nomenclatureentry{a$T_{sync}$@[{$T_{sync}$}]\begingroup Synchronization frequency\nomeqref {3.7}|nompageref}{18}
+\nomenclatureentry{a$T_{sync}$@[{$T_{sync}$}]\begingroup Synchronization frequency\nomeqref {3.7}|nompageref}{17}
 \nomenclatureentry{a$t_{guard}$@[{$t_{guard}$}]\begingroup Length of the guard time\nomeqref {3.8}|nompageref}{18}
 \nomenclatureentry{a$t_{slot}$@[{$t_{slot}$}]\begingroup Time duration of a slot\nomeqref {3.9}|nompageref}{18}
-\nomenclatureentry{a$\xi_i$@[{$\xi_i$}]\begingroup Offset to be added to Node $i$\nomeqref {4.5}|nompageref}{23}
+\nomenclatureentry{a$\xi_i$@[{$\xi_i$}]\begingroup Offset to be added to Node $i$'s wakeup time\nomeqref {4.5}|nompageref}{22}
