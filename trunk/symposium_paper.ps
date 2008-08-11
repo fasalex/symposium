@@ -1,7 +1,7 @@
 %!PS-Adobe-2.0
-%%Creator: dvips(k) 5.96 Copyright 2007 Radical Eye Software
+%%Creator: dvips(k) 5.96.1 Copyright 2007 Radical Eye Software
 %%Title: symposium_paper.dvi
-%%CreationDate: Sun Aug 10 22:19:22 2008
+%%CreationDate: Mon Aug 11 08:49:37 2008
 %%Pages: 10
 %%PageOrder: Ascend
 %%BoundingBox: 0 0 612 792
@@ -13,7 +13,7 @@
 %DVIPSWebPage: (www.radicaleye.com)
 %DVIPSCommandLine: dvips -o symposium_paper.ps symposium_paper.dvi
 %DVIPSParameters: dpi=600
-%DVIPSSource:  TeX output 2008.08.10:2219
+%DVIPSSource:  TeX output 2008.08.11:0849
 %%BeginProcSet: tex.pro 0 0
 %!
 /TeXDict 300 dict def TeXDict begin/N{def}def/B{bind def}N/S{exch}N/X{S
@@ -225,7 +225,7 @@ end
 %   author    = "S. Rahtz, P. MacKay, Alan Jeffrey, B. Horn, K. Berry,
 %                W. Schmidt, P. Lehman",
 %   version   = "2.0",
-%   date      = "30 October 2002",
+%   date      = "27nov06",
 %   filename  = "8r.enc",
 %   email     = "tex-fonts@@tug.org",
 %   docstring = "This is the encoding vector for Type1 and TrueType
@@ -335,7 +335,7 @@ end
  /currency /yen /brokenbar /section
  /dieresis /copyright /ordfeminine /guillemotleft
  /logicalnot /hyphen /registered /macron
-% 0xD0
+% 0xB0
  /degree /plusminus /twosuperior /threesuperior
  /acute /mu /paragraph /periodcentered
  /cedilla /onesuperior /ordmasculine /guillemotright
@@ -688,16 +688,17 @@ end
 %!
 TeXDict begin/rf{findfont dup length 1 add dict begin{1 index/FID ne 2
 index/UniqueID ne and{def}{pop pop}ifelse}forall[1 index 0 6 -1 roll
-exec 0 exch 5 -1 roll VResolution Resolution div mul neg 0 0]/Metrics
-exch def dict begin Encoding{exch dup type/integertype ne{pop pop 1 sub
-dup 0 le{pop}{[}ifelse}{FontMatrix 0 get div Metrics 0 get div def}
-ifelse}forall Metrics/Metrics currentdict end def[2 index currentdict
-end definefont 3 -1 roll makefont/setfont cvx]cvx def}def/ObliqueSlant{
-dup sin S cos div neg}B/SlantFont{4 index mul add}def/ExtendFont{3 -1
-roll mul exch}def/ReEncodeFont{CharStrings rcheck{/Encoding false def
-dup[exch{dup CharStrings exch known not{pop/.notdef/Encoding true def}
-if}forall Encoding{]exch pop}{cleartomark}ifelse}if/Encoding exch def}
-def end
+exec 0 exch 5 -1 roll VResolution Resolution div mul neg 0 0]FontType 0
+ne{/Metrics exch def dict begin Encoding{exch dup type/integertype ne{
+pop pop 1 sub dup 0 le{pop}{[}ifelse}{FontMatrix 0 get div Metrics 0 get
+div def}ifelse}forall Metrics/Metrics currentdict end def}{{1 index type
+/nametype eq{exit}if exch pop}loop}ifelse[2 index currentdict end
+definefont 3 -1 roll makefont/setfont cvx]cvx def}def/ObliqueSlant{dup
+sin S cos div neg}B/SlantFont{4 index mul add}def/ExtendFont{3 -1 roll
+mul exch}def/ReEncodeFont{CharStrings rcheck{/Encoding false def dup[
+exch{dup CharStrings exch known not{pop/.notdef/Encoding true def}if}
+forall Encoding{]exch pop}{cleartomark}ifelse}if/Encoding exch def}def
+end
 
 %%EndProcSet
 %%BeginProcSet: special.pro 0 0
@@ -737,25 +738,26 @@ currentpoint TR/psf$ury psfts/psf$urx psfts/psf$lly psfts/psf$llx psfts
 /psf$y psfts/psf$x psfts currentpoint/psf$cy X/psf$cx X/psf$sx psf$x
 psf$urx psf$llx sub div N/psf$sy psf$y psf$ury psf$lly sub div N psf$sx
 psf$sy scale psf$cx psf$sx div psf$llx sub psf$cy psf$sy div psf$ury sub
-TR/showpage{}N/erasepage{}N/copypage{}N/p 3 def @MacSetUp}N/doclip{
-psf$llx psf$lly psf$urx psf$ury currentpoint 6 2 roll newpath 4 copy 4 2
-roll moveto 6 -1 roll S lineto S lineto S lineto closepath clip newpath
-moveto}N/endTexFig{end psf$SavedState restore}N/@beginspecial{SDict
-begin/SpecialSave save N gsave normalscale currentpoint TR
-@SpecialDefaults count/ocount X/dcount countdictstack N}N/@setspecial{
-CLIP 1 eq{newpath 0 0 moveto hs 0 rlineto 0 vs rlineto hs neg 0 rlineto
-closepath clip}if ho vo TR hsc vsc scale ang rotate rwiSeen{rwi urx llx
-sub div rhiSeen{rhi ury lly sub div}{dup}ifelse scale llx neg lly neg TR
-}{rhiSeen{rhi ury lly sub div dup scale llx neg lly neg TR}if}ifelse
-CLIP 2 eq{newpath llx lly moveto urx lly lineto urx ury lineto llx ury
-lineto closepath clip}if/showpage{}N/erasepage{}N/copypage{}N newpath}N
-/@endspecial{count ocount sub{pop}repeat countdictstack dcount sub{end}
-repeat grestore SpecialSave restore end}N/@defspecial{SDict begin}N
-/@fedspecial{end}B/li{lineto}B/rl{rlineto}B/rc{rcurveto}B/np{/SaveX
-currentpoint/SaveY X N 1 setlinecap newpath}N/st{stroke SaveX SaveY
-moveto}N/fil{fill SaveX SaveY moveto}N/ellipse{/endangle X/startangle X
-/yrad X/xrad X/savematrix matrix currentmatrix N TR xrad yrad scale 0 0
-1 startangle endangle arc savematrix setmatrix}N end
+TR/showpage{}N/erasepage{}N/setpagedevice{pop}N/copypage{}N/p 3 def
+@MacSetUp}N/doclip{psf$llx psf$lly psf$urx psf$ury currentpoint 6 2 roll
+newpath 4 copy 4 2 roll moveto 6 -1 roll S lineto S lineto S lineto
+closepath clip newpath moveto}N/endTexFig{end psf$SavedState restore}N
+/@beginspecial{SDict begin/SpecialSave save N gsave normalscale
+currentpoint TR @SpecialDefaults count/ocount X/dcount countdictstack N}
+N/@setspecial{CLIP 1 eq{newpath 0 0 moveto hs 0 rlineto 0 vs rlineto hs
+neg 0 rlineto closepath clip}if ho vo TR hsc vsc scale ang rotate
+rwiSeen{rwi urx llx sub div rhiSeen{rhi ury lly sub div}{dup}ifelse
+scale llx neg lly neg TR}{rhiSeen{rhi ury lly sub div dup scale llx neg
+lly neg TR}if}ifelse CLIP 2 eq{newpath llx lly moveto urx lly lineto urx
+ury lineto llx ury lineto closepath clip}if/showpage{}N/erasepage{}N
+/setpagedevice{pop}N/copypage{}N newpath}N/@endspecial{count ocount sub{
+pop}repeat countdictstack dcount sub{end}repeat grestore SpecialSave
+restore end}N/@defspecial{SDict begin}N/@fedspecial{end}B/li{lineto}B
+/rl{rlineto}B/rc{rcurveto}B/np{/SaveX currentpoint/SaveY X N 1
+setlinecap newpath}N/st{stroke SaveX SaveY moveto}N/fil{fill SaveX SaveY
+moveto}N/ellipse{/endangle X/startangle X/yrad X/xrad X/savematrix
+matrix currentmatrix N TR xrad yrad scale 0 0 1 startangle endangle arc
+savematrix setmatrix}N end
 
 %%EndProcSet
 %%BeginFont: CMSY8
@@ -2296,46 +2298,46 @@ rf /Fi 129[42 16[69 23 2[23 11[23 1[23 29[65 3[42 42
 83.022 /CMR10 rf /Fj 133[32 37 42 55 37 46 23 32 32 42
 42 42 46 65 23 42 23 23 46 42 28 37 42 37 42 42 9[74
 3[46 55 1[51 60 60 74 51 2[32 3[55 60 55 1[55 1[42 4[28
-55[46 2[{ TeXBase1Encoding ReEncodeFont }42 83.022 /Times-BoldItalic
+55[46 2[{TeXBase1Encoding ReEncodeFont}42 83.022 /Times-BoldItalic
 rf /Fk 133[32 37 4[23 32 32 2[42 42 4[23 42 1[23 37 42
 37 1[42 13[42 51 13[60 55 51 51 6[28 6[42 42 42 2[21
-4[28 41[{ TeXBase1Encoding ReEncodeFont }26 83.022 /Times-Italic
+4[28 41[{TeXBase1Encoding ReEncodeFont}26 83.022 /Times-Italic
 rf /Fl 134[42 42 60 42 46 28 32 37 46 46 42 46 69 23
 46 1[23 46 42 28 37 46 37 1[42 9[83 3[46 60 1[51 65 1[78
-3[32 65 1[51 55 60 60 1[60 23[28 28 40[{ TeXBase1Encoding ReEncodeFont }
+3[32 65 1[51 55 60 60 1[60 23[28 28 40[{TeXBase1Encoding ReEncodeFont}
 38 83.022 /Times-Bold rf /Fm 166[48 1[66 1[48 44 37 48
 1[41 52 48 63 44 52 1[26 52 52 1[44 48 48 44 48 65[{
- TeXBase1Encoding ReEncodeFont }20 66.4176 /Times-Bold
+TeXBase1Encoding ReEncodeFont}20 66.4176 /Times-Bold
 rf /Fn 107[37 25[37 42 42 60 42 42 23 32 28 42 42 42
 42 65 23 42 23 23 42 42 28 37 42 37 42 37 9[78 60 60
 51 46 55 1[46 60 60 74 51 60 32 28 60 60 46 51 60 55
 55 60 1[37 1[47 2[23 42 42 42 42 42 42 42 42 42 42 23
-21 28 21 2[28 28 28 35[46 46 2[{ TeXBase1Encoding ReEncodeFont }71
+21 28 21 2[28 28 28 35[46 46 2[{TeXBase1Encoding ReEncodeFont}71
 83.022 /Times-Roman rf /Fo 107[29 25[29 33 33 48 33 33
 18 26 22 33 33 33 33 52 18 33 18 18 33 33 22 29 33 29
 33 29 3[22 1[22 41 48 48 63 48 48 41 37 44 48 37 48 48
 59 41 48 26 22 48 48 37 41 48 44 44 48 6[18 33 33 33
 33 33 33 33 33 33 33 18 17 22 17 2[22 22 37[37 2[{
- TeXBase1Encoding ReEncodeFont }73 66.4176 /Times-Roman
-rf /Fp 204[25 25 25 49[{ TeXBase1Encoding ReEncodeFont }3
+TeXBase1Encoding ReEncodeFont}73 66.4176 /Times-Roman
+rf /Fp 205[25 25 49[{TeXBase1Encoding ReEncodeFont}2
 49.8132 /Times-Roman rf /Fq 162[21 1[21 91[{}2 74.7198
 /CMR9 rf /Fr 104[75 28[33 37 37 54 37 42 25 29 33 42
 42 37 42 62 21 42 25 21 42 37 25 33 42 33 42 37 9[75
 2[50 42 4[54 71 50 2[29 4[54 2[54 12[37 2[37 2[19 25
-19 2[25 25 25 35[42 42 2[{ TeXBase1Encoding ReEncodeFont }46
+19 2[25 25 25 35[42 42 2[{TeXBase1Encoding ReEncodeFont}46
 74.7198 /Times-Bold rf /Fs 135[37 50 2[21 29 29 2[37
 42 58 21 37 1[21 3[33 37 33 37 37 9[66 2[46 42 4[54 4[29
-7[50 65[{ TeXBase1Encoding ReEncodeFont }22 74.7198 /Times-BoldItalic
+7[50 65[{TeXBase1Encoding ReEncodeFont}22 74.7198 /Times-BoldItalic
 rf /Ft 134[46 2[46 46 25 36 30 1[46 46 46 71 25 46 1[25
 46 46 30 41 46 41 1[41 11[66 56 1[61 3[66 6[66 51 56
-66 2[66 84 5[25 11[23 1[23 44[{ TeXBase1Encoding ReEncodeFont }33
+66 2[66 84 5[25 11[23 1[23 44[{TeXBase1Encoding ReEncodeFont}33
 91.3242 /Times-Roman rf /Fu 133[88 100 1[144 2[55 78
 66 2[100 100 155 55 100 1[55 100 1[66 88 100 88 100 88
 9[188 2[122 111 4[144 177 6[111 1[144 2[144 19[66 45[{
- TeXBase1Encoding ReEncodeFont }28 199.253 /Times-Roman
+TeXBase1Encoding ReEncodeFont}28 199.253 /Times-Roman
 rf /Fv 170[42 36 32 39 1[32 42 42 52 36 2[19 1[42 32
 36 42 39 1[42 7[29 29 29 29 29 29 29 29 29 29 16 15 19
-15 44[{ TeXBase1Encoding ReEncodeFont }30 58.1154 /Times-Roman
+15 44[{TeXBase1Encoding ReEncodeFont}30 58.1154 /Times-Roman
 rf end
 %%EndProlog
 %%BeginSetup
@@ -6285,74 +6287,75 @@ b(speeds)g(of)h Fi(6)p Fg(k)s(m=hr)i Fn(and)e Fi(20)p
 Fg(k)s(m=hr)r Fn(.)f(The)g(chosen)h(speeds)2000 1138
 y(emulate)i(the)h(speed)f(of)h(a)g(w)o(alking)f(man)g(and)g(an)h(a)n(v)
 o(erage)e(speed)i(of)2000 1238 y(a)h(slo)n(wly)f(mo)o(ving)f(v)o
-(ehicle.)2166 1337 y Fk(:)49 b Fn(Figure)34 b Fi(7)p
-Fg(a)h Fn(sho)n(ws)g(20)f(nodes)g(with)i(a)f(speed)f(which)h(is)h(an)
-2000 1437 y(gaussian)h(random)f(v)n(ariable)h(with)h(mean)f
-Fi(6)p Fg(k)s(m=hr)j Fn(and)e(standard)2000 1536 y(de)n(viation)d(of)h
-(1)p Fg(k)s(m=hr)r Fn(.)g(WM)h(and)f(LS)h(sho)n(w)g(a)g(better)f
-(tolerance)2000 1636 y(to)29 b(dynamic)f(netw)o(orks)g(due)g(to)h(the)h
-(algorthms)d(capapbilty)h(to)h(syn-)2000 1736 y(chronize)d(to)n(w)o
-(ards)i(a)g(more)f(stable)i(netw)o(ork.)d(LS)j(has)f(also)g(a)h(better)
-2000 1835 y(tolerance)e(with)h(less)i(v)n(alue)d(gi)n(v)o(en)g(for)h
-(lar)o(ge)f(phase)h(errors.)f(Hence,)2000 1935 y(WM)e(and)e(LS)i
-(perform)d(better)h(concerning)f(the)i(synchronization)d(of)2000
-2035 y(the)f(frame)f(than)h(the)g(Median.)f(Median)g(algorithm)f(has)i
-(a)h(disruptions)2000 2134 y(which)32 b(made)g(the)h(netw)o(ork)e
-(out-of-synchronization,)c(resulting)32 b(in)2000 2234
-y(high)h(synchronization)e(errors)i(at)h(times.)g(This)g(occurs)f(due)g
-(to)h(the)2000 2333 y(mobility)17 b(of)i(the)g(nodes)f(which)g
-(disrupts)g(the)h(stability)g(netw)o(orks)e(as)j(it)2000
-2433 y(tries)i(to)f(compute)f(the)h(median)g(of)g(the)g(phase)g
-(errors,)f(as)i(indicated)e(in)2000 2533 y(Secton)h(II.)h(KF)h
-(outperforms)c(all)j(due)g(to)g(its)h(dynamic)e(and)g(recursi)n(v)o(e)
-2000 2632 y(nature.)2083 2732 y(The)36 b(speed)h(of)f(the)h(nodes)f(is)
-i(changed)d(to)i(a)h(random)d(v)n(ariable)2000 2832 y(with)40
-b(mean)g Fi(20)p Fg(k)s(m=hr)i Fn(and)e(standard)f(de)n(viation)g
-Fi(1)p Fg(k)s(m=hr)r Fn(.)h(The)2000 2931 y(simulation)23
-b(results)h(are)f(presented)g(in)h(Figure)f Fi(7)p Fg(b)p
-Fn(.)g(KF)h(performs)e(the)2000 3031 y(best)g(sho)n(wing)g(that)g(the)h
-(algorithm)d(is)k(stable)e(in)h(dynamic)e(netw)o(orks.)2000
-3130 y(WM)28 b(and)f(LS)h(perform)e(good)g(when)h(it)i(comes)e(to)h
-(stability)-5 b(.)27 b(As)h(the)2000 3230 y(dynamics)35
+(ehicle.)2083 1337 y(Figure)19 b Fi(7)p Fg(a)i Fn(sho)n(ws)f(20)g
+(nodes)f(with)i(a)f(speed)g(which)g(is)h(an)f(gaussian)2000
+1437 y(random)g(v)n(ariable)h(with)h(mean)f Fi(6)p Fg(k)s(m=hr)j
+Fn(and)d(standard)f(de)n(viation)h(of)2000 1536 y(1)p
+Fg(k)s(m=hr)r Fn(.)39 b(WM)h(and)f(LS)g(sho)n(w)h(a)f(better)g
+(tolerance)f(to)i(dynamic)2000 1636 y(netw)o(orks)50
+b(due)g(to)h(the)f(algorthms)g(capapbilty)f(to)i(synchronize)2000
+1736 y(to)n(w)o(ards)25 b(a)i(more)e(stable)i(netw)o(ork.)e(LS)h(has)h
+(also)f(a)h(better)f(tolerance)2000 1835 y(with)j(less)g(v)n(alue)f(gi)
+n(v)o(en)f(for)h(lar)o(ge)g(phase)g(errors.)g(Hence,)g(WM)h(and)2000
+1935 y(LS)21 b(perform)f(better)g(concerning)f(the)i(synchronization)d
+(of)j(the)g(frame)2000 2035 y(than)33 b(the)i(Median.)e(Median)g
+(algorithm)f(has)j(a)f(disruptions)f(which)2000 2134
+y(made)41 b(the)h(netw)o(ork)f(out-of-synchronization,)36
+b(resulting)41 b(in)h(high)2000 2234 y(synchronization)16
+b(errors)i(at)h(times.)h(This)f(occurs)f(due)g(to)h(the)g(mobility)2000
+2333 y(of)k(the)h(nodes)f(which)g(disrupts)g(the)h(stability)g(netw)o
+(orks)e(as)j(it)f(tries)g(to)2000 2433 y(compute)c(the)i(median)e(of)i
+(the)f(phase)h(errors,)e(as)j(indicated)d(in)i(Secton)2000
+2533 y(II.)f(KF)i(outperforms)c(all)j(due)f(to)h(its)h(dynamic)d(and)h
+(recursi)n(v)o(e)g(nature.)2083 2632 y(The)36 b(speed)h(of)f(the)h
+(nodes)f(is)i(changed)d(to)i(a)h(random)d(v)n(ariable)2000
+2732 y(with)40 b(mean)g Fi(20)p Fg(k)s(m=hr)i Fn(and)e(standard)f(de)n
+(viation)g Fi(1)p Fg(k)s(m=hr)r Fn(.)h(The)2000 2832
+y(simulation)23 b(results)h(are)f(presented)g(in)h(Figure)f
+Fi(7)p Fg(b)p Fn(.)g(KF)h(performs)e(the)2000 2931 y(best)g(sho)n(wing)
+g(that)g(the)h(algorithm)d(is)k(stable)e(in)h(dynamic)e(netw)o(orks.)
+2000 3031 y(WM)28 b(and)f(LS)h(perform)e(good)g(when)h(it)i(comes)e(to)
+h(stability)-5 b(.)27 b(As)h(the)2000 3130 y(dynamics)35
 b(of)h(the)h(netw)o(orks)f(increases,)g(Median)g(becomes)f(more)2000
-3330 y(unstable)23 b(and)g(e)o(xhibits)f(lar)o(ge)h(synchronization)d
-(error)-5 b(.)23 b(LS)h(and)f(WM)2000 3429 y(ha)n(v)o(e)c(a)g(stable)h
+3230 y(unstable)23 b(and)g(e)o(xhibits)f(lar)o(ge)h(synchronization)d
+(error)-5 b(.)23 b(LS)h(and)f(WM)2000 3330 y(ha)n(v)o(e)c(a)g(stable)h
 (performance)c(when)j(the)g(netw)o(ork)g(becomes)f(dynamic)2000
-3529 y(with)28 b(constantly)g(changing)e(connection)h(between)g(the)i
-(nodes.)2083 3629 y(The)49 b(relati)n(v)o(e)g(comparison)f(of)h(the)h
-(algorithms)e(performance)2000 3728 y(impro)o(v)o(ement)18
+3429 y(with)28 b(constantly)g(changing)e(connection)h(between)g(the)i
+(nodes.)2083 3529 y(The)49 b(relati)n(v)o(e)g(comparison)f(of)h(the)h
+(algorithms)e(performance)2000 3629 y(impro)o(v)o(ement)18
 b(with)k(the)g(Median)e(is)j(sho)n(wn)e(in)h(Figure)f
-Fi(8)p Fg(a)g Fn(for)g(nodes)2000 3828 y(mo)o(ving)d(at)j
+Fi(8)p Fg(a)g Fn(for)g(nodes)2000 3728 y(mo)o(ving)d(at)j
 Fi(20)p Fg(k)s(m=hr)r Fn(.)f(WM)h(and)f(LS)g(perform,)e(on)i(a)n(v)o
-(erage,)f Fi(6)s Fc(\000)s Fi(8\045)2000 3928 y Fn(better)32
+(erage,)f Fi(6)s Fc(\000)s Fi(8\045)2000 3828 y Fn(better)32
 b(than)h(Median,)f(b)n(ut)h(with)g(more)f(tolerance)g(in)h(handling)e
-(the)2000 4027 y(disruptions.)18 b(The)h(best)g(performer)m(,)e(KF)-7
+(the)2000 3928 y(disruptions.)18 b(The)h(best)g(performer)m(,)e(KF)-7
 b(,)20 b(has)g(on)f(a)n(v)o(erage)f Fi(60\045)h Fn(better)2000
-4127 y(performance)25 b(than)j(the)h(Median)f(one.)2083
-4226 y Fk(3\))40 b Fj(Case)51 b(III)p Fk(:)60 b Fn(In)45
+4027 y(performance)25 b(than)j(the)h(Median)f(one.)2083
+4127 y Fk(3\))40 b Fj(Case)51 b(III)p Fk(:)60 b Fn(In)45
 b(this)g(set)h(of)f(simulations,)f(the)h(number)f(of)2000
-4326 y(the)h(nodes)f(is)i(increased,)e(to)h Fi(50)p Fn(.)g(W)m(ith)g
-(slo)n(wly)g(mo)o(ving)e(nodes)2000 4426 y(\()p Fi(6)p
+4226 y(the)h(nodes)f(is)i(increased,)e(to)h Fi(50)p Fn(.)g(W)m(ith)g
+(slo)n(wly)g(mo)o(ving)e(nodes)2000 4326 y(\()p Fi(6)p
 Fg(k)s(m=hr)r Fn(\),)29 b(the)h(results)h(are)f(sho)n(wn)g(in)g(Figure)
-g Fi(9)p Fg(a)p Fn(.)g(Lar)o(ge)f(disrup-)2000 4525 y(tions)21
+g Fi(9)p Fg(a)p Fn(.)g(Lar)o(ge)f(disrup-)2000 4426 y(tions)21
 b(occur)f(when)h(using)g(Median)f(due)h(to)g(nodes)g(mo)o(ving)e(slo)n
-(wly)i(in)2000 4625 y(the)28 b(surrounding)d(\(lea)n(v)o(e)j(the)h
+(wly)i(in)2000 4525 y(the)28 b(surrounding)d(\(lea)n(v)o(e)j(the)h
 (netw)o(ork)e(and)h(join)g(again)g(after)g(some)2000
-4725 y(time\),)f(resulting)f(in)i(a)g(lar)o(ger)e(drift)g(with)i
-(neighbors)d(before)h(getting)2000 4824 y(back)18 b(to)h(the)g(netw)o
+4625 y(time\),)f(resulting)f(in)i(a)g(lar)o(ger)e(drift)g(with)i
+(neighbors)d(before)h(getting)2000 4725 y(back)18 b(to)h(the)g(netw)o
 (ork.)e(LS)j(and)e(WM)i(perform)c(better)j(when)f(it)i(comes)2000
-4924 y(to)29 b(stability)-5 b(,)29 b(as)g(out-of-sync)e(nodes)h(are)h
-(forced)f(to)h(join)g(the)g(stable)2000 5023 y(netw)o(ork.)f(KF)i(has)g
+4824 y(to)29 b(stability)-5 b(,)29 b(as)g(out-of-sync)e(nodes)h(are)h
+(forced)f(to)h(join)g(the)g(stable)2000 4924 y(netw)o(ork.)f(KF)i(has)g
 (the)g(best)g(preformance,)c(both)j(in)h(precision)e(and)2000
-5123 y(stability)-5 b(.)2083 5223 y(W)m(ith)32 b(a)h(speed)f(of)g
+5023 y(stability)-5 b(.)2083 5123 y(W)m(ith)32 b(a)h(speed)f(of)g
 Fi(20)p Fg(k)s(m=hr)r Fn(,)g(the)g(simulation)f(results)i(are)f(pre-)
-2000 5322 y(sented)39 b(in)g(Figure)g Fi(9)p Fg(b)p Fn(.)g(As)h(the)f
-(speed)g(increases,)g(the)h(instability)2000 5422 y(on)j(the)g
+2000 5223 y(sented)39 b(in)g(Figure)g Fi(9)p Fg(b)p Fn(.)g(As)h(the)f
+(speed)g(increases,)g(the)h(instability)2000 5322 y(on)j(the)g
 (synchronization)d(of)j(the)h(nodes)e(also)i(increases,)f(which)2000
-5522 y(mak)o(es)25 b(the)h(Median)f(more)f(prone)h(to)g(high)g
-(synchronization)e(errors.)2000 5621 y(WM)51 b(has)g(better)f
-(tolerance)g(to)n(w)o(ards)g(mobility)f(of)i(the)f(nodes,)p
-eop end
+5422 y(mak)o(es)25 b(the)h(Median)f(more)f(prone)h(to)g(high)g
+(synchronization)e(errors.)2000 5522 y(WM)51 b(has)g(better)f
+(tolerance)g(to)n(w)o(ards)g(mobility)f(of)i(the)f(nodes,)2000
+5621 y(whereas)26 b(the)h(LS)h(does)e(well)i(re)o(garding)c(stability)
+-5 b(.)26 b(KF)i(has)f(the)g(best)p eop end
 %%Page: 8 8
 TeXDict begin 8 7 bop -192 -307 a Fv(M.SC.)19 b(GRADU)n(A)-6
 b(TION)19 b(P)-5 b(APER)20 b(F)-5 b(.A.ASSEGEI)20 b(-)h(DEP)-5
@@ -24300,52 +24303,51 @@ showpage
 %%EndDocument
  @endspecial 2772 1511 a(\(b\))g(Speed)i(-)e(20km/hr)-192
 1628 y(Fig.)g(9.)70 b(Simulation)26 b(results)e(for)g(50)g(Nodes)-192
-1912 y Fn(whereas)j(the)f(LS)i(does)f(well)g(re)o(garding)d(stability)
--5 b(.)27 b(KF)g(has)g(the)g(best)-192 2011 y(precision)k(out)h(of)f
-(all.)i(As)g(the)f(speed)f(increases,)h(the)g(precision)f(of)-192
-2111 y(the)d(synchronization)c(increases)k(too)f(since)h(f)o(aster)f
-(speed)h(results)g(in)-192 2211 y(f)o(aster)h(synchronization)c(within)
-j(the)h(netw)o(ork.)-109 2322 y(F)o(or)49 b(the)g(set)i(of)e(nodes)f
-(with)i(a)g(higher)e(speed)h(,)h(a)f(relati)n(v)o(e)-192
-2422 y(comparison)24 b(is)j(made)e(to)i(see)f(the)g(performance)d(of)j
-(the)g(nodes)g(with)-192 2521 y(the)44 b(Median)e(algorithm.)g(The)h
-(Median)g(algorithm)f(is)j(sho)n(wn)e(to)-192 2621 y(perform)28
-b(the)i(w)o(orst)g(in)f(this)i(case.)f(There)f(are)g(a)i(lot)f(of)f
-(disruptions)-192 2721 y(in)38 b(the)g(netw)o(ork,)f(making)g(it)h
-(more)g(unstable)f(whereas)g(the)i(other)-192 2820 y(algorithms)31
-b(adapt)i(to)g(the)f(changes)g(f)o(aster)-5 b(.)33 b(Figure)f
-Fi(8)p Fg(b)h Fn(sho)n(ws)g(that)-192 2920 y(KF)k(performs)d(the)i
-(best)h(against)f(Median)f(algorithm,)f Fi(45\045)p Fn(.)i(WM)-192
-3019 y(and)28 b(LS)g(perform)f(well)h(against)g(Median)f(too,)h
-Fi(20\045)g Fn(on)g(a)n(v)o(erage.)e(It)-192 3119 y(has)32
+1912 y Fn(precision)31 b(out)h(of)f(all.)i(As)g(the)f(speed)f
+(increases,)h(the)g(precision)f(of)-192 2011 y(the)d(synchronization)c
+(increases)k(too)f(since)h(f)o(aster)f(speed)h(results)g(in)-192
+2111 y(f)o(aster)h(synchronization)c(within)j(the)h(netw)o(ork.)-109
+2228 y(F)o(or)49 b(the)g(set)i(of)e(nodes)f(with)i(a)g(higher)e(speed)h
+(,)h(a)f(relati)n(v)o(e)-192 2328 y(comparison)24 b(is)j(made)e(to)i
+(see)f(the)g(performance)d(of)j(the)g(nodes)g(with)-192
+2427 y(the)44 b(Median)e(algorithm.)g(The)h(Median)g(algorithm)f(is)j
+(sho)n(wn)e(to)-192 2527 y(perform)28 b(the)i(w)o(orst)g(in)f(this)i
+(case.)f(There)f(are)g(a)i(lot)f(of)f(disruptions)-192
+2626 y(in)38 b(the)g(netw)o(ork,)f(making)g(it)h(more)g(unstable)f
+(whereas)g(the)i(other)-192 2726 y(algorithms)31 b(adapt)i(to)g(the)f
+(changes)g(f)o(aster)-5 b(.)33 b(Figure)f Fi(8)p Fg(b)h
+Fn(sho)n(ws)g(that)-192 2826 y(KF)k(performs)d(the)i(best)h(against)f
+(Median)f(algorithm,)f Fi(45\045)p Fn(.)i(WM)-192 2925
+y(and)28 b(LS)g(perform)f(well)h(against)g(Median)f(too,)h
+Fi(20\045)g Fn(on)g(a)n(v)o(erage.)e(It)-192 3025 y(has)32
 b(been)g(sho)n(wn)f(that)i(the)f(median)f(is)i(prone)e(to)h(error)f(in)
-h(case)h(of)-192 3219 y(high)28 b(dynamics)f(in)i(the)f(netw)o(ork.)
--109 3330 y(The)j(Kalman)g(\002lter)h(has)g(a)g(better)f(precision)g
-(and)f(stability)i(than)-192 3430 y(the)44 b(rest)g(whereas)f(WM)i(and)
-e(LS)h(has)g(a)g(better)g(tolerance)e(to)i(a)-192 3530
-y(dynamic)27 b(netw)o(ork.)-192 3862 y Fk(C.)42 b Fj(Measurements)31
-b(concerning)f(the)h(energy)g(consumption)-192 4029 y
-Fl(Additional)f(ener)o(gy)h(expenditur)o(e)-192 4141
+h(case)h(of)-192 3125 y(high)28 b(dynamics)f(in)i(the)f(netw)o(ork.)
+-109 3242 y(The)j(Kalman)g(\002lter)h(has)g(a)g(better)f(precision)g
+(and)f(stability)i(than)-192 3341 y(the)44 b(rest)g(whereas)f(WM)i(and)
+e(LS)h(has)g(a)g(better)g(tolerance)e(to)i(a)-192 3441
+y(dynamic)27 b(netw)o(ork.)-192 3820 y Fk(C.)42 b Fj(Measurements)31
+b(concerning)f(the)h(energy)g(consumption)-192 4007 y
+Fl(Additional)f(ener)o(gy)h(expenditur)o(e)-192 4124
 y Fn(As)25 b(the)g(results)g(in)g(the)f(pre)n(vious)f(subsection)h(sho)
-n(ws,)g(KF)h(algorithm)-192 4240 y(performs)41 b(well)i(in)f(all)h
-(conditions,)e(so)i(do)f(WM)h(and)e(LS)i(when)-192 4340
+n(ws,)g(KF)h(algorithm)-192 4224 y(performs)41 b(well)i(in)f(all)h
+(conditions,)e(so)i(do)f(WM)h(and)e(LS)i(when)-192 4323
 y(stability)k(is)h(a)g(vital)f(metric.)f(The)h(do)n(wnside)f(in)h
-(implementing)-192 4440 y(these)39 b(algorithms,)f(despite)h(the)h
-(performance)c(gain)i(achie)n(v)o(ed,)g(is)-192 4539
+(implementing)-192 4423 y(these)39 b(algorithms,)f(despite)h(the)h
+(performance)c(gain)i(achie)n(v)o(ed,)g(is)-192 4523
 y(the)f(ener)o(gy)d(consumption.)g(As)j(the)g(algorithms)e(are)i(going)
-e(to)i(be)-192 4639 y(implemented)27 b(on)i(the)g(sensor)g(nodes,)f
-(the)h(ener)o(gy)e(consumption)g(is)-192 4738 y(a)39
+e(to)i(be)-192 4622 y(implemented)27 b(on)i(the)g(sensor)g(nodes,)f
+(the)h(ener)o(gy)e(consumption)g(is)-192 4722 y(a)39
 b(priority)d(in)j(embedded)d(system)i(algorithm)f(de)n(v)o(elopment.)e
-(The)-192 4838 y(algorithms)22 b(are)g(written)h(in)g(C)g(and)g
-(implemented)e(on)h(the)h(test)g(nodes)-192 4938 y(to)37
+(The)-192 4821 y(algorithms)22 b(are)g(written)h(in)g(C)g(and)g
+(implemented)e(on)h(the)h(test)g(nodes)-192 4921 y(to)37
 b(see)g(the)g(ef)n(fect)g(that)g(the)o(y)f(are)h(going)e(to)i(ha)n(v)o
-(e)f(on)h(the)g(ener)o(gy)-192 5037 y(consumption)26
+(e)f(on)h(the)g(ener)o(gy)-192 5021 y(consumption)26
 b(of)i(the)h(nodes)e(and)h(presented)g(belo)n(w)-5 b(.)-109
-5149 y(The)22 b(results)g(sho)n(wn)f(in)h(the)g(table)g(belo)n(w)g(do)f
-(not)h(re\003ect)g(the)g(e)o(xact)-192 5249 y(ener)o(gy)f(consumption)g
+5138 y(The)22 b(results)g(sho)n(wn)f(in)h(the)g(table)g(belo)n(w)g(do)f
+(not)h(re\003ect)g(the)g(e)o(xact)-192 5237 y(ener)o(gy)f(consumption)g
 (of)i(the)g(algorithms)f(as)i(the)f(ener)o(gy)f(consump-)-192
-5348 y(tion)27 b(is)i(dependent)c(on)i(other)g(f)o(actors)g(besides)h
-(the)f(e)o(x)o(ecution)f(time.)-192 5448 y(But)j(it)g(can)g(be)f(used)g
+5337 y(tion)27 b(is)i(dependent)c(on)i(other)g(f)o(actors)g(besides)h
+(the)f(e)o(x)o(ecution)f(time.)-192 5437 y(But)j(it)g(can)g(be)f(used)g
 (to)h(put)f(the)h(comparison)d(into)i(perspecti)n(v)o(e.)p
 2000 1815 2112 4 v 2000 1832 V 1998 2230 4 399 v 2050
 1902 a(Algorithm)p 2452 2230 V 106 w(A)-6 b(v)o(erage)76
@@ -24876,91 +24878,96 @@ b(the)g(proposed)f(algorithms.)-192 5621 y Fl(Recommendation)2083
 (implementing)2000 441 y(them)25 b(on)h(the)f(MyriaNodes.)g(Real)h
 (time)g(feedbacks)e(can)i(be)g(used)f(to)2000 540 y(impro)o(v)o(e)h
 (the)j(algorithms)e(to)n(w)o(ards)h(perfection.)2585
-752 y(V)t(I)t(.)45 b Fl(A)p Fm(C)t(K)t(N)t(O)q(W)t(L)t(E)t(D)t(G)t(M)t
-(E)t(N)t(T)2083 878 y Fn(This)32 b(research)f(is)h(part)g(of)g(the)f
-(MyriaNed)g(Project.)g(The)h(author)2000 977 y(w)o(ould)51
-b(lik)o(e)g(to)h(thank)f(Frits)h(v)n(an)f(der)g(W)-7
-b(ateren)52 b(from)e(Chess)4058 947 y Fv(3)2000 1077
-y Fn(Inno)o(v)n(ation)27 b(T)-6 b(eam)30 b(for)g(his)h(continuous)e
-(support,)g(suggestions)g(and)2000 1177 y(advice)18 b(during)f(the)i
-(project.)f(Man)o(y)g(thanks)g(to)h(dr)-5 b(.ir)g(.)18
-b(Peter)i(Smulders,)2000 1276 y(prof.dr)-5 b(.ir)g(.)22
-b(Erik)i(Fledderus)g(and)g(prof.dr)-5 b(.ir)g(.)23 b(Peter)h(Baltus)i
-(from)d(TU/)2000 1376 y(e)29 b(for)f(their)g(guidance.)2813
-1588 y(R)t Fo(E)t(F)t(E)t(R)t(E)t(N)t(C)t(E)t(S)2275
-1711 y([1])42 b(A.Ebner)d(and)h(et)g(al.)g(\224Decentralized)45
-b(Slot)40 b(Synchronization)j(in)2394 1786 y(Highly)23
+717 y(V)t(I)t(.)45 b Fl(A)p Fm(C)t(K)t(N)t(O)q(W)t(L)t(E)t(D)t(G)t(M)t
+(E)t(N)t(T)2083 841 y Fn(This)29 b(research)g(is)h(part)f(of)g(the)g
+(MyriaNed)p Fi([)p Fn(17)m Fi(])h Fn(Project.)f(The)g(au-)2000
+940 y(thor)22 b(w)o(ould)h(lik)o(e)h(to)f(thank)g(Frits)h(v)n(an)f(der)
+g(W)-7 b(ateren)23 b(from)f(Chess)p Fi([)p Fn(18)p Fi(])2000
+1040 y Fn(Inno)o(v)n(ation)27 b(T)-6 b(eam)30 b(for)g(his)h(continuous)
+e(support,)g(suggestions)g(and)2000 1140 y(advice)18
+b(during)f(the)i(project.)f(Man)o(y)g(thanks)g(to)h(dr)-5
+b(.ir)g(.)18 b(Peter)i(Smulders,)2000 1239 y(prof.dr)-5
+b(.ir)g(.)22 b(Erik)i(Fledderus)g(and)g(prof.dr)-5 b(.ir)g(.)23
+b(Peter)h(Baltus)i(from)d(TU/)2000 1339 y(e)29 b(for)f(their)g
+(guidance.)2813 1516 y(R)t Fo(E)t(F)t(E)t(R)t(E)t(N)t(C)t(E)t(S)2275
+1635 y([1])42 b(A.Ebner)d(and)h(et)g(al.)g(\224Decentralized)45
+b(Slot)40 b(Synchronization)j(in)2394 1710 y(Highly)23
 b(Dynamic)g(Ad)f(Hoc)g(Netw)o(orks,)-5 b(\224)24 b(W)m(ireless)f
-(Personal)g(Multi-)2394 1860 y(media)i(Communications,)g(v)o(ol.2,)f
-(pp.494-498,)g(2002.)2275 1935 y([2])42 b(C.Cordeiro)35
+(Personal)g(Multi-)2394 1784 y(media)i(Communications,)g(v)o(ol.2,)f
+(pp.494-498,)g(2002.)2275 1859 y([2])42 b(C.Cordeiro)35
 b(and)f(D.Agra)o(w)o(al.)g(\224W)m(ireless)h(sensor)f(netw)o(orks\224,)
-h(Ad)2394 2010 y(hoc)23 b(and)g(Sensor)g(Netw)o(orks)h(Theory)e(and)h
-(applications.)j(p.429-441.)2394 2084 y(W)-5 b(orld)24
-b(Scienti\002c)i(Publishing.)f(2006.)2275 2159 y([3])42
+h(Ad)2394 1934 y(hoc)23 b(and)g(Sensor)g(Netw)o(orks)h(Theory)e(and)h
+(applications.)j(p.429-441.)2394 2008 y(W)-5 b(orld)24
+b(Scienti\002c)i(Publishing.)f(2006.)2275 2083 y([3])42
 b(F)-5 b(.Zhao)18 b(and)g(L.Guibas.)g(\224T)n(ime)g
 (synchronization\224,)23 b(W)m(ireless)c(Sensor)2394
-2234 y(Netw)o(orks:)37 b(an)e(Information)i(Processing)f(approach.)h
-(pp.107-108.)2394 2309 y(Else)n(vier)l(.)25 b(2004.)2275
-2383 y([4])42 b(E.Anceaume)25 b(and)g(I.Puaut.)g(\224A)g(taxonomy)g(of)
-g(clock)h(synchroniza-)2394 2458 y(tion)g(algorithms\224.)g(IRISA)f
-(Research)i(Report)f(No.)e(PI1103,)h(IRISA,)2394 2533
-y(1997.)2275 2607 y([5])42 b(H.Karl)20 b(and)g(A.W)m(illig.)g
+2158 y(Netw)o(orks:)37 b(an)e(Information)i(Processing)f(approach.)h
+(pp.107-108.)2394 2233 y(Else)n(vier)l(.)25 b(2004.)2275
+2307 y([4])42 b(E.Anceaume)25 b(and)g(I.Puaut.)g(\224A)g(taxonomy)g(of)
+g(clock)h(synchroniza-)2394 2382 y(tion)g(algorithms\224.)g(IRISA)f
+(Research)i(Report)f(No.)e(PI1103,)h(IRISA,)2394 2457
+y(1997.)2275 2531 y([5])42 b(H.Karl)20 b(and)g(A.W)m(illig.)g
 (\224Introduction\224)k(in)c(Protocols)h(and)f(Architec-)2394
-2682 y(tures)i(for)f(W)m(ireless)i(Sensor)e(Netw)o(orks.)h(pp.)f(3-6.)g
-(W)m(ile)o(y)l(.)h(July)f(2006.)2275 2757 y([6])42 b(Symmetricom,)23
+2606 y(tures)i(for)f(W)m(ireless)i(Sensor)e(Netw)o(orks.)h(pp.)f(3-6.)g
+(W)m(ile)o(y)l(.)h(July)f(2006.)2275 2681 y([6])42 b(Symmetricom,)23
 b(Inc.)f(white)i(paper)l(.)f(\224Stochastic)j(Model)d(Estimation)2394
-2832 y(of)h(netw)o(ork)h(time)f(v)n(ariance,)-5 b(\224)27
-b(USA.2004.)2275 2906 y([7])42 b(Dallas)25 b(semiconductor)l(.)-5
+2756 y(of)h(netw)o(ork)h(time)f(v)n(ariance,)-5 b(\224)27
+b(USA.2004.)2275 2830 y([7])42 b(Dallas)25 b(semiconductor)l(.)-5
 b(\224Crystal)28 b(considerations)f(with)d(Dallas)g(Real)2394
-2981 y(time)h(clocks,)-5 b(\224)26 b(A)-5 b(v)n(ailable)28
-b(online)e(http://pdfserv)l(.maxim-ic.com/en/)2394 3056
+2905 y(time)h(clocks,)-5 b(\224)26 b(A)-5 b(v)n(ailable)28
+b(online)e(http://pdfserv)l(.maxim-ic.com/en/)2394 2980
 y(an/AN58.pdf)f([Accessed)g(on)f(July)g(15,2008].)2275
-3130 y([8])42 b(Golledge)c(frequenc)o(y)g(products.)-5
+3055 y([8])42 b(Golledge)c(frequenc)o(y)g(products.)-5
 b(\224SW)37 b(W)-5 b(atch)36 b(crystal)i(temp)e(mil,)-5
-b(\224)2394 3205 y(A)g(v)n(ailable)105 b(online)d(http://www)l
-(.golledge.co.uk/pdf/)q(produ)q(ct)q(s/)2394 3280 y(xtl)p
-2463 3289 34 5 v 34 w(sm/cc7v)l(.pdf)25 b([Accessed)g(on)f(July)g
-(15,2008].)2275 3355 y([9])42 b(G.W)-5 b(elch)40 b(and)g(G.Bishop.)g
+b(\224)2394 3129 y(A)g(v)n(ailable)105 b(online)d(http://www)l
+(.golledge.co.uk/pdf/)q(produ)q(ct)q(s/)2394 3204 y(xtl)p
+2463 3213 34 5 v 34 w(sm/cc7v)l(.pdf)25 b([Accessed)g(on)f(July)g
+(15,2008].)2275 3279 y([9])42 b(G.W)-5 b(elch)40 b(and)g(G.Bishop.)g
 (\224The)g(kalman)g(\002lter)m(,)-5 b(\224)42 b(Uni)n(v)o(ersity)g(of)
-2394 3429 y(North)23 b(Carolina.)g(A)-5 b(v)n(alable)25
-b(online)f(http://www)l(.cs.unc.edu/)h(welch/)2394 3504
-y(kalman/[Accessed)i(on)d(June)g(10,)f(2008].)2242 3579
+2394 3353 y(North)23 b(Carolina.)g(A)-5 b(v)n(alable)25
+b(online)f(http://www)l(.cs.unc.edu/)h(welch/)2394 3428
+y(kalman/[Accessed)i(on)d(June)g(10,)f(2008].)2242 3503
 y([10])42 b(J.Elson,)17 b(L.Girod)g(and)h(D.Estrin.)g(\224Fine-grained)
-j(netw)o(ork)e(time)g(syn-)2394 3654 y(chronization)g(using)e
+j(netw)o(ork)e(time)g(syn-)2394 3578 y(chronization)g(using)e
 (reference)h(broadcasts,)-5 b(\224)18 b(Proceedings)g(of)e(the)g(5th)
-2394 3728 y(Symposium)i(on)g(Operating)i(Systems)e(Design)h(and)g
-(Implementation,)2394 3803 y(V)-9 b(ol.36)24 b(,)f(Issue)h(SI,)f
-(pp.147-163,)h(2002.)2242 3878 y([11])42 b(P)-7 b(.Anemaet.)34
+2394 3652 y(Symposium)i(on)g(Operating)i(Systems)e(Design)h(and)g
+(Implementation,)2394 3727 y(V)-9 b(ol.36)24 b(,)f(Issue)h(SI,)f
+(pp.147-163,)h(2002.)2242 3802 y([11])42 b(P)-7 b(.Anemaet.)34
 b(Determining)j(G-MA)m(C)d(potential)k(with)c Fa(f)p
-Fo(S,L,SCP)p Fa(g)p Fo(-)2394 3952 y(MA)m(C.)22 b(Masters)i(thesis.)f
+Fo(S,L,SCP)p Fa(g)p Fo(-)2394 3876 y(MA)m(C.)22 b(Masters)i(thesis.)f
 (T)-5 b(echnische)25 b(Uni)n(v)o(ersteit)g(Delft.)e(Delft.)h(Au-)2394
-4027 y(gust)g(2008.)2242 4102 y([12])42 b(Q.Y)-7 b(ang,)41
+3951 y(gust)g(2008.)2242 4026 y([12])42 b(Q.Y)-7 b(ang,)41
 b(and)g(et)g(al.)g(\224A)g(Decentralized)k(Slot)d(Synchronization)2394
-4177 y(Algorithm)g(for)f(TDMA-Based)h(Ad)e(Hoc)i(Netw)o(orks,)-5
-b(\224)42 b(W)m(ireless)2394 4251 y(Communications,)d(Netw)o(orking)g
-(and)f(Mobile)g(Computing,)h(V)-9 b(ol.,)2394 4326 y(Issue,21-25,)24
-b(pp.)f(1717-1721,)i(2007.)2242 4401 y([13])42 b(Q.Y)-7
+4101 y(Algorithm)g(for)f(TDMA-Based)h(Ad)e(Hoc)i(Netw)o(orks,)-5
+b(\224)42 b(W)m(ireless)2394 4175 y(Communications,)d(Netw)o(orking)g
+(and)f(Mobile)g(Computing,)h(V)-9 b(ol.,)2394 4250 y(Issue,21-25,)24
+b(pp.)f(1717-1721,)i(2007.)2242 4325 y([13])42 b(Q.Y)-7
 b(ang)36 b(and)g(J.Shi.)f(\224An)g(interference)40 b(elimination)e
-(method)e(for)2394 4475 y(decentralized)26 b(slot)21
+(method)e(for)2394 4399 y(decentralized)26 b(slot)21
 b(synchronization)k(in)c(TDMA-based)g(wireless)h(ad)2394
-4550 y(hoc)29 b(netw)o(ork,)-5 b(\224)31 b(Intelligent)i(Signal)d
-(Processing)g(and)f(Communica-)2394 4625 y(tion)c(Systems,)e(pp)h
-(236-239,)g(2007.)2242 4700 y([14])42 b(R.Tjoa)27 b(and)h(et)f(al.)g
+4474 y(hoc)29 b(netw)o(ork,)-5 b(\224)31 b(Intelligent)i(Signal)d
+(Processing)g(and)f(Communica-)2394 4549 y(tion)c(Systems,)e(pp)h
+(236-239,)g(2007.)2242 4624 y([14])42 b(R.Tjoa)27 b(and)h(et)f(al.)g
 (\224Clock)i(drift)f(reduction)h(for)e(relati)n(v)o(e)j(time)e(slot)
-2394 4774 y(tdma-based)40 b(sensor)f(netw)o(orks,)-5
-b(\224)40 b(Personal,)f(Indoor)g(and)g(Mobile)2394 4849
+2394 4698 y(tdma-based)40 b(sensor)f(netw)o(orks,)-5
+b(\224)40 b(Personal,)f(Indoor)g(and)g(Mobile)2394 4773
 y(Radio)21 b(Communications,)h(V)-9 b(ol.2,)19 b(5-8)h(,)f
-(pp.1042-1047.)i(Sept.)e(2004.)2242 4924 y([15])42 b(R.John.)20
+(pp.1042-1047.)i(Sept.)e(2004.)2242 4848 y([15])42 b(R.John.)20
 b(\224Introduction)k(to)d(Quartz)g(Frequenc)o(y)i(Standards,)-5
-b(\224)22 b(T)-5 b(echni-)2394 4998 y(cal)23 b(Report)g(SLCET)-6
+b(\224)22 b(T)-5 b(echni-)2394 4923 y(cal)23 b(Report)g(SLCET)-6
 b(-TR-92-1,)21 b(Army)h(Research)i(Laboratory)l(,)f(Elec-)2394
-5073 y(tronics)i(and)f(Po)n(wer)h(Sources)f(Directorate.)j(October)e
-(1992.)2242 5148 y([16])42 b(S.Raje)35 b(and)g(Q.Liang.)f(\224T)n(ime)h
-(synchronization)j(of)c(in)h(Netw)o(ork-)2394 5223 y(centric)46
+4997 y(tronics)i(and)f(Po)n(wer)h(Sources)f(Directorate.)j(October)e
+(1992.)2242 5072 y([16])42 b(S.Raje)35 b(and)g(Q.Liang.)f(\224T)n(ime)h
+(synchronization)j(of)c(in)h(Netw)o(ork-)2394 5147 y(centric)46
 b(sensor)f(netw)o(orks,)-5 b(\224)45 b(Radio)h(and)e(W)m(ireless)i
-(Symposium)2394 5297 y(IEEE,)22 b(pp.333-336.)i(2007.)2066
-5598 y Fp(3)2095 5621 y Fo(http://www)l(.chess.nl)p eop
-end
+(Symposium)2394 5221 y(IEEE,)22 b(pp.333-336.)i(2007.)2242
+5296 y([17])42 b(MyrianNed)h(project.)f(\224Project)h(description,)-5
+b(\224)44 b(A)-5 b(v)n(ailable)44 b(online.)2394 5371
+y(http://www)l(.chess.nl/en/home/Innov)n(a)q(tie)q(/On)q(derz)q(oe)q
+(k/My)q(ria)q(Ned)2394 5446 y([Accessed)25 b(on)f(August)g(3,)f(2008].)
+2242 5520 y([18])42 b(Compan)o(y)c(pro\002le.)g(A)-5
+b(v)n(ailable)41 b(online)d(http://www)l(.chess.nl)i([Ac-)2394
+5595 y(cessed)25 b(on)e(August)h(6,)g(2008].)p eop end
 %%Trailer
 
 userdict /end-hook known{end-hook}if
