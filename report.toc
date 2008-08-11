@@ -2,7 +2,7 @@
 \contentsline {chapter}{Acknowledgment}{ii}
 \contentsline {chapter}{Contents}{iii}
 \contentsline {chapter}{List of figures}{iv}
-\contentsline {chapter}{List of Abbreviations and symbols}{vi}
+\contentsline {chapter}{List of abbreviations and symbols}{vi}
 \contentsline {chapter}{\numberline {1}\textbf {Introduction}}{1}
 \contentsline {section}{\numberline {1.1}\textbf {Wireless sensor networks}}{1}
 \contentsline {section}{\numberline {1.2}\textbf {Existing work on WSN synchronization}}{2}
@@ -53,7 +53,7 @@
 \contentsline {chapter}{\numberline {6}\textbf {Conclusion and recommendation}}{39}
 \contentsline {section}{\numberline {6.1}\textbf {Conclusion}}{39}
 \contentsline {section}{\numberline {6.2}\textbf {Recommendation}}{40}
-\contentsline {chapter}{\numberline {A}Simulation results}{41}
+\contentsline {chapter}{\numberline {A}Additional simulation results}{41}
 \contentsline {section}{\numberline {A.1}\textbf {Synchronization frequency}}{41}
 \contentsline {section}{\numberline {A.2}\textbf {Synchronization error for nodes with different speeds}}{42}
 \contentsline {section}{\numberline {A.3}\textbf {The effect of number of nodes on KF}}{44}
@@ -67,4 +67,4 @@
 \contentsline {subsubsection}{Battery}{48}
 \contentsline {subsubsection}{Programming}{48}
 \contentsline {subsubsection}{Software}{48}
-\contentsline {chapter}{References}{48}
+\contentsline {chapter}{Bibliography}{48}
