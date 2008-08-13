@@ -8,7 +8,7 @@
 \usepackage{psfrag}
 \usepackage{a4wide}
 \linespread{1.5}
-\renewcommand{\nomname}{List of abbrevations and symbols}
+\renewcommand{\nomname}{List of abbreviations and symbols}
 %\pdfpagewidth 8.5in
 %\pdfpageheight 11in
 
@@ -91,7 +91,7 @@ I would like to express my sincere gratitude to my supervisor, Frits van der Wat
 \newpage
 \addcontentsline{toc}{chapter}{Contents} \tableofcontents
 \addcontentsline{toc}{chapter}{List of figures} \listoffigures
-\addcontentsline{toc}{chapter}{List of Abbreviations and symbols}
+\addcontentsline{toc}{chapter}{List of abbreviations and symbols}
 \printnomenclature[3.5cm]
 \chapter{\textbf{Introduction}}
 \pagenumbering{arabic}
@@ -1098,13 +1098,13 @@ stable synchronization. As LS and WM has the same effect as the
 Median in case of stable network, the performance of both algorithms
 is similar with that of Median. Without the dynamic nature of the
 network, both tend to equal the average of the phase errors. KF has
-the best performacesince correcting the phase errors involves
+the best performace since correcting the phase errors involves
 predict and update which results in better precision. \paragraph*{}
 Figure $\ref{50output0}$ is the result of a simulation for $50$
 nodes. The synchronization error in general increases as the number
-of nodes increases. Comparing the individual algorithms, KF has a
-precision of $7clk$ whereas LS and WM have a better performance
-each. Median results in a lower performance on average.
+of nodes increases. Comparing the individual algorithms, KF has the best
+precision whereas LS and WM have a better performance
+each than the Median. Median results in a lower performance on average.
 \subsubsection{\textbf{Case II}}
 In second set of simulations, the mobility of the nodes is taken
 into account. Here, the number of the nodes is taken to be $20$. The
@@ -1115,7 +1115,7 @@ walking man and an average speed of a slowly moving vehicle.
 Figure $\ref{16output6}$ shows 20 nodes with a speed which is an
 gaussian random variable with mean $6km/hr$ and standard deviation
 of 1$km/hr$. WM and LS show a better tolerance to dynamic networks
-due to the algorthms capapbilty to synchronize towards a more stable
+due to the algorthms capabilty to synchronize towards a more stable
 network. LS has also a better tolerance with less value given for
 large phase errors. Hence, WM and LS perform better concerning the
 synchronization of the frame than the Median.  Median algorithm has
@@ -1123,7 +1123,7 @@ a disruptions which made the network out-of-synchronization,
 resulting in high synchronization errors at times. This occurs due
 to the mobility of the nodes which disrupts the stability networks
 as it tries to compute the median of the phase errors, as indicated
-in Chapter 3. KF outperforms all.
+in Chapter 3. KF outperforms all due to its dynamic and recursive nature.
 \paragraph*{}
 \begin{figure}
 \centering
@@ -1166,8 +1166,7 @@ join again after some time), resulting in a larger drift with
 neighbors before getting back to the network. LS and WM perform
 better when it comes to stability, as out-of-sync nodes are forced
 to join the stable network. KF has the best preformance, both in
-precision and stability. On average, KF has $7clk$ as a
-synchronization error.
+precision and stability. 
 \paragraph*{}
 \begin{figure}
 \centering
@@ -1182,17 +1181,16 @@ synchronization error.
 \end{figure}
 With a speed of $20km/hr$, the simulation results are presented in Figure $\ref{50output20}$. As the speed increases, the instability
 on the synchronization of the nodes also increases, which makes the Median more prone to high synchronization errors. WM has better
-tolerance towards mobility of the nodes, whereas the LS does well regarding stability. KF has the best precision, at $9clk$. As the
+tolerance towards mobility of the nodes, whereas the LS does well regarding stability. KF has the best precision out of all. As the
 speed increases, the precision of the synchronization increases too since faster speed results in faster synchronization within the network.
 \paragraph*{}
-For the set of nodes with a higher speed , a relative comparison is made to see the performance of the nodes with the Median algorithm. The Median algorithm is shown to perform the worst in this case. There are a lot of disruptions in the network, making it more unstable whereas the other algorithms adapt to the changes faster. Figure $\ref{50output-error}$ shows that KF performs the best against Median algorithm, $45\%$. WM and LS perform well against Median too, $20\%$ on average. It has been shown that the median is prone to error in case of high dynamics in the network.
+For the set of nodes with a higher speed , a relative comparison is made to see the performance of the nodes with the Median algorithm. The Median algorithm is shown to perform the worst in this case. There are a lot of disruptions in the network, making it more unstable whereas the other algorithms adapt to the changes faster. Figure $\ref{50output-error}$ shows that KF performs the best against Median algorithm, $45\%$. WM and LS perform well against Median too, $20\%$ on average. It has been shown that the median is prone to error in case of high dynamics in the network.\newline
+The Kalman filter has a better precision and stability than the rest whereas WM and LS has a better tolerance to a dynamic network.
 \begin{figure}[!h]
 \centering
 \includegraphics[width=0.7  \textwidth]{50output-error}
 \caption{Relative performance improvement of algorithms from Median - 50 nodes} \label{50output-error}
 \end{figure}
-\paragraph*{}
-Simulation is conducted using the different parameters and the results are presented in the Appendix A.
 \section{\textbf{Energy consumption}}
 %\begin{figure}
 %\centering
@@ -1241,9 +1239,9 @@ into perspective.
     \hline
     Algorithm & Average Execution Time per frame & Increase in execution time per frame & Energy Consumed per frame \\ \hline \hline
     M &  65 $\mu$s & 0 & 0  \\ \hline
-    LS & 82.5 $\mu$s & 7.5$\mu$s & 63 $pJ$  \\ \hline
-    WM &   90 $\mu$s & 25$\mu$s & 210 $pJ$ \\ \hline
-    KF &  150 $\mu$s  & 85$\mu$s &  714 $pJ$\\ \hline
+    LS & 82.5 $\mu$s & 7.5$\mu$s & 0.063 $\mu J$  \\ \hline
+    WM &   90 $\mu$s & 25$\mu$s & 0.21 $\mu J$ \\ \hline
+    KF &  150 $\mu$s  & 85$\mu$s &  0.714 $\mu J$\\ \hline
     \end{tabular}
 \label{tab1}
 \end{table}
@@ -1363,7 +1361,7 @@ Practical implementation of the algorithms and inspect the behavior is another s
 %\end{equation}
 %where $n$ is the number of nodes in the network. This means that synchronization is not only a local property, in the sense that the clock skew between two nodes depends not only on the distance between the nodes, but also on the size of the network. \paragraph*{}
 %Our lower bound implies, as in the case of MyriaNed, that the TDMA protocol with a fixed slot granularity will fail as the network grows, even if the maximum degree of each node stays constant. As the network size grows, the lower bound of the synchronization also increases.
-\chapter{Simulation results}
+\chapter{Additional simulation results}
 %\section{\textbf{Median as a synchronization method}}
 %The performance of Median algorithm is dependent on the gain factor used in the offset calculation. Figure $\ref{gainfactor}$ shows the performance of the Median algorithm for different gain factors, and the optimum value of the gain factor is chosen for the comparison of Median algorithm with the proposed algorithms for synchronization.
 %\begin{figure}[!h]
@@ -1515,16 +1513,16 @@ The ER14250$\cite{bat}$ from EMB is a Lithium Thionyl Chloride battery. It has a
 The node can be programmed and debugged via the JTAG interface. Although there are many second source suppliers of JTAG development tools, it is advised to use the AVR JTAGICE mkII from Atmel, ordering code: ATJTAGICE2$\cite{jtag}$.
 \subsubsection{Software}
 The software is documented by the other working groups of MyriaNed.
-\addcontentsline{toc}{chapter}{References}
+\addcontentsline{toc}{chapter}{Bibliography}
 \begin{thebibliography}{\textbf{References}}
-\bibitem{4}A.Tyrrell, and et al. "Firefly synchronization in ad hoc networks," in Proc. MiNEMA Workshop, February, 2006.
+%\bibitem{4}A.Tyrrell, and et al. "Firefly synchronization in ad hoc networks," in Proc. MiNEMA Workshop, February, 2006.
 \bibitem{correlation}A.Ebner and et al. "Decentralized Slot Synchronization in Highly Dynamic Ad Hoc Networks," Wireless Personal Multimedia Communications, vol.2, pp. 494- 498, 2002.
 \bibitem{11}C.Cordeiro and D.Agrawal. "Wireless sensor networks", Ad hoc and Sensor Networks Theory and applications. p.429-441. World Scientific Publishing. 2006.
 \bibitem{gossip}D.Gavidia, S.Voulgaris, and M. van Steen. "A gossip-based distributed news service for wireless mesh networks,". In Proceedings 3rd IEEE Conference on Wireless On demand Network Systems and Services (WONS), Les Menuires, France, January 2006.
 \bibitem{taxonomy}E.Anceaume and I.Puaut."A taxonomy of clock synchronization algorithms," IRISA Research Report No. PI1103, IRISA, 1997.
-\bibitem{mutualsync}E.Souour and M.Nakagawa."Mutual decentralized synchronization for intervechicle communications," IEEE Transactions and Vehicular Technology, Vol.48, Issue 6, pp.2015-2027, 1999.
+%\bibitem{mutualsync}E.Souour and M.Nakagawa."Mutual decentralized synchronization for intervehicle communications," IEEE Transactions and Vehicular Technology, Vol.48, Issue 6, pp.2015-2027, 1999.
 \bibitem{1}F.Zhao and  L.Guibas. "Time synchronization", Wireless Sensor Networks: an Information Processing approach. pp.107-108. Elsevier. 2004.
-\bibitem{16}G.Werner-Allen and et al. "Firefly-inspired sensor network synchronicity with realistic radio effects," Proceedings of the 3rd international conference on Embedded networked sensor systems, San Diego, California. November 2005.
+%\bibitem{16}G.Werner-Allen and et al. "Firefly-inspired sensor network synchronicity with realistic radio effects," Proceedings of the 3rd international conference on Embedded networked sensor systems, San Diego, California. November 2005.
 \bibitem{10}H.Karl and A.Willig. "Introduction" in Protocols and Architectures for Wireless Sensor Networks. pp. 3-6. Wiley. July 2006.
 \bibitem{19}Dallas semiconductor."Crystal considerations with Dallas Real time clocks," Available online http:\slash \slash pdfserv.maxim-ic.com\slash en\slash an\slash AN58.pdf [Accessed on July 15,2008].
 \bibitem{18}Golledge frequency products."SW Watch crystal temp mil," Available online http:\slash \slash www.golledge.co.uk\slash pdf\slash products\slash xtl$\_$sm\slash cc7v.pdf [Accessed on July 15,2008].
@@ -1551,7 +1549,7 @@ The software is documented by the other working groups of MyriaNed.
 \bibitem{gradient}R. Fan and N. Lynch. "Gradient clock synchronization," In Proceedings of the twenty-third annual ACM symposium on Principles of distributed computing, pp.320-327. ACM Press, 2004.
 \bibitem{clockwhite}Symmetricom, Inc. "Stochastic Model Estimation of network time variance," Available online http:\slash \slash www.symmttm.com\slash pdf\slash Network$\_$Timing\slash wp$\_$Stochastic$\_$Model.pdf [Accessed August 3,2008].
 \bibitem{texas}S.Raje and Q.Liang. "Time synchronization in Network-centric sensor networks," Radio and Wireless Symposium IEEE, pp.333-336. 2007.
-\bibitem{14}S.PalChaudhuri and et al. "Adaptive Clock Synchronization in Sensor Networks," Information Processing in Sensor Networks, pp.340- 348, 2004.
+%\bibitem{14}S.PalChaudhuri and et al. "Adaptive Clock Synchronization in Sensor Networks," Information Processing in Sensor Networks, pp.340- 348, 2004.
 \end{thebibliography}
 \nomenclature{KF}{Kalman Filter}\nomenclature{LS}{Least Squares}\nomenclature{WM}{Weighted Measurments}
 \end{document}
