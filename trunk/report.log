@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592-1.40.4 (MiKTeX 2.6) (preloaded format=latex 2007.11.30)  11 AUG 2008 22:38
+This is pdfTeX, Version 3.141592-1.40.4 (MiKTeX 2.6) (preloaded format=latex 2007.11.30)  18 AUG 2008 17:23
 entering extended mode
 **report.tex
 (report.tex
@@ -161,11 +161,6 @@ Overfull \hbox (343.63815pt too wide) in paragraph at lines 42--43
 
 Overfull \hbox (30.65784pt too wide) in paragraph at lines 52--60
  []$ 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 63--70
-
  []
 
 
@@ -357,7 +352,7 @@ File: myrianode.eps Graphic file (type eps)
 <myrianode.eps>
 
 Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 1456.
+put line 1460.
 
 File: myrianodearch.eps Graphic file (type eps)
 <myrianodearch.eps>
@@ -369,18 +364,18 @@ File: table2.eps Graphic file (type eps)
  <table2.eps>
 
 Package wrapfig Warning: Collision between wrapping environments on input line 
-1489.
+1493.
 
 File: myrianodephy.eps Graphic file (type eps)
 <myrianodephy.eps>
 
-Package wrapfig Warning: Stationary wrapfigure forced to float on input line 14
-96.
+Package wrapfig Warning: Stationary wrapfigure forced to float on input line 15
+00.
 
 [47]
 File: battery.eps Graphic file (type eps)
  <battery.eps> [48]
-Underfull \hbox (badness 1082) in paragraph at lines 1527--1528
+Underfull \hbox (badness 1082) in paragraph at lines 1531--1532
 []\OT1/cmr/m/n/10 Dallas semi-con-duc-tor."Crystal con-sid-er-a-tions with Dal-
 las Real time clocks,"
  []
@@ -388,25 +383,25 @@ las Real time clocks,"
 [49
 
 ] [50]
-Underfull \hbox (badness 4036) in paragraph at lines 1550--1551
+Underfull \hbox (badness 4036) in paragraph at lines 1554--1555
 []\OT1/cmr/m/n/10 Symmetricom, Inc. "Stochas-tic Model Es-ti-ma-tion of net-wor
 k time vari-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1550--1551
+Underfull \hbox (badness 10000) in paragraph at lines 1554--1555
 \OT1/cmr/m/n/10 ance," Avail-able on-line http://www.symmttm.com/pdf/Network$[]
 $Timing/
  []
 
 [51] (report.aux) ) 
 Here is how much of TeX's memory you used:
- 1802 strings out of 95296
- 18849 string characters out of 1184884
+ 1803 strings out of 95296
+ 18857 string characters out of 1184884
  70590 words of memory out of 1069682
- 4770 multiletter control sequences out of 60000
+ 4771 multiletter control sequences out of 60000
  11247 words of font info for 40 fonts, out of 1000000 for 2000
  14 hyphenation exceptions out of 8191
  27i,11n,25p,1978b,338s stack positions out of 5000i,500n,10000p,200000b,32768s
 
-Output written on report.dvi (59 pages, 148460 bytes).
+Output written on report.dvi (59 pages, 148528 bytes).
