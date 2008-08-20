@@ -83,7 +83,7 @@
 \pagenumbering{roman}
 \addcontentsline{toc}{chapter}{Abstract}
 \section*{\begin{center}Abstract\end{center}}
-Synchronization is a one of the main issues in the design of \textit{Wireless Sensor Networks}(WSNs). Most applications of WSNs make extensive use of synchronization mechanisms like \emph{Time Division Multiple Access} \nomenclature{TDMA}{Time Division Multiple Access} scheduling, accurate time stamping of events, coordinate activities of the network or data fusion. The unique requirements of WSNs in terms of precision, lifetime, energy and scope of the synchronization achieved, make the synchronization methods developed for centralized systems unsuitable for WSNs. This motivates the research of synchronization methods which are aligned to the specific properties of WSN.  Interfering nodes, due to mobility and newly incoming nodes, lead to instability in synchronization.  Median$\cite{median}$ algorithm is implemented currently on the wireless sensor nodes in MyriaNed$\cite{myrianed}$ project. In this research, the flaw in the Median algorithm is explored and three algorithms have been proposed to achieve a decentralized, stable, and energy-efficient synchronization of a WSN. The algorithms achieve synchronization by using the phase error of a node's wakeup time with those of the neighboring nodes, without exchanging the information about the clock time of the sender. So, the methods avoid time keeping on the messages (time stamping) which reduces the overall overload. Stability of the algorithms is simulated in a highly dynamic network. Results from simulation of the models are presented and discussed. The algorithms can be integrated with the slot allocation algorithm to form the MAC\nomenclature{MAC}{Media Access Protocol} layer protocol for a better throughput. The research is concluded with the comparison of three algorithms in terms of energy consumption and performance. A low energy-consumption or a better convergence as well as the length of the guard time can be used as a metric for selecting the algorithm.
+Synchronization is a one of the main issues in the design of \textit{Wireless Sensor Networks}(WSNs). Most applications of WSNs make extensive use of synchronization mechanisms like \emph{Time Division Multiple Access} \nomenclature{TDMA}{Time Division Multiple Access} scheduling, accurate time stamping of events, coordinate activities of the network or data fusion. The unique requirements of WSNs in terms of precision, lifetime, energy and scope of the synchronization achieved, make the synchronization methods developed for centralized systems unsuitable for WSNs. This motivates the research of synchronization methods which are aligned to the specific properties of WSN.  Interfering nodes, due to mobility and newly incoming nodes, lead to instability in synchronization.  Median, an extension of $\cite{median}$ algorithm is implemented currently on the wireless sensor nodes in MyriaNed$\cite{myrianed}$ project. In this research, the flaw in the Median algorithm is explored and three algorithms have been proposed to achieve a decentralized, stable, and energy-efficient synchronization of a WSN. The algorithms achieve synchronization by using the phase error of a node's wakeup time with those of the neighboring nodes, without exchanging the information about the clock time of the sender. So, the methods avoid time keeping on the messages (time stamping) which reduces the overall overload. Stability of the algorithms is simulated in a highly dynamic network. Results from simulation of the models are presented and discussed. The algorithms can be integrated with the slot allocation algorithm to form the MAC\nomenclature{MAC}{Medium Access Protocol} layer protocol for a better throughput. The research is concluded with the comparison of three algorithms in terms of energy consumption and performance. A low energy-consumption or a better convergence as well as the length of the guard time can be used as a metric for selecting the algorithm.
 \newpage
 \addcontentsline{toc}{chapter}{Acknowledgment}
 \section*{\begin{center}Acknowledgment\end{center}}
@@ -784,11 +784,11 @@ The minimum value of $S$ occurs when the gradient is zero. Hence, there are $m$ 
 In a non-linear system, the derivatives $\dfrac{\partial r_i}{\partial \beta_j}$ are functions of both the independent variable and the parameters. These gradient equations do not have a closed solution. Instead, initial values must be chosen for the
 parameters. Then, the parameters are refined iteratively, that is, the values are obtained by successive approximation,
 \begin{equation}
-    \beta_j^{p+1}=\beta^p_j+\Delta \beta_j,
+    \beta_j^{p+1}=\beta^P_{ij}+\Delta \beta_j,
 \end{equation}
 for $j=1,2...,m.$. Here, $p$ is an iteration number and the vector of increments, $\Delta \beta_j$, is known as the shift vector. At each iteration, the model is linearized by approximation to a first-order Taylor series expansion about $\beta^p$.
 \begin{equation}
-    f(x_i,\beta)\approx f(x_i,\beta^p) +\sum_j \dfrac{\partial f(x_i, \beta^p)}{\partial \beta_j} \left(\beta^p_j -\beta_j \right)
+    f(x_i,\beta)\approx f(x_i,\beta^p) +\sum_j \dfrac{\partial f(x_i, \beta^p)}{\partial \beta_j} \left(\beta^P_{ij} -\beta_j \right)
 \end{equation}
 \begin{equation}
  f(x_i,\beta) =f(x_i, \beta^p)+\sum_j J_{ij} \Delta\beta_j.
@@ -867,16 +867,16 @@ current state and error covariance estimates to obtain apriori
 estimates for the next time step.
 \par
 The kalman filter addresses the general problem of trying to
-estimate the state $x \in R$ of a discrete-time controlled process that is
+estimate the offset $\xi$ of a discrete-time estimation process that is
 governed by the linear stochastic difference equation
 \begin{equation}
- x_k = Ax_{k-1} + Bu_k + w_{k-1} , \label{mainkal}
+ \xi_{ij} = A\xi_{ij} + Bu_j + w_{j-1} , \label{mainkal}
 \end{equation}
-with a measurement $z \in R$ that is
+with a measurement phase error $\Delta t_{ij}$ that is
 \begin{equation}
- z_k = Hx_k + v_k. \label{meakal}
+ \Delta t_{ij} = H\xi_{ij} + v_j. \label{meakal}
 \end{equation}
-The random variables $w_k$ and $v_k$ represent the process and
+The random variables $w_j$ and $v_j$ represent the process and
 measurement noise respectively. They are assumed to be
 independent of each other, white, and with normal probability
 distributions
@@ -886,53 +886,51 @@ distributions
 \begin{equation}
  p(v) \approx N(0,R).
 \end{equation}
-The $n\ x\ n$ matrix $A$ in ($\ref{mainkal}$) relates the state at
-the previous time step $k-1$ to the state at the current step $k$,
-in the absence of either a driving function or process noise. Note
-that in practice $A$ might change with each time step, but here we
-assume it is constant. The n × l matrix $B$ relates the optional
-control input $u \in R$ to the state $x$. The $m\ x\ n$ matrix $H$
-in $\ref{meakal}$ the relates the state to the measurement $z_k$. In
+The matrix $A$ in ($\ref{mainkal}$) relates the state at
+the previous neighbor $j-1$ to the state at the current neighbor $j$,
+in the absence of either a driving function or process noise. The matrix $B$ relates the optional
+control input $u \in R$ to the state $x$. The matrix $H$
+in $\ref{meakal}$ the relates the state to the measurement $\Delta t_{ij}$. In
 practice, $H$ might change with each time step or measurement, but
 here we assume it is constant.
 \par
-We define $\tilde x_k^- \in R$ to be our a priori state estimate at
-step $k$ given knowledge of the process prior to step $k$, and
-$\tilde x_k \in R$ to be our a posteriori state estimate at step $k$
-given measurement $z_k$. Hence, a priori and a posteriori estimate
+We define $\tilde \xi_{ij}^-$ to be our a priori state estimate for
+neighbor $j$ given knowledge of the process prior to neighbor $j$, and
+$\tilde \xi_{ij}$ to be our a posteriori state estimate at neighbor $j$
+given measurement $\Delta t_{ij}$. Hence, a priori and a posteriori estimate
 errors are defined as
 \begin{equation}
-e_k^- = x_k – \tilde x_k^- ,
+e_j^- = \xi_{ij} – \tilde \xi_{ij}^- ,
 \end{equation}
 \begin{equation}
-e_k =  x_k – \tilde x_k.
+e_j =  \xi_{ij} – \tilde \xi_{ij}.
 \end{equation}
-The a priori estimate error covariance is then
+The apriori estimate error covariance is then
 \begin{equation}
-P_k^- = E[ e_k^- e_k^{-T} ],
+P_{ij}^- = E[ e_j^- e_j^{-T} ],
 \end{equation}
-and the a posteriori estimate error covariance is
+and the aposteriori estimate error covariance is
 \begin{equation}
-P_k = E[e_k e_k^T].
+P_{ij} = E[e_j e_j^T].
 \end{equation}
-With the initial estimates of $x_{k-1}$ and $P_{k-1}$, the predictor equations are
+With the initial estimates of $\xi_{ij-1}$ and $P_{ij-1}$, the predictor equations are
 \begin{equation}
-x_k = Hx_{k-1} + Bu_k,
+\xi_{ij} = A\xi_{ij-1} + Bu_j,
 \end{equation}
 \begin{equation}
-P_k = HP_{k-1}H^T + Q.
+P_{ij} = AP_{ij-1}A^T + Q.
 \end{equation}
 The measurement update equations are responsible for the feedbacks
 i.e. for incorporating a new measurement into the a priori estimate
 to obtain an improved a posteriori estimate.
 \begin{equation}
-K_k = P_kH^T(HP_kH^T + R)^{-1} \label{kalmangain}
+K_j = P_{ij}H^T(HP_kH^T + R)^{-1} \label{kalmangain}
 \end{equation}
 \begin{equation}
-x_k = x_k + K_k(z_k - Hx_x)
+\xi_{ij} = \xi_{ij} + K_j(\Delta t_{ij} - H\xi_{ij})
 \end{equation}
 \begin{equation}
-P_k = (I-K_kH)P_k.
+P_{ij} = (I-K_jH)P_{ij}.
 \end{equation}
 The matrix K in ($\ref{kalmangain}$) is
 chosen to be the gain or blending factor that minimizes the
@@ -940,22 +938,22 @@ posteriori error covariance. Taking the derivative of the trace of
 the resulting derivative with respect to K, setting that result equal to zero, and
 then solving for K provides
 \begin{equation}
-K_k = P_kH^{T}(HP_kH^{T} + R)^{-1}
+K_j = P_{ij}H^{T}(HP_{ij}H^{T} + R)^{-1}
 \end{equation}
 \begin{equation}
-K_k = \dfrac{P_kH^T}{HP_kH^T + R}. \label{gain}
+K_j = \dfrac{P_{ij}H^T}{HP_{ij}H^T + R}. \label{gain}
 \end{equation}
 Looking at ($\ref{gain}$), it is seen that as the measurement error
 covariance $R$ approaches zero, the gain K weights the residual more
 heavily. Specifically,
 \begin{equation}
-\mathop {\lim }\limits_{R_k \to 0 } {K_k} = H^{-1}.
+\mathop {\lim }\limits_{R_j \to 0 } {K_j} = H^{-1}.
 \end{equation}
-On the other hand, as the a priori estimate error covariance $P_k$
+On the other hand, as the a priori estimate error covariance $P_{ij}$
 approaches zero, the gain K weights the residual less heavily.
 Specifically,
 \begin{equation}
-\mathop {\lim }\limits_{P_k \to 0 } {K_k} = 0.
+\mathop {\lim }\limits_{P_{ij} \to 0 } {K_j} = 0.
 \end{equation}
 The time update equations can also be thought of as predictor
 equations, while the measurement update equations can be thought of
@@ -963,29 +961,29 @@ as corrector equations.
 \par
 The update equation is
 \begin{equation}
-\tilde x_k = \tilde x_k + K(z_k-H\tilde x_k).
+\xi_{ij} = \xi_{ij} + K(\Delta t_{ij}-H\xi_{ij}).
 \label{updatekalman}
 \end{equation}
-The difference $z_k - H\tilde x_k$ in ($\ref{updatekalman}$) is the
+The difference $\Delta t_{ij} - H\xi_{ij}$ in ($\ref{updatekalman}$) is the
 residual. The residual reflects the discrepancy between the
-predicted measurement $H\tilde x_k$ and the actual measurement
-$z_k$. A residual of zero means that the two are in complete
+predicted measurement $H\xi_{ij}$ and the actual measurement
+$\Delta t_{ij}$. A residual of zero means that the two are in complete
 agreement.
 \subsubsection{Filter design}
-The transition matrix $A$ plays an important role in achieving the
-proper synchronization. It indicates how fast/slow the next wakeup
-time should be compared to it's previous value and/or neighbors. The
-initial estimates of $x$ and $P$ are selected from the previous
+The parameters in the update and predict equations of the kalman filter are chosen to achive the best performance. 
+The transition matrix $A$ indicates how fast/slow the next wakeup
+time should be compared to it's previous value and/or neighbors, which is taken to be 1. The
+initial estimates of $\xi$ and $P$ are selected from the previous
 firing time of the node, one period earlier. This ensures that the
 nodes are on the same track as the previous time, since the
 neighbors remain the same with some exception of mobility and
 interference. $H$ is used to compare the predicted value with the
-observed value. \paragraph*{} In the filter design, the covariance
+observed value, which stands at 1. \paragraph*{} In the filter design, the covariance
 matrices $R$ and $Q$ have a significant role in the overall
 implementation of the algorithm. $R$ represents how the measurments
 are valued to affect the outcome and $Q$ sends a signal as to how
-the estimated value is weighed. By chosing the value of $R$ and $Q$,
-the direction of focus can be adjusted.
+the estimated value is weighed. By chosing the value of $R$ to be $10e-6$  and $Q$ to be 1,
+the direction of focus can be adjusted so that a maximum performace is achieved.
 \paragraph*{}
 \begin{tabular}{  l }Algorithm for Kalman Filter \\ \hline \hline
 1. Nodes broadcast packets. \\  2. Each receiver records the time that the packet is received. \\
