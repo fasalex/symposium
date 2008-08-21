@@ -87,7 +87,7 @@ Synchronization is a one of the main issues in the design of \textit{Wireless Se
 \newpage
 \addcontentsline{toc}{chapter}{Acknowledgment}
 \section*{\begin{center}Acknowledgment\end{center}}
-I would like to express my sincere gratitude to my supervisor, Frits van der Wateren from Chess Innovation Team, for all the support he has given me during the project. I am greatly indebted to him for all the insight and support that he showed in every phase of the project. I am grateful to dr.ir.Peter Smulders and prof.dr.ir. Peter Baltus for providing guidance during the project. \newline \newline I am greatly indebted to prof.dr.ir. Erik Fledderus for providing me the opportunity to work on such an interesting topic for my Master's thesis. He has been extremely helpful, and was always availble whenever I needed help. \newline \newline I like to express my appreciation to prof.dr.ir. Peter Baltus and prof.dr.ir. Jean-Paul Linnartz for taking time to serve on my thesis panel.\newline \newline  I want to say thanks for everyone in Chess Innovation team (Pieter, Wouter, Bert, Roland) for the wonderful time that I had working at Chess. They are exremely helpful and make the environment lively. It has been a pleasure working with them. \newline \newline Special thanks to my friends, Simon and Aman, and the all-in gang in Eindhvoen (Yenu, Teme, Esae and Frew). I want to thank all my friends at TU/e, for their help and encouragement and for making my stay in the Netherlands unforgettable.\newline \newline  Finally, I want to extend my gratitude to my family. No words can describe how grateful I am to my mohter, Etye and my sister, Hanna, and my brother, Teddy who showed immense faith in me. Thanks.
+I would like to express my sincere gratitude to my supervisor, Frits van der Wateren from Chess Innovation Team, for all the support he has given me during the project. I am greatly indebted to him for all the insight and support that he showed in every phase of the project. I am grateful to dr.ir.Peter Smulders and prof.dr.ir. Peter Baltus for providing guidance during the project. \newline \newline I am greatly indebted to prof.dr.ir. Erik Fledderus for providing me the opportunity to work on such an interesting topic for my Master's thesis. He has been extremely helpful, and was always availble whenever I needed help. \newline \newline I like to express my appreciation to prof.dr.ir. Peter Baltus and prof.dr.ir. Jean-Paul Linnartz for taking time to serve on my thesis panel.\newline \newline  I want to say thanks for everyone in Chess Innovation team for the wonderful time that I had working at Chess. They are exremely helpful and make the environment lively. Special thanks to my friends, Simon and Aman, and all my friends at TU/e, for their help and encouragement and for making my stay in the Netherlands unforgettable.\newline \newline  Finally, I want to extend my gratitude to my family. No words can describe how grateful I am. Thanks a lot.
 \newpage
 \addcontentsline{toc}{chapter}{Contents} \tableofcontents
 \addcontentsline{toc}{chapter}{List of figures} \listoffigures
@@ -762,53 +762,52 @@ other proposed algorithms.\paragraph*{}
 Least Squares (LS) is a method to fit a set of $n$ observations with
 a model of $m$ unknown parameters by minimizing the sum of the
 squares of the errors ("the residuals"). It uses a set of $n$ data
-points which are ($x_1$, $y_1$), ($x_2$, $y_2$),$\dots$,($x_n$,
-$y_n$), and a curve (model function) $y= f(x, \beta)$, that in
-addition to the variable $x$ also depends on $m$
+points, which correspond to $n$ neighbors, which are ($1$, $\Delta t_{i1}$), ($2$, $\Delta t_{i2}$),$\dots$,($n$,
+$\Delta t_{in}$), and a curve (model function) $f(j, \beta)$,  also depends on $m$
 parameters($\beta_1,\beta_2,...,\beta_m$). It is desired to find the
 vector $\beta$ of parameters such that the curve best fits the given
 data in the least squares, that is, the sum of squares
 \begin{equation}
-    S=\sum_{i=1}^{n}r_i^2 ,
+    S=\sum_{j=1}^{n}r_j^2 ,
 \end{equation}
-is minimized, where the residuals $r_i$ are given by
+is minimized, where the residuals $r_j$ are given by
 \begin{equation}
-    r_i = y_i - f(x_i,\beta),
+    r_j = \Delta t_{ij} - f(j,\beta),
 \end{equation}
-for i=1,2,$\dots$, $n$.
+for j=1,2,$\dots$, $n$.
 \paragraph*{}
 The minimum value of $S$ occurs when the gradient is zero. Hence, there are $m$ gradient equations to be solved:
 \begin{equation}
-    \dfrac{\partial S}{\partial \beta_j}=2\sum_i r_i\dfrac{\partial r_i}{\partial \beta_j}=0 \ \quad for \quad j=1,2...,m.
+    \dfrac{\partial S}{\partial \beta_q}=2\sum_j r_j\dfrac{\partial r_j}{\partial \beta_q}=0 \ \quad for \quad q=1,2...,m.
 \end{equation}
-In a non-linear system, the derivatives $\dfrac{\partial r_i}{\partial \beta_j}$ are functions of both the independent variable and the parameters. These gradient equations do not have a closed solution. Instead, initial values must be chosen for the
+In a non-linear system, the derivatives $\dfrac{\partial r_j}{\partial \beta_q}$ are functions of both the independent variable and the parameters. These gradient equations do not have a closed solution. Instead, initial values must be chosen for the
 parameters. Then, the parameters are refined iteratively, that is, the values are obtained by successive approximation,
 \begin{equation}
-    \beta_j^{p+1}=\beta^P_{ij}+\Delta \beta_j,
+    \beta_q^{p+1}=\beta_q + \Delta \beta_q,
 \end{equation}
-for $j=1,2...,m.$. Here, $p$ is an iteration number and the vector of increments, $\Delta \beta_j$, is known as the shift vector. At each iteration, the model is linearized by approximation to a first-order Taylor series expansion about $\beta^p$.
+for $q=1,2...,m.$. Here, $p$ is an iteration number and the vector of increments, $\Delta \beta_q$, is known as the shift vector. At each iteration, the model is linearized by approximation to a first-order Taylor series expansion about $\beta^q$.
 \begin{equation}
-    f(x_i,\beta)\approx f(x_i,\beta^p) +\sum_j \dfrac{\partial f(x_i, \beta^p)}{\partial \beta_j} \left(\beta^P_{ij} -\beta_j \right)
+    f(j,\beta)  \approx f(j,\beta^q) +\sum_q \dfrac{\partial f(j, \beta^p)}{\partial \beta_q} \left(\beta_q^p -\beta_q \right)
 \end{equation}
 \begin{equation}
- f(x_i,\beta) =f(x_i, \beta^p)+\sum_j J_{ij} \Delta\beta_j.
+ f(j,\beta) =f(j, \beta^q)+\sum_q J_{jq} \Delta\beta_q.
 \end{equation}
 The Jacobian, $J$, is a function of constants, the independent variable and the parameters. So it changes from one iteration to the
 next. Thus, in terms of the linearized model,
 \begin{equation}
-\dfrac{\partial r_i}{\partial \beta_j}=-J_{ij}
+\dfrac{\partial r_j}{\partial \beta_q}=-J_{jq}
 \end{equation}
 and the residuals are given by
 \begin{equation}
-    r_i=\Delta y_i- \sum_{j=1}^{m} J_{ij}\Delta\beta_j,
+    r_j= y - \sum_{q=1}^{m} J_{jq}\Delta\beta_q,
 \end{equation}
 where
 \begin{equation}
- \Delta y_i=y_i- f(x_i, \beta^p).
+ y =\Delta t_{ij}- f(j, \beta^p).
 \end{equation}
 Substituting these expressions into the gradient equations and equating to $0$, the resulting system of equations can be represented as a matrix notation as
 \begin{equation}
-    \left(J^TJ\right)\Delta  \beta=J^T\Delta y.
+    \left(J^TJ\right)\Delta  \beta=J^Ty.
 \end{equation}
 \subsubsection{Model design}
 As the algorithm is decentralized, the next wakeup time of the node
@@ -822,7 +821,7 @@ of the node with its neighbors. In order to meet the demand of
 adjusting the time offset and stabilize the network, the logarithmic
 curve with the model
 \begin{equation}
- f(x_i,\beta)= \beta _1 + \beta_2log(x_i),
+ f(j,\beta)= \beta _1 + \beta_2log(j),
 \end{equation}
 is chosen. \paragraph*{} A logarithmic function can be used to
 represent the distribution of the offsets in the neighborhood, as
@@ -837,11 +836,11 @@ time.
 \includegraphics[width= 0.6 \textwidth]{curvefit}
 \caption{Curve fitting using logarithmic function} \label{curvefit}
 \end{figure}
-\paragraph*{}
+\newline
 The initial values of the parameters $\beta_1$ and $\beta_2$ is
 estimated taking into account the state of a synchronized network,
-which means $f(0)=0$ and $f(n-1)=\dfrac{t_{guard}}{2}$ where $n$ is
-the number of slots. \newline As each measurement arrives from the
+which means $f(0)=0$ and $f(N-1)=\dfrac{t_{guard}}{2}$ where $N$ is
+the number of slots. As each measurement arrives from the
 neighbors, the parameters are calculated in such a way that the
 measurement error from a pre-determined offset value is reduced.
 This ensures that the offset to be added in the next wakeup time
@@ -859,10 +858,10 @@ doesn't diverge in a large amount from the predicted value.
 \subsubsection{Discrete time kalman filter}
 The kalman filter$\cite{kalm}$ estimates a process by using a form of feedback
 control. It estimates the process state at some time and
-then obtains feedback in the form of (noisy) measurements. As such,
+then obtains feedback in the form of measurements. As such,
 the equations for the Kalman filter fall into two groups: time
 update equations and measurement update equations. The time update
-equations are responsible for projecting forward (in time) the
+equations are responsible for projecting forward the
 current state and error covariance estimates to obtain apriori
 estimates for the next time step.
 \par
@@ -870,7 +869,7 @@ The kalman filter addresses the general problem of trying to
 estimate the offset $\xi$ of a discrete-time estimation process that is
 governed by the linear stochastic difference equation
 \begin{equation}
- \xi_{ij} = A\xi_{ij} + Bu_j + w_{j-1} , \label{mainkal}
+ \xi_{ij} = A\xi_{ij-1} + Bu_j + w_{j-1} , \label{mainkal}
 \end{equation}
 with a measurement phase error $\Delta t_{ij}$ that is
 \begin{equation}
@@ -887,10 +886,10 @@ distributions
  p(v) \approx N(0,R).
 \end{equation}
 The matrix $A$ in ($\ref{mainkal}$) relates the state at
-the previous neighbor $j-1$ to the state at the current neighbor $j$,
+the previous neighbor $j-1$ to the state at the neighbor $j$,
 in the absence of either a driving function or process noise. The matrix $B$ relates the optional
-control input $u \in R$ to the state $x$. The matrix $H$
-in $\ref{meakal}$ the relates the state to the measurement $\Delta t_{ij}$. In
+control input $u$ to the state $x$. The matrix $H$
+in $\ref{meakal}$ the relates the offset $\xi_{ij}$ to the measurement $\Delta t_{ij}$. In
 practice, $H$ might change with each time step or measurement, but
 here we assume it is constant.
 \par
@@ -958,7 +957,7 @@ Specifically,
 The time update equations can also be thought of as predictor
 equations, while the measurement update equations can be thought of
 as corrector equations.
-\par
+\newline
 The update equation is
 \begin{equation}
 \xi_{ij} = \xi_{ij} + K(\Delta t_{ij}-H\xi_{ij}).
@@ -978,7 +977,7 @@ firing time of the node, one period earlier. This ensures that the
 nodes are on the same track as the previous time, since the
 neighbors remain the same with some exception of mobility and
 interference. $H$ is used to compare the predicted value with the
-observed value, which stands at 1. \paragraph*{} In the filter design, the covariance
+observed value, which is taken as 1. \paragraph*{} In the filter design, the covariance
 matrices $R$ and $Q$ have a significant role in the overall
 implementation of the algorithm. $R$ represents how the measurments
 are valued to affect the outcome and $Q$ sends a signal as to how
@@ -987,8 +986,8 @@ the direction of focus can be adjusted so that a maximum performace is achieved.
 \paragraph*{}
 \begin{tabular}{  l }Algorithm for Kalman Filter \\ \hline \hline
 1. Nodes broadcast packets. \\  2. Each receiver records the time that the packet is received. \\
-3. Each receiver i computes its phase errors to any other node j in the neighborhood. \\
-4. Each receiver i computes the optimum kalman update value for each phase error recursively. \\
+3. Each receiver \textit{i} computes its phase errors to any other node \textit{j} in the neighborhood. \\
+4. Each receiver \textit{i} computes the optimum kalman update value for each phase error recursively. \\
 5. Each receiver adjusts its wakeup time using the offset calculated.\\
 \hline \hline
 \end{tabular}
@@ -1016,7 +1015,7 @@ D = \dfrac{NT_{slot}}{T}, \label{duty}
 \end{equation}
 where $T$ is the period of a time frame. \paragraph*{} Substituting ($\ref{slot}$) in ($\ref{duty}$) equation, the duty cycle becomes
 \begin{equation}
-D= \dfrac{N(2x+T_{slot}}{T}.
+D= \dfrac{N(2x+T_{slot})}{T}.
 \end{equation}
 With the better performance achievement with the other algorithms,
 the guard time can be reduced depending on the precision of the
