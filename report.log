@@ -1,4 +1,4 @@
-This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=latex 2008.5.8)  20 AUG 2008 16:24
+This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=latex 2008.5.8)  21 AUG 2008 15:58
 entering extended mode
  %&-line parsing enabled.
 **report.tex
@@ -195,11 +195,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 90--91
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 90--91
-
- []
-
 [2] (./report.toc [3
 
 ])
@@ -270,7 +265,7 @@ Missing character: There is no â in font cmr10!
 Missing character: There is no € in font cmr10!
 Missing character: There is no “ in font cmr10!
  [27] [28]
-Overfull \hbox (14.33116pt too wide) in paragraph at lines 988--995
+Overfull \hbox (15.63898pt too wide) in paragraph at lines 987--994
  [] 
  []
 
@@ -304,17 +299,17 @@ File: 50output-error.eps Graphic file (type eps)
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1238--1238
+Underfull \hbox (badness 10000) in paragraph at lines 1237--1237
 []\OT1/cmr/m/n/10 Average Ex-e-cu-tion
  []
 
 
-Underfull \hbox (badness 1297) in paragraph at lines 1238--1238
+Underfull \hbox (badness 1297) in paragraph at lines 1237--1237
 []\OT1/cmr/m/n/10 Increase in ex-e-cu-tion
  []
 
 [35] [36]
-Overfull \hbox (2.26541pt too wide) in paragraph at lines 1260--1269
+Overfull \hbox (2.26541pt too wide) in paragraph at lines 1259--1268
 [][]
  []
 
@@ -359,7 +354,7 @@ File: myrianode.eps Graphic file (type eps)
 <myrianode.eps>
 
 Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 1458.
+put line 1457.
 
 File: myrianodearch.eps Graphic file (type eps)
 <myrianodearch.eps>
@@ -371,18 +366,18 @@ File: table2.eps Graphic file (type eps)
  <table2.eps>
 
 Package wrapfig Warning: Collision between wrapping environments on input line 
-1491.
+1490.
 
 File: myrianodephy.eps Graphic file (type eps)
 <myrianodephy.eps>
 
 Package wrapfig Warning: Stationary wrapfigure forced to float on input line 14
-98.
+97.
 
 [47]
 File: battery.eps Graphic file (type eps)
  <battery.eps> [48]
-Underfull \hbox (badness 1082) in paragraph at lines 1529--1530
+Underfull \hbox (badness 1082) in paragraph at lines 1528--1529
 []\OT1/cmr/m/n/10 Dallas semi-con-duc-tor."Crystal con-sid-er-a-tions with Dal-
 las Real time clocks,"
  []
@@ -390,13 +385,13 @@ las Real time clocks,"
 [49
 
 ] [50]
-Underfull \hbox (badness 4036) in paragraph at lines 1552--1553
+Underfull \hbox (badness 4036) in paragraph at lines 1551--1552
 []\OT1/cmr/m/n/10 Symmetricom, Inc. "Stochas-tic Model Es-ti-ma-tion of net-wor
 k time vari-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1552--1553
+Underfull \hbox (badness 10000) in paragraph at lines 1551--1552
 \OT1/cmr/m/n/10 ance," Avail-able on-line http://www.symmttm.com/pdf/Network$[]
 $Timing/
  []
@@ -411,4 +406,4 @@ Here is how much of TeX's memory you used:
  28 hyphenation exceptions out of 8191
  27i,11n,25p,1997b,338s stack positions out of 5000i,500n,6000p,200000b,5000s
 
-Output written on report.dvi (59 pages, 148692 bytes).
+Output written on report.dvi (59 pages, 148220 bytes).

@@ -1,5 +1,6 @@
 \documentclass[a4paper,10pt]{article}
 \usepackage{graphicx}
+\usepackage{listings}
 %opening
 \title{Software defined radio for MyriaNed}
 \author{Fasika A.Assegei}
@@ -10,23 +11,16 @@
 GNU Radio is an open source software-defined radio project, and the
 USBM is hardware designed specifically for use with GNU Radio, made
 by Mediatronix. Together, these two pieces have been used to
-implement a low cost, software-defined radios. In this thesis, we
-discuss the design of a software-defined radio application for
-wireless sensor networks, built using the open source GNU Radio and
+implement a low cost, software-defined radios. In this report,
+the design of a software-defined radio application for
+wireless sensor networks is discussed and built using the open source GNU Radio and
 a proprietary hardware made by Mediatronix.
-\newline
-In the second part of the thesis, the time synchronization of the
-wireless sensor nodes will be dealt with. An algorithm developed for
-a distributed multihop sensor network is presented with the results
-of the simulation conducted.
 \end{abstract}
 \newpage
 \tableofcontents
 \newpage
-\section{Introduction}
-\newpage
 \section{Software Defined Radio}
-A cognitive radio is a........ A software-defined radio (SDR) is a
+A software-defined radio (SDR) is a
 radio communication system that performs radio signal modulation and
 demodulation in software.The exact extent to which a particular
 radio system may be considered an SDR is not entirely clear because
@@ -39,9 +33,9 @@ to the antenna as possible (in terms of intervening signal
 processing stages), and this software should run on a general
 purpose computer. See Figure $\ref{fig:blockdiagram}$ for the block
 diagram of an ideal SDR.
-\begin{figure}
+\begin{figure}[b]
 \centering
-\includegraphics[width=0.5 \textwidth]{Broadside}
+\includegraphics[width=0.8 \textwidth]{sdrblk}
 \caption{Block Diagram of an SDR} \label{fig:blockdiagram}
 \end{figure}
 The impetus of SDR research is a desire to shift the radio
@@ -55,16 +49,20 @@ system could become one of any number of RF transceivers (e.g., GPS,
 802.11, HDTV) by simply executing a different block of code residing
 in memory. Of course, realizing the ideal SDR of Figure means
 overcoming some formidable obstacles. Consider the components of
-this system: \newline 1. Ideal transmit and receive antennas - These
+this system: 
+\begin{itemize}
+\item Ideal transmit and receive antennas - These
 antennas can operate at the carrier frequencies of all radio signals
-of interest. \newline 2. Ideal analog-to-digital and
-digital-to-analog converters - These devices have sampling rates
+of interest. 
+\item Ideal analog-to-digital and digital-to-analog converters - These devices have sampling rates
 greater than two times the carrier frequency of all radio signals of
 interest. At this sampling rate, all signals of interest can be
-processed at their carrier frequency.\newline 3. Ideal computer -
-This computer has sufficient processing power to handle the realtime
+processed at their carrier frequency.
+\item Ideal computer -This computer has sufficient processing power to handle the realtime
 signal processing and protocol management demands for all radio
-signals of interest. In reality, antennas must be designed for
+signals of interest. 
+\end{itemize}
+In reality, antennas must be designed for
 operation within a particular frequency band, modern
 analog-to-digital converters (ADCs) and digital-to-analog converters
 (DACs) are not fast enough to process a large portion of the
@@ -101,11 +99,11 @@ protocol-analysis, performance and quality measurements, and
 actively participate in the communication with the wireless sensor
 network.
 \subsubsection{Block Diagram}
-The block digram of the RF front end is shown below.
+The test hardware consists of two modules, an RF front-end for reception or transmission at specific a frequency band and bandwidth, and a base module consisting of an AD/DA front-end, an FPGA and a high-speed USB interface.
 \subsubsection{Packet format}
 The sensor nodes are equipped with the nordic transceiver nRF24LU1.
 All communications are packet based and packets are sent at a rate
-of 1Mb/s. Data is modulated using GFSK modulation, where a frequency
+of 2Mb/s. Data is modulated using GFSK modulation, where a frequency
 shift of +115KHz represents a binary 1, and -115KHz represents a
 binary 0. The packet format is described below. \newline Packets are
 made up of three sections, preamble, address and payload. The packet
@@ -113,8 +111,14 @@ is accompanied by a CRC at the end. All packets have a preamble to
 inform other devices the start of the packet transmission.The
 address part of the packet identifies the sender of the packet and
 the data stored in the payload is formatted accordingly. The packet
-is 313 bits long. The packet format is shown below. ( Figure). A
-preamble is an 8 bit sequence of ones and zeros. It can be 01010101
+is 313 bits long. The packet format is shown below. 
+\begin{figure}
+\centering
+\includegraphics[width= 1\textwidth]{packet}
+\caption{Packet format}
+\label{packet}
+\end{figure}
+A preamble is an 8 bit sequence of ones and zeros. It can be 01010101
 if the address field starts with 0 and 10101010 if the address field
 starts with 0. The address field is a 3 Byte field which describes
 the address of the transmitting node. The Packet Identification
@@ -136,16 +140,22 @@ project it is able to demodulate the USBM packets. The signal is
 then detected when the first 8 bits of the signal matches the
 preamble.
 \subsection{Deciphering the Packet}
-Figure shows the stages that the signal received by the radio must
+Figure $\ref{gnublock}$ shows the stages that the signal received by the radio must
 pass through in order to be processed. These modules are part of the
 GNU Radio framework, from the USBM hardware, to the software filters
 and demodulators that come with the software framework. The USBM
 module was adapted in order to process the binary data that comes
-from the demodulator. Figure 5.2: Flow of data within the GNU Radio
-software. The hardware control, filters and GFSK demodulator are
+from the demodulator. 
+\begin{figure}
+\centering
+\includegraphics[width= 1\textwidth]{gnublock}
+\caption{Flow of data within the GNU Radio software.}
+\label{gnublock}
+\label{dataflow}
+\end{figure} 
+The hardware control, filters and GFSK demodulator are
 part of the GNU Radio framework, however the USBM specific block was
-written for deciphering the packets depending on a module previously
-written by Dominic . The module works through a stream of data to
+written for deciphering the packets depending on a module. The module works through a stream of data to
 find the preamble and the crc of the packet at the correct distance
 apart. It then takes the portion that represents the address and the
 payload. Then, it creates a CRC using the crc16 CCITT algorithm. It
@@ -154,20 +164,207 @@ match, it returns the payload and the address of the packet. If they
 dont match, it discards the packet and continues to search for the
 other packet. The following figure shows the process of extracting
 the payload from the data packet received from the GFSK demodulator.
-\section{Conclusion and Recommendation}
+\section{Remarks}
+The project is temproarly teminated due to hardware problems.
+\newpage
+\appendix
+\section{Code}
+\subsection{Firmware}
+\begin{lstlisting}
+:03020000020203F4
+:10025C0002025F12026480FE1206D31207381202E9
+:10026C00F41202CE900032120AED80F890E68BE484
+:10027C00F090E6A0E0FA20E1F82290E6047480F019
+:10028C0000000000000090E6047402F00000000082
+:10029C00000090E6047404F000000000000090E6FA
+:1002AC00047406F000000000000090E6047408F0EE
+:1002BC0000000000000090E604E4F00000000000E4
+:1002CC00002290E680E0FA440AF09000FA120AED5F
+:1002DC0090E65D74FFF090E65F74FFF05391EF9041
+:1002EC00E680E0FA54F7F02290E65C74FFF090E6BA
+:1002FC00687408F090E65E740FF0D2E875A880D2AE
+:10030C00AF2290E65CE4F090E668F090E65EF0C216
+:10031C00E875A800C2AF22C0E0C0F0C082C083C0A4
+:10032C0002C003C004C005C006C007C000C001C0A5
+:10033C00D075D00090E6B8E0FA530260BA000280A3
+:10034C0032BA2002800DBA40028013BA60028003D8
+:10035C000205AB90E6A0E0FA4401F00205AB1208EE
+:10036C00CEE58260030205AB90E6A0E0FA4401F012
+:10037C000205AB90E6B9E0FA24F450030205ABEAAF
+:10038C002A2A900392730205330205A90205AB02D7
+:10039C0005A50205AB0205AB0203B60204F8020583
+:1003AC001F02051A02050302051590E6BBE0FABA16
+:1003BC0001028017BA02028040BA03028069BA06B1
+:1003CC0002801FBA070280480204ED7A007BE0909D
+:1003DC00E6B3EBF07A007BE07B0090E6B4EAF00247
+:1003EC0005AB7A127BE090E6B3EBF07A127BE07B04
+:1003FC000090E6B4EAF00205AB7A1C7BE090E6B321
+:10040C00EBF07A1C7BE07B0090E6B4EAF00205ABE3
+:10041C007A3C7BE090E6B3EBF07A3C7BE07B00909F
+:10042C00E6B4EAF00205AB90E6BAE0FA24FA50031F
+:10043C000204E2EA2A2A9004467302045802046F6A
+:10044C0002048602049D0204B40204CB7A787BE099
+:10045C0090E6B3EBF07A787BE07B0090E6B4EAF0C0
+:10046C000205AB7A7C7BE090E6B3EBF07A7C7BE028
+:10047C007B0090E6B4EAF00205AB7AA47BE090E650
+:10048C00B3EBF07AA47BE07B0090E6B4EAF00205D3
+:10049C00AB7AC47BE090E6B3EBF07AC47BE07B00F4
+:1004AC0090E6B4EAF00205AB7ACE7BE090E6B3EBD3
+:1004BC00F07ACE7BE07B0090E6B4EAF00205AB7AF2
+:1004CC00D87BE090E6B3EBF07AD87BE07B0090E64B
+:1004DC00B4EAF00205AB90E6A0E0FA4401F00205A4
+:1004EC00AB90E6A0E0FA4401F00205AB90E6A0E088
+:1004FC00FA4401F00205AB90E740E4F090E68AF094
+:10050C0090E68B7401F00205AB00000205AB000015
+:10051C000205AB90E7407401F090E68AE4F090E6B7
+:10052C008B7401F00205AB90E6B8E0FABA80028059
+:10053C000ABA8102804EBA8266801590E740E4F0D8
+:10054C0090E741F090E68AF090E68B7402F0804FD1
+:10055C0090E6BCE0FA53027E90E6BCE0FBC37480EC
+:10056C009BE433FB4A900B3893FA24A15401FA9084
+:10057C00E740F090E741E4F090E68AF090E68B7467
+:10058C0002F0801B90E740E4F090E741F090E68A9F
+:10059C00F090E68B7402F080060000800200009060
+:1005AC00E6A0E0FA4480F05391EF90E65D7401F020
+:1005BC00D0D0D001D000D007D006D005D004D003C5
+:1005CC00D002D083D082D0F0D0E032C0E0C082C064
+:1005DC00835391EF90E65D7402F0D083D082D0E02B
+:1005EC0032C0E0C082C0835391EF90E65D7404F09A
+:1005FC00D083D082D0E032C0E0C082C0835391EF70
+:10060C0090E65D7408F0D083D082D0E032C0E0C0B8
+:10061C0082C0835391EF90E65D7410F0D083D0824A
+:10062C00D0E032C0E0C082C0835391EF90E65D749D
+:10063C0020F0D083D082D0E032C0E0C082C083539F
+:10064C0091EF90E65D7440F0D083D082D0E032C060
+:10065C00E0C082C0835391EF90E65D7480F0D0834C
+:10066C00D082D0E032C0E0C082C0835391EF90E6DC
+:10067C005F7401F0D083D082D0E032C0E0C082C081
+:10068C00835391EF90E65F7402F0D083D082D0E078
+:10069C0032C0E0C082C0837509015391EF90E65FD0
+:1006AC007404F0D083D082D0E032C0E0C082C0832A
+:1006BC007508015391EF90E65F7408F0D083D082F7
+:0706CC00D0E0325391EF3240
+:0A0B38000001020203030404050596
+:1006D300C2AF90E670E4F075800075B2FF759000CC
+:1006E30075B3FF75B00075B5FF0000000000009002
+:1006F300E6007410F000000000000090E60174C0F2
+:10070300F000000000000090E6C37480F0000000D9
+:1007130000000090E6C274F0F000000000000090BA
+:1007230001F4120AED7580029001F4120AED90E6CD
+:10073300007412F022C2AF90E6007412F0000000C1
+:1007430000000090E60174E3F00000000000007573
+:10075300800275B20B75900075B30075B00075B566
+:100763000090E6707480F000000000000090E60244
+:1007730074C8F000000000000090E60374EAF00083
+:10078300000000000090E6C3E4F000000000000059
+:1007930090E6C2E4F000000000000090E609E4F0F7
+:1007A30000000000000090E60B7401F00000000060
+:1007B300000090E613E4F000000000000090E6154E
+:1007C300E4F000000000000090E61274A0F00000C6
+:1007D3000000000090E61474E0F000000000000048
+:1007E30090E618E4F000000000000090E61AE4F040
+:1007F30000000000000090E619E4F0000000000093
+:100803000090E61BE4F000000000000090E6047492
+:1008130080F000000000000090E6047402F0000085
+:100823000000000090E6047404F0000000000000E3
+:1008330090E6047406F000000000000090E60474E3
+:1008430008F000000000000090E604E4F00000005F
+:1008530000000090E6497482F00000000000009060
+:10086300E6497482F000000000000090E6497482BB
+:10087300F000000000000090E6497482F0000000E0
+:1008830000000090E6187401F000000000000090E2
+:10089300E6187411F000000000000090E61A740DD1
+:1008A300F000000000000090E60B7403F00000006D
+:1008B30000000090E6247402F000000000000090A5
+:1008C300E625E4F0000000000000227A0090E6B87C
+:1008D300E0FBBBC002800302094D90E6B9E0FBBB1D
+:1008E30080028005BB815F802C90E6BCE0FB600545
+:1008F300BB011E800E90E68AE4F090E68B7401F053
+:1009030002099590E68AE4F090E68B7401F00209FF
+:10091300957582002290E6BAE0FB750A40750BE7F5
+:1009230090E6BEE0F50C8B82C0021209AFE582D0DF
+:10093300027003F5822290E68AE4F090E6BEE0FBC3
+:1009430090E68BF0804C7582002290E6B8E0FBBB0A
+:10095300404090E6B9E0FBBB02028005BB08338050
+:100963002A90E6BCE0FB600ABB01028008BB0217C9
+:10097300801202099812027890E68BE0F50A90E75C
+:100983004002099C0209AB7A018007C00212027877
+:10099300D0028A8222758201227A00C3EA950A5024
+:1009A300030A80F77582012275820122AA82E50C6F
+:1009B30070047582012290E678E0FB20E6F890E669
+:1009C300787480F0EA2AFA90E67974014AF090E6A6
+:1009D30078E0FA30E0F890E678E0FA30E203020AD1
+:1009E3006690E678E0FA20E103020A66E50CB401BA
+:1009F3000890E678E0FA4420F090E679E0F50DAA55
+:100A03000AAB0BAC0CDC02803090E678E0FD30E002
+:100A1300F890E678E0FD20E24ABC010890E678E031
+:100A2300FD4420F090E679E0FD8A828B83F0A3AA4F
+:100A330082AB838A0A8B0B80CC90E678E0FA30E0B5
+:100A4300F890E678E0FA20E21A90E678E0FA44407B
+:100A5300F0AA0AAB0B90E679E0FC8A828B83F075EF
+:100A630082012290E678E0FA4440F075820022AADF
+:100A73008290E678E0FB20E6F890E6787480F0EA6E
+:100A83002AFA90E679F090E678E0FA30E0F890E61A
+:100A930078E0FA20E24890E678E0FA30E140AA0AEA
+:100AA300AB0BAC0CEC602B8A828B83E0FDA3AA8298
+:100AB300AB8390E679EDF01C90E678E0FD30E0F84A
+:100AC30090E678E0FD20E21690E678E0FD20E1D4A0
+:100AD300800C90E678E0FA4440F07582012290E6BB
+:0A0AE30078E0FA4440F0758200222A
+:10E0000012010002FFFFFF40A7070001010001020B
+:10E0100003010A060002FFFFFF4001000902200081
+:10E0200001010080FA0904000002FFFFFF05070557
+:10E0300002020002010705860200020109023C00FB
+:10E0400001010080FA0909000004FF000000070533
+:10E05000010240000007058102400000070502029E
+:10E060000002010705040200020107058602000202
+:10E070000107058802000201040309042803770050
+:10E08000770077002E006D00650064006900610074
+:10E09000740072006F006E00690078002E0063004B
+:10E0A0006F006D0020035500530042004D0020001A
+:10E0B000560031002E00300020004600580032008B
+:10E0C0004C0050000A0330003000300031000A03D9
+:10E0D0004300740072006C000A0352007800540080
+:02E0E0007800C6
+:100000000202000206CF00000000000206CF00003E
+:100010000000000206CF00000000000206CF000032
+:100020000000000206CF00000000000206CF000022
+:100030000000000206CF00000000000206CF000012
+:1000400000000002010000000000000206CF0000D6
+:100050000000000206CF00000000000206CF0000F2
+:060060000000000206CFC3
+:10010000020323000205D7000205ED0002060300EA
+:100110000206190002062F000206450002065B00D7
+:10012000020671000206870002069D000206B60064
+:100130000206CF000206CF000206CF000206CF0063
+:100140000206CF000206CF000206CF000206CF0053
+:100150000206CF000206CF000206CF000206CF0043
+:100160000206CF000206CF000206CF000206CF0033
+:100170000206CF000206CF000206CF000206CF0023
+:100180000206CF000206CF000206CF000206CF0013
+:100190000206CF000206CF000206CF000206CF0003
+:1001A0000206CF000206CF000206CF000206CF00F3
+:0801B0000206CF000206CF0099
+:100AED00A883A9827A027B567C001BBBFF041A02E5
+:100AFD000B0300020B03BA0028BB00EC19B9FF046D
+:100B0D0018020B1500020B157C007C007C007C008C
+:100B1D007C007C007C007C007C00B80007B900C420
+:070B2D0022020AF5020AF1A1
+:06023200E478FFF6D8FDA0
+:100210007900E94400601B7A00900B42780075A0D9
+:100220001AE493F2A308B8000205A0D9F4DAF27533
+:02023000A0FF2D
+:100238007800E84400600A790075A000E4F309D862
+:10024800FC7800E84400600C7900901A00E4F0A300
+:04025800D8FCD9FAFB
+:0D02030075810D120B34E582600302025F6D
+:040B340075820022A4
+:00000001FF
+\end{lstlisting}
 \newpage
 \begin{thebibliography}{}
-\bibitem{1} R. Mirollo and S. Strogatz, Synchronization of pulse-coupled biological oscillators, SIAM J. Appl. Math, vol. 50, no. 6, pp. 1645-1662,Dec 1990.
-\bibitem{2} Romer,K. Time Synchronization in Ad Hoc Networks. In: Proceedings of the Second ACM International Symposium on Mobile Ad Hoc Networking and Computing, Long Beach, California. 2001
-\bibitem{3}
-\bibitem{4}
-\bibitem{5}
-\bibitem{6}
-\bibitem{7}
-\bibitem{8}
-\bibitem{9}
-\bibitem{10}
-\bibitem{11}
-\bibitem{12}
+\bibitem{explore}"Exploring GNU Radio". Available online. http:\slash \slash www.gnu.org\slash software\slash gnuradio\slash doc\slash exploring-gnuradio.html [Accessed February 15, 2008].
+\bibitem{1} "Build guide". Available online. http:\slash \slash gnuradio.org\slash trac\slash wiki\slash BuildGuide [Accessed February 15, 2008].
+\bibitem{2} "How to Write a Signal Processing Block". Available online. http:\slash \slash www.gnu.org\slash software\slash gnuradio\slash doc\slash howto-write-a-block.html [Accessed February 15, 2008].
 \end{thebibliography}
 \end{document}
